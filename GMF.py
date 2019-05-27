@@ -7,7 +7,6 @@ He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
 import numpy as np
-import theano.tensor as T
 import keras
 from keras import backend as K
 from keras import initializations
