@@ -6,6 +6,7 @@ He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
 
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
+from __future__ import print_function
 import numpy as np
 import keras
 from keras import backend as K
@@ -90,7 +91,7 @@ def get_train_instances(train, num_negatives):
         # negative instances
         for t in xrange(num_negatives):
             j = np.random.randint(num_items)
-            while train.has_key((u, j)):
+            while (u, j) in train:
                 j = np.random.randint(num_items)
             user_input.append(u)
             item_input.append(j)
