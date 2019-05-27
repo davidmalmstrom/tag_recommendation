@@ -4,6 +4,7 @@ Processing datasets.
 
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
+from builtins import object
 import scipy.sparse as sp
 import numpy as np
 

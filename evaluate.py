@@ -7,6 +7,9 @@ Evaluate the performance of Top-K recommendation:
 
 @author: hexiangnan
 '''
+from __future__ import division
+from builtins import range
+from past.utils import old_div
 import math
 import heapq # for retrieval topK
 import multiprocessing
@@ -37,14 +40,14 @@ def evaluate_model(model, testRatings, testNegatives, K, num_thread):
     hits, ndcgs = [],[]
     if(num_thread > 1): # Multi-thread
         pool = multiprocessing.Pool(processes=num_thread)
-        res = pool.map(eval_one_rating, range(len(_testRatings)))
+        res = pool.map(eval_one_rating, list(range(len(_testRatings))))
         pool.close()
         pool.join()
         hits = [r[0] for r in res]
         ndcgs = [r[1] for r in res]
         return (hits, ndcgs)
     # Single thread
-    for idx in xrange(len(_testRatings)):
+    for idx in range(len(_testRatings)):
         (hr,ndcg) = eval_one_rating(idx)
         hits.append(hr)
         ndcgs.append(ndcg)      
@@ -61,7 +64,7 @@ def eval_one_rating(idx):
     users = np.full(len(items), u, dtype = 'int32')
     predictions = _model.predict([users, np.array(items)], 
                                  batch_size=100, verbose=0)
-    for i in xrange(len(items)):
+    for i in range(len(items)):
         item = items[i]
         map_item_score[item] = predictions[i]
     items.pop()
@@ -79,8 +82,8 @@ def getHitRatio(ranklist, gtItem):
     return 0
 
 def getNDCG(ranklist, gtItem):
-    for i in xrange(len(ranklist)):
+    for i in range(len(ranklist)):
         item = ranklist[i]
         if item == gtItem:
-            return math.log(2) / math.log(i+2)
+            return old_div(math.log(2), math.log(i+2))
     return 0

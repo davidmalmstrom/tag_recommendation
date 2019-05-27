@@ -6,7 +6,10 @@ He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
 from __future__ import print_function
+from __future__ import division
 
+from builtins import range
+from past.utils import old_div
 import numpy as np
 
 import keras
@@ -62,9 +65,9 @@ def get_model(num_users, num_items, layers = [20,10], reg_layers=[0,0]):
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
 
-    MLP_Embedding_User = Embedding(input_dim = num_users, output_dim = layers[0]/2, name = 'user_embedding',
+    MLP_Embedding_User = Embedding(input_dim = num_users, output_dim = old_div(layers[0],2), name = 'user_embedding',
                                   init = init_normal, W_regularizer = l2(reg_layers[0]), input_length=1)
-    MLP_Embedding_Item = Embedding(input_dim = num_items, output_dim = layers[0]/2, name = 'item_embedding',
+    MLP_Embedding_Item = Embedding(input_dim = num_items, output_dim = old_div(layers[0],2), name = 'item_embedding',
                                   init = init_normal, W_regularizer = l2(reg_layers[0]), input_length=1)   
     
     # Crucial to flatten an embedding vector!
@@ -75,7 +78,7 @@ def get_model(num_users, num_items, layers = [20,10], reg_layers=[0,0]):
     vector = Concatenate()([user_latent, item_latent])
     
     # MLP layers
-    for idx in xrange(1, num_layer):
+    for idx in range(1, num_layer):
         layer = Dense(layers[idx], W_regularizer= l2(reg_layers[idx]), activation='relu', name = 'layer%d' %idx)
         vector = layer(vector)
         
@@ -90,13 +93,13 @@ def get_model(num_users, num_items, layers = [20,10], reg_layers=[0,0]):
 def get_train_instances(train, num_negatives):
     user_input, item_input, labels = [],[],[]
     num_users = train.shape[0]
-    for (u, i) in train.keys():
+    for (u, i) in list(train.keys()):
         # positive instance
         user_input.append(u)
         item_input.append(i)
         labels.append(1)
         # negative instances
-        for t in xrange(num_negatives):
+        for t in range(num_negatives):
             j = np.random.randint(num_items)
             while (u, j) in train:
                 j = np.random.randint(num_items)
@@ -150,7 +153,7 @@ if __name__ == '__main__':
     
     # Train model
     best_hr, best_ndcg, best_iter = hr, ndcg, -1
-    for epoch in xrange(epochs):
+    for epoch in range(epochs):
         t1 = time()
         # Generate training instances
         user_input, item_input, labels = get_train_instances(train, num_negatives)
