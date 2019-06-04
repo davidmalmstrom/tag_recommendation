@@ -7,6 +7,7 @@ He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
 '''
 from __future__ import print_function
 from __future__ import division
+
 from builtins import range
 from past.utils import old_div
 import numpy as np
@@ -20,18 +21,20 @@ from keras.layers.core import Dense, Lambda, Activation
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from evaluate import evaluate_model
+from evaluate_recall import evaluate_model_recall
 from Dataset import Dataset
 from time import time
 import sys
 import GMF, MLP
 import argparse
+import scipy.sparse as sp
 
 #################### Arguments ####################
-def parse_args():
+def parse_args(sargs):
     parser = argparse.ArgumentParser(description="Run NeuMF.")
     parser.add_argument('--path', nargs='?', default='Data/',
                         help='Input data path.')
-    parser.add_argument('--dataset', nargs='?', default='ml-1m',
+    parser.add_argument('--dataset', nargs='?', default='',
                         help='Choose a dataset.')
     parser.add_argument('--epochs', type=int, default=100,
                         help='Number of epochs.')
@@ -59,7 +62,17 @@ def parse_args():
                         help='Specify the pretrain model file for MF part. If empty, no pretrain will be used')
     parser.add_argument('--mlp_pretrain', nargs='?', default='',
                         help='Specify the pretrain model file for MLP part. If empty, no pretrain will be used')
-    return parser.parse_args()
+    parser.add_argument('--is_tag', type=int, default=0,
+                        help='Specify if a tag dataset is to be used, or just the regular default datasets')
+    parser.add_argument('--eval_recall', type=int, default=0,
+                        help='Whether the recall evaluation method should be used or not')
+    parser.add_argument('--topk', type=int, default=10,
+                        help='What topk to use when evaluating (recall@K, for example)')
+    parser.add_argument('--big_tag', type=int, default=0,
+                        help='Whether the large amount of tag data should be used or not')
+    parser.add_argument('--nn_model', nargs='?', default='NeuMF',
+                        help='Which model to use, \"NeuMF\", \"GMF\" or \"MLP\"')
+    return parser.parse_args(sargs)
 
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
@@ -134,9 +147,8 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
     model.get_layer('prediction').set_weights([0.5*new_weights, 0.5*new_b])    
     return model
 
-def get_train_instances(train, num_negatives):
+def get_train_instances(train, num_negatives, num_items):
     user_input, item_input, labels = [],[],[]
-    num_users = train.shape[0]
     for (u, i) in list(train.keys()):
         # positive instance
         user_input.append(u)
@@ -152,8 +164,20 @@ def get_train_instances(train, num_negatives):
             labels.append(0)
     return user_input, item_input, labels
 
-if __name__ == '__main__':
-    args = parse_args()
+
+def split_half_tags(full_data):
+    x_cf_train = full_data.copy()
+    for row_index in range(full_data.shape[0]):
+        nonzeros = np.nonzero(full_data[row_index])[1]
+        # Set half of the non-zero elements in the row to zero. These are saved in y_cf_train, and will be predicted
+        x_cf_train[row_index, np.random.choice(
+            nonzeros, int(len(nonzeros)/2), replace=False)] = 0
+    # Set y_cf_train to contain the remainder of the elements.
+    y_cf_train = full_data - x_cf_train
+    return x_cf_train, y_cf_train
+
+def main(sargs):
+    args = parse_args(sargs)
     num_epochs = args.epochs
     batch_size = args.batch_size
     mf_dim = args.num_factors
@@ -166,22 +190,34 @@ if __name__ == '__main__':
     verbose = args.verbose
     mf_pretrain = args.mf_pretrain
     mlp_pretrain = args.mlp_pretrain
+    model_type = args.nn_model
             
-    topK = 10
+    topK = args.topk
     evaluation_threads = 1#mp.cpu_count()
-    print("NeuMF arguments: %s " %(args))
-    model_out_file = 'Pretrain/%s_NeuMF_%d_%s_%d.h5' %(args.dataset, mf_dim, args.layers, time())
+    print("%s arguments: %s " %(model_type, args))
+    model_out_file = 'Pretrain/%s_%s_%d_%s_%d.h5' %(args.dataset, model_type, mf_dim, args.layers, time())
 
     # Loading data
     t1 = time()
-    dataset = Dataset(args.path + args.dataset)
+    dataset = Dataset(args.path + args.dataset, args.is_tag, args.big_tag)
     train, testRatings, testNegatives = dataset.trainMatrix, dataset.testRatings, dataset.testNegatives
+    #dataset2 = Dataset(args.path + "ml-1m", 0)
+    #train2, testRatings2, testNegatives2 = dataset2.trainMatrix, dataset2.testRatings, dataset2.testNegatives
     num_users, num_items = train.shape
     print("Load data done [%.1f s]. #user=%d, #item=%d, #train=%d, #test=%d" 
           %(time()-t1, num_users, num_items, train.nnz, len(testRatings)))
     
     # Build model
-    model = get_model(num_users, num_items, mf_dim, layers, reg_layers, reg_mf)
+    if model_type == 'NeuMF':
+        model = get_model(num_users, num_items, mf_dim, layers, reg_layers, reg_mf)
+    elif model_type == "GMF":
+        model = GMF.get_model(num_users,num_items,mf_dim)
+    elif model_type == "MLP":
+        model = MLP.get_model(num_users,num_items, layers, reg_layers)
+    else:
+        print("Error: wrong model type")
+        sys.exit()
+
     if learner.lower() == "adagrad": 
         model.compile(optimizer=Adagrad(lr=learning_rate), loss='binary_crossentropy')
     elif learner.lower() == "rmsprop":
@@ -192,45 +228,78 @@ if __name__ == '__main__':
         model.compile(optimizer=SGD(lr=learning_rate), loss='binary_crossentropy')
     
     # Load pretrain model
-    if mf_pretrain != '' and mlp_pretrain != '':
+    if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
         gmf_model = GMF.get_model(num_users,num_items,mf_dim)
         gmf_model.load_weights(mf_pretrain)
         mlp_model = MLP.get_model(num_users,num_items, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
         model = load_pretrain_model(model, gmf_model, mlp_model, len(layers))
         print("Load pretrained GMF (%s) and MLP (%s) models done. " %(mf_pretrain, mlp_pretrain))
-        
+    
+    
+    from sklearn.model_selection import train_test_split
+    # Split the data
+    val = train[:1500]
+    train = train[1500:]
+    val_user_input, val_item_input, val_labels = get_train_instances(val, num_negatives, num_items)
+
     # Init performance
-    (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
-    hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
-    print('Init: HR = %.4f, NDCG = %.4f' % (hr, ndcg))
+    if args.eval_recall:
+        val_x, val_y = split_half_tags(train[:1500])
+        train = sp.vstack([val_x, train[1500:]]).todok()
+
+        hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
+
+        metric1 = "Recall"
+        metric2 = "Jaccard score"
+    else:
+        (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
+        hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
+
+        metric1 = "HR"
+        metric2 = "NDCG"
+        
+    print('Init: %s = %.4f, %s = %.4f' % (metric1, hr, metric2, ndcg))
     best_hr, best_ndcg, best_iter = hr, ndcg, -1
     if args.out > 0:
         model.save_weights(model_out_file, overwrite=True) 
-        
+    
+
+
     # Training model
     for epoch in range(num_epochs):
         t1 = time()
         # Generate training instances
-        user_input, item_input, labels = get_train_instances(train, num_negatives)
+        user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
+        #user_input2, item_input2, labels2 = get_train_instances(train2, num_negatives, num_items)
         
         # Training
         hist = model.fit([np.array(user_input), np.array(item_input)], #input
                          np.array(labels), # labels 
-                         batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
+                         batch_size=batch_size, epochs=1, verbose=0, shuffle=True,
+                         validation_data=([np.array(val_user_input), np.array(val_item_input)],
+                         np.array(val_labels)))
         t2 = time()
         
         # Evaluation
         if epoch %verbose == 0:
-            (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
-            hr, ndcg, loss = np.array(hits).mean(), np.array(ndcgs).mean(), hist.history['loss'][0]
-            print('Iteration %d [%.1f s]: HR = %.4f, NDCG = %.4f, loss = %.4f [%.1f s]' 
-                  % (epoch,  t2-t1, hr, ndcg, loss, time()-t2))
+            if args.eval_recall:
+                hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
+            else:
+                (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
+                hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
+            loss = hist.history['loss'][0]
+            val_loss = hist.history['val_loss'][0]
+            print('Iteration %d [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss = %.4f, [%.1f s]' 
+                  % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, val_loss, time()-t2))
             if hr > best_hr:
                 best_hr, best_ndcg, best_iter = hr, ndcg, epoch
                 if args.out > 0:
                     model.save_weights(model_out_file, overwrite=True)
 
-    print("End. Best Iteration %d:  HR = %.4f, NDCG = %.4f. " %(best_iter, best_hr, best_ndcg))
+    print("End. Best Iteration %d:  %s = %.4f, %s = %.4f. " %(best_iter, metric1, best_hr, metric2, best_ndcg))
     if args.out > 0:
         print("The best NeuMF model is saved to %s" %(model_out_file))
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
