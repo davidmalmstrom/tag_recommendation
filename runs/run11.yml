@@ -1,0 +1,36 @@
+--nn_model: NeuMF
+--is_tag: '0'
+--eval_recall: '0'
+--topk: '10'
+--dataset: ml-1m
+--big_tag: '0'
+--epochs: '20'
+
+
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='ml-1m', epochs=20, eval_recall=0, is_tag=0, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='NeuMF', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0,0,0,0]', reg_mf=0, topk=10, verbose=1) 
+# Load data done [11.2 s]. #user=6040, #item=3706, #train=994169, #test=6040
+# Init: HR = 0.0965, NDCG = 0.0437
+# Iteration 0 [42.7 s]: HR = 0.4369, NDCG = 0.2424, loss = 0.3743, val_loss = 0.3678, [4.5 s]
+# Iteration 1 [42.0 s]: HR = 0.4447, NDCG = 0.2436, loss = 0.3554, val_loss = 0.3713, [4.5 s]
+# Iteration 2 [45.6 s]: HR = 0.4359, NDCG = 0.2396, loss = 0.3512, val_loss = 0.3757, [4.5 s]
+# Iteration 3 [41.9 s]: HR = 0.4219, NDCG = 0.2306, loss = 0.3418, val_loss = 0.3919, [4.5 s]
+# Iteration 4 [42.0 s]: HR = 0.4043, NDCG = 0.2180, loss = 0.3293, val_loss = 0.4111, [4.5 s]
+# Iteration 5 [41.9 s]: HR = 0.3892, NDCG = 0.2072, loss = 0.3188, val_loss = 0.4321, [4.5 s]
+# Iteration 6 [41.9 s]: HR = 0.3798, NDCG = 0.2014, loss = 0.3067, val_loss = 0.4395, [4.5 s]
+# Iteration 7 [42.0 s]: HR = 0.3724, NDCG = 0.1968, loss = 0.2958, val_loss = 0.4498, [4.5 s]
+# Iteration 8 [42.9 s]: HR = 0.3772, NDCG = 0.1985, loss = 0.2875, val_loss = 0.4691, [4.5 s]
+# Iteration 9 [41.9 s]: HR = 0.3680, NDCG = 0.1925, loss = 0.2807, val_loss = 0.4934, [4.5 s]
+# Iteration 10 [41.9 s]: HR = 0.3603, NDCG = 0.1905, loss = 0.2749, val_loss = 0.5035, [4.5 s]
+# Iteration 11 [41.9 s]: HR = 0.3573, NDCG = 0.1861, loss = 0.2703, val_loss = 0.5194, [4.6 s]
+# Iteration 12 [42.0 s]: HR = 0.3581, NDCG = 0.1881, loss = 0.2667, val_loss = 0.5293, [4.5 s]
+# Iteration 13 [41.9 s]: HR = 0.3424, NDCG = 0.1791, loss = 0.2633, val_loss = 0.5438, [4.5 s]
+# Iteration 14 [42.0 s]: HR = 0.3425, NDCG = 0.1798, loss = 0.2611, val_loss = 0.5486, [4.5 s]
+# Iteration 15 [41.9 s]: HR = 0.3450, NDCG = 0.1811, loss = 0.2586, val_loss = 0.5442, [4.5 s]
+# Iteration 16 [42.0 s]: HR = 0.3452, NDCG = 0.1813, loss = 0.2566, val_loss = 0.5347, [4.5 s]
+# Iteration 17 [41.9 s]: HR = 0.3414, NDCG = 0.1794, loss = 0.2546, val_loss = 0.5481, [4.5 s]
+# Iteration 18 [41.9 s]: HR = 0.3464, NDCG = 0.1796, loss = 0.2534, val_loss = 0.5532, [4.5 s]
+# Iteration 19 [42.0 s]: HR = 0.3430, NDCG = 0.1784, loss = 0.2520, val_loss = 0.5500, [4.5 s]
+# End. Best Iteration 1:  HR = 0.4447, NDCG = 0.2436. 
+# The best NeuMF model is saved to Pretrain/ml-1m_NeuMF_8_[64,32,16,8]_1559657487.h5
+#
+# Detta är med val

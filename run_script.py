@@ -6,7 +6,7 @@ import sys
 import oyaml as yaml
 import importlib
 
-if len(sys.argv) < 2:
+if len(sys.argv) < 3:
     print("No JSON parameter configuration file provided, using default run_template.")
     read_file_name = "run_template.yml"
     i = 1
@@ -45,6 +45,11 @@ class Logger(object):
 
 sys.stdout = Logger()
 print("\n")
+
+if sys.argv[-1] == "vscode":
+    print("Launched by VS Code.")
+else:
+    print("Launched by terminal.")
 
 import NeuMF
 NeuMF.main(args)

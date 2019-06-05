@@ -1,0 +1,38 @@
+--nn_model: MLP
+--is_tag: '0'
+--eval_recall: '0'
+--topk: '10'
+--dataset: ml-1m
+--big_tag: '0'
+
+
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='ml-1m', epochs=100, eval_recall=0, is_tag=0, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0,0,0,0]', reg_mf=0, topk=10, verbose=1) 
+# Load data done [33.6 s]. #user=6040, #item=3706, #train=994169, #test=6040
+# Init: HR = 0.1018, NDCG = 0.0479
+# Iteration 0 [44.7 s]: HR = 0.4376, NDCG = 0.2436, loss = 0.3755, val_loss = 0.3691, [6.0 s]
+# Iteration 1 [43.6 s]: HR = 0.4374, NDCG = 0.2407, loss = 0.3556, val_loss = 0.3737, [5.9 s]
+
+
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='ml-1m', epochs=100, eval_recall=0, is_tag=0, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0,0,0,0]', reg_mf=0, topk=10, verbose=1) 
+# Load data done [33.2 s]. #user=6040, #item=3706, #train=994169, #test=6040
+# Init: HR = 0.1005, NDCG = 0.0466
+# Iteration 0 [44.3 s]: HR = 0.4447, NDCG = 0.2454, loss = 0.3745, val_loss = 0.3705, [5.9 s]
+# Iteration 1 [43.2 s]: HR = 0.4421, NDCG = 0.2452, loss = 0.3564, val_loss = 0.3714, [5.9 s]
+# Iteration 2 [43.1 s]: HR = 0.4376, NDCG = 0.2400, loss = 0.3526, val_loss = 0.3781, [5.9 s]
+# Iteration 3 [43.2 s]: HR = 0.4358, NDCG = 0.2382, loss = 0.3480, val_loss = 0.3819, [5.9 s]
+# Iteration 4 [43.1 s]: HR = 0.4172, NDCG = 0.2242, loss = 0.3370, val_loss = 0.4031, [5.9 s]
+# Iteration 5 [43.1 s]: HR = 0.3990, NDCG = 0.2173, loss = 0.3247, val_loss = 0.4158, [5.9 s]
+# Iteration 6 [43.1 s]: HR = 0.3909, NDCG = 0.2110, loss = 0.3151, val_loss = 0.4276, [5.9 s]
+# Iteration 7 [43.1 s]: HR = 0.3836, NDCG = 0.2062, loss = 0.3082, val_loss = 0.4380, [5.9 s]
+# Iteration 8 [43.1 s]: HR = 0.3810, NDCG = 0.2034, loss = 0.3034, val_loss = 0.4497, [5.9 s]
+# Iteration 9 [43.1 s]: HR = 0.3788, NDCG = 0.2017, loss = 0.2997, val_loss = 0.4584, [5.9 s]
+# Iteration 10 [43.1 s]: HR = 0.3725, NDCG = 0.1976, loss = 0.2970, val_loss = 0.4636, [5.9 s]
+# Iteration 11 [43.1 s]: HR = 0.3652, NDCG = 0.1950, loss = 0.2948, val_loss = 0.4656, [5.9 s]
+# Iteration 12 [43.1 s]: HR = 0.3724, NDCG = 0.1979, loss = 0.2931, val_loss = 0.4842, [5.9 s]
+# Iteration 13 [43.1 s]: HR = 0.3679, NDCG = 0.1964, loss = 0.2912, val_loss = 0.4716, [5.9 s]
+# Iteration 14 [43.1 s]: HR = 0.3692, NDCG = 0.1962, loss = 0.2899, val_loss = 0.4784, [5.9 s]
+# Iteration 15 [43.1 s]: HR = 0.3636, NDCG = 0.1914, loss = 0.2886, val_loss = 0.4935, [5.9 s]
+# Iteration 16 [43.1 s]: HR = 0.3689, NDCG = 0.1944, loss = 0.2871, val_loss = 0.4901, [5.9 s]
+# Iteration 17 [43.1 s]: HR = 0.3637, NDCG = 0.1903, loss = 0.2855, val_loss = 0.4872, [5.9 s]
+# Iteration 18 [43.1 s]: HR = 0.3576, NDCG = 0.1902, loss = 0.2843, val_loss = 0.4905, [5.9 s]
+# Iteration 19 [43.1 s]: HR = 0.3613, NDCG = 0.1901, loss = 0.2829, val_loss = 0.4858, [5.9 s]

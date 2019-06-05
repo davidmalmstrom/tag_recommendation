@@ -1,0 +1,19 @@
+--nn_model: NeuMF
+--is_tag: '1'
+--eval_recall: '1'
+--topk: '10'
+--big_tag: '1'
+--epochs: '20'
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=1, dataset='', epochs=20, eval_recall=1, is_tag=1, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='NeuMF', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0,0,0,0]', reg_mf=0, topk=10, verbose=1) 
+# Load data done [19.5 s]. #user=90726, #item=985, #train=676660, #test=90726
+# Init: Recall = 0.0138, Jaccard score = 0.0036
+# Iteration 0 [66.2 s]: Recall = 0.0728, Jaccard score = 0.0192, loss = 0.4425, val_loss = 0.0000, [8.4 s]
+# Iteration 1 [65.4 s]: Recall = 0.0735, Jaccard score = 0.0194, loss = 0.4359, val_loss = 0.0000, [8.4 s]
+# Iteration 2 [65.4 s]: Recall = 0.0754, Jaccard score = 0.0199, loss = 0.4343, val_loss = 0.0000, [8.4 s]
+# Iteration 3 [65.6 s]: Recall = 0.0722, Jaccard score = 0.0190, loss = 0.4297, val_loss = 0.0000, [8.5 s]
+# Iteration 4 [65.4 s]: Recall = 0.0787, Jaccard score = 0.0207, loss = 0.4216, val_loss = 0.0000, [8.7 s]
+# Iteration 5 [65.6 s]: Recall = 0.0819, Jaccard score = 0.0216, loss = 0.4088, val_loss = 0.0000, [8.4 s]
+# Iteration 6 [65.6 s]: Recall = 0.0867, Jaccard score = 0.0229, loss = 0.3938, val_loss = 0.0000, [8.4 s]
