@@ -1,0 +1,9 @@
+Pretrain
+*.bak
+.vscode
+__pycache__
+NCF_dataset.pkl
+__init__.py
+out.profile
+saves
+Data/preprocessed_user_auto_tags_big.pkl
