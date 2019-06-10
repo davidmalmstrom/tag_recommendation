@@ -1,9 +1,9 @@
---nn_model: NeuMF
+--nn_model: GMF
 --is_tag: "1"
 --eval_recall: "1"
 --topk: "3"
 #--dataset: "ml-1m"
 --big_tag: "0"
---epochs: "20"
+--epochs: "200"
 #--mf_pretrain: "Pretrain/ml-1m_GMF_8_1501651698.h5"
 #--mlp_pretrain: "Pretrain/ml-1m_MLP_[64,32,16,8]_1501652038.h5"

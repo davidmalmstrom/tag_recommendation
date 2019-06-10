@@ -1,0 +1,12 @@
+--nn_model: NeuMF
+--is_tag: '1'
+--eval_recall: '1'
+--topk: '3'
+--big_tag: '1'
+--epochs: '400'
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=1, dataset='', epochs=400, eval_recall=1, is_tag=1, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='NeuMF', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0,0,0,0]', reg_mf=0, topk=3, verbose=1) 
+# Load data done [19.6 s]. #user=90722, #item=985, #train=676636, #test=90722
+# Init: Recall = 0.0057, Jaccard score = 0.0031

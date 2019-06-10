@@ -1,0 +1,48 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+#--dataset: "ml-1m"
+--big_tag: "0"
+--epochs: "30"
+--layers: "[2048]"
+--reg_layers: "[0]"
+#--mf_pretrain: "Pretrain/ml-1m_GMF_8_1501651698.h5"
+#--mlp_pretrain: "Pretrain/ml-1m_MLP_[64,32,16,8]_1501652038.h5"
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=30, eval_recall=1, is_tag=1, layers='[2048]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0]', reg_mf=0, topk=3, verbose=1) 
+# Load data done [2.7 s]. #user=17445, #item=986, #train=133201, #test=17445
+# Init: Recall = 0.0019, Jaccard score = 0.0010
+# Iteration 0 fit: [41.6 s]: Recall = 0.0262, Jaccard score = 0.0143, loss = 0.4639, val_loss = 0.0000, eval: [6.5 s]
+# Iteration 1 fit: [40.9 s]: Recall = 0.0292, Jaccard score = 0.0160, loss = 0.4548, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 2 fit: [40.9 s]: Recall = 0.0205, Jaccard score = 0.0112, loss = 0.4539, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 3 fit: [40.9 s]: Recall = 0.0258, Jaccard score = 0.0141, loss = 0.4537, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 4 fit: [40.9 s]: Recall = 0.0294, Jaccard score = 0.0161, loss = 0.4531, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 5 fit: [40.9 s]: Recall = 0.0313, Jaccard score = 0.0172, loss = 0.4535, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 6 fit: [40.9 s]: Recall = 0.0327, Jaccard score = 0.0179, loss = 0.4530, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 7 fit: [40.9 s]: Recall = 0.0245, Jaccard score = 0.0134, loss = 0.4529, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 8 fit: [40.9 s]: Recall = 0.0268, Jaccard score = 0.0146, loss = 0.4527, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 9 fit: [40.9 s]: Recall = 0.0289, Jaccard score = 0.0158, loss = 0.4527, val_loss = 0.0000, eval: [6.5 s]
+# Iteration 10 fit: [40.9 s]: Recall = 0.0313, Jaccard score = 0.0172, loss = 0.4525, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 11 fit: [40.9 s]: Recall = 0.0197, Jaccard score = 0.0108, loss = 0.4527, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 12 fit: [40.9 s]: Recall = 0.0296, Jaccard score = 0.0162, loss = 0.4522, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 13 fit: [40.9 s]: Recall = 0.0308, Jaccard score = 0.0169, loss = 0.4522, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 14 fit: [40.9 s]: Recall = 0.0207, Jaccard score = 0.0113, loss = 0.4524, val_loss = 0.0000, eval: [6.5 s]
+# Iteration 15 fit: [40.9 s]: Recall = 0.0205, Jaccard score = 0.0112, loss = 0.4521, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 16 fit: [40.9 s]: Recall = 0.0290, Jaccard score = 0.0159, loss = 0.4519, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 17 fit: [40.9 s]: Recall = 0.0300, Jaccard score = 0.0164, loss = 0.4521, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 18 fit: [40.9 s]: Recall = 0.0226, Jaccard score = 0.0123, loss = 0.4521, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 19 fit: [40.9 s]: Recall = 0.0275, Jaccard score = 0.0151, loss = 0.4519, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 20 fit: [40.9 s]: Recall = 0.0306, Jaccard score = 0.0168, loss = 0.4522, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 21 fit: [40.9 s]: Recall = 0.0285, Jaccard score = 0.0156, loss = 0.4522, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 22 fit: [40.9 s]: Recall = 0.0241, Jaccard score = 0.0132, loss = 0.4521, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 23 fit: [40.9 s]: Recall = 0.0251, Jaccard score = 0.0137, loss = 0.4515, val_loss = 0.0000, eval: [6.5 s]
+# Iteration 24 fit: [40.9 s]: Recall = 0.0256, Jaccard score = 0.0140, loss = 0.4518, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 25 fit: [40.9 s]: Recall = 0.0239, Jaccard score = 0.0131, loss = 0.4519, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 26 fit: [40.9 s]: Recall = 0.0253, Jaccard score = 0.0138, loss = 0.4518, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 27 fit: [40.9 s]: Recall = 0.0279, Jaccard score = 0.0153, loss = 0.4515, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 28 fit: [40.9 s]: Recall = 0.0199, Jaccard score = 0.0109, loss = 0.4513, val_loss = 0.0000, eval: [6.6 s]
+# Iteration 29 fit: [40.9 s]: Recall = 0.0277, Jaccard score = 0.0152, loss = 0.4513, val_loss = 0.0000, eval: [6.6 s]
+# End. Best Iteration 6:  Recall = 0.0327, Jaccard score = 0.0179. 
+# The best NeuMF model is saved to Pretrain/_MLP_8_[2048]_1559919450.h5

@@ -1,0 +1,16 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+#--dataset: "ml-1m"
+--big_tag: "0"
+--epochs: "30"
+--layers: "[1028]"
+--reg_layers: "[0]"
+#--mf_pretrain: "Pretrain/ml-1m_GMF_8_1501651698.h5"
+#--mlp_pretrain: "Pretrain/ml-1m_MLP_[64,32,16,8]_1501652038.h5"
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=30, eval_recall=1, is_tag=1, layers='[1028]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_neg=4, out=1, path='Data/', reg_layers='[0]', reg_mf=0, topk=3, verbose=1) 
+# Load data done [2.7 s]. #user=17433, #item=986, #train=133115, #test=17433
+# Init: Recall = 0.0027, Jaccard score = 0.0014
