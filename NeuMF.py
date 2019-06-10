@@ -196,6 +196,7 @@ def main(sargs):
     evaluation_threads = 1#mp.cpu_count()
     print("%s arguments: %s " %(model_type, args))
     model_out_file = 'Pretrain/%s_%s_%d_%s_%d.h5' %(args.dataset, model_type, mf_dim, args.layers, time())
+    print("The best NeuMF model will be saved to %s" %(model_out_file))
 
     # Loading data
     t1 = time()
@@ -239,9 +240,9 @@ def main(sargs):
     
     from sklearn.model_selection import train_test_split
     # Split the data
-    val = train[:1500]
-    train = train[1500:]
-    val_user_input, val_item_input, val_labels = get_train_instances(val, num_negatives, num_items)
+    #val = train[-1500:]
+    #train = train[:-1500]
+    #val_user_input, val_item_input, val_labels = get_train_instances(val, num_negatives, num_items)
 
     # Init performance
     if args.eval_recall:
@@ -276,9 +277,9 @@ def main(sargs):
         # Training
         hist = model.fit([np.array(user_input), np.array(item_input)], #input
                          np.array(labels), # labels 
-                         batch_size=batch_size, epochs=1, verbose=0, shuffle=True,
-                         validation_data=([np.array(val_user_input), np.array(val_item_input)],
-                         np.array(val_labels)))
+                         batch_size=batch_size, epochs=1, verbose=0, shuffle=True)#,
+                         #validation_data=([np.array(val_user_input), np.array(val_item_input)],
+                         #np.array(val_labels)))
         t2 = time()
         
         # Evaluation
@@ -289,8 +290,9 @@ def main(sargs):
                 (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                 hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
             loss = hist.history['loss'][0]
-            val_loss = hist.history['val_loss'][0]
-            print('Iteration %d [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss = %.4f, [%.1f s]' 
+            #val_loss = hist.history['val_loss'][0]
+            val_loss = 0
+            print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss = %.4f, eval: [%.1f s]' 
                   % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, val_loss, time()-t2))
             if hr > best_hr:
                 best_hr, best_ndcg, best_iter = hr, ndcg, epoch
@@ -299,7 +301,7 @@ def main(sargs):
 
     print("End. Best Iteration %d:  %s = %.4f, %s = %.4f. " %(best_iter, metric1, best_hr, metric2, best_ndcg))
     if args.out > 0:
-        print("The best NeuMF model is saved to %s" %(model_out_file))
+        print("The best NeuMF model has been saved to %s" %(model_out_file))
 
 if __name__ == '__main__':
     main(sys.argv[1:])
