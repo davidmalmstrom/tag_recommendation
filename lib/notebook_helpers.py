@@ -66,14 +66,14 @@ def reduce_tags(tag_series, max_num_features, min_occurrences_per_user_tag=5):
     """
     
     all_user_tags_count = pd.Series((tag for tag_list in tag_series for tag in tag_list)).value_counts()
-    
+    # sort
+    all_user_tags_count = all_user_tags_count.iloc[np.lexsort([all_user_tags_count.index, all_user_tags_count.values])].iloc[::-1]
     # Get the n most used tags (not currently used)
     if all_user_tags_count.shape[0] > max_num_features:
         all_user_tags_count = all_user_tags_count[:max_num_features]
     
     # Have at least 5 occurrences per user tag.
     common_user_tags = set(all_user_tags_count[all_user_tags_count > min_occurrences_per_user_tag].index)
-
     # Remove the camera brands, as well as the year labels, as these would not give any information
     try:
         common_user_tags.remove('canon')
