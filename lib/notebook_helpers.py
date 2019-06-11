@@ -183,11 +183,14 @@ def print_all_scores(y_test, y_pred):
     print_score(y_test, y_pred)
 
 
-def random_check(y_test, y_pred, mlbx, mlby):
+def random_check(y_test, y_pred, mlbx, mlby, start_tags = None):
     from random import randint
     index = randint(0, len(y_test) - 1)
-    print(mlby.inverse_transform(y_test)[index])
-    print(mlby.inverse_transform(y_pred)[index])
+    if start_tags is not None:
+        print("Start tags: " + str(mlby.inverse_transform(start_tags)[index]))
+        print("")
+    print("Pred goal: " + str(mlby.inverse_transform(y_test)[index]))
+    print("Predicted: " + str(mlby.inverse_transform(y_pred)[index]))
     print("index: " + str(index))
 
 
