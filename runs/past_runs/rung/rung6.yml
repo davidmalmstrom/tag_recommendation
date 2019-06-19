@@ -1,0 +1,72 @@
+--nn_model: NeuMF
+--is_tag: "1"
+--eval_recall: "0"
+--topk: "3"
+#--dataset: "ml-1m"
+--big_tag: "0"
+--epochs: "50"
+--layers: "[128,128]"
+--num_factors: "64"
+--reg_layers: "[0,0]"
+--mf_pretrain: "Pretrain/_GMF_64_[64,32,16,8]_1560852290.h5"
+--mlp_pretrain: "Pretrain/_MLP_8_[128,128]_1560850100.h5"
+# This run is only based on eval_recall: 0 - instances.
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=50, eval_recall=0, is_tag=1, layers='[128,128]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_64_[64,32,16,8]_1560852290.h5', mlp_pretrain='Pretrain/_MLP_8_[128,128]_1560850100.h5', nn_model='NeuMF', num_factors=64, num_neg=4, out=1, path='Data/', reg_layers='[0,0]', reg_mf=0, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_64_[128,128]_1560856392.h5
+# Load data done [2.8 s]. #user=17431, #item=986, #train=133134, #test=17431
+# Load pretrained GMF (Pretrain/_GMF_64_[64,32,16,8]_1560852290.h5) and MLP (Pretrain/_MLP_8_[128,128]_1560850100.h5) models done. 
+# Init: HR = 0.9726, NDCG = 0.9570
+# Iteration 0 fit: [10.4 s]: HR = 0.9705, NDCG = 0.9529, loss = 0.0784, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 1 fit: [9.7 s]: HR = 0.9700, NDCG = 0.9519, loss = 0.0512, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 2 fit: [9.7 s]: HR = 0.9685, NDCG = 0.9506, loss = 0.0393, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 3 fit: [9.7 s]: HR = 0.9683, NDCG = 0.9493, loss = 0.0318, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 4 fit: [9.7 s]: HR = 0.9663, NDCG = 0.9473, loss = 0.0260, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 5 fit: [9.7 s]: HR = 0.9655, NDCG = 0.9456, loss = 0.0220, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 6 fit: [9.7 s]: HR = 0.9638, NDCG = 0.9435, loss = 0.0187, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 7 fit: [9.7 s]: HR = 0.9626, NDCG = 0.9411, loss = 0.0162, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 8 fit: [9.7 s]: HR = 0.9614, NDCG = 0.9397, loss = 0.0140, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 9 fit: [9.7 s]: HR = 0.9609, NDCG = 0.9383, loss = 0.0132, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 10 fit: [9.7 s]: HR = 0.9604, NDCG = 0.9377, loss = 0.0118, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 11 fit: [9.7 s]: HR = 0.9602, NDCG = 0.9354, loss = 0.0110, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 12 fit: [9.7 s]: HR = 0.9600, NDCG = 0.9348, loss = 0.0103, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 13 fit: [9.7 s]: HR = 0.9578, NDCG = 0.9328, loss = 0.0097, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 14 fit: [9.7 s]: HR = 0.9581, NDCG = 0.9327, loss = 0.0093, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 15 fit: [9.7 s]: HR = 0.9575, NDCG = 0.9308, loss = 0.0091, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 16 fit: [9.7 s]: HR = 0.9558, NDCG = 0.9284, loss = 0.0085, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 17 fit: [9.7 s]: HR = 0.9564, NDCG = 0.9274, loss = 0.0084, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 18 fit: [9.7 s]: HR = 0.9558, NDCG = 0.9278, loss = 0.0080, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 19 fit: [9.7 s]: HR = 0.9539, NDCG = 0.9246, loss = 0.0078, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 20 fit: [9.7 s]: HR = 0.9518, NDCG = 0.9219, loss = 0.0072, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 21 fit: [9.7 s]: HR = 0.9518, NDCG = 0.9208, loss = 0.0072, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 22 fit: [9.7 s]: HR = 0.9513, NDCG = 0.9206, loss = 0.0071, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 23 fit: [9.7 s]: HR = 0.9509, NDCG = 0.9195, loss = 0.0068, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 24 fit: [9.7 s]: HR = 0.9493, NDCG = 0.9174, loss = 0.0063, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 25 fit: [9.7 s]: HR = 0.9482, NDCG = 0.9154, loss = 0.0067, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 26 fit: [9.7 s]: HR = 0.9476, NDCG = 0.9150, loss = 0.0059, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 27 fit: [9.7 s]: HR = 0.9461, NDCG = 0.9123, loss = 0.0067, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 28 fit: [9.7 s]: HR = 0.9463, NDCG = 0.9115, loss = 0.0060, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 29 fit: [9.7 s]: HR = 0.9465, NDCG = 0.9112, loss = 0.0058, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 30 fit: [9.7 s]: HR = 0.9441, NDCG = 0.9085, loss = 0.0057, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 31 fit: [9.7 s]: HR = 0.9427, NDCG = 0.9073, loss = 0.0057, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 32 fit: [9.7 s]: HR = 0.9431, NDCG = 0.9061, loss = 0.0054, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 33 fit: [9.7 s]: HR = 0.9424, NDCG = 0.9044, loss = 0.0056, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 34 fit: [9.7 s]: HR = 0.9419, NDCG = 0.9027, loss = 0.0053, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 35 fit: [9.7 s]: HR = 0.9405, NDCG = 0.9017, loss = 0.0053, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 36 fit: [9.7 s]: HR = 0.9383, NDCG = 0.8986, loss = 0.0049, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 37 fit: [9.7 s]: HR = 0.9378, NDCG = 0.8975, loss = 0.0052, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 38 fit: [9.7 s]: HR = 0.9376, NDCG = 0.8968, loss = 0.0051, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 39 fit: [9.7 s]: HR = 0.9360, NDCG = 0.8943, loss = 0.0049, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 40 fit: [9.7 s]: HR = 0.9384, NDCG = 0.8943, loss = 0.0049, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 41 fit: [9.7 s]: HR = 0.9363, NDCG = 0.8938, loss = 0.0046, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 42 fit: [9.7 s]: HR = 0.9345, NDCG = 0.8915, loss = 0.0048, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 43 fit: [9.7 s]: HR = 0.9349, NDCG = 0.8900, loss = 0.0045, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 44 fit: [9.7 s]: HR = 0.9342, NDCG = 0.8890, loss = 0.0046, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 45 fit: [9.7 s]: HR = 0.9340, NDCG = 0.8892, loss = 0.0044, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 46 fit: [9.7 s]: HR = 0.9339, NDCG = 0.8890, loss = 0.0045, val_loss = 0.0000, eval: [11.7 s]
+# Iteration 47 fit: [9.7 s]: HR = 0.9320, NDCG = 0.8869, loss = 0.0042, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 48 fit: [9.7 s]: HR = 0.9306, NDCG = 0.8845, loss = 0.0042, val_loss = 0.0000, eval: [11.6 s]
+# Iteration 49 fit: [9.7 s]: HR = 0.9286, NDCG = 0.8811, loss = 0.0046, val_loss = 0.0000, eval: [11.6 s]
+# End. Best Iteration -1:  HR = 0.9726, NDCG = 0.9570. 
+# The best NeuMF model has been saved to Pretrain/_NeuMF_64_[128,128]_1560856392.h5
