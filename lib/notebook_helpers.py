@@ -60,67 +60,81 @@ def is_year_number(number):
         return False
 
 
-def reduce_tags(tag_series, max_num_features, min_occurrences_per_user_tag=5):
+def reduce_tags(tag_series, max_num_features, min_occurrences_per_user_tag):
     """
     Gets the n most common tags, and removes camera brand name tags
     """
     
-    all_user_tags_count = pd.Series((tag for tag_list in tag_series for tag in tag_list)).value_counts()
-    # sort
-    all_user_tags_count = all_user_tags_count.iloc[np.lexsort([all_user_tags_count.index, all_user_tags_count.values])].iloc[::-1]
-    # Get the n most used tags (not currently used)
-    if all_user_tags_count.shape[0] > max_num_features:
-        all_user_tags_count = all_user_tags_count[:max_num_features]
+    all_tags_count = pd.Series((tag for tag_list in tag_series for tag in tag_list)).value_counts()
+    # sort to always keep the same order between different times the function is called on the same dataset
+    all_tags_count = all_tags_count.iloc[np.lexsort([all_tags_count.index, all_tags_count.values])].iloc[::-1]
     
     # Have at least 5 occurrences per user tag.
-    common_user_tags = set(all_user_tags_count[all_user_tags_count > min_occurrences_per_user_tag].index)
+    all_tags_count = all_tags_count[all_tags_count > min_occurrences_per_user_tag]
+
     # Remove the camera brands, as well as the year labels, as these would not give any information
-    try:
-        common_user_tags.remove('canon')
-        common_user_tags.remove('nikon')
-        common_user_tags.remove('sony')
-        common_user_tags.remove('eos')
-    except KeyError:
-        pass
-    common_user_tags = set([tag for tag in common_user_tags if not is_year_number(tag)])
+    banned_words = ['canon', 'nikon', 'sony', 'eos']
+    for tag in all_tags_count.index.copy():
+        if is_year_number(tag) or tag in banned_words:
+            all_tags_count.drop(tag, inplace=True)
+
+    # Get the n most used tags
+    if all_tags_count.shape[0] > max_num_features:
+        all_tags_count = all_tags_count[:max_num_features]
+
     return tag_series.map(lambda tag_list: 
-                          [tag for tag in tag_list if tag in common_user_tags])
+                          [tag for tag in tag_list if tag in all_tags_count.index])
 
 
-def generate_data(n_samples=None, x_dim=1000, y_dim=1000, amount_x=5, amount_y=5, data_dir=None, data_name=None):
+def generate_data(n_samples=None, x_dim=1000, y_dim=1000, amount_x=6, amount_y=6, data_dir=None, data_name=None, min_x=5, min_y=5):
     """
-    n_samples -- desired number of samples, leave empty if all is wanted.
+    n_samples -- desired number of samples (before data treatment), leave empty if all is wanted.
     x_dim -- number of features (maximum)
     y_dim -- number of classes (maximum)
     amount_y -- the minimum amount of features per sample
     amount_x -- the minimum amount of classes per output
+    min_x -- minimum amount of times a tag is used for x (autotags)
+    min_y -- minimum amount of times a tag is used for y (user tags)
     """
     if n_samples is None:
         n = 1000000000
     else:
         n = n_samples
+
     if data_dir is None:
         data_dir = "/Users/davidmalmstrom/mnt/proj/tag-rec/src/notebooks/flickr100m/results"
     if data_name is None:
         data_name = "preprocessed_user_auto_tags.pkl"
     dataset = pd.read_pickle(data_dir + "/" + data_name)
 
+    
     # Drop duplicate user tag sets (to avoid problem of flickr bulk tagging)
     # This is done before tag reduction since a set can be unique before we remove camera brand tags
     dataset = dataset.loc[dataset.User_tags.apply(lambda x: frozenset(x)).drop_duplicates().index]
     
-    dataset.autotags = reduce_tags(dataset.autotags, x_dim)
-    dataset.User_tags = reduce_tags(dataset.User_tags, y_dim)
+    dataset.autotags = reduce_tags(dataset.autotags, x_dim, min_x)
+    dataset.User_tags = reduce_tags(dataset.User_tags, y_dim, min_y)
 
     # Filter the tag sets to include at least amount_x and amount_y tags.
-    dataset = dataset.query('autotags.str.len() > ' + str(amount_x))
-    dataset = dataset.query('User_tags.str.len() > ' + str(amount_y))
+    dataset = dataset.query('autotags.str.len() >= ' + str(amount_x))
+    dataset = dataset.query('User_tags.str.len() >= ' + str(amount_y))
 
     if dataset.shape[0] > n:
         dataset = dataset.head(n)
     elif n_samples is not None:
-        print("Warning: desired number of samples could not be provided.")
+        print("")
+        print("Warning: desired number of samples could not be provided, generated " + str(dataset.shape[0]) + " samples.")
     
+    # Shuffle
+    dataset = dataset.sample(frac=1).reset_index(drop=True)
+
+    tag_stats(dataset)
+    min_a_tags = pd.Series((tag for tag_list in dataset.autotags for tag in tag_list)).value_counts().values[-1]
+    min_u_tags = pd.Series((tag for tag_list in dataset.User_tags for tag in tag_list)).value_counts().values[-1]
+    if min_a_tags < min_x:
+        print("Warning: min_a < min_x")
+    if min_u_tags < min_y:
+        print("Warning: min_u < min_y")
     return dataset
 
 
@@ -128,15 +142,25 @@ def tag_stats(dataset):
     auto_tag_list = pd.Series((tag for tag_list in dataset.autotags for tag in tag_list))
     user_tag_list = pd.Series((tag for tag_list in dataset.User_tags for tag in tag_list))
     
+    a_counts = auto_tag_list.value_counts()
+    u_counts = user_tag_list.value_counts()
+
+    print("dataset shape: " + str(dataset.shape))
+    print("")
     print("number of autotags:")
     print("total: " + str(len(auto_tag_list)))
     print("unique: " + str(len(auto_tag_list.unique())))
     print("ratio autotags/item: " + str(len(auto_tag_list) / dataset.shape[0]))
+    print("min number of tags per item: " + str(dataset.autotags.str.len().min()))
+    print("min number of times an autotag is used: " + str(a_counts.values[-1]))
     print("")
     print("number of user tags:")
     print("total: " + str(len(user_tag_list)))
     print("unique: " + str(len(user_tag_list.unique())))
     print("ratio user_tags/item: " + str(len(user_tag_list) / dataset.shape[0]))
+    print("min number of tags per item: " + str(dataset.User_tags.str.len().min()))
+    print("min number of times a user tag is used: " + str(u_counts.values[-1]))
+
 
 
 def hamming_score(y_true, y_pred, normalize=True, sample_weight=None):
@@ -257,13 +281,18 @@ def mean_iou(y_true, y_pred):
 def get_top_n_tags(prediction, n=5):
     return [row.argsort()[-n:][::-1] for row in prediction]
 
-
-def split_half_tags(full_data):
-    x_cf_train = full_data.copy()
-    for row_index in range(full_data.shape[0]):
-        nonzeros = np.nonzero(full_data[row_index])[0]
-        # Set half of the non-zero elements in the row to zero. These are saved in y_cf_train, and will be predicted
-        x_cf_train[row_index, np.random.choice(nonzeros, int(len(nonzeros)/2), replace=False)] = 0
-    # Set y_cf_train to contain the remainder of the elements.
-    y_cf_train = full_data - x_cf_train
-    return x_cf_train, y_cf_train
+def split_user_tags_percentage(cf_data, percentage=0.5):
+    """Returns a percentage split of the user tag matrix.
+    Outputs the given percentage first, then the remainder.
+    The remainder is supposed to be predicted.
+    """
+    if type(cf_data) is sparse.dok_matrix:
+        cf_data = cf_data.toarray()
+    y_cf_train = cf_data.copy()
+    for row_index in range(cf_data.shape[0]):
+        nonzeros = np.nonzero(cf_data[row_index])[0]
+        # Set the given percentage of the non-zero elements in the row to zero. 
+        y_cf_train[row_index, np.random.choice(
+            nonzeros, round(len(nonzeros)*percentage), replace=False)] = 0
+    x_cf_train = cf_data - y_cf_train
+    return sparse.dok_matrix(x_cf_train), sparse.dok_matrix(y_cf_train)
