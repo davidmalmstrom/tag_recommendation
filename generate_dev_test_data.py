@@ -1,11 +1,16 @@
 import lib.notebook_helpers as nh
 from sklearn.model_selection import train_test_split
+import pickle
+import scipy.sparse as sp
 
 path = "Data/"
 
-dataset = nh.generate_data(20000, data_dir=path, data_name="preprocessed_user_auto_tags_big.pkl")
+dataset = nh.generate_data(n_samples=20000, y_dim=2000, data_dir=path, data_name="preprocessed_user_auto_tags_big.pkl",
+                           amount_x=6, amount_y=6, min_x=6, min_y=6)
 
-dev_dataset, test_dataset = train_test_split(dataset, test_size=0.1)
+# Hold out first 2000 entries for testing.
+with open(path + 'dev_tag_dataset.pkl', 'wb') as f:
+    pickle.dump(nh.reshape_data(dataset[2000:]), f)
 
-dev_dataset.to_pickle(path + "dev_tag_dataset.pkl")
-test_dataset.to_pickle(path + "test_tag_dataset.pkl")
+with open(path + 'test_tag_dataset.pkl', 'wb') as f:
+    pickle.dump((*nh.reshape_data(dataset), "test_size_2000"), f)

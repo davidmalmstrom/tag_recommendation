@@ -8,6 +8,7 @@ from builtins import object
 import scipy.sparse as sp
 import numpy as np
 import lib.notebook_helpers as nh
+import pickle
 
 class Dataset(object):
     '''
@@ -23,11 +24,12 @@ class Dataset(object):
                 end_addition = "_big"
             else:
                 end_addition = ""
-            dataset = nh.generate_data(data_dir=path, data_name="preprocessed_user_auto_tags{}.pkl".format(end_addition))
-            X, y, mlbx, mlby = nh.reshape_data(dataset)
 
             # Sample unlabelled as negatives, 100 per item:
             self.testNegatives = [np.random.choice(np.where(row == 0)[0], 99).tolist() for row in y]
+            with open('Data/dev_tag_dataset.pkl', 'rb') as f:
+                X, y, mlbx, mlby = pickle.load(f)
+
 
             # Sample positives as test positives. The list in list with indices is because NCF is implemented that way.
             # Sets the test positives in the y-matrix to 0, so that these are not in the training process.
