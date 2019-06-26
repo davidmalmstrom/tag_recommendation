@@ -15,7 +15,7 @@ class Dataset(object):
     classdocs
     '''
 
-    def __init__(self, path, tag_dataset=False, big_tag=False):
+    def __init__(self, path, eval_recall, tag_dataset=False, big_tag=False):
         '''
         Constructor
         '''
@@ -25,25 +25,32 @@ class Dataset(object):
             else:
                 end_addition = ""
 
-            # Sample unlabelled as negatives, 100 per item:
-            self.testNegatives = [np.random.choice(np.where(row == 0)[0], 99).tolist() for row in y]
             with open('Data/dev_tag_dataset.pkl', 'rb') as f:
                 X, y, mlbx, mlby = pickle.load(f)
 
+            if not eval_recall:
+                # Sample unlabelled as negatives, 99 per item:
+                self.testNegatives = [np.random.choice(np.where(row == 0)[0], 99).tolist() for row in y]
 
-            # Sample positives as test positives. The list in list with indices is because NCF is implemented that way.
-            # Sets the test positives in the y-matrix to 0, so that these are not in the training process.
-            # The order is important here, since y is modified. Therefore, this step should be done after negatives have 
-            # been sampled, and before the trainMatrix is finalized.
-            self.testRatings = [[i, int(np.random.choice(np.nonzero(row)[0]))] for i, row in enumerate(y)]
-            for (m, n) in self.testRatings:
-                y[m, n] = 0
+                # Sample positives as test positives. The list in list with indices is because NCF is implemented that way.
+                # Sets the test positives in the y-matrix to 0, so that these are not in the training process.
+                # The order is important here, since y is modified. Therefore, this step should be done after negatives have 
+                # been sampled, and before the trainMatrix is finalized.
+                self.testRatings = [[i, int(np.random.choice(np.nonzero(row)[0]))] for i, row in enumerate(y)]
+                for (m, n) in self.testRatings:
+                    y[m, n] = 0
+            else:
+                self.testNegatives = None
+                self.testRatings = None
+
             self.trainMatrix = sp.dok_matrix(y)
+            self.mlbx = mlbx
+            self.mlby = mlby
         else:
             self.trainMatrix = self.load_rating_file_as_matrix(path + ".train.rating")
             self.testRatings = self.load_rating_file_as_list(path + ".test.rating")
             self.testNegatives = self.load_negative_file(path + ".test.negative")
-        assert len(self.testRatings) == len(self.testNegatives)
+        if not eval_recall: assert len(self.testRatings) == len(self.testNegatives)
         
         self.num_users, self.num_items = self.trainMatrix.shape
         

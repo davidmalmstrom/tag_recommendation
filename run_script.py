@@ -44,6 +44,8 @@ def main(args, run_file_path=None):
         def write(self, m):
             if m == "\n":
                 self.log.write(m)
+            elif m[:2] == "!#":
+                self.log.write(m[2:])
             else:
                 self.log.write("# " + m)
             self.terminal.write(m)

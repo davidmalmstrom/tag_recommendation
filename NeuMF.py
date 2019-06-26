@@ -28,6 +28,7 @@ import sys
 import GMF, MLP
 import argparse
 import scipy.sparse as sp
+import lib.notebook_helpers as nh
 
 #################### Arguments ####################
 def parse_args(sargs):
@@ -72,7 +73,11 @@ def parse_args(sargs):
                         help='Whether the large amount of tag data should be used or not')
     parser.add_argument('--nn_model', nargs='?', default='NeuMF',
                         help='Which model to use, \"NeuMF\", \"GMF\" or \"MLP\"')
-    return parser.parse_args(sargs)
+    parser.add_argument('--percentage', type=float, default=0.5,
+                        help='The percentage of user_tags that should be used for training. 0 means cold start.')
+    parser.add_argument('--num_k_folds', type=int, default=1,
+                        help='The number of k-folds to user (only applicable for eval_recall).')
+    return parser.parse_known_args(sargs)[0]
 
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
@@ -172,7 +177,6 @@ def split_half_tags(full_data):
         # Set half of the non-zero elements in the row to zero. These are saved in y_cf_train, and will be predicted
         x_cf_train[row_index, np.random.choice(
             nonzeros, int(len(nonzeros)/2), replace=False)] = 0
-    # Set y_cf_train to contain the remainder of the elements.
     y_cf_train = full_data - x_cf_train
     return x_cf_train, y_cf_train
 
@@ -197,16 +201,21 @@ def main(sargs):
     print("%s arguments: %s " %(model_type, args))
     model_out_file = 'Pretrain/%s_%s_%d_%s_%d.h5' %(args.dataset, model_type, mf_dim, args.layers, time())
     print("The best NeuMF model will be saved to %s" %(model_out_file))
+    print("!#--weights_path: " + model_out_file)
 
     # Loading data
     t1 = time()
-    dataset = Dataset(args.path + args.dataset, args.is_tag, args.big_tag)
+    dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag)
     train, testRatings, testNegatives = dataset.trainMatrix, dataset.testRatings, dataset.testNegatives
     #dataset2 = Dataset(args.path + "ml-1m", 0)
     #train2, testRatings2, testNegatives2 = dataset2.trainMatrix, dataset2.testRatings, dataset2.testNegatives
     num_users, num_items = train.shape
-    print("Load data done [%.1f s]. #user=%d, #item=%d, #train=%d, #test=%d" 
-          %(time()-t1, num_users, num_items, train.nnz, len(testRatings)))
+    if args.eval_recall:
+        num_test_ratings = "eval_recall"
+    else:
+        num_test_ratings = str(len(testRatings))
+    print("Load data done [%.1f s]. #user=%d, #item=%d, #train=%d, #test=%s" 
+          %(time()-t1, num_users, num_items, train.nnz, num_test_ratings))
     
     # Build model
     if model_type == 'NeuMF':
@@ -218,16 +227,18 @@ def main(sargs):
     else:
         print("Error: wrong model type")
         sys.exit()
+        
+    def compile_model():
+        if learner.lower() == "adagrad": 
+            model.compile(optimizer=Adagrad(lr=learning_rate), loss='binary_crossentropy')
+        elif learner.lower() == "rmsprop":
+            model.compile(optimizer=RMSprop(lr=learning_rate), loss='binary_crossentropy')
+        elif learner.lower() == "adam":
+            model.compile(optimizer=Adam(lr=learning_rate), loss='binary_crossentropy')
+        else:
+            model.compile(optimizer=SGD(lr=learning_rate), loss='binary_crossentropy')
+    compile_model()
 
-    if learner.lower() == "adagrad": 
-        model.compile(optimizer=Adagrad(lr=learning_rate), loss='binary_crossentropy')
-    elif learner.lower() == "rmsprop":
-        model.compile(optimizer=RMSprop(lr=learning_rate), loss='binary_crossentropy')
-    elif learner.lower() == "adam":
-        model.compile(optimizer=Adam(lr=learning_rate), loss='binary_crossentropy')
-    else:
-        model.compile(optimizer=SGD(lr=learning_rate), loss='binary_crossentropy')
-    
     # Load pretrain model
     if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
         gmf_model = GMF.get_model(num_users,num_items,mf_dim)
@@ -244,64 +255,100 @@ def main(sargs):
     #train = train[:-1500]
     #val_user_input, val_item_input, val_labels = get_train_instances(val, num_negatives, num_items)
 
-    # Init performance
-    if args.eval_recall:
-        val_x, val_y = split_half_tags(train[:1500])
-        train = sp.vstack([val_x, train[1500:]]).todok()
+    old_weights = model.get_weights()
 
-        hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
-
-        metric1 = "Recall"
-        metric2 = "Jaccard score"
+    # validation does only need to be used if eval_recall
+    #train, validation = nh.split_user_tags_percentage(train, percentage=args.percentage)
+    if not args.eval_recall:
+        num_k_folds = 1
     else:
-        (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
-        hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
+        num_k_folds = args.num_k_folds
+        avg_recall = 0
+        avg_jaccard = 0
+    for fold in range(num_k_folds):
+        # Init performance
+        if args.eval_recall:
+            print("")
+            print("Performing k-fold " + str(fold + 1))
 
-        metric1 = "HR"
-        metric2 = "NDCG"
+            compile_model()
+            model.set_weights(old_weights)
+
+            start_index = int(num_users * fold / num_k_folds)
+            end_index = int(num_users * (fold + 1) / num_k_folds)
+            val_x, val_y = nh.split_user_tags_percentage(train[start_index:end_index])
+            train = sp.vstack([val_x, train[0:start_index], train[end_index:]]).todok()
+            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
+
+            # Test.remove
+            # best_hr = 0.1
+            # best_ndcg = 0.05
+            # if args.eval_recall and num_k_folds > 1:
+            #     avg_recall = avg_recall + ((best_hr - avg_recall) / (fold + 1))
+            #     avg_jaccard = avg_jaccard + ((best_ndcg - avg_jaccard) / (fold + 1))
+            #     # avg_recall = ((avg_recall * fold) + best_hr) / (fold + 1)
+            #     # avg_jaccard = ((avg_jaccard * fold) + best_ndcg) / (fold + 1)
+            #     print("The average best performance after k-fold " + str(fold + 1) + 
+            #         " is: Recall = " + str(avg_recall) + ", Jaccard score = " + str(avg_jaccard))
+            # continue
+            # Test.remove
+
+            metric1 = "Recall"
+            metric2 = "Jaccard score"
+        else:
+            (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
+            hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
+
+            metric1 = "HR"
+            metric2 = "NDCG"
+
         
-    print('Init: %s = %.4f, %s = %.4f' % (metric1, hr, metric2, ndcg))
-    best_hr, best_ndcg, best_iter = hr, ndcg, -1
-    if args.out > 0:
-        model.save_weights(model_out_file, overwrite=True) 
-    
-
-
-    # Training model
-    for epoch in range(num_epochs):
-        t1 = time()
-        # Generate training instances
-        user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
-        #user_input2, item_input2, labels2 = get_train_instances(train2, num_negatives, num_items)
+        print('Init: %s = %.4f, %s = %.4f' % (metric1, hr, metric2, ndcg))
+        best_hr, best_ndcg, best_iter = hr, ndcg, -1
+        if args.out > 0:
+            model.save_weights(model_out_file, overwrite=True) 
         
-        # Training
-        hist = model.fit([np.array(user_input), np.array(item_input)], #input
-                         np.array(labels), # labels 
-                         batch_size=batch_size, epochs=1, verbose=0, shuffle=True)#,
-                         #validation_data=([np.array(val_user_input), np.array(val_item_input)],
-                         #np.array(val_labels)))
-        t2 = time()
-        
-        # Evaluation
-        if epoch %verbose == 0:
-            if args.eval_recall:
-                hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
-            else:
-                (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
-                hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
-            loss = hist.history['loss'][0]
-            #val_loss = hist.history['val_loss'][0]
-            val_loss = 0
-            print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss = %.4f, eval: [%.1f s]' 
-                  % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, val_loss, time()-t2))
-            if hr > best_hr:
-                best_hr, best_ndcg, best_iter = hr, ndcg, epoch
-                if args.out > 0:
-                    model.save_weights(model_out_file, overwrite=True)
+        # Training model
+        for epoch in range(num_epochs):
+            t1 = time()
+            # Generate training instances
+            user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
+            #user_input2, item_input2, labels2 = get_train_instances(train2, num_negatives, num_items)
+            
+            # Training
+            hist = model.fit([np.array(user_input), np.array(item_input)], #input
+                            np.array(labels), # labels 
+                            batch_size=batch_size, epochs=1, verbose=0, shuffle=True)#,
+                            #validation_data=([np.array(val_user_input), np.array(val_item_input)],
+                            #np.array(val_labels)))
+            t2 = time()
+            
+            # Evaluation
+            if epoch %verbose == 0:
+                if args.eval_recall:
+                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
+                else:
+                    (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
+                    hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
+                loss = hist.history['loss'][0]
+                #val_loss = hist.history['val_loss'][0]
+                val_loss = 0
+                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss = %.4f, eval: [%.1f s]' 
+                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, val_loss, time()-t2))
+                if hr > best_hr:
+                    best_hr, best_ndcg, best_iter = hr, ndcg, epoch
+                    if args.out > 0:
+                        model.save_weights(model_out_file, overwrite=True)
 
-    print("End. Best Iteration %d:  %s = %.4f, %s = %.4f. " %(best_iter, metric1, best_hr, metric2, best_ndcg))
-    if args.out > 0:
-        print("The best NeuMF model has been saved to %s" %(model_out_file))
+        print("End. Best Iteration %d:  %s = %.4f, %s = %.4f. " %(best_iter, metric1, best_hr, metric2, best_ndcg))
+        if args.out > 0:
+            print("The best NeuMF model has been saved to %s" %(model_out_file))
+
+        if args.eval_recall and num_k_folds > 1:
+            avg_recall = avg_recall + ((best_hr - avg_recall) / (fold + 1))
+            avg_jaccard = avg_jaccard + ((best_ndcg - avg_jaccard) / (fold + 1))
+            print("The average best performance after k-fold " + str(fold + 1) + 
+                  " is: Recall = " + str(avg_recall) + ", Jaccard score = " + str(avg_jaccard))
 
 if __name__ == '__main__':
     main(sys.argv[1:])
