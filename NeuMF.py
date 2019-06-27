@@ -256,6 +256,7 @@ def main(sargs):
     #val_user_input, val_item_input, val_labels = get_train_instances(val, num_negatives, num_items)
 
     old_weights = model.get_weights()
+    orig_train = train.copy()
 
     # validation does only need to be used if eval_recall
     #train, validation = nh.split_user_tags_percentage(train, percentage=args.percentage)
@@ -276,8 +277,8 @@ def main(sargs):
 
             start_index = int(num_users * fold / num_k_folds)
             end_index = int(num_users * (fold + 1) / num_k_folds)
-            val_x, val_y = nh.split_user_tags_percentage(train[start_index:end_index])
-            train = sp.vstack([val_x, train[0:start_index], train[end_index:]]).todok()
+            val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
+            train = sp.vstack([val_x, orig_train[0:start_index], orig_train[end_index:]]).todok()
             hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
 
             # Test.remove
@@ -333,8 +334,8 @@ def main(sargs):
                 loss = hist.history['loss'][0]
                 #val_loss = hist.history['val_loss'][0]
                 val_loss = 0
-                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss = %.4f, eval: [%.1f s]' 
-                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, val_loss, time()-t2))
+                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, eval: [%.1f s]'
+                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, time()-t2))
                 if hr > best_hr:
                     best_hr, best_ndcg, best_iter = hr, ndcg, epoch
                     if args.out > 0:
