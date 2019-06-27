@@ -8,6 +8,7 @@ sys.path.append('..')
 import run_script
 
 run_files = os.listdir("runs/several_runs/")
+run_files.sort()
 
 for run_file_name in run_files:
     try:
