@@ -10,7 +10,7 @@ import numpy as np
 import heapq
 from sklearn.metrics import recall_score, jaccard_score
 
-def evaluate_model_recall(model, val_x, val_y, K):
+def evaluate_model_recall(model, val_x, val_y, K, fast_eval=False):
     """
     val_x: The part of the training set whose labels have been cut in half. The remaining half is in val_y.
     val_y: Half of the labels, used as a truth in the tests.
@@ -18,22 +18,26 @@ def evaluate_model_recall(model, val_x, val_y, K):
     It is important that the val_x part is put before the rest of the data, when concatenated before training.
     This is because the precision functions rely on that the val_x part user numbers start with 0.
     """
-    y_pred = get_preds(model, val_x, val_y, K)
+    y_pred = get_preds(model, val_x, val_y, K, fast_eval)
     return recall_score(val_y, y_pred, average='micro'), jaccard_score(val_y, y_pred, average='micro')
 
 
-def get_preds(model, val_x, val_y, K):
+def get_preds(model, val_x, val_y, K, fast_eval):
     def top_cands(user_row, u_num):
         # Just the same user all the way, like in ncf (evaluate.py)
 
         # Make predictions only on the items that has not been added to the model 
         # (i.e. 1:s in the final concatenated train matrix)
 
-        # User a total of 100 different unseen tags to evaluate (using all causes too much computations)
-        num_unseen_tags = 100
 
         all_true = user_row + val_y[u_num]
         not_seen_tag_indices = np.where(np.squeeze(all_true.toarray()) == 0)[0]
+
+        # User a total of 100 different unseen tags to evaluate (using all causes too much computations)
+        if fast_eval: 
+            num_unseen_tags = 100
+        else: 
+            num_unseen_tags = len(not_seen_tag_indices)
 
         tag_indices_to_predict = np.random.choice(not_seen_tag_indices, num_unseen_tags, replace=False)
         tag_indices_to_predict = np.append(tag_indices_to_predict, np.nonzero(val_y[u_num])[1])

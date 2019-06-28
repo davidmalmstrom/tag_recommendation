@@ -268,9 +268,11 @@ def main(sargs):
             compile_model()
             model.set_weights(old_weights)
 
+            fast_eval = False
             if num_k_folds > 1:
                 start_index = int(num_users * fold / num_k_folds)
                 end_index = int(num_users * (fold + 1) / num_k_folds)
+                fast_eval = True
             elif args.test_dataset:  # validation from end of user list since first end is already halved (for later testing)
                 start_index = num_users - int(num_users / 10)
                 end_index = num_users
@@ -280,7 +282,7 @@ def main(sargs):
 
             val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
             train = sp.vstack([val_x, orig_train[0:start_index], orig_train[end_index:]]).todok()
-            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
+            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval)
 
             # Test.remove
             # best_hr = 0.1
@@ -324,7 +326,7 @@ def main(sargs):
             # Evaluation
             if epoch %verbose == 0:
                 if args.eval_recall:
-                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
+                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval)
                 else:
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
