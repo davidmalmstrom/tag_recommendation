@@ -77,6 +77,8 @@ def parse_args(sargs):
                         help='The percentage of user_tags that should be used for training. 0 means cold start.')
     parser.add_argument('--num_k_folds', type=int, default=1,
                         help='The number of k-folds to user (only applicable for eval_recall).')
+    parser.add_argument('--test_dataset', type=int, default=0,
+                        help='Specify whether test dataset should be used.')
     return parser.parse_known_args(sargs)[0]
 
 def init_normal(shape, dtype=None):
@@ -180,6 +182,7 @@ def split_half_tags(full_data):
     y_cf_train = full_data - x_cf_train
     return x_cf_train, y_cf_train
 
+
 def main(sargs):
     args = parse_args(sargs)
     num_epochs = args.epochs
@@ -205,10 +208,8 @@ def main(sargs):
 
     # Loading data
     t1 = time()
-    dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag)
+    dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag, args.test_dataset)
     train, testRatings, testNegatives = dataset.trainMatrix, dataset.testRatings, dataset.testNegatives
-    #dataset2 = Dataset(args.path + "ml-1m", 0)
-    #train2, testRatings2, testNegatives2 = dataset2.trainMatrix, dataset2.testRatings, dataset2.testNegatives
     num_users, num_items = train.shape
     if args.eval_recall:
         num_test_ratings = "eval_recall"
@@ -237,6 +238,7 @@ def main(sargs):
             model.compile(optimizer=Adam(lr=learning_rate), loss='binary_crossentropy')
         else:
             model.compile(optimizer=SGD(lr=learning_rate), loss='binary_crossentropy')
+
     compile_model()
 
     # Load pretrain model
@@ -247,19 +249,10 @@ def main(sargs):
         mlp_model.load_weights(mlp_pretrain)
         model = load_pretrain_model(model, gmf_model, mlp_model, len(layers))
         print("Load pretrained GMF (%s) and MLP (%s) models done. " %(mf_pretrain, mlp_pretrain))
-    
-    
-    from sklearn.model_selection import train_test_split
-    # Split the data
-    #val = train[-1500:]
-    #train = train[:-1500]
-    #val_user_input, val_item_input, val_labels = get_train_instances(val, num_negatives, num_items)
 
     old_weights = model.get_weights()
     orig_train = train.copy()
 
-    # validation does only need to be used if eval_recall
-    #train, validation = nh.split_user_tags_percentage(train, percentage=args.percentage)
     if not args.eval_recall:
         num_k_folds = 1
     else:
@@ -275,8 +268,16 @@ def main(sargs):
             compile_model()
             model.set_weights(old_weights)
 
-            start_index = int(num_users * fold / num_k_folds)
-            end_index = int(num_users * (fold + 1) / num_k_folds)
+            if num_k_folds > 1:
+                start_index = int(num_users * fold / num_k_folds)
+                end_index = int(num_users * (fold + 1) / num_k_folds)
+            elif args.test_dataset:  # validation from end of user list since first end is already halved (for later testing)
+                start_index = num_users - int(num_users / 10)
+                end_index = num_users
+            else:
+                start_index = 0
+                end_index = int(num_users/10)
+
             val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
             train = sp.vstack([val_x, orig_train[0:start_index], orig_train[end_index:]]).todok()
             hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK)
@@ -302,26 +303,22 @@ def main(sargs):
 
             metric1 = "HR"
             metric2 = "NDCG"
-
         
         print('Init: %s = %.4f, %s = %.4f' % (metric1, hr, metric2, ndcg))
         best_hr, best_ndcg, best_iter = hr, ndcg, -1
         if args.out > 0:
             model.save_weights(model_out_file, overwrite=True) 
-        
+
         # Training model
         for epoch in range(num_epochs):
             t1 = time()
             # Generate training instances
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
-            #user_input2, item_input2, labels2 = get_train_instances(train2, num_negatives, num_items)
             
             # Training
             hist = model.fit([np.array(user_input), np.array(item_input)], #input
                             np.array(labels), # labels 
-                            batch_size=batch_size, epochs=1, verbose=0, shuffle=True)#,
-                            #validation_data=([np.array(val_user_input), np.array(val_item_input)],
-                            #np.array(val_labels)))
+                            batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
             t2 = time()
             
             # Evaluation
@@ -332,8 +329,6 @@ def main(sargs):
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
                 loss = hist.history['loss'][0]
-                #val_loss = hist.history['val_loss'][0]
-                val_loss = 0
                 print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, eval: [%.1f s]'
                     % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, time()-t2))
                 if hr > best_hr:

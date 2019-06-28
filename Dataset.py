@@ -15,17 +15,22 @@ class Dataset(object):
     classdocs
     '''
 
-    def __init__(self, path, eval_recall, tag_dataset=False, big_tag=False):
+    def __init__(self, path, eval_recall, tag_dataset=False, big_tag=False, test_dataset=False):
         '''
         Constructor
         '''
         if tag_dataset:
+            # Not in use for now
             if big_tag:
                 end_addition = "_big"
             else:
                 end_addition = ""
 
-            with open('Data/dev_tag_dataset.pkl', 'rb') as f:
+            if test_dataset:
+                path = "Data/test_tag_dataset.pkl"
+            else:
+                path = "Data/dev_tag_dataset.pkl"
+            with open(path, 'rb') as f:
                 X, y, mlbx, mlby = pickle.load(f)
 
             if not eval_recall:

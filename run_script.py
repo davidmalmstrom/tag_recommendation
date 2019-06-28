@@ -1,4 +1,4 @@
-# Script to run the training, reads a json with settings and writes output to it as comments
+# Script to run the training, reads a YML-file with settings and writes output to it as comments
 # Requires a json with the parameters in it
 
 import os
@@ -8,10 +8,10 @@ import importlib
 
 def main(args, run_file_path=None):
     if run_file_path is None:
-        run_file_path = "runs/past_runs/"
+        run_file_path = ""
 
     if len(args) < 2 or ".yml" not in args[1]:
-        print("No JSON parameter configuration file provided, using default run_template.")
+        print("No YML parameter configuration file provided, using default run_template.")
         read_file_name = "run_template.yml"
         i = 1
         while os.path.exists(run_file_path + "run%s.yml" % i):
@@ -35,7 +35,7 @@ def main(args, run_file_path=None):
 
     nn_args = [item for sublist in params.items() for item in sublist]
 
-    # Write stdout prints to end of json file (commented out)
+    # Write stdout prints to end of yml file (commented out)
     class Logger(object):
         def __init__(self):
             self.terminal = sys.stdout
