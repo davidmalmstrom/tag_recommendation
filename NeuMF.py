@@ -282,8 +282,13 @@ def main(sargs):
                 end_index = int(num_users/10)
             starting_user_num = start_index
 
-            val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
-            train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
+            if args.test_dataset:  # test dataset has pre-calculated, fixed val_x and val_y
+                val_x = train[start_index:end_index]
+                val_y = dataset.val_y
+            else:
+                val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
+                train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
+
             hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval, starting_user_num=starting_user_num)
 
             # Test.remove

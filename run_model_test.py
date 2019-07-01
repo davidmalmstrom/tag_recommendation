@@ -34,11 +34,11 @@ def read_params(model_runfile_path):
             sys.exit(1)
         return params
 
-def get_test_set():    
+def get_test_set():
     with open('Data/test_tag_dataset.pkl', 'rb') as f:
-        _, y_test, _, _, val_y = pickle.load(f)
+        _, y_test, _, _, _, test_y = pickle.load(f)
         test_set = sp.dok_matrix(y_test)
-    return test_set, val_y
+    return test_set, test_y
 
 def build_model(params, data_shape):
     num_users, num_items = data_shape
@@ -60,10 +60,10 @@ def build_model(params, data_shape):
     model.load_weights(params['weights_path'])
     return model
 
-def test_model(model, params, test_set, model_runfile_path, val_y):
-    val_x = test_set[:TEST_PART_SIZE]
+def test_model(model, params, test_set, model_runfile_path, test_y):
+    test_x = test_set[:TEST_PART_SIZE]
 
-    recall, jaccard = evaluate_model_recall(model, val_x, val_y, params['topk'], fast_eval=False)
+    recall, jaccard = evaluate_model_recall(model, test_x, test_y, params['topk'], fast_eval=False)
 
     result = "Model test performed \nRecall score: " + str(recall) + "     Jaccard score: " + str(jaccard)
     print(result)
@@ -81,11 +81,11 @@ def main():
 
     params = read_params(model_runfile_path)
 
-    test_set, val_y = get_test_set()
+    test_set, test_y = get_test_set()
 
     model = build_model(params, test_set.shape)
 
-    test_model(model, params, test_set, model_runfile_path, val_y)
+    test_model(model, params, test_set, model_runfile_path, test_y)
 
 if __name__ == "__main__":
 	main()

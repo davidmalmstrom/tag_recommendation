@@ -26,9 +26,10 @@ class Dataset(object):
             else:
                 end_addition = ""
 
+            val_y = None
             if test_dataset:
                 with open("Data/test_tag_dataset.pkl", 'rb') as f:
-                    X, y, mlbx, mlby, _ = pickle.load(f)
+                    X, y, mlbx, mlby, val_y, _ = pickle.load(f)
             else:
                 with open("Data/dev_tag_dataset.pkl", 'rb') as f:
                     X, y, mlbx, mlby = pickle.load(f)
@@ -51,6 +52,7 @@ class Dataset(object):
             self.trainMatrix = sp.dok_matrix(y)
             self.mlbx = mlbx
             self.mlby = mlby
+            self.val_y = val_y
         else:
             self.trainMatrix = self.load_rating_file_as_matrix(path + ".train.rating")
             self.testRatings = self.load_rating_file_as_list(path + ".test.rating")
