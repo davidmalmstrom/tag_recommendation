@@ -13,3 +13,7 @@ MLP.py
 nohup.out
 *.pyc
 env_list
+Data/dev_tag_dataset.pkl
+Data/test_tag_dataset.pkl
+test_test_script.py
+*.lprof
