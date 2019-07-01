@@ -27,11 +27,11 @@ class Dataset(object):
                 end_addition = ""
 
             if test_dataset:
-                path = "Data/test_tag_dataset.pkl"
+                with open("Data/test_tag_dataset.pkl", 'rb') as f:
+                    X, y, mlbx, mlby, _ = pickle.load(f)
             else:
-                path = "Data/dev_tag_dataset.pkl"
-            with open(path, 'rb') as f:
-                X, y, mlbx, mlby = pickle.load(f)
+                with open("Data/dev_tag_dataset.pkl", 'rb') as f:
+                    X, y, mlbx, mlby = pickle.load(f)
 
             if not eval_recall:
                 # Sample unlabelled as negatives, 99 per item:

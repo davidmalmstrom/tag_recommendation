@@ -276,13 +276,15 @@ def main(sargs):
             elif args.test_dataset:  # validation from end of user list since first end is already halved (for later testing)
                 start_index = num_users - int(num_users / 10)
                 end_index = num_users
+                fast_eval = True
             else:
                 start_index = 0
                 end_index = int(num_users/10)
+            starting_user_num = start_index
 
             val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
-            train = sp.vstack([val_x, orig_train[0:start_index], orig_train[end_index:]]).todok()
-            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval)
+            train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
+            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval, starting_user_num=starting_user_num)
 
             # Test.remove
             # best_hr = 0.1
@@ -326,7 +328,7 @@ def main(sargs):
             # Evaluation
             if epoch %verbose == 0:
                 if args.eval_recall:
-                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval)
+                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval, starting_user_num=starting_user_num)
                 else:
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()

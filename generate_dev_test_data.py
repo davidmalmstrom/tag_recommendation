@@ -13,4 +13,7 @@ with open(path + 'dev_tag_dataset.pkl', 'wb') as f:
     pickle.dump(nh.reshape_data(dataset[2000:]), f)
 
 with open(path + 'test_tag_dataset.pkl', 'wb') as f:
-    pickle.dump(nh.reshape_data(dataset), f)
+    X, y, mlbx, mlby = nh.reshape_data(dataset)
+    val_x, val_y = nh.split_user_tags_percentage(y[:2000])
+    y = sp.vstack([val_x, y[2000:]]).todok()
+    pickle.dump((X, y, mlbx, mlby, val_y), f)
