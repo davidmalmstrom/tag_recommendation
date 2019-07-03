@@ -1,0 +1,31 @@
+--nn_model: GMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "10"
+--num_factors: "64"
+--test_dataset: "1"
+
+# Launched by terminal.
+# GMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=10, eval_recall=1, is_tag=1, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='GMF', num_factors=64, num_k_folds=1, num_neg=4, out=1, path='Data/', percentage=0.5, reg_layers='[0,0,0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_GMF_64_[64,32,16,8]_1561722056.h5
+--weights_path: Pretrain/_GMF_64_[64,32,16,8]_1561722056.h5
+# Load data done [2.3 s]. #user=20000, #item=2000, #train=179445, #test=eval_recall
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0016, Jaccard score = 0.0009
+# Iteration 0 fit: [9.2 s]: Recall = 0.0017, Jaccard score = 0.0010, loss = 0.5363, eval: [21.6 s]
+# Iteration 1 fit: [10.7 s]: Recall = 0.0017, Jaccard score = 0.0010, loss = 0.5007, eval: [25.8 s]
+# Iteration 2 fit: [10.3 s]: Recall = 0.0018, Jaccard score = 0.0011, loss = 0.5002, eval: [20.4 s]
+# Iteration 3 fit: [8.8 s]: Recall = 0.0019, Jaccard score = 0.0012, loss = 0.4979, eval: [20.4 s]
+# Iteration 4 fit: [8.8 s]: Recall = 0.0030, Jaccard score = 0.0018, loss = 0.4920, eval: [20.3 s]
+# Iteration 5 fit: [8.8 s]: Recall = 0.0035, Jaccard score = 0.0021, loss = 0.4809, eval: [20.4 s]
+# Iteration 6 fit: [8.8 s]: Recall = 0.0049, Jaccard score = 0.0029, loss = 0.4637, eval: [20.4 s]
+# Iteration 7 fit: [8.8 s]: Recall = 0.0077, Jaccard score = 0.0046, loss = 0.4405, eval: [20.4 s]
+# Iteration 8 fit: [8.8 s]: Recall = 0.0102, Jaccard score = 0.0061, loss = 0.4120, eval: [20.4 s]
+# Iteration 9 fit: [8.8 s]: Recall = 0.0132, Jaccard score = 0.0079, loss = 0.3796, eval: [20.4 s]
+# End. Best Iteration 9:  Recall = 0.0132, Jaccard score = 0.0079. 
+# The best NeuMF model has been saved to Pretrain/_GMF_64_[64,32,16,8]_1561722056.h5
+# Model test performed 
+# Recall score: 0.0055568156044454526     Jaccard score: 0.0033177601733360416

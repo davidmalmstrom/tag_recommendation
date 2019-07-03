@@ -1,0 +1,24 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "2"
+--layers: "[128,128]"
+--reg_layers: "[0,0]"
+--test_dataset: "1"
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=2, eval_recall=1, is_tag=1, layers='[128,128]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='Data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[128,128]_1561721774.h5
+--weights_path: Pretrain/_MLP_8_[128,128]_1561721774.h5
+# Load data done [2.1 s]. #user=20000, #item=2000, #train=179445, #test=eval_recall
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0348, Jaccard score = 0.0211
+# Iteration 0 fit: [9.9 s]: Recall = 0.1731, Jaccard score = 0.1147, loss = 0.4426, eval: [6.5 s]
+# Iteration 1 fit: [9.4 s]: Recall = 0.1706, Jaccard score = 0.1128, loss = 0.4222, eval: [6.4 s]
+# End. Best Iteration 0:  Recall = 0.1731, Jaccard score = 0.1147. 
+# The best NeuMF model has been saved to Pretrain/_MLP_8_[128,128]_1561721774.h5
+# Model test performed 
+# Recall score: 0.17532320254025857     Jaccard score: 0.11648583484026521

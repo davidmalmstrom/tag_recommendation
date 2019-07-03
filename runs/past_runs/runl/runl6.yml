@@ -1,0 +1,102 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "50"
+--layers: "[128,128]"
+--reg_layers: "[0,0]"
+--test_dataset: "1"
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=50, eval_recall=1, is_tag=1, layers='[128,128]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='Data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[128,128]_1561726661.h5
+--weights_path: Pretrain/_MLP_8_[128,128]_1561726661.h5
+# Load data done [1.8 s]. #user=20000, #item=2000, #train=170756, #test=eval_recall
+# 
+# Performing k-fold 1
+# Init: Recall = 0.2007, Jaccard score = 0.1357
+# Iteration 0 fit: [9.3 s]: Recall = 0.4125, Jaccard score = 0.3256, loss = 0.4415, eval: [5.5 s]
+# Iteration 1 fit: [9.2 s]: Recall = 0.4148, Jaccard score = 0.3279, loss = 0.4214, eval: [5.5 s]
+# Iteration 2 fit: [9.2 s]: Recall = 0.4161, Jaccard score = 0.3294, loss = 0.4187, eval: [5.5 s]
+# Iteration 3 fit: [9.3 s]: Recall = 0.4128, Jaccard score = 0.3259, loss = 0.4150, eval: [5.4 s]
+# Iteration 4 fit: [9.1 s]: Recall = 0.4117, Jaccard score = 0.3247, loss = 0.4095, eval: [5.5 s]
+# Iteration 5 fit: [9.1 s]: Recall = 0.4111, Jaccard score = 0.3241, loss = 0.4004, eval: [5.4 s]
+# Iteration 6 fit: [9.0 s]: Recall = 0.3987, Jaccard score = 0.3113, loss = 0.3879, eval: [5.4 s]
+# Iteration 7 fit: [9.0 s]: Recall = 0.4050, Jaccard score = 0.3178, loss = 0.3729, eval: [5.5 s]
+# Iteration 8 fit: [9.1 s]: Recall = 0.4008, Jaccard score = 0.3135, loss = 0.3569, eval: [5.5 s]
+# Iteration 9 fit: [9.2 s]: Recall = 0.3970, Jaccard score = 0.3095, loss = 0.3399, eval: [5.4 s]
+# Iteration 10 fit: [9.0 s]: Recall = 0.3986, Jaccard score = 0.3111, loss = 0.3227, eval: [5.4 s]
+# Iteration 11 fit: [9.0 s]: Recall = 0.4042, Jaccard score = 0.3170, loss = 0.3076, eval: [5.5 s]
+# Iteration 12 fit: [9.1 s]: Recall = 0.4010, Jaccard score = 0.3136, loss = 0.2909, eval: [5.5 s]
+# Iteration 13 fit: [8.8 s]: Recall = 0.4059, Jaccard score = 0.3187, loss = 0.2758, eval: [5.4 s]
+# Iteration 14 fit: [8.9 s]: Recall = 0.4084, Jaccard score = 0.3213, loss = 0.2623, eval: [5.4 s]
+# Iteration 15 fit: [8.9 s]: Recall = 0.4106, Jaccard score = 0.3235, loss = 0.2486, eval: [5.4 s]
+# Iteration 16 fit: [8.8 s]: Recall = 0.4094, Jaccard score = 0.3224, loss = 0.2359, eval: [5.4 s]
+# Iteration 17 fit: [8.8 s]: Recall = 0.4124, Jaccard score = 0.3254, loss = 0.2232, eval: [5.4 s]
+# Iteration 18 fit: [8.8 s]: Recall = 0.4092, Jaccard score = 0.3221, loss = 0.2115, eval: [5.5 s]
+# Iteration 19 fit: [8.8 s]: Recall = 0.4132, Jaccard score = 0.3263, loss = 0.2008, eval: [5.5 s]
+# Iteration 20 fit: [8.8 s]: Recall = 0.4145, Jaccard score = 0.3277, loss = 0.1907, eval: [5.4 s]
+# Iteration 21 fit: [8.9 s]: Recall = 0.4185, Jaccard score = 0.3319, loss = 0.1811, eval: [5.4 s]
+# Iteration 22 fit: [8.8 s]: Recall = 0.4133, Jaccard score = 0.3264, loss = 0.1714, eval: [5.5 s]
+# Iteration 23 fit: [8.8 s]: Recall = 0.4164, Jaccard score = 0.3296, loss = 0.1632, eval: [5.5 s]
+# Iteration 24 fit: [8.8 s]: Recall = 0.4217, Jaccard score = 0.3352, loss = 0.1543, eval: [5.4 s]
+# Iteration 25 fit: [8.8 s]: Recall = 0.4226, Jaccard score = 0.3362, loss = 0.1473, eval: [5.4 s]
+# Iteration 26 fit: [8.8 s]: Recall = 0.4246, Jaccard score = 0.3384, loss = 0.1402, eval: [5.4 s]
+# Iteration 27 fit: [8.8 s]: Recall = 0.4186, Jaccard score = 0.3320, loss = 0.1328, eval: [5.4 s]
+# Iteration 28 fit: [8.8 s]: Recall = 0.4207, Jaccard score = 0.3341, loss = 0.1262, eval: [5.5 s]
+# Iteration 29 fit: [8.9 s]: Recall = 0.4256, Jaccard score = 0.3394, loss = 0.1203, eval: [5.5 s]
+# Iteration 30 fit: [9.1 s]: Recall = 0.4305, Jaccard score = 0.3447, loss = 0.1152, eval: [5.5 s]
+# Iteration 31 fit: [9.6 s]: Recall = 0.4287, Jaccard score = 0.3427, loss = 0.1094, eval: [5.5 s]
+# Iteration 32 fit: [8.8 s]: Recall = 0.4307, Jaccard score = 0.3449, loss = 0.1039, eval: [5.4 s]
+# Iteration 33 fit: [8.8 s]: Recall = 0.4255, Jaccard score = 0.3393, loss = 0.1001, eval: [5.5 s]
+# Iteration 34 fit: [8.8 s]: Recall = 0.4299, Jaccard score = 0.3441, loss = 0.0962, eval: [5.5 s]
+# Iteration 35 fit: [8.9 s]: Recall = 0.4319, Jaccard score = 0.3461, loss = 0.0915, eval: [5.5 s]
+# Iteration 36 fit: [8.8 s]: Recall = 0.4336, Jaccard score = 0.3480, loss = 0.0882, eval: [5.5 s]
+# Iteration 37 fit: [8.8 s]: Recall = 0.4298, Jaccard score = 0.3439, loss = 0.0853, eval: [5.4 s]
+# Iteration 38 fit: [8.8 s]: Recall = 0.4363, Jaccard score = 0.3509, loss = 0.0815, eval: [5.5 s]
+# Iteration 39 fit: [8.9 s]: Recall = 0.4294, Jaccard score = 0.3434, loss = 0.0788, eval: [5.4 s]
+# Iteration 40 fit: [8.8 s]: Recall = 0.4344, Jaccard score = 0.3488, loss = 0.0752, eval: [5.4 s]
+# Iteration 41 fit: [8.8 s]: Recall = 0.4320, Jaccard score = 0.3463, loss = 0.0726, eval: [5.5 s]
+# Iteration 42 fit: [8.8 s]: Recall = 0.4362, Jaccard score = 0.3508, loss = 0.0700, eval: [5.5 s]
+# Iteration 43 fit: [8.9 s]: Recall = 0.4338, Jaccard score = 0.3482, loss = 0.0681, eval: [5.5 s]
+# Iteration 44 fit: [8.8 s]: Recall = 0.4333, Jaccard score = 0.3477, loss = 0.0651, eval: [5.4 s]
+# Iteration 45 fit: [8.8 s]: Recall = 0.4373, Jaccard score = 0.3520, loss = 0.0631, eval: [5.4 s]
+# Iteration 46 fit: [8.9 s]: Recall = 0.4426, Jaccard score = 0.3578, loss = 0.0610, eval: [5.5 s]
+# Iteration 47 fit: [8.8 s]: Recall = 0.4357, Jaccard score = 0.3503, loss = 0.0591, eval: [5.4 s]
+# Iteration 48 fit: [8.8 s]: Recall = 0.4421, Jaccard score = 0.3572, loss = 0.0574, eval: [5.4 s]
+# Iteration 49 fit: [8.8 s]: Recall = 0.4395, Jaccard score = 0.3544, loss = 0.0555, eval: [5.5 s]
+# End. Best Iteration 46:  Recall = 0.4426, Jaccard score = 0.3578. 
+# The best NeuMF model has been saved to Pretrain/_MLP_8_[128,128]_1561726661.h5
+# Model test performed 
+# Recall score: 0.288295546092761     Jaccard score: 0.20559750492449114# Model test performed 
+# Recall score: 0.006099666244677178     Jaccard score: 0.0036212079803224924# Model test performed 
+# Recall score: 0.006099666244677178     Jaccard score: 0.0036212079803224924# Model test performed 
+# Recall score: 0.006099666244677178     Jaccard score: 0.0036212079803224924# Model test performed 
+# Recall score: 0.29013695477039936     Jaccard score: 0.2071827744904668# Model test performed 
+# Recall score: 0.28461272873748417     Jaccard score: 0.20243942370661427# Model test performed 
+# Recall score: 0.006099666244677178     Jaccard score: 0.0036212079803224924# Model test performed 
+# Recall score: 0.006099666244677178     Jaccard score: 0.0036212079803224924
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=50, eval_recall=1, is_tag=1, layers='[128,128]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='Data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[128,128]_1561729566.h5
+--weights_path: Pretrain/_MLP_8_[128,128]_1561729566.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=50, eval_recall=1, is_tag=1, layers='[128,128]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='Data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[128,128]_1561729585.h5
+--weights_path: Pretrain/_MLP_8_[128,128]_1561729585.h5
+# Load data done [4.7 s]. #user=20000, #item=2000, #train=170756, #test=eval_recall
+# 
+# Performing k-fold 1
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', epochs=50, eval_recall=1, is_tag=1, layers='[128,128]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='Data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[128,128]_1561732244.h5
+--weights_path: Pretrain/_MLP_8_[128,128]_1561732244.h5
+# Load data done [4.6 s]. #user=20000, #item=2000, #train=170756, #test=eval_recall
+# 
+# Performing k-fold 1
