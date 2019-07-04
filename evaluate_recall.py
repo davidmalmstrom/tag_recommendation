@@ -22,23 +22,27 @@ def evaluate_model_recall(model, val_x, val_y, K, fast_eval=False, starting_user
     return recall_score(val_y, y_pred, average='micro'), jaccard_score(val_y, y_pred, average='micro')
 
 
-def get_preds(model, val_x, val_y, K, fast_eval, starting_user_num):
+def get_preds(model, val_x, K, fast_eval, starting_user_num, val_y=None):
     def top_cands(user_row, i, u_num):
         # Just the same user all the way, like in ncf (evaluate.py)
 
-        # Make predictions only on the items that has not been added to the model 
-        # (i.e. 1:s in the final concatenated train matrix)
-        all_true = user_row + val_y[i]
-        not_seen_tag_indices = np.where(np.squeeze(all_true.toarray()) == 0)[0]
-
-        if fast_eval: 
+        if fast_eval:
+            if val_y is None:
+                print("Error, val_y need to be provided in order to use fast evaluation")
+                import sys
+                sys.exit(1)
             num_unseen_tags = 100
-        else: 
-            num_unseen_tags = len(not_seen_tag_indices)
+            all_true = user_row + val_y[i]
 
-        tag_indices_to_predict = np.random.choice(not_seen_tag_indices, num_unseen_tags, replace=False)
-        tag_indices_to_predict = np.append(tag_indices_to_predict, np.nonzero(val_y[i])[1])
-        np.random.shuffle(tag_indices_to_predict)
+            # Make predictions only on the items that has not been added to the model 
+            # (i.e. 1:s in the final concatenated train matrix)
+            not_seen_tag_indices = np.where(np.squeeze(all_true.toarray()) == 0)[0]
+
+            tag_indices_to_predict = np.random.choice(not_seen_tag_indices, num_unseen_tags, replace=False)
+            tag_indices_to_predict = np.append(tag_indices_to_predict, np.nonzero(val_y[i])[1])
+            np.random.shuffle(tag_indices_to_predict)
+        else: 
+            tag_indices_to_predict = np.where(np.squeeze(user_row.toarray()) == 0)[0]
 
         users = np.full(len(tag_indices_to_predict), u_num, dtype='int32')
         predictions = model.predict([users, tag_indices_to_predict],
