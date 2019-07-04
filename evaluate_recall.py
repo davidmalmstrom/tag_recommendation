@@ -18,7 +18,7 @@ def evaluate_model_recall(model, val_x, val_y, K, fast_eval=False, starting_user
     It is important that the val_x part is put before the rest of the data, when concatenated before training.
     This is because the precision functions rely on that the val_x part user numbers start with 0.
     """
-    y_pred = get_preds(model, val_x, val_y, K, fast_eval, starting_user_num)
+    y_pred = get_preds(model, val_x, K, fast_eval, starting_user_num, val_y)
     return recall_score(val_y, y_pred, average='micro'), jaccard_score(val_y, y_pred, average='micro')
 
 
