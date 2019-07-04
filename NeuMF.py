@@ -211,6 +211,7 @@ def main(sargs):
     dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag, args.test_dataset)
     train, testRatings, testNegatives = dataset.trainMatrix, dataset.testRatings, dataset.testNegatives
     num_users, num_items = train.shape
+    num_autotags = dataset.X.shape[1]
     if args.eval_recall:
         num_test_ratings = "eval_recall"
     else:
@@ -224,7 +225,7 @@ def main(sargs):
     elif model_type == "GMF":
         model = GMF.get_model(num_users,num_items,mf_dim)
     elif model_type == "MLP":
-        model = MLP.get_model(num_users,num_items, layers, reg_layers)
+        model = MLP.get_model(num_users, num_items, num_autotags, layers, reg_layers)
     else:
         print("Error: wrong model type")
         sys.exit()
@@ -245,7 +246,7 @@ def main(sargs):
     if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
         gmf_model = GMF.get_model(num_users,num_items,mf_dim)
         gmf_model.load_weights(mf_pretrain)
-        mlp_model = MLP.get_model(num_users,num_items, layers, reg_layers)
+        mlp_model = MLP.get_model(num_users,num_items, num_autotags, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
         model = load_pretrain_model(model, gmf_model, mlp_model, len(layers))
         print("Load pretrained GMF (%s) and MLP (%s) models done. " %(mf_pretrain, mlp_pretrain))
@@ -289,7 +290,7 @@ def main(sargs):
                 val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
                 train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
 
-            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval, starting_user_num=starting_user_num)
+            hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, dataset.X, fast_eval, starting_user_num=starting_user_num)
 
             # Test.remove
             # best_hr = 0.1
@@ -325,7 +326,7 @@ def main(sargs):
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
             
             # Training
-            hist = model.fit([np.array(user_input), np.array(item_input)], #input
+            hist = model.fit([np.array(user_input), np.array(item_input), dataset.X[user_input]], #input
                             np.array(labels), # labels 
                             batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
             t2 = time()
@@ -333,7 +334,7 @@ def main(sargs):
             # Evaluation
             if epoch %verbose == 0:
                 if args.eval_recall:
-                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, fast_eval, starting_user_num=starting_user_num)
+                    hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, dataset.X, fast_eval , starting_user_num=starting_user_num)
                 else:
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()

@@ -10,7 +10,7 @@ import numpy as np
 import heapq
 from sklearn.metrics import recall_score, jaccard_score
 
-def evaluate_model_recall(model, val_x, val_y, K, fast_eval=False, starting_user_num=0):
+def evaluate_model_recall(model, val_x, val_y, K, X, fast_eval=False, starting_user_num=0):
     """
     val_x: The part of the training set whose labels have been cut in half. The remaining half is in val_y.
     val_y: Half of the labels, used as a truth in the tests.
@@ -18,11 +18,11 @@ def evaluate_model_recall(model, val_x, val_y, K, fast_eval=False, starting_user
     It is important that the val_x part is put before the rest of the data, when concatenated before training.
     This is because the precision functions rely on that the val_x part user numbers start with 0.
     """
-    y_pred = get_preds(model, val_x, K, fast_eval, starting_user_num, val_y)
+    y_pred = get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y)
     return recall_score(val_y, y_pred, average='micro'), jaccard_score(val_y, y_pred, average='micro')
 
 
-def get_preds(model, val_x, K, fast_eval, starting_user_num, val_y=None):
+def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
     def top_cands(user_row, i, u_num):
         # Just the same user all the way, like in ncf (evaluate.py)
 
@@ -45,7 +45,8 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, val_y=None):
             tag_indices_to_predict = np.where(np.squeeze(user_row.toarray()) == 0)[0]
 
         users = np.full(len(tag_indices_to_predict), u_num, dtype='int32')
-        predictions = model.predict([users, tag_indices_to_predict],
+        features = np.tile(X[u_num], (len(tag_indices_to_predict), 1))
+        predictions = model.predict([users, tag_indices_to_predict, features],
                                     batch_size=100, verbose=0)
         
         map_item_score = {}

@@ -11,12 +11,15 @@ import run_script
 
 TEST_PART_SIZE = 2000
 
-def train_model(model_runfile_path):
+def train_model(model_runfile_path, vscode=False):
     """Uses the NeuMF-module to build and train a model. This will modify the .yml file,
     adding the model weights path so that they can be loaded by the test_model functions.
     """
     read_params(model_runfile_path)  # for the assert
-    run_script.main(["run_model_test.py", model_runfile_path])
+    if vscode:
+        run_script.main(["run_model_test.py", model_runfile_path, "vscode"])
+    else:
+        run_script.main(["run_model_test.py", model_runfile_path])
 
 def read_params(model_runfile_path):
     """Also asserts that the yml file is valid for testing
@@ -36,18 +39,18 @@ def read_params(model_runfile_path):
 
 def get_test_set():
     with open('Data/test_tag_dataset.pkl', 'rb') as f:
-        _, y_test, _, _, _, test_y = pickle.load(f)
+        X, y_test, _, _, _, test_y = pickle.load(f)
         test_set = sp.dok_matrix(y_test)
-    return test_set, test_y
+    return test_set, test_y, X
 
-def build_model(params, data_shape):
+def build_model(params, data_shape, num_autotags):
     num_users, num_items = data_shape
     try:
         if params['nn_model'] == 'NeuMF':
             reg_mf = 0
             model = NeuMF.get_model(num_users, num_items, params['num_factors'], params['layers'], params['reg_layers'], reg_mf)
         elif params['nn_model'] == "GMF":
-            model = GMF.get_model(num_users, num_items, params['num_factors'])
+            model = GMF.get_model(num_users, num_items, num_autotags, params['num_factors'])
         elif params['nn_model'] == "MLP":
             model = MLP.get_model(num_users, num_items, params['layers'], params['reg_layers'])
         else:
@@ -60,10 +63,10 @@ def build_model(params, data_shape):
     model.load_weights(params['weights_path'])
     return model
 
-def test_model(model, params, test_set, model_runfile_path, test_y):
+def test_model(model, params, test_set, model_runfile_path, test_y, X):
     test_x = test_set[:TEST_PART_SIZE]
 
-    recall, jaccard = evaluate_model_recall(model, test_x, test_y, params['topk'], fast_eval=False)
+    recall, jaccard = evaluate_model_recall(model, test_x, test_y, params['topk'], X, fast_eval=False)
 
     result = "Model test performed \nRecall score: " + str(recall) + "     Jaccard score: " + str(jaccard)
     print(result)
@@ -77,15 +80,20 @@ def main():
         print("Need to provide model run file.")
         sys.exit(1)
 
-    train_model(model_runfile_path)
+    if sys.argv[-1] == "vscode":
+        vscode = True
+    else:
+        vscode = False
+
+    train_model(model_runfile_path, vscode)
 
     params = read_params(model_runfile_path)
 
-    test_set, test_y = get_test_set()
+    test_set, test_y, X = get_test_set()
 
-    model = build_model(params, test_set.shape)
+    model = build_model(params, test_set.shape, X.shape[1])
 
-    test_model(model, params, test_set, model_runfile_path, test_y)
+    test_model(model, params, test_set, model_runfile_path, test_y, X)
 
 if __name__ == "__main__":
 	main()

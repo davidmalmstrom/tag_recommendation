@@ -48,7 +48,7 @@ class Dataset(object):
             else:
                 self.testNegatives = None
                 self.testRatings = None
-
+            self.X = X
             self.trainMatrix = sp.dok_matrix(y)
             self.mlbx = mlbx
             self.mlby = mlby
