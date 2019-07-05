@@ -58,7 +58,7 @@ def parse_args():
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
 
-def get_model(num_users, num_items, num_autotags, layers = [20,10], reg_layers=[0,0]):
+def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[0,0]):
     assert len(layers) == len(reg_layers)
     num_layer = len(layers) #Number of layers in the MLP
     # Input variables

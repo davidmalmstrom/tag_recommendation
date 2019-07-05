@@ -225,7 +225,7 @@ def main(sargs):
     elif model_type == "GMF":
         model = GMF.get_model(num_users,num_items,mf_dim)
     elif model_type == "MLP":
-        model = MLP.get_model(num_users, num_items, num_autotags, layers, reg_layers)
+        model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
     else:
         print("Error: wrong model type")
         sys.exit()
@@ -246,7 +246,7 @@ def main(sargs):
     if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
         gmf_model = GMF.get_model(num_users,num_items,mf_dim)
         gmf_model.load_weights(mf_pretrain)
-        mlp_model = MLP.get_model(num_users,num_items, num_autotags, layers, reg_layers)
+        mlp_model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
         model = load_pretrain_model(model, gmf_model, mlp_model, len(layers))
         print("Load pretrained GMF (%s) and MLP (%s) models done. " %(mf_pretrain, mlp_pretrain))
