@@ -84,12 +84,13 @@ def parse_args(sargs):
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
 
-def get_model(num_users, num_items, mf_dim=10, layers=[10], reg_layers=[0], reg_mf=0):
+def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_layers=[0], reg_mf=0):
     assert len(layers) == len(reg_layers)
     num_layer = len(layers) #Number of layers in the MLP
     # Input variables
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
+    user_features = Input(shape=(num_autotags,), dtype='float32', name='user_features')
     
     # Embedding layer
     MF_Embedding_User = Embedding(input_dim = num_users, output_dim = mf_dim, name = 'mf_embedding_user',
@@ -110,6 +111,8 @@ def get_model(num_users, num_items, mf_dim=10, layers=[10], reg_layers=[0], reg_
     # MLP part 
     mlp_user_latent = Flatten()(MLP_Embedding_User(user_input))
     mlp_item_latent = Flatten()(MLP_Embedding_Item(item_input))
+    mlp_user_latent = Concatenate()([mlp_user_latent, user_features])
+
     mlp_vector = Concatenate()([mlp_user_latent, mlp_item_latent])
     for idx in range(1, num_layer):
         layer = Dense(layers[idx], kernel_regularizer= l2(reg_layers[idx]), activation='relu', name="layer%d" %idx)
@@ -123,9 +126,11 @@ def get_model(num_users, num_items, mf_dim=10, layers=[10], reg_layers=[0], reg_
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = "prediction")(predict_vector)
     
-    model = Model(inputs=[user_input, item_input], 
+    model = Model(inputs=[user_input, item_input, user_features],
                   outputs=prediction)
-    
+
+    model.name = "NeuMF"
+
     return model
 
 def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
@@ -221,7 +226,7 @@ def main(sargs):
     
     # Build model
     if model_type == 'NeuMF':
-        model = get_model(num_users, num_items, mf_dim, layers, reg_layers, reg_mf)
+        model = get_model(num_users, num_autotags, num_items, mf_dim, layers, reg_layers, reg_mf)
     elif model_type == "GMF":
         model = GMF.get_model(num_users,num_items,mf_dim)
     elif model_type == "MLP":
@@ -326,7 +331,11 @@ def main(sargs):
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
             
             # Training
-            hist = model.fit([np.array(user_input), np.array(item_input), dataset.X[user_input]], #input
+            if model.name == "GMF":
+                input_array = [np.array(user_input), np.array(item_input)]
+            else:
+                input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
+            hist = model.fit(input_array, #input
                             np.array(labels), # labels 
                             batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
             t2 = time()

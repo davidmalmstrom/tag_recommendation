@@ -92,6 +92,8 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
     model = Model(inputs=[user_input, item_input, user_features], 
                   outputs=prediction)
     
+    model.name = "MLP"
+
     return model
 
 def get_train_instances(train, num_negatives):

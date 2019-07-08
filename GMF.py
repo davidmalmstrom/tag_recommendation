@@ -78,6 +78,7 @@ def get_model(num_users, num_items, latent_dim, regs=[0,0]):
     
     model = Model(inputs=[user_input, item_input], 
                 outputs=prediction)
+    model.name = "GMF"
 
     return model
 
