@@ -128,14 +128,14 @@ def generate_data(n_samples=None, x_dim=1000, y_dim=1000, amount_x=6, amount_y=6
     # Shuffle
     dataset = dataset.sample(frac=1)
 
-    dataset['Photo/video_identifier'] = dataset.index
-
     # Remove index
-    dataset = dataset.reset_index(drop=True)
+    dataset = dataset.reset_index()
 
     # Save index - id mapping
-    index_id_mapping = dataset['Photo/video_identifier']
+    index_id_mapping = dataset['user+id']
     index_id_mapping.to_frame().to_pickle(data_dir + "/index_id_mapping.pkl")
+
+    dataset.drop('user+id', axis=1, inplace=True)
 
     tag_stats(dataset)
     min_a_tags = pd.Series((tag for tag_list in dataset.autotags for tag in tag_list)).value_counts().values[-1]
