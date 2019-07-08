@@ -126,7 +126,16 @@ def generate_data(n_samples=None, x_dim=1000, y_dim=1000, amount_x=6, amount_y=6
         print("Warning: desired number of samples could not be provided, generated " + str(dataset.shape[0]) + " samples.")
     
     # Shuffle
-    dataset = dataset.sample(frac=1).reset_index(drop=True)
+    dataset = dataset.sample(frac=1)
+
+    dataset['Photo/video_identifier'] = dataset.index
+
+    # Remove index
+    dataset = dataset.reset_index(drop=True)
+
+    # Save index - id mapping
+    index_id_mapping = dataset['Photo/video_identifier']
+    index_id_mapping.to_frame().to_pickle(data_dir + "/index_id_mapping.pkl")
 
     tag_stats(dataset)
     min_a_tags = pd.Series((tag for tag_list in dataset.autotags for tag in tag_list)).value_counts().values[-1]
