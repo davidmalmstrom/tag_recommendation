@@ -8,8 +8,6 @@ out.profile
 saves
 Data/preprocessed_user_auto_tags_big.pkl
 .ipynb_checkpoints/
-GMF.py
-MLP.py
 nohup.out
 *.pyc
 env_list
