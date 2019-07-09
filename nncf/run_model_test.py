@@ -1,4 +1,6 @@
 import sys
+sys.path.append("..")
+
 import NeuMF
 import MLP
 import GMF
@@ -38,7 +40,7 @@ def read_params(model_runfile_path):
         return params
 
 def get_test_set():
-    with open('Data/test_tag_dataset.pkl', 'rb') as f:
+    with open('../Data/test_tag_dataset.pkl', 'rb') as f:
         X, y_test, _, _, _, test_y = pickle.load(f)
         test_set = sp.dok_matrix(y_test)
     return test_set, test_y, X

@@ -4,6 +4,9 @@ Processing datasets.
 
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
+import sys
+sys.path.append("..")
+
 from builtins import object
 import scipy.sparse as sp
 import numpy as np
@@ -28,10 +31,10 @@ class Dataset(object):
 
             val_y = None
             if test_dataset:
-                with open("Data/test_tag_dataset.pkl", 'rb') as f:
+                with open("../Data/test_tag_dataset.pkl", 'rb') as f:
                     X, y, mlbx, mlby, val_y, _ = pickle.load(f)
             else:
-                with open("Data/dev_tag_dataset.pkl", 'rb') as f:
+                with open("../Data/dev_tag_dataset.pkl", 'rb') as f:
                     X, y, mlbx, mlby = pickle.load(f)
 
             if not eval_recall:

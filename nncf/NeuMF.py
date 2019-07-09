@@ -8,6 +8,9 @@ He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
 from __future__ import print_function
 from __future__ import division
 
+import sys
+sys.path.append("..")
+
 from builtins import range
 from past.utils import old_div
 import numpy as np
@@ -24,7 +27,6 @@ from evaluate import evaluate_model
 from evaluate_recall import evaluate_model_recall
 from Dataset import Dataset
 from time import time
-import sys
 import GMF, MLP
 import argparse
 import scipy.sparse as sp
@@ -33,7 +35,7 @@ import lib.notebook_helpers as nh
 #################### Arguments ####################
 def parse_args(sargs):
     parser = argparse.ArgumentParser(description="Run NeuMF.")
-    parser.add_argument('--path', nargs='?', default='Data/',
+    parser.add_argument('--path', nargs='?', default='../Data/',
                         help='Input data path.')
     parser.add_argument('--dataset', nargs='?', default='',
                         help='Choose a dataset.')

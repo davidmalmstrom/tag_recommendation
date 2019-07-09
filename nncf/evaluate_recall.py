@@ -4,6 +4,8 @@ Evaluate performance of top-K recommendation
 Protocol: half test set
 Measures: Recall and jaccard-score
 """
+import sys
+sys.path.append("..")
 
 import lib.notebook_helpers as nh
 import numpy as np
