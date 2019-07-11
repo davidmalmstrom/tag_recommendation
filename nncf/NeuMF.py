@@ -35,7 +35,7 @@ import lib.notebook_helpers as nh
 #################### Arguments ####################
 def parse_args(sargs):
     parser = argparse.ArgumentParser(description="Run NeuMF.")
-    parser.add_argument('--path', nargs='?', default='../Data/',
+    parser.add_argument('--path', nargs='?', default='../data/',
                         help='Input data path.')
     parser.add_argument('--dataset', nargs='?', default='',
                         help='Choose a dataset.')

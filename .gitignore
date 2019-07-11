@@ -6,12 +6,12 @@ NCF_dataset.pkl
 __init__.py
 out.profile
 saves
-Data/preprocessed_user_auto_tags_big.pkl
+data/preprocessed_user_auto_tags_big.pkl
 .ipynb_checkpoints/
 nohup.out
 *.pyc
 env_list
-Data/dev_tag_dataset.pkl
-Data/test_tag_dataset.pkl
+data/dev_tag_dataset.pkl
+data/test_tag_dataset.pkl
 test_test_script.py
 *.lprof

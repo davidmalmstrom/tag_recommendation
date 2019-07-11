@@ -3,7 +3,7 @@ from sklearn.model_selection import train_test_split
 import pickle
 import scipy.sparse as sp
 
-path = "Data/"
+path = "data/"
 
 dataset = nh.generate_data(n_samples=20000, y_dim=2000, data_dir=path, data_name="preprocessed_user_auto_tags_big.pkl",
                            amount_x=6, amount_y=6, min_x=6, min_y=6)

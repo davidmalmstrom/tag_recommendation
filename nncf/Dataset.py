@@ -31,10 +31,10 @@ class Dataset(object):
 
             val_y = None
             if test_dataset:
-                with open("../Data/test_tag_dataset.pkl", 'rb') as f:
+                with open("../data/test_tag_dataset.pkl", 'rb') as f:
                     X, y, mlbx, mlby, val_y, _ = pickle.load(f)
             else:
-                with open("../Data/dev_tag_dataset.pkl", 'rb') as f:
+                with open("../data/dev_tag_dataset.pkl", 'rb') as f:
                     X, y, mlbx, mlby = pickle.load(f)
 
             if not eval_recall:
