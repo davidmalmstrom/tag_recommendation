@@ -288,7 +288,8 @@ def mean_iou(y_true, y_pred):
 
 
 def get_top_n_tags(prediction, n=5):
-    return [row.argsort()[-n:][::-1] for row in prediction]
+    return np.array([row.argsort()[-n:][::-1] for row in prediction])
+
 
 def split_user_tags_percentage(cf_data, percentage=0.5):
     """Returns a percentage split of the user tag matrix.
