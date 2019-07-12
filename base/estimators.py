@@ -27,12 +27,12 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
     def predict(self, X=None):
         """Returns the top-n predictions as a one-hot multi-element array.
         """
-        predictions = self.predict_proba(X)
+        predictions = self.predict_score(X)
 
         tops = nh.get_top_n_tags(predictions, n=self.n)
         return nh.from_keras_format(list(map(lambda x: x + 1, tops)), predictions.shape[1])
 
-    def predict_proba(self, X=None):
+    def predict_score(self, X=None):
         """Returns the probabilities of the classes. If the probabilities
         have been calculated already, returns the calculated value.
         """
@@ -54,7 +54,7 @@ class ContentEstimator(TemplateEstimator):
         self._predictions = None
         self._prev_X = None
 
-    def predict_proba(self, X):
+    def predict_score(self, X):
         try:
             if np.array_equal(X, self._prev_X) and self._predictions is not None:
                 return self._predictions
@@ -100,7 +100,7 @@ class ALSEstimator(TemplateEstimator):
         self._fitted = True
         return self
 
-    def predict_proba(self, X=None):
+    def predict_score(self, X=None):
         check_is_fitted(self, ['_fitted'])
         try:
             return self._predictions
@@ -159,14 +159,14 @@ class BaselineModel(BaseEstimator):
                     filter_seen=True,
                     show_progress=True,
                     n=3,
-                    scale_factor=1):
+                    content_scale_factor=0.2):
         self.factors = factors
         self.regularization = regularization
         self.iterations = iterations
         self.filter_seen = filter_seen
         self.show_progress = show_progress
         self.n = n
-        self.scale_factor = scale_factor
+        self.content_scale_factor = content_scale_factor
 
     def fit(self, X, y):
         self.cf = ALSEstimator(self.factors,
@@ -187,28 +187,37 @@ class BaselineModel(BaseEstimator):
     def predict(self, X=None, y=None):
         check_is_fitted(self, ['_fitted'])
 
-        cf_predictions = self.cf.predict_proba()
-        cf_top_n_probs = self._top_n_probs(cf_predictions)
+        cf_predictions = self.cf.predict_score()
+        cf_top_n_scores = self._top_n_scores(cf_predictions)
 
-        content_predictions = self.content.predict_proba(X) * self.scale_factor  # Use of scale_factor hyperparameter
-        content_top_n_probs = self._top_n_probs(content_predictions)
+        content_predictions = self.content.predict_score(X) * self.content_scale_factor  # Use of scale_factor hyperparameter
+        content_top_n_scores = self._top_n_scores(content_predictions)
 
         def best_n(cf_cands, content_cands):
-            return sorted(cf_cands + content_cands, key = lambda x: x[1], reverse=True)[:self.n]
+            best_n = sorted(cf_cands + content_cands, key = lambda x: x[1], reverse=True)
+
+            # Don't add tuples with the same index
+            retlist = []
+            seen_indexes = set()
+            for cand in best_n:
+                if cand[0] not in seen_indexes:
+                    retlist.append(cand)
+                    seen_indexes.add(cand[0])
+            return retlist[:self.n]
 
         predictions = [best_n(cf_cands, content_cands) for cf_cands,
-                       content_cands in zip(cf_top_n_probs, content_top_n_probs)]
+                       content_cands in zip(cf_top_n_scores, content_top_n_scores)]
 
         top_indexes = np.array([[index for index, _ in top_list] for top_list in predictions])
 
         return nh.from_keras_format(list(map(lambda x: x + 1, top_indexes)), cf_predictions.shape[1])
 
-    def _top_n_probs(self, prob_mat):
+    def _top_n_scores(self, score_matrix):
         """Returns lists of tuples with top-n element indexes and the
-        probabilities of them, given the probability matrix.
+        scores of them, given the score matrix.
         """
-        top_n_indexes_lists = nh.get_top_n_tags(prob_mat, n=self.n)
+        top_n_indexes_lists = nh.get_top_n_tags(score_matrix, n=self.n)
 
         f = lambda x: x[x.argsort()[-self.n:][::-1]]
-        top_n_probs_lists = np.apply_along_axis(f, 1, prob_mat)
-        return [list(zip(i_list, p_list)) for i_list, p_list in zip(top_n_indexes_lists, top_n_probs_lists)]
+        top_n_scores_lists = np.apply_along_axis(f, 1, score_matrix)
+        return [list(zip(i_list, p_list)) for i_list, p_list in zip(top_n_indexes_lists, top_n_scores_lists)]
