@@ -291,11 +291,12 @@ def get_top_n_tags(prediction, n=5):
     return np.array([row.argsort()[-n:][::-1] for row in prediction])
 
 
-def split_user_tags_percentage(cf_data, percentage=0.5):
+def split_user_tags_percentage(cf_data, percentage=0.5, seed=None, todok=True):
     """Returns a percentage split of the user tag matrix.
     Outputs the given percentage first, then the remainder.
     The remainder is supposed to be predicted.
     """
+    np.random.seed(seed)
     if type(cf_data) is sparse.dok_matrix:
         cf_data = cf_data.toarray()
     y_cf_train = cf_data.copy()
@@ -305,4 +306,7 @@ def split_user_tags_percentage(cf_data, percentage=0.5):
         y_cf_train[row_index, np.random.choice(
             nonzeros, round(len(nonzeros)*percentage), replace=False)] = 0
     x_cf_train = cf_data - y_cf_train
-    return sparse.dok_matrix(x_cf_train), sparse.dok_matrix(y_cf_train)
+    if todok:
+        return sparse.dok_matrix(x_cf_train), sparse.dok_matrix(y_cf_train)
+    else:
+        return x_cf_train, y_cf_train
