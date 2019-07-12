@@ -1,11 +1,10 @@
-from sklearn import svm
 from sklearn.preprocessing import MultiLabelBinarizer
 from sklearn import preprocessing
 import pandas as pd
 import numpy as np
 import numpy as np
 from keras import backend as K
-from sklearn.metrics import jaccard_similarity_score, accuracy_score, f1_score, precision_score, recall_score, hamming_loss
+from sklearn.metrics import jaccard_score, accuracy_score, f1_score, precision_score, recall_score, hamming_loss
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfTransformer
 from scipy import sparse
@@ -207,7 +206,7 @@ def reshape_data(dataset):
 
 
 def print_all_scores(y_test, y_pred):
-    print("jaccard score: " + str(jaccard_similarity_score(y_test, y_pred)))
+    print("jaccard score: " + str(jaccard_score(y_test, y_pred, average='micro')))
     print("accuracy score: " + str(accuracy_score(y_test, y_pred)))
     print("f1-score: " + str(f1_score(y_test, y_pred, average='micro')))
     print("recall-score: " + str(recall_score(y_test, y_pred, average='micro')))
