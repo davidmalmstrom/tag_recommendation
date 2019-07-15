@@ -294,7 +294,7 @@ def main(sargs):
                 val_x = train[start_index:end_index]
                 val_y = dataset.val_y
             else:
-                val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index])
+                val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index], seed=1)
                 train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
 
             hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, dataset.X, fast_eval, starting_user_num=starting_user_num)
