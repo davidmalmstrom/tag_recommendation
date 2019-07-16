@@ -10,7 +10,8 @@ dataset = nh.generate_data(n_samples=20000, y_dim=2000, data_dir=path, data_name
 
 # Hold out first 2000 entries for testing.
 with open(path + 'dev_tag_dataset.pkl', 'wb') as f:
-    pickle.dump(nh.reshape_data(dataset[2000:]), f)
+    X, y, mlbx, mlby = nh.reshape_data(dataset[2000:])
+    pickle.dump((X, sp.dok_matrix(y), mlbx, mlby), f)
 
 with open(path + 'test_tag_dataset.pkl', 'wb') as f:
     # first 2000 is test set and last 2000 is val set (for training the models for testing)

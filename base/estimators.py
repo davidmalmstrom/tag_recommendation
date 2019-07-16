@@ -15,6 +15,8 @@ from sklearn.base import BaseEstimator, TransformerMixin
 from sklearn.utils.validation import check_is_fitted
 from sklearn.feature_extraction.text import TfidfTransformer
 from sklearn.calibration import CalibratedClassifierCV
+from sklearn.preprocessing import StandardScaler, Normalizer
+
 
 
 class TemplateEstimator(BaseEstimator, TransformerMixin):
@@ -23,6 +25,11 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
     """
     def __init__(self, n=3):
         self.n = n
+
+    def fit(self, X=None, y=None):
+        for input_ in [(X, "X"), (y, "y")]:
+            if input_[0] is not None and type(input_[0]) is not sp.csr_matrix:
+                print("Warning: input \"" + input_[1] + "\" is not of csr_matrix type.")
 
     def predict(self, X=None):
         """Returns the top-n predictions as a one-hot multi-element array.
@@ -41,7 +48,7 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
 
 class ContentEstimator(TemplateEstimator):
     """Content estimators can generate predictions on new data.
-    The predict_proba method makes sure that if the same data is
+    The predict_score method makes sure that if the same data is
     to be predicted on the same model then the predictions will
     be reused.
     """
@@ -51,6 +58,7 @@ class ContentEstimator(TemplateEstimator):
     def fit(self, X=None, y=None):
         """Reset state when fit is called
         """
+        super().fit(X, y)
         self._predictions = None
         self._prev_X = None
 
@@ -85,6 +93,7 @@ class ALSEstimator(TemplateEstimator):
         self.show_progress = show_progress
 
     def fit(self, X=None, y=None):
+        super().fit(None, y)
         self._model = implicit.als.AlternatingLeastSquares(factors=self.factors,
                                              regularization=self.regularization,
                                              iterations=self.iterations,
@@ -111,12 +120,13 @@ class ALSEstimator(TemplateEstimator):
             return self._predictions
 
 class NaiveBayesEstimator(ContentEstimator):
-    def __init__(self, n=3):
+    def __init__(self, alpha=1, n=3):
         super().__init__(n)
+        self.alpha = alpha
 
-    def fit(self, X, y):
-        super().fit(X)
-        self._model = OneVsRestClassifier(MultinomialNB())
+    def fit(self, X=None, y=None):
+        super().fit(X, y)
+        self._model = OneVsRestClassifier(MultinomialNB(alpha=self.alpha))
         self._model.fit(X, y)
 
         self._fitted = True
@@ -133,8 +143,9 @@ class SVMEstimator(ContentEstimator):
         self.n = n
         self.C = C
 
-    def fit(self, X, y):
-        self.transformer_ = TfidfTransformer()
+    def fit(self, X=None, y=None):
+        super().fit(X, y)
+        self.transformer_ = Normalizer()
         X_transformed = self.transformer_.fit_transform(X)
 
         self._model = OneVsRestClassifier(LinearSVC(C=self.C))

@@ -1,0 +1,4 @@
+--base_model: "NaiveBayesEstimator"
+--num_k_folds: "10"
+--topk: "3"
+--NB_smoothing: "0.5"
