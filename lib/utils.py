@@ -3,7 +3,7 @@ import sys
 class Logger(object):
     def __init__(self, file_path):
         self.terminal = sys.stdout
-        self.log = open(file_path, 'a')
+        self.log = open(file_path, 'a+')
 
     def write(self, m):
         if m == "\n":

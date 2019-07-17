@@ -68,9 +68,10 @@ def get_model(args):
         sys.exit()
     return model
 
-def main(sargs):
+def main(sargs, log_output=True):
     args = parse_args(sargs)
-    print("Arguments: %s " %(args))
+    if log_output:
+        print("Arguments: %s " %(args))
 
     num_k_folds = args.num_k_folds
 
@@ -91,13 +92,12 @@ def main(sargs):
     num_items = y.shape[0]
     num_usertags = y.shape[1]
 
-    if num_k_folds > 1:
-        avg_recall = 0
-        avg_jaccard = 0
+    avg_recall = 0
+    avg_jaccard = 0
 
     for fold in range(num_k_folds):
-        print("")
-        print("Performing k-fold " + str(fold + 1) + " of " + str(num_k_folds) + ".")
+        if log_output:
+            print("\n")
 
         model = get_model(args)
 
@@ -118,11 +118,8 @@ def main(sargs):
             val_x, val_y = nh.split_user_tags_percentage(y[start_index:end_index], seed=1, todok=True)
             y_train = sp.vstack([y[0:start_index], val_x, y[end_index:]], format="csr")
 
-        print("Fitting model...")
-
         t1 = time()
         model.fit(X, y_train)
-        print("Making predictions...")
         t2 = time()
         preds = model.predict(X[start_index:end_index])
 
@@ -133,14 +130,19 @@ def main(sargs):
 
         t3 = time()
 
-        print("Fit: [{0:.2f} s]".format(t2-t1) + ": Recall score: " + str(recall) +
-              ",    Jaccard score: " + str(jaccard) + ",    Eval: [{0:.2f} s]".format(t3-t2))
+        if log_output:
+            print("K-fold " + str(fold + 1) + " of " + str(num_k_folds) + ":   " +
+                  "Fit: [{0:.2f} s]".format(t2-t1) + ": Recall score: " + str(recall) +
+                  ",    Jaccard score: " + str(jaccard) + ",    Eval: [{0:.2f} s]".format(t3-t2))
 
-        if num_k_folds > 1:
-            avg_recall = avg_recall + ((recall - avg_recall) / (fold + 1))
-            avg_jaccard = avg_jaccard + ((jaccard - avg_jaccard) / (fold + 1))
+        avg_recall = avg_recall + ((recall - avg_recall) / (fold + 1))
+        avg_jaccard = avg_jaccard + ((jaccard - avg_jaccard) / (fold + 1))
+
+        if num_k_folds > 1 and log_output:
             print("The average performance after k-fold " + str(fold + 1) +
                   " is: Recall = " + str(avg_recall) + ", Jaccard score = " + str(avg_jaccard))
+
+    return avg_recall
 
 if __name__ == '__main__':
     main(sys.argv[1:])

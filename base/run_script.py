@@ -9,7 +9,7 @@ import oyaml as yaml
 import importlib
 import lib.utils as utils
 
-def main(args, run_file_path=None):
+def main(args, run_file_path=None, log_output=True):
     if run_file_path is None:
         run_file_path = ""
 
@@ -38,18 +38,22 @@ def main(args, run_file_path=None):
 
     model_args = [item for sublist in params.items() for item in sublist]
 
-    sys.stdout = utils.Logger(run_file_path + write_file_name)
-    print("\n")
+    if log_output:
+        sys.stdout = utils.Logger(run_file_path + write_file_name)
+        print("\n")
 
-    if args[-1] == "vscode":
-        print("Launched by VS Code.")
-    else:
-        print("Launched by terminal.")
+        if args[-1] == "vscode":
+            print("Launched by VS Code.")
+        else:
+            print("Launched by terminal.")
 
     import base
-    base.main(model_args)
+    recall_score = base.main(model_args, log_output=log_output)
 
-    sys.stdout = sys.stdout.terminal
+    if log_output:
+        sys.stdout = sys.stdout.terminal
+
+    return recall_score
 
 if __name__ == "__main__":
     main(sys.argv)

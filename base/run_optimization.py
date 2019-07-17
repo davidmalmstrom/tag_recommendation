@@ -1,0 +1,87 @@
+import sys
+sys.path.append('..')
+
+import os
+import oyaml as yaml
+import lib.utils as utils
+import run_script
+from skopt import dummy_minimize, gp_minimize, forest_minimize
+
+folder_path = "runs/optimizer_runs/"
+
+
+def get_unique_filename(name_str):
+    """add digit to create unique name, either at last position or at
+    4th last position (if .yml).
+    """
+    def get_formatted_name():
+        if ".yml" in name_str:
+            return name_str[:-4] + str(i) + name_str[-4:]
+        else:
+            return name_str + str(i)
+    i = 1
+    while os.path.exists(folder_path + get_formatted_name()):
+        i += 1
+    return get_formatted_name()
+
+def write_yml_file(yml_params, file_name=get_unique_filename("run_file.yml")):
+    with open(folder_path + file_name, 'w') as w_file:
+        yaml.dump(yml_params, w_file)
+
+    return file_name
+
+def run_config(yml_params):
+    run_file_name = write_yml_file(yml_params)
+    print("Args: " + str(yml_params))
+    res_recall = -run_script.main(["run_optimization.py", run_file_name], folder_path, log_output=False)
+    os.remove(folder_path + run_file_name)
+    return res_recall
+
+def opt_naive_bayes(params=[1]):
+    [NB_smoothing] = params
+
+    yml_params = {"--base_model": "NaiveBayesEstimator", "--num_k_folds": "10",
+                  "--topk": "3", "--NB_smoothing": str(NB_smoothing)}
+
+    return run_config(yml_params)
+
+def opt_als(params=[0.01, 15, 50]):
+    regularization, iterations, factors = params
+
+    yml_params = {"--base_model": "ALSEstimator", "--num_k_folds": "10", "--topk": "3",
+                  "--regularization": str(regularization), "--iterations": str(iterations),
+                  "--factors": str(factors)}
+
+    return run_config(yml_params)
+
+def opt_baseline(params=[1, 0.01, 15, 50]):
+    NB_smoothing, regularization, iterations, factors, content_scale_factor= params
+
+    yml_params = {"--base_model": "ALSEstimator", "--num_k_folds": "10", "--topk": "3",
+                  "--regularization": str(regularization), "--iterations": str(iterations),
+                  "--factors": str(factors), "--NB_smoothing": str(NB_smoothing),
+                  "--content_scale_factor": str(content_scale_factor)}
+
+    return run_config(yml_params)
+
+def main(args):
+    sys.stdout = utils.Logger(folder_path + get_unique_filename("optim_log"))
+
+    args = (opt_naive_bayes, [(0.1,4)])
+    kwargs = {"verbose": True, "random_state": 0, "n_calls": 100}
+
+    print("opt-args:")
+    print(args)
+    print("opt-kwargs:")
+    print(kwargs)
+    print("")
+
+    res = dummy_minimize(*args, **kwargs)
+
+    print("\n")
+    print(res)
+
+    sys.stdout = sys.stdout.terminal
+
+if __name__ == '__main__':
+    main(sys.argv[1:])
