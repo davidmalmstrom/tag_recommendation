@@ -54,22 +54,28 @@ def opt_als(params=[0.01, 15, 50]):
 
     return run_config(yml_params)
 
-def opt_baseline(params=[1, 0.01, 15, 50]):
-    NB_smoothing, regularization, iterations, factors, content_scale_factor= params
+def opt_baseline(params=[1, 0.01, 15, 50, 0.06]):
+    NB_smoothing, regularization, iterations, factors, content_scale_factor = params
 
-    yml_params = {"--base_model": "ALSEstimator", "--num_k_folds": "10", "--topk": "3",
+    yml_params = {"--base_model": "BaselineModel", "--num_k_folds": "10", "--topk": "3",
                   "--regularization": str(regularization), "--iterations": str(iterations),
                   "--factors": str(factors), "--NB_smoothing": str(NB_smoothing),
                   "--content_scale_factor": str(content_scale_factor)}
 
     return run_config(yml_params)
 
-def main(args):
+def main(combinations=None):
+    if combinations:
+        optimizer, args, kwargs = combinations
+    else:
+        optimizer = gp_minimize
+        args = (opt_naive_bayes, [(0.1,4)])
+        kwargs = {"verbose": True, "random_state": 0, "n_calls": 100}
+
     sys.stdout = utils.Logger(folder_path + get_unique_filename("optim_log"))
 
-    args = (opt_naive_bayes, [(0.1,4)])
-    kwargs = {"verbose": True, "random_state": 0, "n_calls": 100}
-
+    print("optimizer:")
+    print(optimizer)
     print("opt-args:")
     print(args)
     print("opt-kwargs:")
