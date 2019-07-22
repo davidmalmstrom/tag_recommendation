@@ -46,36 +46,6 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
 
         raise NotImplementedError("Please implement this method")
 
-class ContentEstimator(TemplateEstimator):
-    """Content estimators can generate predictions on new data.
-    The predict_score method makes sure that if the same data is
-    to be predicted on the same model then the predictions will
-    be reused.
-    """
-    def __init(self, n=3):
-        super().__init__(n)
-
-    def fit(self, X=None, y=None):
-        """Reset state when fit is called
-        """
-        super().fit(X, y)
-        self._predictions = None
-        self._prev_X = None
-
-    def predict_score(self, X):
-        try:
-            if np.array_equal(X, self._prev_X) and self._predictions is not None:
-                return self._predictions
-        except AttributeError:
-            pass
-
-        self._predictions = self._generate_new_preds(X)
-        self._prev_X = X
-        return self._predictions
-
-    def _generate_new_preds(self, X):
-        raise NotImplementedError("Please implement this method")
-
 class ALSEstimator(TemplateEstimator):
     """Models items (dim 1) as items and tags (dim 2) as users.
     """
@@ -111,15 +81,12 @@ class ALSEstimator(TemplateEstimator):
 
     def predict_score(self, X=None):
         check_is_fitted(self, ['_fitted'])
-        try:
-            return self._predictions
-        except AttributeError:
-            self._predictions = np.dot(self._model.item_factors, self._model.user_factors.T)
-            if self.filter_seen:
-                self._predictions[self._fit_y.nonzero()] = -99
-            return self._predictions
+        preds = np.dot(self._model.item_factors, self._model.user_factors.T)
+        if self.filter_seen:
+            preds[self._fit_y.nonzero()] = -99
+        return preds
 
-class NaiveBayesEstimator(ContentEstimator):
+class NaiveBayesEstimator(TemplateEstimator):
     def __init__(self, alpha=1, n=3):
         super().__init__(n)
         self.alpha = alpha
@@ -133,12 +100,12 @@ class NaiveBayesEstimator(ContentEstimator):
 
         return self
 
-    def _generate_new_preds(self, X):
+    def predict_score(self, X):
         check_is_fitted(self, ['_fitted'])
 
         return self._model.predict_proba(X)
 
-class SVMEstimator(ContentEstimator):
+class SVMEstimator(TemplateEstimator):
     def __init__(self, n=3, C=10):
         self.n = n
         self.C = C
@@ -154,7 +121,8 @@ class SVMEstimator(ContentEstimator):
         self._fitted = True
 
         return self
-    def _generate_new_preds(self, X):
+
+    def predict_score(self, X):
         check_is_fitted(self, ['_fitted'])
 
         X_transformed = self.transformer_.transform(X)
