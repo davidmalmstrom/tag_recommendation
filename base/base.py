@@ -121,7 +121,7 @@ def main(sargs, log_output=True):
         t1 = time()
         model.fit(X, y_train)
         t2 = time()
-        preds = model.predict(X[start_index:end_index])
+        preds = model.predict(X[start_index:end_index], start_index=start_index)
 
         val_y_array = val_y.toarray()
 

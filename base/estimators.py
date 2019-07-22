@@ -27,19 +27,21 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
         self.n = n
 
     def fit(self, X=None, y=None):
+        """Makes sure that the input is of the right type.
+        """
         for input_ in [(X, "X"), (y, "y")]:
             if input_[0] is not None and type(input_[0]) is not sp.csr_matrix:
                 print("Warning: input \"" + input_[1] + "\" is not of csr_matrix type.")
 
-    def predict(self, X=None):
+    def predict(self, X=None, start_index=0):
         """Returns the top-n predictions as a one-hot multi-element array.
         """
-        predictions = self.predict_score(X)
+        predictions = self.predict_score(X, start_index=start_index)
 
         tops = nh.get_top_n_tags(predictions, n=self.n)
         return nh.from_keras_format(list(map(lambda x: x + 1, tops)), predictions.shape[1])
 
-    def predict_score(self, X=None):
+    def predict_score(self, X, start_index):
         """Returns the probabilities of the classes. If the probabilities
         have been calculated already, returns the calculated value.
         """
@@ -79,11 +81,13 @@ class ALSEstimator(TemplateEstimator):
         self._fitted = True
         return self
 
-    def predict_score(self, X=None):
+    def predict_score(self, X=None, start_index=0):
         check_is_fitted(self, ['_fitted'])
         preds = np.dot(self._model.item_factors, self._model.user_factors.T)
         if self.filter_seen:
             preds[self._fit_y.nonzero()] = -99
+        if X is not None:
+            preds = preds[start_index: start_index + X.shape[0]]
         return preds
 
 class NaiveBayesEstimator(TemplateEstimator):
@@ -100,7 +104,7 @@ class NaiveBayesEstimator(TemplateEstimator):
 
         return self
 
-    def predict_score(self, X):
+    def predict_score(self, X, start_index=None):
         check_is_fitted(self, ['_fitted'])
 
         return self._model.predict_proba(X)
@@ -122,7 +126,7 @@ class SVMEstimator(TemplateEstimator):
 
         return self
 
-    def predict_score(self, X):
+    def predict_score(self, X, start_index=None):
         check_is_fitted(self, ['_fitted'])
 
         X_transformed = self.transformer_.transform(X)
@@ -163,10 +167,10 @@ class BaselineModel(BaseEstimator):
         self._fitted = True
         return self
 
-    def predict(self, X=None, y=None):
+    def predict(self, X=None, y=None, start_index=0):
         check_is_fitted(self, ['_fitted'])
 
-        cf_predictions = self.cf.predict_score()
+        cf_predictions = self.cf.predict_score(X, start_index=start_index)
         cf_top_n_scores = self._top_n_scores(cf_predictions)
 
         content_predictions = self.content.predict_score(X) * self.content_scale_factor  # Use of scale_factor hyperparameter
