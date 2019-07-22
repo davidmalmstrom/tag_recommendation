@@ -81,6 +81,8 @@ def parse_args(sargs):
                         help='The number of k-folds to user (only applicable for eval_recall).')
     parser.add_argument('--test_dataset', type=int, default=0,
                         help='Specify whether test dataset should be used.')
+    parser.add_argument('--early_stopping', type=int, default=0,
+                        help='Specify at which point the training should be stopped if no improvement has been made.')
     return parser.parse_known_args(sargs)[0]
 
 def init_normal(shape, dtype=None):
@@ -326,8 +328,13 @@ def main(sargs):
         if args.out > 0:
             model.save_weights(model_out_file, overwrite=True) 
 
+        if args.early_stopping:
+            epochs_without_improvement = 0
+
         # Training model
         for epoch in range(num_epochs):
+            if args.early_stopping != 0 and args.early_stopping == epochs_without_improvement:
+                break
             t1 = time()
             # Generate training instances
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
@@ -356,6 +363,11 @@ def main(sargs):
                     best_hr, best_ndcg, best_iter = hr, ndcg, epoch
                     if args.out > 0:
                         model.save_weights(model_out_file, overwrite=True)
+                    if args.early_stopping:
+                        epochs_without_improvement = 0
+                elif args.early_stopping:
+                    epochs_without_improvement += 1
+
 
         print("End. Best Iteration %d:  %s = %.4f, %s = %.4f. " %(best_iter, metric1, best_hr, metric2, best_ndcg))
         if args.out > 0:
