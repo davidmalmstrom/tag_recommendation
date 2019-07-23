@@ -5,7 +5,7 @@ import os
 import oyaml as yaml
 import lib.utils as utils
 import run_script
-from skopt import dummy_minimize, gp_minimize, forest_minimize
+from skopt import dummy_minimize, gp_minimize, forest_minimize, dump
 
 folder_path = "runs/optimizer_runs/"
 
@@ -71,8 +71,8 @@ def main(combinations=None):
         optimizer = gp_minimize
         args = (opt_naive_bayes, [(0.1,4)])
         kwargs = {"verbose": True, "random_state": 0, "n_calls": 100}
-
-    sys.stdout = utils.Logger(folder_path + get_unique_filename("optim_log"))
+    optim_log_name = get_unique_filename("optim_log")
+    sys.stdout = utils.Logger(folder_path + optim_log_name)
 
     print("optimizer:")
     print(optimizer)
@@ -82,12 +82,14 @@ def main(combinations=None):
     print(kwargs)
     print("")
 
-    res = dummy_minimize(*args, **kwargs)
+    res = optimizer(*args, **kwargs)
 
     print("\n")
     print(res)
 
     sys.stdout = sys.stdout.terminal
+
+    dump(res, folder_path + "res_files/" + optim_log_name + "_res_dump")
 
 if __name__ == '__main__':
     main(sys.argv[1:])

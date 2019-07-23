@@ -1,0 +1,764 @@
+# optimizer:
+# <function gp_minimize at 0x7f4335cbbae8>
+# opt-args:
+# (<function opt_baseline at 0x7f4335cc1620>, [(0.1, 15), (0.001, 1), (15,), (30, 100), (0.02, 0.1)])
+# opt-kwargs:
+# {'verbose': True, 'random_state': 0, 'n_calls': 120}
+# 
+# Iteration No: 1 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8444214828324365', '--iterations': '15', '--factors': '39', '--NB_smoothing': '8.933384811552774', '--content_scale_factor': '0.0698850957428778'}
+# Iteration No: 1 ended. Evaluation done at random point.
+# Time taken: 178.5640
+# Function value obtained: -0.1336
+# Current minimum: -0.1336
+# Iteration No: 2 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.29823707193792787', '--iterations': '15', '--factors': '42', '--NB_smoothing': '5.8272874386612274', '--content_scale_factor': '0.05067532150606222'}
+# Iteration No: 2 ended. Evaluation done at random point.
+# Time taken: 180.0685
+# Function value obtained: -0.1344
+# Current minimum: -0.1344
+# Iteration No: 3 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5293660248331516', '--iterations': '15', '--factors': '67', '--NB_smoothing': '11.896703067431703', '--content_scale_factor': '0.08688630108299022'}
+# Iteration No: 3 ended. Evaluation done at random point.
+# Time taken: 182.5384
+# Function value obtained: -0.1432
+# Current minimum: -0.1432
+# Iteration No: 4 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6485237001791461', '--iterations': '15', '--factors': '99', '--NB_smoothing': '5.127202790217299', '--content_scale_factor': '0.08225254007598805'}
+# Iteration No: 4 ended. Evaluation done at random point.
+# Time taken: 193.2951
+# Function value obtained: -0.1461
+# Current minimum: -0.1461
+# Iteration No: 5 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9786397238905313', '--iterations': '15', '--factors': '59', '--NB_smoothing': '13.063181008877606', '--content_scale_factor': '0.08244233410291645'}
+# Iteration No: 5 ended. Evaluation done at random point.
+# Time taken: 186.3112
+# Function value obtained: -0.1405
+# Current minimum: -0.1461
+# Iteration No: 6 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6402811003061963', '--iterations': '15', '--factors': '62', '--NB_smoothing': '1.8622889454471052', '--content_scale_factor': '0.061747865740005736'}
+# Iteration No: 6 ended. Evaluation done at random point.
+# Time taken: 183.5913
+# Function value obtained: -0.1413
+# Current minimum: -0.1461
+# Iteration No: 7 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2652910564925224', '--iterations': '15', '--factors': '85', '--NB_smoothing': '6.278462905858802', '--content_scale_factor': '0.037324028353949754'}
+# Iteration No: 7 ended. Evaluation done at random point.
+# Time taken: 188.2648
+# Function value obtained: -0.1444
+# Current minimum: -0.1461
+# Iteration No: 8 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.32481686678542093', '--iterations': '15', '--factors': '47', '--NB_smoothing': '2.114750783741236', '--content_scale_factor': '0.09549984628116995'}
+# Iteration No: 8 ended. Evaluation done at random point.
+# Time taken: 178.1648
+# Function value obtained: -0.1379
+# Current minimum: -0.1461
+# Iteration No: 9 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.36014839267321225', '--iterations': '15', '--factors': '95', '--NB_smoothing': '10.259122456641904', '--content_scale_factor': '0.027942428028717912'}
+# Iteration No: 9 ended. Evaluation done at random point.
+# Time taken: 193.6065
+# Function value obtained: -0.1438
+# Current minimum: -0.1461
+# Iteration No: 10 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6534868957621398', '--iterations': '15', '--factors': '30', '--NB_smoothing': '14.550155109426559', '--content_scale_factor': '0.045234268073934714'}
+# Iteration No: 10 ended. Evaluation done at random point.
+# Time taken: 175.9831
+# Function value obtained: -0.1270
+# Current minimum: -0.1461
+# Iteration No: 11 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5706265736474618', '--iterations': '15', '--factors': '98', '--NB_smoothing': '5.519290487045077', '--content_scale_factor': '0.09671594148996164'}
+# Iteration No: 11 ended. Evaluation done at random point.
+# Time taken: 190.0402
+# Function value obtained: -0.1467
+# Current minimum: -0.1467
+# Iteration No: 12 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6354238147299603', '--iterations': '15', '--factors': '82', '--NB_smoothing': '9.826575723381815', '--content_scale_factor': '0.04026332820318257'}
+# Iteration No: 12 ended. Evaluation done at random point.
+# Time taken: 187.3217
+# Function value obtained: -0.1444
+# Current minimum: -0.1467
+# Iteration No: 13 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.24518116640960116', '--iterations': '15', '--factors': '43', '--NB_smoothing': '7.048030515558964', '--content_scale_factor': '0.07398018578072167'}
+# Iteration No: 13 ended. Evaluation done at random point.
+# Time taken: 176.0394
+# Function value obtained: -0.1350
+# Current minimum: -0.1467
+# Iteration No: 14 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7785671365438832', '--iterations': '15', '--factors': '99', '--NB_smoothing': '4.8263059568325115', '--content_scale_factor': '0.021085730848968788'}
+# Iteration No: 14 ended. Evaluation done at random point.
+# Time taken: 191.9521
+# Function value obtained: -0.1444
+# Current minimum: -0.1467
+# Iteration No: 15 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6739859712049536', '--iterations': '15', '--factors': '33', '--NB_smoothing': '9.380406823645377', '--content_scale_factor': '0.057492096131816134'}
+# Iteration No: 15 ended. Evaluation done at random point.
+# Time taken: 175.5063
+# Function value obtained: -0.1299
+# Current minimum: -0.1467
+# Iteration No: 16 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.605240674225301', '--iterations': '15', '--factors': '30', '--NB_smoothing': '14.653740214036025', '--content_scale_factor': '0.05533687369990764'}
+# Iteration No: 16 ended. Evaluation done at random point.
+# Time taken: 175.3274
+# Function value obtained: -0.1276
+# Current minimum: -0.1467
+# Iteration No: 17 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3600850195053522', '--iterations': '15', '--factors': '92', '--NB_smoothing': '14.695842259309655', '--content_scale_factor': '0.05314103956117361'}
+# Iteration No: 17 ended. Evaluation done at random point.
+# Time taken: 191.2100
+# Function value obtained: -0.1443
+# Current minimum: -0.1467
+# Iteration No: 18 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6927796472506499', '--iterations': '15', '--factors': '80', '--NB_smoothing': '1.055797695596887', '--content_scale_factor': '0.061859844277335985'}
+# Iteration No: 18 ended. Evaluation done at random point.
+# Time taken: 186.6746
+# Function value obtained: -0.1454
+# Current minimum: -0.1467
+# Iteration No: 19 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5763705490606231', '--iterations': '15', '--factors': '73', '--NB_smoothing': '1.4997136103007813', '--content_scale_factor': '0.02074853638852261'}
+# Iteration No: 19 ended. Evaluation done at random point.
+# Time taken: 184.2901
+# Function value obtained: -0.1434
+# Current minimum: -0.1467
+# Iteration No: 20 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.647526966047368', '--iterations': '15', '--factors': '68', '--NB_smoothing': '12.650896987049194', '--content_scale_factor': '0.03465530896056935'}
+# Iteration No: 20 ended. Evaluation done at random point.
+# Time taken: 179.7867
+# Function value obtained: -0.1429
+# Current minimum: -0.1467
+# Iteration No: 21 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.02108743864130606', '--iterations': '15', '--factors': '60', '--NB_smoothing': '8.83904272867024', '--content_scale_factor': '0.031715341018328985'}
+# Iteration No: 21 ended. Evaluation done at random point.
+# Time taken: 182.2299
+# Function value obtained: -0.1397
+# Current minimum: -0.1467
+# Iteration No: 22 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7040335420106264', '--iterations': '15', '--factors': '70', '--NB_smoothing': '8.58731424825727', '--content_scale_factor': '0.08048853550920329'}
+# Iteration No: 22 ended. Evaluation done at random point.
+# Time taken: 183.0825
+# Function value obtained: -0.1440
+# Current minimum: -0.1467
+# Iteration No: 23 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8961423491215681', '--iterations': '15', '--factors': '97', '--NB_smoothing': '6.001864303808099', '--content_scale_factor': '0.09621992092135882'}
+# Iteration No: 23 ended. Evaluation done at random point.
+# Time taken: 189.8800
+# Function value obtained: -0.1474
+# Current minimum: -0.1474
+# Iteration No: 24 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8465622637986568', '--iterations': '15', '--factors': '86', '--NB_smoothing': '6.762168141402648', '--content_scale_factor': '0.03998370205239825'}
+# Iteration No: 24 ended. Evaluation done at random point.
+# Time taken: 189.0578
+# Function value obtained: -0.1446
+# Current minimum: -0.1474
+# Iteration No: 25 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9654508042994072', '--iterations': '15', '--factors': '91', '--NB_smoothing': '4.76695314599467', '--content_scale_factor': '0.03844264188050639'}
+# Iteration No: 25 ended. Evaluation done at random point.
+# Time taken: 193.0035
+# Function value obtained: -0.1448
+# Current minimum: -0.1474
+# Iteration No: 26 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6191897560267658', '--iterations': '15', '--factors': '100', '--NB_smoothing': '5.983552472408415', '--content_scale_factor': '0.044125985333963946'}
+# Iteration No: 26 ended. Evaluation done at random point.
+# Time taken: 192.6610
+# Function value obtained: -0.1449
+# Current minimum: -0.1474
+# Iteration No: 27 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2907875296032337', '--iterations': '15', '--factors': '48', '--NB_smoothing': '9.936585708641008', '--content_scale_factor': '0.09027617522208338'}
+# Iteration No: 27 ended. Evaluation done at random point.
+# Time taken: 177.9623
+# Function value obtained: -0.1369
+# Current minimum: -0.1474
+# Iteration No: 28 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.09328151557143731', '--iterations': '15', '--factors': '31', '--NB_smoothing': '1.6326640445322296', '--content_scale_factor': '0.06594601990796631'}
+# Iteration No: 28 ended. Evaluation done at random point.
+# Time taken: 176.5152
+# Function value obtained: -0.1284
+# Current minimum: -0.1474
+# Iteration No: 29 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6524511667316872', '--iterations': '15', '--factors': '33', '--NB_smoothing': '9.832692215871292', '--content_scale_factor': '0.049404949603831724'}
+# Iteration No: 29 ended. Evaluation done at random point.
+# Time taken: 173.4022
+# Function value obtained: -0.1295
+# Current minimum: -0.1474
+# Iteration No: 30 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8920314316606566', '--iterations': '15', '--factors': '73', '--NB_smoothing': '6.59438738645784', '--content_scale_factor': '0.028018150984984093'}
+# Iteration No: 30 ended. Evaluation done at random point.
+# Time taken: 183.0956
+# Function value obtained: -0.1436
+# Current minimum: -0.1474
+# Iteration No: 31 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7145270582495624', '--iterations': '15', '--factors': '58', '--NB_smoothing': '13.800290944795638', '--content_scale_factor': '0.08945008458945716'}
+# Iteration No: 31 ended. Evaluation done at random point.
+# Time taken: 182.0339
+# Function value obtained: -0.1398
+# Current minimum: -0.1474
+# Iteration No: 32 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6159440047195603', '--iterations': '15', '--factors': '81', '--NB_smoothing': '2.5211447266779854', '--content_scale_factor': '0.08919466364819943'}
+# Iteration No: 32 ended. Evaluation done at random point.
+# Time taken: 186.3503
+# Function value obtained: -0.1457
+# Current minimum: -0.1474
+# Iteration No: 33 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1408326129077085', '--iterations': '15', '--factors': '71', '--NB_smoothing': '6.229811183956273', '--content_scale_factor': '0.04986326006266039'}
+# Iteration No: 33 ended. Evaluation done at random point.
+# Time taken: 182.9392
+# Function value obtained: -0.1448
+# Current minimum: -0.1474
+# Iteration No: 34 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.05153752693918298', '--iterations': '15', '--factors': '39', '--NB_smoothing': '6.3591230098801', '--content_scale_factor': '0.0884642673914089'}
+# Iteration No: 34 ended. Evaluation done at random point.
+# Time taken: 175.7418
+# Function value obtained: -0.1339
+# Current minimum: -0.1474
+# Iteration No: 35 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.36061808641388554', '--iterations': '15', '--factors': '74', '--NB_smoothing': '0.2745398543565294', '--content_scale_factor': '0.04715230555596149'}
+# Iteration No: 35 ended. Evaluation done at random point.
+# Time taken: 184.6557
+# Function value obtained: -0.1442
+# Current minimum: -0.1474
+# Iteration No: 36 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3396461316629985', '--iterations': '15', '--factors': '30', '--NB_smoothing': '7.394279159677296', '--content_scale_factor': '0.08349581626859366'}
+# Iteration No: 36 ended. Evaluation done at random point.
+# Time taken: 175.2778
+# Function value obtained: -0.1280
+# Current minimum: -0.1474
+# Iteration No: 37 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3460063290162058', '--iterations': '15', '--factors': '38', '--NB_smoothing': '3.4364778520996646', '--content_scale_factor': '0.06773243250360425'}
+# Iteration No: 37 ended. Evaluation done at random point.
+# Time taken: 174.8827
+# Function value obtained: -0.1335
+# Current minimum: -0.1474
+# Iteration No: 38 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5005262714315721', '--iterations': '15', '--factors': '66', '--NB_smoothing': '11.77629925499814', '--content_scale_factor': '0.09939171191109063'}
+# Iteration No: 38 ended. Evaluation done at random point.
+# Time taken: 181.3984
+# Function value obtained: -0.1433
+# Current minimum: -0.1474
+# Iteration No: 39 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6794115250117866', '--iterations': '15', '--factors': '59', '--NB_smoothing': '4.082211814434026', '--content_scale_factor': '0.07840976236134158'}
+# Iteration No: 39 ended. Evaluation done at random point.
+# Time taken: 181.5706
+# Function value obtained: -0.1403
+# Current minimum: -0.1474
+# Iteration No: 40 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.39882284115387584', '--iterations': '15', '--factors': '99', '--NB_smoothing': '4.747980432646068', '--content_scale_factor': '0.03749994989894175'}
+# Iteration No: 40 ended. Evaluation done at random point.
+# Time taken: 191.8181
+# Function value obtained: -0.1442
+# Current minimum: -0.1474
+# Iteration No: 41 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4526569259983923', '--iterations': '15', '--factors': '69', '--NB_smoothing': '8.586645665163598', '--content_scale_factor': '0.026823645268696048'}
+# Iteration No: 41 ended. Evaluation done at random point.
+# Time taken: 180.3506
+# Function value obtained: -0.1426
+# Current minimum: -0.1474
+# Iteration No: 42 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.48834986665460534', '--iterations': '15', '--factors': '73', '--NB_smoothing': '0.940633157438097', '--content_scale_factor': '0.06941263328767042'}
+# Iteration No: 42 ended. Evaluation done at random point.
+# Time taken: 183.9926
+# Function value obtained: -0.1442
+# Current minimum: -0.1474
+# Iteration No: 43 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8547589667304039', '--iterations': '15', '--factors': '58', '--NB_smoothing': '8.183231747654922', '--content_scale_factor': '0.09173370344322739'}
+# Iteration No: 43 ended. Evaluation done at random point.
+# Time taken: 180.8328
+# Function value obtained: -0.1399
+# Current minimum: -0.1474
+# Iteration No: 44 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2176800874140755', '--iterations': '15', '--factors': '66', '--NB_smoothing': '14.856050316210897', '--content_scale_factor': '0.021652079957258295'}
+# Iteration No: 44 ended. Evaluation done at random point.
+# Time taken: 179.5923
+# Function value obtained: -0.1423
+# Current minimum: -0.1474
+# Iteration No: 45 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.32069713367164543', '--iterations': '15', '--factors': '62', '--NB_smoothing': '11.399841942158508', '--content_scale_factor': '0.08981205243579164'}
+# Iteration No: 45 ended. Evaluation done at random point.
+# Time taken: 184.7216
+# Function value obtained: -0.1413
+# Current minimum: -0.1474
+# Iteration No: 46 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7982487870786512', '--iterations': '15', '--factors': '85', '--NB_smoothing': '4.175776318752973', '--content_scale_factor': '0.07499906211102524'}
+# Iteration No: 46 ended. Evaluation done at random point.
+# Time taken: 188.7750
+# Function value obtained: -0.1458
+# Current minimum: -0.1474
+# Iteration No: 47 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9474232198984355', '--iterations': '15', '--factors': '58', '--NB_smoothing': '3.3110643889920213', '--content_scale_factor': '0.03706495818939856'}
+# Iteration No: 47 ended. Evaluation done at random point.
+# Time taken: 181.2890
+# Function value obtained: -0.1392
+# Current minimum: -0.1474
+# Iteration No: 48 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.026637055336477047', '--iterations': '15', '--factors': '91', '--NB_smoothing': '7.821190637566883', '--content_scale_factor': '0.04993359842673805'}
+# Iteration No: 48 ended. Evaluation done at random point.
+# Time taken: 190.9185
+# Function value obtained: -0.1444
+# Current minimum: -0.1474
+# Iteration No: 49 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2783510775884372', '--iterations': '15', '--factors': '34', '--NB_smoothing': '7.00727382303568', '--content_scale_factor': '0.07976635761113875'}
+# Iteration No: 49 ended. Evaluation done at random point.
+# Time taken: 173.6899
+# Function value obtained: -0.1308
+# Current minimum: -0.1474
+# Iteration No: 50 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2776168570662739', '--iterations': '15', '--factors': '81', '--NB_smoothing': '10.155225454337513', '--content_scale_factor': '0.057052015999210656'}
+# Iteration No: 50 ended. Evaluation done at random point.
+# Time taken: 185.9049
+# Function value obtained: -0.1448
+# Current minimum: -0.1474
+# Iteration No: 51 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2056608964182653', '--iterations': '15', '--factors': '88', '--NB_smoothing': '12.622385134777945', '--content_scale_factor': '0.048449019027996455'}
+# Iteration No: 51 ended. Evaluation done at random point.
+# Time taken: 189.3566
+# Function value obtained: -0.1438
+# Current minimum: -0.1474
+# Iteration No: 52 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7655599285531584', '--iterations': '15', '--factors': '100', '--NB_smoothing': '14.112435984266916', '--content_scale_factor': '0.037396039416445745'}
+# Iteration No: 52 ended. Evaluation done at random point.
+# Time taken: 190.7070
+# Function value obtained: -0.1448
+# Current minimum: -0.1474
+# Iteration No: 53 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7319620627082258', '--iterations': '15', '--factors': '65', '--NB_smoothing': '11.263890814242274', '--content_scale_factor': '0.043371802143403915'}
+# Iteration No: 53 ended. Evaluation done at random point.
+# Time taken: 180.1860
+# Function value obtained: -0.1424
+# Current minimum: -0.1474
+# Iteration No: 54 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.10119364832323233', '--iterations': '15', '--factors': '68', '--NB_smoothing': '3.6883488207401585', '--content_scale_factor': '0.02073920587892326'}
+# Iteration No: 54 ended. Evaluation done at random point.
+# Time taken: 181.9854
+# Function value obtained: -0.1424
+# Current minimum: -0.1474
+# Iteration No: 55 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.984345104913774', '--iterations': '15', '--factors': '38', '--NB_smoothing': '12.512267652889925', '--content_scale_factor': '0.06643577097505042'}
+# Iteration No: 55 ended. Evaluation done at random point.
+# Time taken: 174.5017
+# Function value obtained: -0.1336
+# Current minimum: -0.1474
+# Iteration No: 56 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6068689846085071', '--iterations': '15', '--factors': '46', '--NB_smoothing': '11.834378123729886', '--content_scale_factor': '0.03853613011769637'}
+# Iteration No: 56 ended. Evaluation done at random point.
+# Time taken: 178.1195
+# Function value obtained: -0.1347
+# Current minimum: -0.1474
+# Iteration No: 57 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9414363270017923', '--iterations': '15', '--factors': '79', '--NB_smoothing': '14.244850453993655', '--content_scale_factor': '0.07668385200160026'}
+# Iteration No: 57 ended. Evaluation done at random point.
+# Time taken: 186.8810
+# Function value obtained: -0.1456
+# Current minimum: -0.1474
+# Iteration No: 58 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8447055293924706', '--iterations': '15', '--factors': '53', '--NB_smoothing': '7.522289360061305', '--content_scale_factor': '0.02105894862071196'}
+# Iteration No: 58 ended. Evaluation done at random point.
+# Time taken: 178.7655
+# Function value obtained: -0.1375
+# Current minimum: -0.1474
+# Iteration No: 59 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1489927200872169', '--iterations': '15', '--factors': '37', '--NB_smoothing': '5.273779417190072', '--content_scale_factor': '0.05979130923989302'}
+# Iteration No: 59 ended. Evaluation done at random point.
+# Time taken: 175.5149
+# Function value obtained: -0.1326
+# Current minimum: -0.1474
+# Iteration No: 60 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3692160215234879', '--iterations': '15', '--factors': '50', '--NB_smoothing': '9.628140494340983', '--content_scale_factor': '0.03518783295222064'}
+# Iteration No: 60 ended. Evaluation done at random point.
+# Time taken: 178.0586
+# Function value obtained: -0.1373
+# Current minimum: -0.1474
+# Iteration No: 61 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.22509271194576455', '--iterations': '15', '--factors': '98', '--NB_smoothing': '7.718652839942195', '--content_scale_factor': '0.06553686080749005'}
+# Iteration No: 61 ended. Evaluation done at random point.
+# Time taken: 190.6666
+# Function value obtained: -0.1446
+# Current minimum: -0.1474
+# Iteration No: 62 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7890839049417447', '--iterations': '15', '--factors': '73', '--NB_smoothing': '5.219721996906671', '--content_scale_factor': '0.046651612162291356'}
+# Iteration No: 62 ended. Evaluation done at random point.
+# Time taken: 183.1988
+# Function value obtained: -0.1440
+# Current minimum: -0.1474
+# Iteration No: 63 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.40783393024239356', '--iterations': '15', '--factors': '65', '--NB_smoothing': '1.308410710821152', '--content_scale_factor': '0.04602482441271972'}
+# Iteration No: 63 ended. Evaluation done at random point.
+# Time taken: 180.8063
+# Function value obtained: -0.1423
+# Current minimum: -0.1474
+# Iteration No: 64 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.014934447537481934', '--iterations': '15', '--factors': '33', '--NB_smoothing': '14.297773018563957', '--content_scale_factor': '0.03175573163203001'}
+# Iteration No: 64 ended. Evaluation done at random point.
+# Time taken: 174.9818
+# Function value obtained: -0.1281
+# Current minimum: -0.1474
+# Iteration No: 65 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.09051343120436679', '--iterations': '15', '--factors': '88', '--NB_smoothing': '1.284879030542661', '--content_scale_factor': '0.05457184399398533'}
+# Iteration No: 65 ended. Evaluation done at random point.
+# Time taken: 187.9993
+# Function value obtained: -0.1440
+# Current minimum: -0.1474
+# Iteration No: 66 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8297726456797915', '--iterations': '15', '--factors': '90', '--NB_smoothing': '11.306804362720214', '--content_scale_factor': '0.04162623241909717'}
+# Iteration No: 66 ended. Evaluation done at random point.
+# Time taken: 190.7229
+# Function value obtained: -0.1442
+# Current minimum: -0.1474
+# Iteration No: 67 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.05631894610077675', '--iterations': '15', '--factors': '83', '--NB_smoothing': '2.0590937094378017', '--content_scale_factor': '0.05649124534403838'}
+# Iteration No: 67 ended. Evaluation done at random point.
+# Time taken: 188.1271
+# Function value obtained: -0.1449
+# Current minimum: -0.1474
+# Iteration No: 68 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6959298201932185', '--iterations': '15', '--factors': '37', '--NB_smoothing': '10.280891899660439', '--content_scale_factor': '0.08614962946245133'}
+# Iteration No: 68 ended. Evaluation done at random point.
+# Time taken: 175.0181
+# Function value obtained: -0.1333
+# Current minimum: -0.1474
+# Iteration No: 69 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.0872906033902706', '--iterations': '15', '--factors': '30', '--NB_smoothing': '7.689196773985983', '--content_scale_factor': '0.08219260494790026'}
+# Iteration No: 69 ended. Evaluation done at random point.
+# Time taken: 175.7662
+# Function value obtained: -0.1278
+# Current minimum: -0.1474
+# Iteration No: 70 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.37443932479462894', '--iterations': '15', '--factors': '38', '--NB_smoothing': '3.9653962087457892', '--content_scale_factor': '0.03067721676650898'}
+# Iteration No: 70 ended. Evaluation done at random point.
+# Time taken: 174.8388
+# Function value obtained: -0.1320
+# Current minimum: -0.1474
+# Iteration No: 71 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9252382624117113', '--iterations': '15', '--factors': '56', '--NB_smoothing': '11.709960416345691', '--content_scale_factor': '0.06620343590651005'}
+# Iteration No: 71 ended. Evaluation done at random point.
+# Time taken: 179.9243
+# Function value obtained: -0.1394
+# Current minimum: -0.1474
+# Iteration No: 72 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.645924674211548', '--iterations': '15', '--factors': '80', '--NB_smoothing': '14.395556778418037', '--content_scale_factor': '0.06451435417533925'}
+# Iteration No: 72 ended. Evaluation done at random point.
+# Time taken: 186.2387
+# Function value obtained: -0.1453
+# Current minimum: -0.1474
+# Iteration No: 73 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.14468553631537492', '--iterations': '15', '--factors': '96', '--NB_smoothing': '2.4820195227045163', '--content_scale_factor': '0.030308845237305617'}
+# Iteration No: 73 ended. Evaluation done at random point.
+# Time taken: 189.3217
+# Function value obtained: -0.1441
+# Current minimum: -0.1474
+# Iteration No: 74 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.956449317073153', '--iterations': '15', '--factors': '34', '--NB_smoothing': '5.950867580551706', '--content_scale_factor': '0.06631379100311158'}
+# Iteration No: 74 ended. Evaluation done at random point.
+# Time taken: 174.8654
+# Function value obtained: -0.1308
+# Current minimum: -0.1474
+# Iteration No: 75 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9106341776710702', '--iterations': '15', '--factors': '85', '--NB_smoothing': '1.4746765390633056', '--content_scale_factor': '0.05192202573624817'}
+# Iteration No: 75 ended. Evaluation done at random point.
+# Time taken: 188.3833
+# Function value obtained: -0.1452
+# Current minimum: -0.1474
+# Iteration No: 76 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6903349951710362', '--iterations': '15', '--factors': '76', '--NB_smoothing': '13.570261454224271', '--content_scale_factor': '0.08054229141895115'}
+# Iteration No: 76 ended. Evaluation done at random point.
+# Time taken: 184.4627
+# Function value obtained: -0.1454
+# Current minimum: -0.1474
+# Iteration No: 77 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.24078025310632986', '--iterations': '15', '--factors': '43', '--NB_smoothing': '9.577309726162406', '--content_scale_factor': '0.09673332824281781'}
+# Iteration No: 77 ended. Evaluation done at random point.
+# Time taken: 176.1440
+# Function value obtained: -0.1353
+# Current minimum: -0.1474
+# Iteration No: 78 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5913931811583613', '--iterations': '15', '--factors': '68', '--NB_smoothing': '6.926268526174639', '--content_scale_factor': '0.02779749509803919'}
+# Iteration No: 78 ended. Evaluation done at random point.
+# Time taken: 179.9663
+# Function value obtained: -0.1427
+# Current minimum: -0.1474
+# Iteration No: 79 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8631595940436897', '--iterations': '15', '--factors': '61', '--NB_smoothing': '9.363009512265714', '--content_scale_factor': '0.09594379786414681'}
+# Iteration No: 79 ended. Evaluation done at random point.
+# Time taken: 184.9526
+# Function value obtained: -0.1412
+# Current minimum: -0.1474
+# Iteration No: 80 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.447930916312526', '--iterations': '15', '--factors': '96', '--NB_smoothing': '14.057522459462886', '--content_scale_factor': '0.029581707927804495'}
+# Iteration No: 80 ended. Evaluation done at random point.
+# Time taken: 201.5004
+# Function value obtained: -0.1444
+# Current minimum: -0.1474
+# Iteration No: 81 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.39238254491472374', '--iterations': '15', '--factors': '95', '--NB_smoothing': '6.713792267553007', '--content_scale_factor': '0.06290196354943003'}
+# Iteration No: 81 ended. Evaluation done at random point.
+# Time taken: 198.8749
+# Function value obtained: -0.1447
+# Current minimum: -0.1474
+# Iteration No: 82 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6095684039768297', '--iterations': '15', '--factors': '67', '--NB_smoothing': '10.236025250585842', '--content_scale_factor': '0.056332991752604145'}
+# Iteration No: 82 ended. Evaluation done at random point.
+# Time taken: 181.2611
+# Function value obtained: -0.1432
+# Current minimum: -0.1474
+# Iteration No: 83 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.23351138514977782', '--iterations': '15', '--factors': '36', '--NB_smoothing': '4.967843138347075', '--content_scale_factor': '0.0617896425817049'}
+# Iteration No: 83 ended. Evaluation done at random point.
+# Time taken: 174.0127
+# Function value obtained: -0.1319
+# Current minimum: -0.1474
+# Iteration No: 84 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6501821415499299', '--iterations': '15', '--factors': '84', '--NB_smoothing': '7.744815461256029', '--content_scale_factor': '0.04025529549782816'}
+# Iteration No: 84 ended. Evaluation done at random point.
+# Time taken: 187.2553
+# Function value obtained: -0.1447
+# Current minimum: -0.1474
+# Iteration No: 85 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.013024186674756615', '--iterations': '15', '--factors': '38', '--NB_smoothing': '2.0527229451073405', '--content_scale_factor': '0.09794049702544404'}
+# Iteration No: 85 ended. Evaluation done at random point.
+# Time taken: 173.8553
+# Function value obtained: -0.1341
+# Current minimum: -0.1474
+# Iteration No: 86 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4096450412776886', '--iterations': '15', '--factors': '67', '--NB_smoothing': '14.85614052325732', '--content_scale_factor': '0.07120193242395507'}
+# Iteration No: 86 ended. Evaluation done at random point.
+# Time taken: 183.1681
+# Function value obtained: -0.1431
+# Current minimum: -0.1474
+# Iteration No: 87 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.31344054247775077', '--iterations': '15', '--factors': '84', '--NB_smoothing': '5.5847257895248585', '--content_scale_factor': '0.03931348960612592'}
+# Iteration No: 87 ended. Evaluation done at random point.
+# Time taken: 191.9761
+# Function value obtained: -0.1445
+# Current minimum: -0.1474
+# Iteration No: 88 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.24681712180597354', '--iterations': '15', '--factors': '72', '--NB_smoothing': '9.971318115836873', '--content_scale_factor': '0.08831520940309108'}
+# Iteration No: 88 ended. Evaluation done at random point.
+# Time taken: 183.1525
+# Function value obtained: -0.1442
+# Current minimum: -0.1474
+# Iteration No: 89 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4284065444526409', '--iterations': '15', '--factors': '99', '--NB_smoothing': '7.515401880181195', '--content_scale_factor': '0.04884364483887139'}
+# Iteration No: 89 ended. Evaluation done at random point.
+# Time taken: 191.2044
+# Function value obtained: -0.1444
+# Current minimum: -0.1474
+# Iteration No: 90 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.925041945041239', '--iterations': '15', '--factors': '99', '--NB_smoothing': '12.446988026880494', '--content_scale_factor': '0.05592667421610317'}
+# Iteration No: 90 ended. Evaluation done at random point.
+# Time taken: 191.6651
+# Function value obtained: -0.1449
+# Current minimum: -0.1474
+# Iteration No: 91 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.257976251985922', '--iterations': '15', '--factors': '37', '--NB_smoothing': '14.065537022374574', '--content_scale_factor': '0.029684790368086838'}
+# Iteration No: 91 ended. Evaluation done at random point.
+# Time taken: 176.2582
+# Function value obtained: -0.1311
+# Current minimum: -0.1474
+# Iteration No: 92 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.22903534629047095', '--iterations': '15', '--factors': '59', '--NB_smoothing': '3.699030728760053', '--content_scale_factor': '0.03867362043744771'}
+# Iteration No: 92 ended. Evaluation done at random point.
+# Time taken: 182.1822
+# Function value obtained: -0.1399
+# Current minimum: -0.1474
+# Iteration No: 93 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.05929800262160808', '--iterations': '15', '--factors': '55', '--NB_smoothing': '10.377547149658483', '--content_scale_factor': '0.041794951637277006'}
+# Iteration No: 93 ended. Evaluation done at random point.
+# Time taken: 181.4058
+# Function value obtained: -0.1388
+# Current minimum: -0.1474
+# Iteration No: 94 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3749218871375952', '--iterations': '15', '--factors': '48', '--NB_smoothing': '5.747947751553686', '--content_scale_factor': '0.060314688950354856'}
+# Iteration No: 94 ended. Evaluation done at random point.
+# Time taken: 177.2794
+# Function value obtained: -0.1364
+# Current minimum: -0.1474
+# Iteration No: 95 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.886076306733116', '--iterations': '15', '--factors': '78', '--NB_smoothing': '4.514011586730026', '--content_scale_factor': '0.06019115659914093'}
+# Iteration No: 95 ended. Evaluation done at random point.
+# Time taken: 185.9556
+# Function value obtained: -0.1449
+# Current minimum: -0.1474
+# Iteration No: 96 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6343637000469161', '--iterations': '15', '--factors': '59', '--NB_smoothing': '14.144495635499164', '--content_scale_factor': '0.047902613133647964'}
+# Iteration No: 96 ended. Evaluation done at random point.
+# Time taken: 181.9631
+# Function value obtained: -0.1402
+# Current minimum: -0.1474
+# Iteration No: 97 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1496804741397321', '--iterations': '15', '--factors': '72', '--NB_smoothing': '0.4668373601411899', '--content_scale_factor': '0.05614573461358077'}
+# Iteration No: 97 ended. Evaluation done at random point.
+# Time taken: 181.8294
+# Function value obtained: -0.1439
+# Current minimum: -0.1474
+# Iteration No: 98 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.29350123740907835', '--iterations': '15', '--factors': '39', '--NB_smoothing': '1.1559596949447049', '--content_scale_factor': '0.07568617351728042'}
+# Iteration No: 98 ended. Evaluation done at random point.
+# Time taken: 176.7761
+# Function value obtained: -0.1335
+# Current minimum: -0.1474
+# Iteration No: 99 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.10093201724011629', '--iterations': '15', '--factors': '98', '--NB_smoothing': '5.737059558193052', '--content_scale_factor': '0.02154404851608568'}
+# Iteration No: 99 ended. Evaluation done at random point.
+# Time taken: 191.9397
+# Function value obtained: -0.1438
+# Current minimum: -0.1474
+# Iteration No: 100 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1493296096372469', '--iterations': '15', '--factors': '63', '--NB_smoothing': '14.695641452780897', '--content_scale_factor': '0.06639299187188046'}
+# Iteration No: 100 ended. Evaluation done at random point.
+# Time taken: 182.9226
+# Function value obtained: -0.1414
+# Current minimum: -0.1474
+# Iteration No: 101 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.27373589239261076', '--iterations': '15', '--factors': '58', '--NB_smoothing': '14.638700108584958', '--content_scale_factor': '0.039873077206637686'}
+# Iteration No: 101 ended. Evaluation done at random point.
+# Time taken: 183.0922
+# Function value obtained: -0.1390
+# Current minimum: -0.1474
+# Iteration No: 102 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.31107044515383164', '--iterations': '15', '--factors': '54', '--NB_smoothing': '7.637409118997095', '--content_scale_factor': '0.02212180420791806'}
+# Iteration No: 102 ended. Evaluation done at random point.
+# Time taken: 180.5376
+# Function value obtained: -0.1374
+# Current minimum: -0.1474
+# Iteration No: 103 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3302131681012705', '--iterations': '15', '--factors': '97', '--NB_smoothing': '9.421985598424534', '--content_scale_factor': '0.023895223678042286'}
+# Iteration No: 103 ended. Evaluation done at random point.
+# Time taken: 190.0143
+# Function value obtained: -0.1446
+# Current minimum: -0.1474
+# Iteration No: 104 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4466893771465428', '--iterations': '15', '--factors': '50', '--NB_smoothing': '3.87927361142666', '--content_scale_factor': '0.050946172285386615'}
+# Iteration No: 104 ended. Evaluation done at random point.
+# Time taken: 178.3059
+# Function value obtained: -0.1380
+# Current minimum: -0.1474
+# Iteration No: 105 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9447627734155795', '--iterations': '15', '--factors': '42', '--NB_smoothing': '7.998325145792424', '--content_scale_factor': '0.047335849189178575'}
+# Iteration No: 105 ended. Evaluation done at random point.
+# Time taken: 176.4643
+# Function value obtained: -0.1342
+# Current minimum: -0.1474
+# Iteration No: 106 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8793555282682959', '--iterations': '15', '--factors': '40', '--NB_smoothing': '10.176012985934198', '--content_scale_factor': '0.08850423814668373'}
+# Iteration No: 106 ended. Evaluation done at random point.
+# Time taken: 175.9750
+# Function value obtained: -0.1349
+# Current minimum: -0.1474
+# Iteration No: 107 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3003438507532792', '--iterations': '15', '--factors': '80', '--NB_smoothing': '9.562346304834028', '--content_scale_factor': '0.09376891694137546'}
+# Iteration No: 107 ended. Evaluation done at random point.
+# Time taken: 185.6369
+# Function value obtained: -0.1458
+# Current minimum: -0.1474
+# Iteration No: 108 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4065363796463155', '--iterations': '15', '--factors': '83', '--NB_smoothing': '1.433468720990212', '--content_scale_factor': '0.0697784847071836'}
+# Iteration No: 108 ended. Evaluation done at random point.
+# Time taken: 188.2374
+# Function value obtained: -0.1454
+# Current minimum: -0.1474
+# Iteration No: 109 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.21054019970597948', '--iterations': '15', '--factors': '51', '--NB_smoothing': '4.258112428606116', '--content_scale_factor': '0.043182070073646314'}
+# Iteration No: 109 ended. Evaluation done at random point.
+# Time taken: 178.6900
+# Function value obtained: -0.1366
+# Current minimum: -0.1474
+# Iteration No: 110 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7244237005555046', '--iterations': '15', '--factors': '36', '--NB_smoothing': '8.13219584682704', '--content_scale_factor': '0.0563887903692676'}
+# Iteration No: 110 ended. Evaluation done at random point.
+# Time taken: 173.7214
+# Function value obtained: -0.1318
+# Current minimum: -0.1474
+# Iteration No: 111 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8339844159916606', '--iterations': '15', '--factors': '67', '--NB_smoothing': '14.584029362143728', '--content_scale_factor': '0.05525328744273106'}
+# Iteration No: 111 ended. Evaluation done at random point.
+# Time taken: 182.1858
+# Function value obtained: -0.1432
+# Current minimum: -0.1474
+# Iteration No: 112 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6489497100608864', '--iterations': '15', '--factors': '40', '--NB_smoothing': '10.307870666653866', '--content_scale_factor': '0.027779434050593972'}
+# Iteration No: 112 ended. Evaluation done at random point.
+# Time taken: 174.7883
+# Function value obtained: -0.1327
+# Current minimum: -0.1474
+# Iteration No: 113 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5204324221962674', '--iterations': '15', '--factors': '35', '--NB_smoothing': '6.686331002175887', '--content_scale_factor': '0.0568805463479516'}
+# Iteration No: 113 ended. Evaluation done at random point.
+# Time taken: 175.1777
+# Function value obtained: -0.1309
+# Current minimum: -0.1474
+# Iteration No: 114 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5395791167517854', '--iterations': '15', '--factors': '42', '--NB_smoothing': '12.419680783253114', '--content_scale_factor': '0.03067691767479476'}
+# Iteration No: 114 ended. Evaluation done at random point.
+# Time taken: 176.3849
+# Function value obtained: -0.1335
+# Current minimum: -0.1474
+# Iteration No: 115 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8719139490207375', '--iterations': '15', '--factors': '33', '--NB_smoothing': '14.71064397853051', '--content_scale_factor': '0.029673548891130726'}
+# Iteration No: 115 ended. Evaluation done at random point.
+# Time taken: 173.4631
+# Function value obtained: -0.1280
+# Current minimum: -0.1474
+# Iteration No: 116 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.28783214242248334', '--iterations': '15', '--factors': '86', '--NB_smoothing': '10.242388856153717', '--content_scale_factor': '0.028514352545006276'}
+# Iteration No: 116 ended. Evaluation done at random point.
+# Time taken: 188.5810
+# Function value obtained: -0.1439
+# Current minimum: -0.1474
+# Iteration No: 117 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.24728825941823832', '--iterations': '15', '--factors': '92', '--NB_smoothing': '4.815669988826712', '--content_scale_factor': '0.03283741151100809'}
+# Iteration No: 117 ended. Evaluation done at random point.
+# Time taken: 190.1573
+# Function value obtained: -0.1437
+# Current minimum: -0.1474
+# Iteration No: 118 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.44694802106771975', '--iterations': '15', '--factors': '92', '--NB_smoothing': '13.305939524689745', '--content_scale_factor': '0.031669612324903916'}
+# Iteration No: 118 ended. Evaluation done at random point.
+# Time taken: 190.6406
+# Function value obtained: -0.1439
+# Current minimum: -0.1474
+# Iteration No: 119 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.625902443091648', '--iterations': '15', '--factors': '57', '--NB_smoothing': '5.100901586263849', '--content_scale_factor': '0.02316924180636142'}
+# Iteration No: 119 ended. Evaluation done at random point.
+# Time taken: 181.1877
+# Function value obtained: -0.1387
+# Current minimum: -0.1474
+# Iteration No: 120 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.062017458529720564', '--iterations': '15', '--factors': '64', '--NB_smoothing': '0.9931700439186416', '--content_scale_factor': '0.09184498857709883'}
+# Iteration No: 120 ended. Evaluation done at random point.
+# Time taken: 181.1697
+# Function value obtained: -0.1420
+# Current minimum: -0.1474
+
+
+#           fun: -0.1473547303664478
+    func_vals: array([-0.13362791, -0.13438026, -0.14319486, -0.1461123 , -0.14045731,
+       -0.141296  , -0.1444436 , -0.13787488, -0.1438353 , -0.12704974,
+       -0.14672657, -0.14437166, -0.13499696, -0.14443767, -0.1298818 ,
+       -0.12757975, -0.14433509, -0.14535225, -0.14337694, -0.14289116,
+       -0.13973816, -0.14398171, -0.14735473, -0.14457432, -0.14478612,
+       -0.14492174, -0.13693242, -0.12836745, -0.12953871, -0.14364259,
+       -0.13979072, -0.14574177, -0.14479117, -0.13385282, -0.14422891,
+       -0.1280349 , -0.13353037, -0.14331909, -0.14032052, -0.14418829,
+       -0.14262709, -0.144159  , -0.13987888, -0.14226129, -0.14128339,
+       -0.14576707, -0.13921206, -0.14435036, -0.13079359, -0.14483568,
+       -0.1438344 , -0.14480754, -0.1424119 , -0.14242406, -0.13356951,
+       -0.13468232, -0.14563709, -0.13752742, -0.13262743, -0.13734243,
+       -0.14459117, -0.1440458 , -0.14234813, -0.12813187, -0.14404852,
+       -0.14422524, -0.14492583, -0.13325959, -0.12777228, -0.131997  ,
+       -0.1394033 , -0.14525185, -0.1440649 , -0.13083278, -0.14516373,
+       -0.14539049, -0.13534593, -0.14270264, -0.14119567, -0.14439104,
+       -0.14472907, -0.14319366, -0.13185578, -0.14473606, -0.13410734,
+       -0.14306864, -0.14454694, -0.14418742, -0.14435231, -0.14487936,
+       -0.13113232, -0.13986522, -0.1387853 , -0.13639304, -0.14494715,
+       -0.14020485, -0.14393607, -0.1335259 , -0.14382224, -0.14143431,
+       -0.13903484, -0.1374395 , -0.14462379, -0.13795483, -0.13422891,
+       -0.13492979, -0.1458174 , -0.14536735, -0.13659633, -0.1318298 ,
+       -0.14315621, -0.13266782, -0.13088592, -0.13353029, -0.12800807,
+       -0.14394584, -0.14374657, -0.14392106, -0.13871868, -0.14202206])
+       models: []
+ random_state: <mtrand.RandomState object at 0x7f43333d40d8>
+        space: Space([Real(low=0.1, high=15, prior='uniform', transform='identity'),
+       Real(low=0.001, high=1, prior='uniform', transform='identity'),
+       Categorical(categories=(15,), prior=None),
+       Integer(low=30, high=100),
+       Real(low=0.02, high=0.1, prior='uniform', transform='identity')])
+        specs: {'args': {'n_jobs': 1, 'kappa': 1.96, 'xi': 0.01, 'n_restarts_optimizer': 5, 'n_points': 10000, 'callback': None, 'verbose': True, 'random_state': 0, 'y0': None, 'x0': None, 'acq_optimizer': 'sampling', 'acq_func': 'EI', 'n_random_starts': 120, 'n_calls': 120, 'base_estimator': 'dummy', 'dimensions': [(0.1, 15), (0.001, 1), (15,), (30, 100), (0.02, 0.1)], 'func': <function opt_baseline at 0x7f4335cc1620>}, 'function': 'base_minimize'}
+            x: [6.001864303808099, 0.8961423491215681, 15, 97, 0.09621992092135882]
+      x_iters: [[8.933384811552774, 0.8444214828324365, 15, 39, 0.0698850957428778], [5.8272874386612274, 0.29823707193792787, 15, 42, 0.05067532150606222], [11.896703067431703, 0.5293660248331516, 15, 67, 0.08688630108299022], [5.127202790217299, 0.6485237001791461, 15, 99, 0.08225254007598805], [13.063181008877606, 0.9786397238905313, 15, 59, 0.08244233410291645], [1.8622889454471052, 0.6402811003061963, 15, 62, 0.061747865740005736], [6.278462905858802, 0.2652910564925224, 15, 85, 0.037324028353949754], [2.114750783741236, 0.32481686678542093, 15, 47, 0.09549984628116995], [10.259122456641904, 0.36014839267321225, 15, 95, 0.027942428028717912], [14.550155109426559, 0.6534868957621398, 15, 30, 0.045234268073934714], [5.519290487045077, 0.5706265736474618, 15, 98, 0.09671594148996164], [9.826575723381815, 0.6354238147299603, 15, 82, 0.04026332820318257], [7.048030515558964, 0.24518116640960116, 15, 43, 0.07398018578072167], [4.8263059568325115, 0.7785671365438832, 15, 99, 0.021085730848968788], [9.380406823645377, 0.6739859712049536, 15, 33, 0.057492096131816134], [14.653740214036025, 0.605240674225301, 15, 30, 0.05533687369990764], [14.695842259309655, 0.3600850195053522, 15, 92, 0.05314103956117361], [1.055797695596887, 0.6927796472506499, 15, 80, 0.061859844277335985], [1.4997136103007813, 0.5763705490606231, 15, 73, 0.02074853638852261], [12.650896987049194, 0.647526966047368, 15, 68, 0.03465530896056935], [8.83904272867024, 0.02108743864130606, 15, 60, 0.031715341018328985], [8.58731424825727, 0.7040335420106264, 15, 70, 0.08048853550920329], [6.001864303808099, 0.8961423491215681, 15, 97, 0.09621992092135882], [6.762168141402648, 0.8465622637986568, 15, 86, 0.03998370205239825], [4.76695314599467, 0.9654508042994072, 15, 91, 0.03844264188050639], [5.983552472408415, 0.6191897560267658, 15, 100, 0.044125985333963946], [9.936585708641008, 0.2907875296032337, 15, 48, 0.09027617522208338], [1.6326640445322296, 0.09328151557143731, 15, 31, 0.06594601990796631], [9.832692215871292, 0.6524511667316872, 15, 33, 0.049404949603831724], [6.59438738645784, 0.8920314316606566, 15, 73, 0.028018150984984093], [13.800290944795638, 0.7145270582495624, 15, 58, 0.08945008458945716], [2.5211447266779854, 0.6159440047195603, 15, 81, 0.08919466364819943], [6.229811183956273, 0.1408326129077085, 15, 71, 0.04986326006266039], [6.3591230098801, 0.05153752693918298, 15, 39, 0.0884642673914089], [0.2745398543565294, 0.36061808641388554, 15, 74, 0.04715230555596149], [7.394279159677296, 0.3396461316629985, 15, 30, 0.08349581626859366], [3.4364778520996646, 0.3460063290162058, 15, 38, 0.06773243250360425], [11.77629925499814, 0.5005262714315721, 15, 66, 0.09939171191109063], [4.082211814434026, 0.6794115250117866, 15, 59, 0.07840976236134158], [4.747980432646068, 0.39882284115387584, 15, 99, 0.03749994989894175], [8.586645665163598, 0.4526569259983923, 15, 69, 0.026823645268696048], [0.940633157438097, 0.48834986665460534, 15, 73, 0.06941263328767042], [8.183231747654922, 0.8547589667304039, 15, 58, 0.09173370344322739], [14.856050316210897, 0.2176800874140755, 15, 66, 0.021652079957258295], [11.399841942158508, 0.32069713367164543, 15, 62, 0.08981205243579164], [4.175776318752973, 0.7982487870786512, 15, 85, 0.07499906211102524], [3.3110643889920213, 0.9474232198984355, 15, 58, 0.03706495818939856], [7.821190637566883, 0.026637055336477047, 15, 91, 0.04993359842673805], [7.00727382303568, 0.2783510775884372, 15, 34, 0.07976635761113875], [10.155225454337513, 0.2776168570662739, 15, 81, 0.057052015999210656], [12.622385134777945, 0.2056608964182653, 15, 88, 0.048449019027996455], [14.112435984266916, 0.7655599285531584, 15, 100, 0.037396039416445745], [11.263890814242274, 0.7319620627082258, 15, 65, 0.043371802143403915], [3.6883488207401585, 0.10119364832323233, 15, 68, 0.02073920587892326], [12.512267652889925, 0.984345104913774, 15, 38, 0.06643577097505042], [11.834378123729886, 0.6068689846085071, 15, 46, 0.03853613011769637], [14.244850453993655, 0.9414363270017923, 15, 79, 0.07668385200160026], [7.522289360061305, 0.8447055293924706, 15, 53, 0.02105894862071196], [5.273779417190072, 0.1489927200872169, 15, 37, 0.05979130923989302], [9.628140494340983, 0.3692160215234879, 15, 50, 0.03518783295222064], [7.718652839942195, 0.22509271194576455, 15, 98, 0.06553686080749005], [5.219721996906671, 0.7890839049417447, 15, 73, 0.046651612162291356], [1.308410710821152, 0.40783393024239356, 15, 65, 0.04602482441271972], [14.297773018563957, 0.014934447537481934, 15, 33, 0.03175573163203001], [1.284879030542661, 0.09051343120436679, 15, 88, 0.05457184399398533], [11.306804362720214, 0.8297726456797915, 15, 90, 0.04162623241909717], [2.0590937094378017, 0.05631894610077675, 15, 83, 0.05649124534403838], [10.280891899660439, 0.6959298201932185, 15, 37, 0.08614962946245133], [7.689196773985983, 0.0872906033902706, 15, 30, 0.08219260494790026], [3.9653962087457892, 0.37443932479462894, 15, 38, 0.03067721676650898], [11.709960416345691, 0.9252382624117113, 15, 56, 0.06620343590651005], [14.395556778418037, 0.645924674211548, 15, 80, 0.06451435417533925], [2.4820195227045163, 0.14468553631537492, 15, 96, 0.030308845237305617], [5.950867580551706, 0.956449317073153, 15, 34, 0.06631379100311158], [1.4746765390633056, 0.9106341776710702, 15, 85, 0.05192202573624817], [13.570261454224271, 0.6903349951710362, 15, 76, 0.08054229141895115], [9.577309726162406, 0.24078025310632986, 15, 43, 0.09673332824281781], [6.926268526174639, 0.5913931811583613, 15, 68, 0.02779749509803919], [9.363009512265714, 0.8631595940436897, 15, 61, 0.09594379786414681], [14.057522459462886, 0.447930916312526, 15, 96, 0.029581707927804495], [6.713792267553007, 0.39238254491472374, 15, 95, 0.06290196354943003], [10.236025250585842, 0.6095684039768297, 15, 67, 0.056332991752604145], [4.967843138347075, 0.23351138514977782, 15, 36, 0.0617896425817049], [7.744815461256029, 0.6501821415499299, 15, 84, 0.04025529549782816], [2.0527229451073405, 0.013024186674756615, 15, 38, 0.09794049702544404], [14.85614052325732, 0.4096450412776886, 15, 67, 0.07120193242395507], [5.5847257895248585, 0.31344054247775077, 15, 84, 0.03931348960612592], [9.971318115836873, 0.24681712180597354, 15, 72, 0.08831520940309108], [7.515401880181195, 0.4284065444526409, 15, 99, 0.04884364483887139], [12.446988026880494, 0.925041945041239, 15, 99, 0.05592667421610317], [14.065537022374574, 0.257976251985922, 15, 37, 0.029684790368086838], [3.699030728760053, 0.22903534629047095, 15, 59, 0.03867362043744771], [10.377547149658483, 0.05929800262160808, 15, 55, 0.041794951637277006], [5.747947751553686, 0.3749218871375952, 15, 48, 0.060314688950354856], [4.514011586730026, 0.886076306733116, 15, 78, 0.06019115659914093], [14.144495635499164, 0.6343637000469161, 15, 59, 0.047902613133647964], [0.4668373601411899, 0.1496804741397321, 15, 72, 0.05614573461358077], [1.1559596949447049, 0.29350123740907835, 15, 39, 0.07568617351728042], [5.737059558193052, 0.10093201724011629, 15, 98, 0.02154404851608568], [14.695641452780897, 0.1493296096372469, 15, 63, 0.06639299187188046], [14.638700108584958, 0.27373589239261076, 15, 58, 0.039873077206637686], [7.637409118997095, 0.31107044515383164, 15, 54, 0.02212180420791806], [9.421985598424534, 0.3302131681012705, 15, 97, 0.023895223678042286], [3.87927361142666, 0.4466893771465428, 15, 50, 0.050946172285386615], [7.998325145792424, 0.9447627734155795, 15, 42, 0.047335849189178575], [10.176012985934198, 0.8793555282682959, 15, 40, 0.08850423814668373], [9.562346304834028, 0.3003438507532792, 15, 80, 0.09376891694137546], [1.433468720990212, 0.4065363796463155, 15, 83, 0.0697784847071836], [4.258112428606116, 0.21054019970597948, 15, 51, 0.043182070073646314], [8.13219584682704, 0.7244237005555046, 15, 36, 0.0563887903692676], [14.584029362143728, 0.8339844159916606, 15, 67, 0.05525328744273106], [10.307870666653866, 0.6489497100608864, 15, 40, 0.027779434050593972], [6.686331002175887, 0.5204324221962674, 15, 35, 0.0568805463479516], [12.419680783253114, 0.5395791167517854, 15, 42, 0.03067691767479476], [14.71064397853051, 0.8719139490207375, 15, 33, 0.029673548891130726], [10.242388856153717, 0.28783214242248334, 15, 86, 0.028514352545006276], [4.815669988826712, 0.24728825941823832, 15, 92, 0.03283741151100809], [13.305939524689745, 0.44694802106771975, 15, 92, 0.031669612324903916], [5.100901586263849, 0.625902443091648, 15, 57, 0.02316924180636142], [0.9931700439186416, 0.062017458529720564, 15, 64, 0.09184498857709883]]
