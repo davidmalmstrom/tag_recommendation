@@ -296,7 +296,7 @@ def split_user_tags_percentage(cf_data, percentage=0.5, seed=None, todok=True):
     The remainder is supposed to be predicted.
     """
     np.random.seed(seed)
-    if type(cf_data) is sparse.dok_matrix or sparse.csr_matrix:
+    if type(cf_data) is sparse.dok_matrix or type(cf_data) is sparse.csr_matrix:
         cf_data = cf_data.toarray()
     y_cf_train = cf_data.copy()
     for row_index in range(cf_data.shape[0]):

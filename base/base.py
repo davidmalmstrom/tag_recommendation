@@ -38,6 +38,10 @@ def parse_args(sargs):
                         help='Number of factors in ALS estimator')
     parser.add_argument('--NB_smoothing', type=float, default=1.0,
                         help='Smoothing parameter for multinomial naive Bayes model.')
+    parser.add_argument('--percentage', type=float, default=0.5,
+                        help='The percentage of user_tags that should be used for training. 0 means cold start.')
+    parser.add_argument('--dataset_name_prepend', nargs='?', default='',
+                        help='Prepend to dataset name to read the cold start test datasets instead.')
 
     return parser.parse_known_args(sargs)[0]
 
@@ -70,15 +74,20 @@ def get_model(args):
 
 def main(sargs, log_output=True):
     args = parse_args(sargs)
+    test_dataset = args.test_dataset
+
+    if test_dataset:
+        if (args.percentage == 0.5 and args.dataset_name_prepend) or (not args.dataset_name_prepend and args.percentage != 0.5):
+            print("WARNING: percentage and dataset_name_prepend should be specified as a pair.")
+            print("------------------------------------")
+
     if log_output:
         print("Arguments: %s " %(args))
 
     num_k_folds = args.num_k_folds
 
-    test_dataset = args.test_dataset
-
     if test_dataset:
-        with open(args.path + "test_tag_dataset.pkl", 'rb') as f:
+        with open(args.path + args.dataset_name_prepend + "test_tag_dataset.pkl", 'rb') as f:
             X, y, mlbx, mlby, val_y, test_y = pickle.load(f)
     else:
         with open(args.path + "dev_tag_dataset.pkl", 'rb') as f:
@@ -115,7 +124,7 @@ def main(sargs, log_output=True):
             val_x = y[start_index:end_index]
             y_train = y.copy()
         else:
-            val_x, val_y = nh.split_user_tags_percentage(y[start_index:end_index], seed=1, todok=True)
+            val_x, val_y = nh.split_user_tags_percentage(y[start_index:end_index], seed=1, todok=True, percentage=args.percentage)
             y_train = sp.vstack([y[0:start_index], val_x, y[end_index:]], format="csr")
 
         t1 = time()

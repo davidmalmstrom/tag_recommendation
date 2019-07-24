@@ -83,6 +83,8 @@ def parse_args(sargs):
                         help='Specify whether test dataset should be used.')
     parser.add_argument('--early_stopping', type=int, default=0,
                         help='Specify at which point the training should be stopped if no improvement has been made.')
+    parser.add_argument('--dataset_name_prepend', nargs='?', default='',
+                        help='Prepend to dataset name to read the cold start datasets instead.')
     return parser.parse_known_args(sargs)[0]
 
 def init_normal(shape, dtype=None):
@@ -207,6 +209,11 @@ def main(sargs):
     mf_pretrain = args.mf_pretrain
     mlp_pretrain = args.mlp_pretrain
     model_type = args.nn_model
+
+    if args.test_dataset:
+        if (args.percentage == 0.5 and args.dataset_name_prepend) or (not args.dataset_name_prepend and args.percentage != 0.5):
+            print("WARNING: percentage and dataset_name_prepend should be specified as a pair.")
+            print("------------------------------------")
             
     topK = args.topk
     evaluation_threads = 1#mp.cpu_count()
@@ -217,7 +224,8 @@ def main(sargs):
 
     # Loading data
     t1 = time()
-    dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag, args.test_dataset)
+    dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag, args.test_dataset,
+                      dataset_name_prepend=args.dataset_name_prepend)
     train, testRatings, testNegatives = dataset.trainMatrix, dataset.testRatings, dataset.testNegatives
     num_users, num_items = train.shape
     num_autotags = dataset.X.shape[1]
@@ -296,7 +304,7 @@ def main(sargs):
                 val_x = train[start_index:end_index]
                 val_y = dataset.val_y
             else:
-                val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index], seed=1)
+                val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index], seed=1, percentage=args.percentage)
                 train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
 
             hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, dataset.X, fast_eval, starting_user_num=starting_user_num)

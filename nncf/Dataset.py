@@ -18,7 +18,8 @@ class Dataset(object):
     classdocs
     '''
 
-    def __init__(self, path, eval_recall, tag_dataset=False, big_tag=False, test_dataset=False):
+    def __init__(self, path, eval_recall, tag_dataset=False, big_tag=False, test_dataset=False,
+                 dataset_name_prepend=""):
         '''
         Constructor
         '''
@@ -31,7 +32,7 @@ class Dataset(object):
 
             val_y = None
             if test_dataset:
-                with open("../data/test_tag_dataset.pkl", 'rb') as f:
+                with open("../data/" + dataset_name_prepend + "test_tag_dataset.pkl", 'rb') as f:
                     X, y, mlbx, mlby, val_y, _ = pickle.load(f)
             else:
                 with open("../data/dev_tag_dataset.pkl", 'rb') as f:

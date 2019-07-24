@@ -37,10 +37,15 @@ def read_params(model_runfile_path):
             print(repr(e))
             print("Not a valid test yml file; please specify \"--test_dataset: 1\" in the yml-file.")
             sys.exit(1)
+        try:
+            assert(params['dataset_name_prepend'])
+        except (KeyError, AssertionError) as e:
+            params['dataset_name_prepend'] = ""
+
         return params
 
-def get_test_set():
-    with open('../data/test_tag_dataset.pkl', 'rb') as f:
+def get_test_set(prepend):
+    with open('../data/' + prepend + 'test_tag_dataset.pkl', 'rb') as f:
         X, y_test, _, _, _, test_y = pickle.load(f)
         test_set = sp.dok_matrix(y_test)
     return test_set, test_y, X
@@ -92,7 +97,7 @@ def main():
 
     params = read_params(model_runfile_path)
 
-    test_set, test_y, X = get_test_set()
+    test_set, test_y, X = get_test_set(params['dataset_name_prepend'])
 
     model = build_model(params, test_set.shape, X.shape[1])
 
