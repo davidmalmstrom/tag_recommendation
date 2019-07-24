@@ -212,8 +212,9 @@ def main(sargs):
 
     if args.test_dataset:
         if (args.percentage == 0.5 and args.dataset_name_prepend) or (not args.dataset_name_prepend and args.percentage != 0.5):
-            print("WARNING: percentage and dataset_name_prepend should be specified as a pair.")
+            print("ERROR: percentage and dataset_name_prepend should be specified as a pair.")
             print("------------------------------------")
+            sys.exit()
             
     topK = args.topk
     evaluation_threads = 1#mp.cpu_count()

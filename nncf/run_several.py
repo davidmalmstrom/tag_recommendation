@@ -15,5 +15,7 @@ for run_file_name in run_files:
         run_script.main(["run_several.py", run_file_name], "runs/several_runs/")
     except Exception as e:
         print((str(type(e)) + ": " + str(e)).replace('\n', ' '))
+        sys.stdout = sys.stdout.terminal  # Reset stdout so that new prints
+                                            # does not go into old file
 # os.system("shutdown now -h")  # run with sudo nohup /home/david/miniconda2/envs/t10/bin/python run_several.py
 # and with ctrl+Z and bg %1
