@@ -17,7 +17,9 @@ from keras import backend as K
 from keras import initializers
 from keras.regularizers import l2
 from keras.models import Sequential, Model
-from keras.layers.core import Dense, Lambda, Activation
+from keras.layers.core import Dense, Lambda, Activation, Dropout
+from keras.layers.normalization import BatchNormalization
+from keras.activations import relu
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
 from keras.constraints import maxnorm
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
@@ -76,15 +78,22 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
     user_latent = Flatten()(MLP_Embedding_User(user_input))
     item_latent = Flatten()(MLP_Embedding_Item(item_input))
     
-    user_latent = Concatenate()([user_latent, user_features])
+    feature_latent = Dense(1024, kernel_regularizer=l2(reg_layers[0]), name='dense_feature_layer1')(user_features)
+    #feature_latent = Dense(layers[0], kernel_regularizer=l2(reg_layers[0]), name='dense_feature_layer2')(feature_latent)
 
+    feature_latent = Dropout(0.5)(feature_latent)
+    user_latent = Concatenate()([user_latent, feature_latent])
+
+    item_latent = Dropout(0.5)(item_latent)
     # The 0-th layer is the concatenation of embedding layers
     vector = Concatenate()([user_latent, item_latent])
+    vector = Concatenate()([feature_latent, item_latent])
     
     # MLP layerss
     for idx in range(1, num_layer):
-        layer = Dense(layers[idx], kernel_regularizer= l2(reg_layers[idx]), activation='relu', name = 'layer%d' %idx)
-        vector = layer(vector)
+        layer = Dense(layers[idx], kernel_regularizer= l2(reg_layers[idx]), name = 'layer%d' %idx)(vector) # activation='relu', name = 'layer%d' %idx)
+        vector = Activation('relu')(layer)
+        #vector = BatchNormalization()(layer)
         
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = 'prediction')(vector)
@@ -93,6 +102,7 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
                   outputs=prediction)
     
     model.name = "MLP"
+    print(model.summary())
 
     return model
 
