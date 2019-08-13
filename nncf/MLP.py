@@ -72,26 +72,28 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
     MLP_Embedding_Item = Embedding(input_dim = num_items, output_dim = old_div(layers[0],2), name = 'item_embedding',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
-    # MLP_Embedding_User_Features = Embedding(input_dim = num_autotags + 1, )
+
     
     # Crucial to flatten an embedding vector!
     user_latent = Flatten()(MLP_Embedding_User(user_input))
     item_latent = Flatten()(MLP_Embedding_Item(item_input))
     
-    feature_latent = Dense(1024, kernel_regularizer=l2(reg_layers[0]), name='dense_feature_layer1')(user_features)
+    feature_latent = Dense(1024, kernel_regularizer=l2(reg_layers[0]), activation='relu', name='dense_feature_layer1',
+                           kernel_initializer='lecun_uniform')(user_features)
     #feature_latent = Dense(layers[0], kernel_regularizer=l2(reg_layers[0]), name='dense_feature_layer2')(feature_latent)
 
-    feature_latent = Dropout(0.5)(feature_latent)
+    # feature_latent = Dropout(0.5)(feature_latent)
     user_latent = Concatenate()([user_latent, feature_latent])
 
-    item_latent = Dropout(0.5)(item_latent)
+    # item_latent = Dropout(0.5)(item_latent)
     # The 0-th layer is the concatenation of embedding layers
     vector = Concatenate()([user_latent, item_latent])
     vector = Concatenate()([feature_latent, item_latent])
     
     # MLP layerss
     for idx in range(1, num_layer):
-        layer = Dense(layers[idx], kernel_regularizer= l2(reg_layers[idx]), name = 'layer%d' %idx)(vector) # activation='relu', name = 'layer%d' %idx)
+        layer = Dense(layers[idx], kernel_regularizer=l2(reg_layers[idx]), name = 'layer%d' %idx,
+                      kernel_initializer='lecun_uniform')(vector) # activation='relu', name = 'layer%d' %idx)
         vector = Activation('relu')(layer)
         #vector = BatchNormalization()(layer)
         
