@@ -4,7 +4,7 @@
 --topk: "3"
 --big_tag: "0"
 --epochs: "300"
---layers: "[32,16]"
+--layers: "[512,256]"
 --reg_layers: "[0,0]"
 --early_stopping: "35"
 --test_dataset: "1"
@@ -3156,3 +3156,1066 @@
 # Iteration 127 fit: [10.8 s]: Recall = 0.1791, Jaccard score = 0.1546, loss = 0.3622, eval: [6.9 s]
 # Iteration 128 fit: [10.8 s]: Recall = 0.1778, Jaccard score = 0.1534, loss = 0.3617, eval: [6.7 s]
 # Iteration 129 fit: [10.8 s]: Recall = 0.1829, Jaccard score = 0.1585, loss = 0.3619, eval: [6.9 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565689108.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565689108.h5
+# Load data done [4.2 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565692887.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565692887.h5
+# Load data done [4.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565693171.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565693171.h5
+# Load data done [3.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565693352.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565693352.h5
+# Load data done [4.3 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565693578.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565693578.h5
+# Load data done [4.2 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565693630.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565693630.h5
+# Load data done [4.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+
+
+# Launched by terminal.
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565693752.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565693752.h5
+# Load data done [4.4 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565693832.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565693832.h5
+# Load data done [3.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565697283.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565697283.h5
+# Load data done [3.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# airplane fuselage
+# airplane wing
+# almond tree
+# amusement park
+# aquatic bird
+# armored vehicle
+# art gallery
+# assembly hall
+# athletic game
+# auto racing
+# ball game
+# bicycle seat
+# bicycle wheel
+# big cat
+# bike pedal
+# billiard room
+# bird feeder
+# bird of prey
+# black background
+# blackandwhite
+# boat racing
+# branchlet
+# brass instrument
+# breakfast table
+# brick red
+# bridal veil
+# building complex
+# building structure
+# bumper car
+# cable car
+# canal boat
+# cantilever bridge
+# car bumper
+# car engine
+# car grille
+# car hood
+# car interior
+# car mirror
+# car part
+# car rally
+# car seat
+# car tire
+# car wheel
+# cargo container
+# carthorse
+# cherry blossom
+# cliff diving
+# cliff dwelling
+# clock tower
+# comic book
+# computer keyboard
+# computer monitor
+# computer screen
+# concert band
+# conference table
+# contact sport
+# container ship
+# control panel
+# country house
+# court game
+# crew boat
+# cross-country skiing
+# cruise ship
+# dark red
+# department store
+# depth of field
+# digital display
+# dining room
+# dining table
+# dinner table
+# display screen
+# display window
+# dome building
+# door knocker
+# draft horse
+# dust storm
+# electric locomotive
+# farm machine
+# farmer's market
+# feather boa
+# ferris wheel
+# field game
+# field hockey
+# field house
+# fighter jet
+# figure skating
+# fire truck
+# flower cluster
+# flying buttress
+# football helmet
+# formal wear
+# four wheel drive
+# freight car
+# french window
+# fuel injection
+# full moon
+# fur hat
+# gable roof
+# goal net
+# golden retriever
+# golf cart
+# golf club
+# gothic arch
+# grainfield
+# great hall
+# grocery store
+# group performance
+# groupshot
+# gym weights
+# hand rail
+# hang glider
+# high jump
+# horse cart
+# horse ranch
+# horseback riding
+# hot air balloon
+# hour hand
+# ice hockey
+# ice rink
+# ice skating
+# interior door
+# jack-o-lantern
+# jumbo jet
+# jungle gym
+# keyboard instrument
+# kitchen ware
+# lecture hall
+# life jacket
+# light painting
+# meeting room
+# military officer
+# military vehicle
+# minute hand
+# mixed drink
+# motor scooter
+# mountain bike
+# mountain peak
+# mountain ridge
+# neon light
+# newel post
+# nissen hut
+# ocean floor
+# ocean liner
+# office furniture
+# oil lamp
+# onion dome
+# open air market
+# orange daisy
+# organ instrument
+# organ loft
+# organic pattern
+# outdoor sport
+# palm tree
+# park bench
+# passenger ship
+# pedestrian crossing
+# percussion instrument
+# photo border
+# photomicrograph
+# piano keyboard
+# picture frame
+# pink flower
+# pointed arch
+# portable computer
+# potted plant
+# power line
+# race car
+# radiogram
+# railroad track
+# reading lamp
+# recreational vehicle
+# red maple
+# reddish brown
+# rock climbing
+# rock formation
+# rock wall
+# roller coaster
+# roller skate
+# roller skating
+# roman arch
+# room light
+# rope bridge
+# rose window
+# rotor blade
+# round arch
+# row house
+# rowing boat
+# saddle horse
+# sail boat
+# salad bar
+# school bus
+# scuba diver
+# scuba diving
+# sea lion
+# seat belt
+# shelf stacks
+# shipping container
+# ski pole
+# skin diving
+# snack bar
+# solar array
+# solar cell
+# speed skate
+# spider web
+# sport fight
+# sports car
+# stained glass
+# star shape
+# steam engine
+# steel arch bridge
+# steering wheel
+# stemma
+# stock car
+# stone wall
+# store shelf
+# street sign
+# stringed instrument
+# study hall
+# study room
+# sumo wrestling
+# sun parlor
+# sunbath
+# support column
+# swimming pool
+# swimming trunks
+# team sport
+# telephone booth
+# telephone pole
+# telephone wire
+# trail bike
+# urban decay
+# vigil light
+# volcanic crater
+# water ski
+# water skiing
+# water sport
+# wheel spoke
+# white background
+# whitewater rafting
+# wind turbine
+# window box
+# window frame
+# wine cellar
+# wood fence
+# wood laminate
+# blackandwhite
+# branchlet
+# carthorse
+# farmer's market
+# grainfield
+# groupshot
+# jack-o-lantern
+# photomicrograph
+# radiogram
+# stemma
+# sunbath
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565699748.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565699748.h5
+# Load data done [3.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565699819.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565699819.h5
+# Load data done [4.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565700410.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565700410.h5
+# Load data done [1.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565700486.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565700486.h5
+# Load data done [1.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_features (InputLayer)      (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# embedding_1 (Embedding)         (None, 1000, 100)    100000      user_features[0][0]              
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 16)        32000       item_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_3 (Flatten)             (None, 100000)       0           embedding_1[0][0]                
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 16)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 100016)       0           flatten_3[0][0]                  
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 16)           1600272     concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 16)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            17          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 1,732,289
+# Trainable params: 1,632,289
+# Non-trainable params: 100,000
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0279, Jaccard score = 0.0213
+# Iteration 0 fit: [30.7 s]: Recall = 0.0543, Jaccard score = 0.0424, loss = 0.5030, eval: [11.6 s]
+# Iteration 1 fit: [30.9 s]: Recall = 0.0846, Jaccard score = 0.0676, loss = 0.4989, eval: [11.7 s]
+# Iteration 2 fit: [31.4 s]: Recall = 0.1030, Jaccard score = 0.0835, loss = 0.4901, eval: [10.6 s]
+# Iteration 3 fit: [30.6 s]: Recall = 0.1175, Jaccard score = 0.0963, loss = 0.4746, eval: [11.2 s]
+# Iteration 4 fit: [32.3 s]: Recall = 0.1226, Jaccard score = 0.1010, loss = 0.4610, eval: [11.0 s]
+# Iteration 5 fit: [31.6 s]: Recall = 0.1161, Jaccard score = 0.0951, loss = 0.4529, eval: [10.8 s]
+# Iteration 6 fit: [31.4 s]: Recall = 0.1274, Jaccard score = 0.1053, loss = 0.4469, eval: [11.0 s]
+# Iteration 7 fit: [31.7 s]: Recall = 0.1180, Jaccard score = 0.0968, loss = 0.4418, eval: [10.8 s]
+# Iteration 8 fit: [32.0 s]: Recall = 0.1270, Jaccard score = 0.1049, loss = 0.4387, eval: [11.2 s]
+# Iteration 9 fit: [31.9 s]: Recall = 0.1220, Jaccard score = 0.1004, loss = 0.4352, eval: [11.5 s]
+# Iteration 10 fit: [32.1 s]: Recall = 0.1238, Jaccard score = 0.1020, loss = 0.4323, eval: [10.9 s]
+# Iteration 11 fit: [32.5 s]: Recall = 0.1321, Jaccard score = 0.1097, loss = 0.4300, eval: [12.1 s]
+# Iteration 12 fit: [30.7 s]: Recall = 0.1171, Jaccard score = 0.0960, loss = 0.4289, eval: [11.4 s]
+# Iteration 13 fit: [31.9 s]: Recall = 0.1276, Jaccard score = 0.1055, loss = 0.4276, eval: [11.3 s]
+# Iteration 14 fit: [32.0 s]: Recall = 0.1282, Jaccard score = 0.1060, loss = 0.4267, eval: [11.1 s]
+# Iteration 15 fit: [29.5 s]: Recall = 0.1262, Jaccard score = 0.1043, loss = 0.4252, eval: [10.8 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565701214.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565701214.h5
+# Load data done [4.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565709766.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565709766.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565777031.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565777031.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565785286.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565785286.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565785345.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565785345.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565785361.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565785361.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565786201.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565786201.h5
+# Load data done [8.1 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565786219.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565786219.h5
+# Load data done [8.3 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_features (InputLayer)      (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# embedding_1 (Embedding)         (None, 1000, 100)    100000      user_features[0][0]              
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 16)        32000       item_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_3 (Flatten)             (None, 100000)       0           embedding_1[0][0]                
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 16)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 100016)       0           flatten_3[0][0]                  
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 16)           1600272     concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 16)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            17          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 1,732,289
+# Trainable params: 1,632,289
+# Non-trainable params: 100,000
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565786278.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565786278.h5
+# Load data done [8.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565786489.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565786489.h5
+# Load data done [8.8 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_features (InputLayer)      (None, 77)           0                                            
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# embedding_1 (Embedding)         (None, 77, 100)      100000      user_features[0][0]              
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 16)        32000       item_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_3 (Flatten)             (None, 7700)         0           embedding_1[0][0]                
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 16)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 7716)         0           flatten_3[0][0]                  
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 16)           123472      concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 16)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            17          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 255,489
+# Trainable params: 155,489
+# Non-trainable params: 100,000
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0278, Jaccard score = 0.0212
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565786595.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565786595.h5
+# Load data done [4.8 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_features (InputLayer)      (None, 77)           0                                            
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# embedding_1 (Embedding)         (None, 77, 100)      100000      user_features[0][0]              
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 16)        32000       item_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_3 (Flatten)             (None, 7700)         0           embedding_1[0][0]                
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 16)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 7716)         0           flatten_3[0][0]                  
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 16)           123472      concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 16)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            17          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 255,489
+# Trainable params: 155,489
+# Non-trainable params: 100,000
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0300, Jaccard score = 0.0230
+# Iteration 0 fit: [10.3 s]: Recall = 0.0554, Jaccard score = 0.0432, loss = 0.4994, eval: [10.2 s]
+# Iteration 1 fit: [7.0 s]: Recall = 0.0797, Jaccard score = 0.0634, loss = 0.4898, eval: [10.1 s]
+# Iteration 2 fit: [7.0 s]: Recall = 0.1013, Jaccard score = 0.0820, loss = 0.4777, eval: [10.1 s]
+# Iteration 3 fit: [7.1 s]: Recall = 0.1137, Jaccard score = 0.0929, loss = 0.4666, eval: [10.1 s]
+# Iteration 4 fit: [7.0 s]: Recall = 0.1210, Jaccard score = 0.0995, loss = 0.4572, eval: [10.1 s]
+# Iteration 5 fit: [7.0 s]: Recall = 0.1241, Jaccard score = 0.1023, loss = 0.4493, eval: [10.2 s]
+# Iteration 6 fit: [7.0 s]: Recall = 0.1298, Jaccard score = 0.1075, loss = 0.4433, eval: [10.2 s]
+# Iteration 7 fit: [7.0 s]: Recall = 0.1281, Jaccard score = 0.1060, loss = 0.4380, eval: [10.2 s]
+# Iteration 8 fit: [7.1 s]: Recall = 0.1198, Jaccard score = 0.0984, loss = 0.4342, eval: [10.1 s]
+# Iteration 9 fit: [7.0 s]: Recall = 0.1301, Jaccard score = 0.1078, loss = 0.4314, eval: [10.1 s]
+# Iteration 10 fit: [7.0 s]: Recall = 0.1309, Jaccard score = 0.1085, loss = 0.4294, eval: [10.1 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565787115.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565787115.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565787141.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565787141.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565787198.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565787198.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565787619.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565787619.h5
+# Load data done [12.4 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 77)           0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 16)        32000       item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dense_feature_layer1 (Dense)    (None, 1024)         79872       user_features[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 16)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 1040)         0           dense_feature_layer1[0][0]       
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 16)           16656       concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 16)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            17          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 128,545
+# Trainable params: 128,545
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[32,16]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[32,16]_1565787966.h5
+--weights_path: Pretrain/_MLP_8_[32,16]_1565787966.h5
+# Load data done [13.3 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 100)          0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 16)        32000       item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dense_feature_layer1 (Dense)    (None, 1024)         103424      user_features[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 16)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 1040)         0           dense_feature_layer1[0][0]       
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 16)           16656       concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 16)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            17          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 152,097
+# Trainable params: 152,097
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0254, Jaccard score = 0.0194
+# Iteration 0 fit: [8.4 s]: Recall = 0.0406, Jaccard score = 0.0313, loss = 0.5189, eval: [9.6 s]
+# Iteration 1 fit: [7.5 s]: Recall = 0.0649, Jaccard score = 0.0510, loss = 0.4996, eval: [9.6 s]
+# Iteration 2 fit: [7.5 s]: Recall = 0.0971, Jaccard score = 0.0783, loss = 0.4876, eval: [9.5 s]
+# Iteration 3 fit: [7.5 s]: Recall = 0.1173, Jaccard score = 0.0961, loss = 0.4751, eval: [9.5 s]
+# Iteration 4 fit: [7.5 s]: Recall = 0.1225, Jaccard score = 0.1009, loss = 0.4652, eval: [9.5 s]
+# Iteration 5 fit: [7.5 s]: Recall = 0.1268, Jaccard score = 0.1048, loss = 0.4566, eval: [9.5 s]
+# Iteration 6 fit: [7.5 s]: Recall = 0.1264, Jaccard score = 0.1044, loss = 0.4498, eval: [9.5 s]
+# Iteration 7 fit: [7.5 s]: Recall = 0.1237, Jaccard score = 0.1019, loss = 0.4440, eval: [9.5 s]
+# Iteration 8 fit: [7.6 s]: Recall = 0.1259, Jaccard score = 0.1040, loss = 0.4391, eval: [9.7 s]
+# Iteration 9 fit: [7.5 s]: Recall = 0.1254, Jaccard score = 0.1035, loss = 0.4351, eval: [9.5 s]
+# Iteration 10 fit: [7.5 s]: Recall = 0.1293, Jaccard score = 0.1071, loss = 0.4323, eval: [9.5 s]
+# Iteration 11 fit: [7.5 s]: Recall = 0.1284, Jaccard score = 0.1062, loss = 0.4293, eval: [9.9 s]
+# Iteration 12 fit: [7.6 s]: Recall = 0.1331, Jaccard score = 0.1105, loss = 0.4277, eval: [9.6 s]
+# Iteration 13 fit: [7.6 s]: Recall = 0.1275, Jaccard score = 0.1054, loss = 0.4264, eval: [9.6 s]
+# Iteration 14 fit: [7.6 s]: Recall = 0.1327, Jaccard score = 0.1102, loss = 0.4251, eval: [9.6 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[256,128]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[256,128]_1565788257.h5
+--weights_path: Pretrain/_MLP_8_[256,128]_1565788257.h5
+# Load data done [12.6 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 100)          0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 128)       256000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dense_feature_layer1 (Dense)    (None, 1024)         103424      user_features[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 128)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 1152)         0           dense_feature_layer1[0][0]       
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 128)          147584      concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 128)          0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            129         activation_1[0][0]               
+# ==================================================================================================
+# Total params: 507,137
+# Trainable params: 507,137
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0290, Jaccard score = 0.0222
+# Iteration 0 fit: [8.7 s]: Recall = 0.1244, Jaccard score = 0.1026, loss = 0.4936, eval: [9.5 s]
+# Iteration 1 fit: [7.8 s]: Recall = 0.1376, Jaccard score = 0.1148, loss = 0.4550, eval: [9.5 s]
+# Iteration 2 fit: [7.9 s]: Recall = 0.1440, Jaccard score = 0.1207, loss = 0.4370, eval: [9.5 s]
+# Iteration 3 fit: [7.9 s]: Recall = 0.1502, Jaccard score = 0.1265, loss = 0.4276, eval: [9.5 s]
+# Iteration 4 fit: [7.9 s]: Recall = 0.1588, Jaccard score = 0.1348, loss = 0.4212, eval: [9.5 s]
+# Iteration 5 fit: [7.9 s]: Recall = 0.1601, Jaccard score = 0.1360, loss = 0.4163, eval: [9.5 s]
+# Iteration 6 fit: [7.9 s]: Recall = 0.1673, Jaccard score = 0.1430, loss = 0.4116, eval: [9.5 s]
+# Iteration 7 fit: [7.9 s]: Recall = 0.1700, Jaccard score = 0.1456, loss = 0.4078, eval: [9.5 s]
+# Iteration 8 fit: [7.9 s]: Recall = 0.1745, Jaccard score = 0.1501, loss = 0.4039, eval: [9.5 s]
+# Iteration 9 fit: [7.9 s]: Recall = 0.1789, Jaccard score = 0.1545, loss = 0.4002, eval: [9.5 s]
+# Iteration 10 fit: [7.9 s]: Recall = 0.1788, Jaccard score = 0.1544, loss = 0.3965, eval: [9.5 s]
+# Iteration 11 fit: [7.9 s]: Recall = 0.1810, Jaccard score = 0.1566, loss = 0.3935, eval: [9.5 s]
+# Iteration 12 fit: [7.9 s]: Recall = 0.1817, Jaccard score = 0.1573, loss = 0.3901, eval: [9.5 s]
+# Iteration 13 fit: [7.8 s]: Recall = 0.1881, Jaccard score = 0.1637, loss = 0.3871, eval: [9.5 s]
+# Iteration 14 fit: [7.8 s]: Recall = 0.1877, Jaccard score = 0.1633, loss = 0.3837, eval: [9.5 s]
+# Iteration 15 fit: [7.8 s]: Recall = 0.1891, Jaccard score = 0.1647, loss = 0.3811, eval: [9.5 s]
+# Iteration 16 fit: [7.9 s]: Recall = 0.1905, Jaccard score = 0.1661, loss = 0.3792, eval: [9.9 s]
+# Iteration 17 fit: [7.9 s]: Recall = 0.1893, Jaccard score = 0.1650, loss = 0.3764, eval: [9.6 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[256,128]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[256,128]_1565788611.h5
+--weights_path: Pretrain/_MLP_8_[256,128]_1565788611.h5
+# Load data done [13.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 100)          0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 128)       256000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dense_feature_layer1 (Dense)    (None, 256)          25856       user_features[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 128)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 384)          0           dense_feature_layer1[0][0]       
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 128)          49280       concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 128)          0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            129         activation_1[0][0]               
+# ==================================================================================================
+# Total params: 331,265
+# Trainable params: 331,265
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0290, Jaccard score = 0.0222
+# Iteration 0 fit: [8.3 s]: Recall = 0.1192, Jaccard score = 0.0979, loss = 0.5016, eval: [9.5 s]
+# Iteration 1 fit: [7.5 s]: Recall = 0.1524, Jaccard score = 0.1286, loss = 0.4543, eval: [9.5 s]
+# Iteration 2 fit: [7.5 s]: Recall = 0.1607, Jaccard score = 0.1366, loss = 0.4301, eval: [9.5 s]
+# Iteration 3 fit: [7.5 s]: Recall = 0.1682, Jaccard score = 0.1439, loss = 0.4173, eval: [9.5 s]
+# Iteration 4 fit: [7.5 s]: Recall = 0.1738, Jaccard score = 0.1494, loss = 0.4088, eval: [9.5 s]
+# Iteration 5 fit: [7.4 s]: Recall = 0.1766, Jaccard score = 0.1522, loss = 0.4026, eval: [9.5 s]
+# Iteration 6 fit: [7.5 s]: Recall = 0.1775, Jaccard score = 0.1531, loss = 0.3979, eval: [9.5 s]
+# Iteration 7 fit: [7.4 s]: Recall = 0.1841, Jaccard score = 0.1597, loss = 0.3931, eval: [9.5 s]
+# Iteration 8 fit: [7.5 s]: Recall = 0.1842, Jaccard score = 0.1598, loss = 0.3897, eval: [9.5 s]
+# Iteration 9 fit: [7.4 s]: Recall = 0.1856, Jaccard score = 0.1612, loss = 0.3857, eval: [9.5 s]
+# Iteration 10 fit: [7.5 s]: Recall = 0.1891, Jaccard score = 0.1647, loss = 0.3819, eval: [9.5 s]
+# Iteration 11 fit: [7.4 s]: Recall = 0.1886, Jaccard score = 0.1642, loss = 0.3790, eval: [9.5 s]
+# Iteration 12 fit: [7.5 s]: Recall = 0.1948, Jaccard score = 0.1706, loss = 0.3766, eval: [9.5 s]
+# Iteration 13 fit: [7.5 s]: Recall = 0.1935, Jaccard score = 0.1692, loss = 0.3735, eval: [9.7 s]
+# Iteration 14 fit: [7.5 s]: Recall = 0.1932, Jaccard score = 0.1689, loss = 0.3709, eval: [9.6 s]
+# Iteration 15 fit: [7.5 s]: Recall = 0.1949, Jaccard score = 0.1706, loss = 0.3688, eval: [9.7 s]
+# Iteration 16 fit: [7.5 s]: Recall = 0.1973, Jaccard score = 0.1731, loss = 0.3657, eval: [9.7 s]
+# Iteration 17 fit: [7.5 s]: Recall = 0.1975, Jaccard score = 0.1733, loss = 0.3644, eval: [9.6 s]
+# Iteration 18 fit: [7.6 s]: Recall = 0.1960, Jaccard score = 0.1718, loss = 0.3623, eval: [9.5 s]
+# Iteration 19 fit: [7.4 s]: Recall = 0.1972, Jaccard score = 0.1730, loss = 0.3605, eval: [9.5 s]
+# Iteration 20 fit: [7.6 s]: Recall = 0.1987, Jaccard score = 0.1746, loss = 0.3587, eval: [9.5 s]
+# Iteration 21 fit: [7.4 s]: Recall = 0.1961, Jaccard score = 0.1719, loss = 0.3574, eval: [9.6 s]
+# Iteration 22 fit: [7.7 s]: Recall = 0.1984, Jaccard score = 0.1742, loss = 0.3561, eval: [9.7 s]
+# Iteration 23 fit: [7.5 s]: Recall = 0.2024, Jaccard score = 0.1783, loss = 0.3545, eval: [9.6 s]
+# Iteration 24 fit: [7.5 s]: Recall = 0.1988, Jaccard score = 0.1747, loss = 0.3531, eval: [9.6 s]
+# Iteration 25 fit: [7.5 s]: Recall = 0.1989, Jaccard score = 0.1748, loss = 0.3517, eval: [9.6 s]
+# Iteration 26 fit: [7.5 s]: Recall = 0.2002, Jaccard score = 0.1761, loss = 0.3509, eval: [9.5 s]
+# Iteration 27 fit: [7.5 s]: Recall = 0.2006, Jaccard score = 0.1765, loss = 0.3494, eval: [9.5 s]
+# Iteration 28 fit: [7.5 s]: Recall = 0.2015, Jaccard score = 0.1775, loss = 0.3480, eval: [9.5 s]
+# Iteration 29 fit: [7.5 s]: Recall = 0.2010, Jaccard score = 0.1769, loss = 0.3473, eval: [9.9 s]
+# Iteration 30 fit: [7.5 s]: Recall = 0.2014, Jaccard score = 0.1774, loss = 0.3464, eval: [9.5 s]
+# Iteration 31 fit: [7.5 s]: Recall = 0.2029, Jaccard score = 0.1789, loss = 0.3456, eval: [9.5 s]
+# Iteration 32 fit: [7.5 s]: Recall = 0.2004, Jaccard score = 0.1763, loss = 0.3438, eval: [9.5 s]
+# Iteration 33 fit: [7.4 s]: Recall = 0.2028, Jaccard score = 0.1788, loss = 0.3437, eval: [9.5 s]
+# Iteration 34 fit: [7.5 s]: Recall = 0.2005, Jaccard score = 0.1764, loss = 0.3420, eval: [9.5 s]
+# Iteration 35 fit: [7.4 s]: Recall = 0.2015, Jaccard score = 0.1775, loss = 0.3414, eval: [9.5 s]
+# Iteration 36 fit: [7.4 s]: Recall = 0.2011, Jaccard score = 0.1770, loss = 0.3402, eval: [9.5 s]
+# Iteration 37 fit: [7.4 s]: Recall = 0.2009, Jaccard score = 0.1768, loss = 0.3397, eval: [9.5 s]
+# Iteration 38 fit: [7.4 s]: Recall = 0.1986, Jaccard score = 0.1744, loss = 0.3392, eval: [9.5 s]
+# Iteration 39 fit: [7.4 s]: Recall = 0.2035, Jaccard score = 0.1795, loss = 0.3383, eval: [9.5 s]
+# Iteration 40 fit: [7.4 s]: Recall = 0.2012, Jaccard score = 0.1772, loss = 0.3376, eval: [9.5 s]
+# Iteration 41 fit: [7.5 s]: Recall = 0.2028, Jaccard score = 0.1788, loss = 0.3364, eval: [9.6 s]
+# Iteration 42 fit: [7.5 s]: Recall = 0.2029, Jaccard score = 0.1789, loss = 0.3361, eval: [9.5 s]
+# Iteration 43 fit: [7.5 s]: Recall = 0.2032, Jaccard score = 0.1792, loss = 0.3356, eval: [9.5 s]
+# Iteration 44 fit: [7.5 s]: Recall = 0.2025, Jaccard score = 0.1785, loss = 0.3350, eval: [9.5 s]
+# Iteration 45 fit: [7.5 s]: Recall = 0.2028, Jaccard score = 0.1788, loss = 0.3341, eval: [9.5 s]
+# Iteration 46 fit: [7.4 s]: Recall = 0.2039, Jaccard score = 0.1799, loss = 0.3335, eval: [9.6 s]
+# Iteration 47 fit: [9.1 s]: Recall = 0.2038, Jaccard score = 0.1799, loss = 0.3325, eval: [10.8 s]
+# Iteration 48 fit: [7.5 s]: Recall = 0.2036, Jaccard score = 0.1796, loss = 0.3327, eval: [9.5 s]
+# Iteration 49 fit: [7.5 s]: Recall = 0.2038, Jaccard score = 0.1799, loss = 0.3317, eval: [9.5 s]
+# Iteration 50 fit: [7.4 s]: Recall = 0.2038, Jaccard score = 0.1798, loss = 0.3311, eval: [9.5 s]
+# Iteration 51 fit: [7.4 s]: Recall = 0.2034, Jaccard score = 0.1794, loss = 0.3308, eval: [9.6 s]
+# Iteration 52 fit: [7.5 s]: Recall = 0.2036, Jaccard score = 0.1796, loss = 0.3304, eval: [9.4 s]
+# Iteration 53 fit: [7.4 s]: Recall = 0.2029, Jaccard score = 0.1789, loss = 0.3293, eval: [9.5 s]
+# Iteration 54 fit: [7.4 s]: Recall = 0.2025, Jaccard score = 0.1785, loss = 0.3287, eval: [9.5 s]
+# Iteration 55 fit: [7.5 s]: Recall = 0.2032, Jaccard score = 0.1792, loss = 0.3284, eval: [9.5 s]
+# Iteration 56 fit: [7.4 s]: Recall = 0.2054, Jaccard score = 0.1815, loss = 0.3278, eval: [9.5 s]
+# Iteration 57 fit: [7.4 s]: Recall = 0.2019, Jaccard score = 0.1778, loss = 0.3273, eval: [9.5 s]
+# Iteration 58 fit: [7.4 s]: Recall = 0.2028, Jaccard score = 0.1788, loss = 0.3267, eval: [9.5 s]
+# Iteration 59 fit: [7.4 s]: Recall = 0.2044, Jaccard score = 0.1804, loss = 0.3264, eval: [9.5 s]
+# Iteration 60 fit: [7.5 s]: Recall = 0.2027, Jaccard score = 0.1786, loss = 0.3253, eval: [9.5 s]
+# Iteration 61 fit: [7.4 s]: Recall = 0.2023, Jaccard score = 0.1782, loss = 0.3248, eval: [9.5 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1565789748.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1565789748.h5
+# Load data done [12.6 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 100)          0                                            
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 356)          0           user_features[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           34272       concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 96)           0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          activation_1[0][0]               
+# ==================================================================================================
+# Total params: 546,369
+# Trainable params: 546,369
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0264, Jaccard score = 0.0201
+# Iteration 0 fit: [8.4 s]: Recall = 0.1530, Jaccard score = 0.1292, loss = 0.4856, eval: [9.5 s]
+# Iteration 1 fit: [7.7 s]: Recall = 0.1695, Jaccard score = 0.1452, loss = 0.4299, eval: [9.5 s]
+# Iteration 2 fit: [7.7 s]: Recall = 0.1765, Jaccard score = 0.1520, loss = 0.4110, eval: [9.6 s]
+# Iteration 3 fit: [7.7 s]: Recall = 0.1823, Jaccard score = 0.1578, loss = 0.4007, eval: [9.5 s]
+# Iteration 4 fit: [7.7 s]: Recall = 0.1866, Jaccard score = 0.1622, loss = 0.3933, eval: [9.5 s]
+# Iteration 5 fit: [7.7 s]: Recall = 0.1897, Jaccard score = 0.1653, loss = 0.3874, eval: [9.6 s]
+# Iteration 6 fit: [7.7 s]: Recall = 0.1911, Jaccard score = 0.1667, loss = 0.3828, eval: [9.6 s]
+# Iteration 7 fit: [7.7 s]: Recall = 0.1937, Jaccard score = 0.1694, loss = 0.3784, eval: [9.5 s]
+# Iteration 8 fit: [7.7 s]: Recall = 0.1945, Jaccard score = 0.1702, loss = 0.3744, eval: [9.5 s]
+# Iteration 9 fit: [7.7 s]: Recall = 0.1956, Jaccard score = 0.1713, loss = 0.3711, eval: [9.5 s]
+# Iteration 10 fit: [7.7 s]: Recall = 0.1961, Jaccard score = 0.1719, loss = 0.3682, eval: [9.5 s]
+# Iteration 11 fit: [7.7 s]: Recall = 0.1947, Jaccard score = 0.1704, loss = 0.3653, eval: [9.5 s]
+# Iteration 12 fit: [7.7 s]: Recall = 0.1968, Jaccard score = 0.1726, loss = 0.3628, eval: [9.5 s]
+# Iteration 13 fit: [7.8 s]: Recall = 0.1968, Jaccard score = 0.1726, loss = 0.3605, eval: [9.5 s]
+# Iteration 14 fit: [7.7 s]: Recall = 0.1996, Jaccard score = 0.1754, loss = 0.3582, eval: [9.5 s]
+# Iteration 15 fit: [7.7 s]: Recall = 0.1996, Jaccard score = 0.1754, loss = 0.3566, eval: [9.5 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[512,256]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,256]_1565790064.h5
+--weights_path: Pretrain/_MLP_8_[512,256]_1565790064.h5
+# Load data done [12.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 100)          0                                            
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 356)          0           user_features[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 256)          91392       concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 256)          0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            257         activation_1[0][0]               
+# ==================================================================================================
+# Total params: 603,649
+# Trainable params: 603,649
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0242, Jaccard score = 0.0184
+# Iteration 0 fit: [8.5 s]: Recall = 0.1561, Jaccard score = 0.1322, loss = 0.4722, eval: [9.5 s]
+# Iteration 1 fit: [7.7 s]: Recall = 0.1718, Jaccard score = 0.1474, loss = 0.4195, eval: [9.5 s]
+# Iteration 2 fit: [7.9 s]: Recall = 0.1784, Jaccard score = 0.1539, loss = 0.4028, eval: [9.5 s]
+# Iteration 3 fit: [7.7 s]: Recall = 0.1868, Jaccard score = 0.1623, loss = 0.3925, eval: [9.5 s]
+# Iteration 4 fit: [7.7 s]: Recall = 0.1900, Jaccard score = 0.1656, loss = 0.3852, eval: [9.5 s]
+# Iteration 5 fit: [7.8 s]: Recall = 0.1920, Jaccard score = 0.1677, loss = 0.3792, eval: [9.5 s]
+# Iteration 6 fit: [7.7 s]: Recall = 0.1958, Jaccard score = 0.1716, loss = 0.3740, eval: [9.5 s]
+# Iteration 7 fit: [7.7 s]: Recall = 0.1978, Jaccard score = 0.1736, loss = 0.3690, eval: [9.5 s]
+# Iteration 8 fit: [7.7 s]: Recall = 0.1967, Jaccard score = 0.1725, loss = 0.3654, eval: [9.5 s]
+# Iteration 9 fit: [7.7 s]: Recall = 0.1988, Jaccard score = 0.1747, loss = 0.3618, eval: [9.5 s]
+# Iteration 10 fit: [8.3 s]: Recall = 0.1989, Jaccard score = 0.1748, loss = 0.3585, eval: [11.7 s]
+# Iteration 11 fit: [7.7 s]: Recall = 0.1998, Jaccard score = 0.1757, loss = 0.3556, eval: [9.5 s]
+# Iteration 12 fit: [7.7 s]: Recall = 0.2011, Jaccard score = 0.1770, loss = 0.3531, eval: [9.4 s]
+# Iteration 13 fit: [7.7 s]: Recall = 0.2052, Jaccard score = 0.1813, loss = 0.3505, eval: [9.4 s]
+# Iteration 14 fit: [7.7 s]: Recall = 0.2019, Jaccard score = 0.1778, loss = 0.3481, eval: [9.4 s]
+# Iteration 15 fit: [7.7 s]: Recall = 0.2010, Jaccard score = 0.1769, loss = 0.3459, eval: [9.4 s]
+# Iteration 16 fit: [7.8 s]: Recall = 0.2040, Jaccard score = 0.1800, loss = 0.3440, eval: [9.4 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[512,256]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,256]_1565790434.h5
+--weights_path: Pretrain/_MLP_8_[512,256]_1565790434.h5
+# Load data done [9.3 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# _________________________________________________________________
+# Layer (type)                 Output Shape              Param #   
+# =================================================================
+# item_input (InputLayer)      (None, 1)                 0         
+# _________________________________________________________________
+# item_embedding (Embedding)   (None, 1, 256)            512000    
+# _________________________________________________________________
+# flatten_2 (Flatten)          (None, 256)               0         
+# _________________________________________________________________
+# layer1 (Dense)               (None, 256)               65792     
+# _________________________________________________________________
+# activation_1 (Activation)    (None, 256)               0         
+# _________________________________________________________________
+# prediction (Dense)           (None, 1)                 257       
+# =================================================================
+# Total params: 578,049
+# Trainable params: 578,049
+# Non-trainable params: 0
+# _________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0305, Jaccard score = 0.0233
+# Iteration 0 fit: [7.0 s]: Recall = 0.1385, Jaccard score = 0.1156, loss = 0.4430, eval: [5.8 s]
+# Iteration 1 fit: [6.8 s]: Recall = 0.1365, Jaccard score = 0.1137, loss = 0.4219, eval: [5.9 s]
+# Iteration 2 fit: [6.7 s]: Recall = 0.1362, Jaccard score = 0.1134, loss = 0.4209, eval: [5.9 s]
+# Iteration 3 fit: [6.6 s]: Recall = 0.1382, Jaccard score = 0.1153, loss = 0.4207, eval: [5.9 s]
+# Iteration 4 fit: [6.6 s]: Recall = 0.1359, Jaccard score = 0.1131, loss = 0.4209, eval: [5.9 s]
+# Iteration 5 fit: [6.6 s]: Recall = 0.1354, Jaccard score = 0.1127, loss = 0.4204, eval: [5.9 s]
+# Iteration 6 fit: [6.6 s]: Recall = 0.1348, Jaccard score = 0.1122, loss = 0.4201, eval: [5.8 s]
+# Iteration 7 fit: [6.6 s]: Recall = 0.1352, Jaccard score = 0.1125, loss = 0.4201, eval: [5.8 s]
+# Iteration 8 fit: [6.6 s]: Recall = 0.1378, Jaccard score = 0.1149, loss = 0.4200, eval: [5.8 s]
+# Iteration 9 fit: [6.6 s]: Recall = 0.1352, Jaccard score = 0.1125, loss = 0.4203, eval: [5.8 s]
+# Iteration 10 fit: [6.6 s]: Recall = 0.1381, Jaccard score = 0.1152, loss = 0.4199, eval: [5.8 s]
+# Iteration 11 fit: [6.6 s]: Recall = 0.1404, Jaccard score = 0.1173, loss = 0.4201, eval: [5.9 s]
+# Iteration 12 fit: [6.6 s]: Recall = 0.1391, Jaccard score = 0.1161, loss = 0.4201, eval: [5.8 s]
+# Iteration 13 fit: [6.6 s]: Recall = 0.1361, Jaccard score = 0.1134, loss = 0.4201, eval: [5.8 s]
+# Iteration 14 fit: [6.6 s]: Recall = 0.1388, Jaccard score = 0.1158, loss = 0.4198, eval: [5.8 s]
+# Iteration 15 fit: [6.6 s]: Recall = 0.1383, Jaccard score = 0.1154, loss = 0.4198, eval: [5.8 s]
+# Iteration 16 fit: [6.6 s]: Recall = 0.1369, Jaccard score = 0.1140, loss = 0.4198, eval: [5.9 s]
+# Iteration 17 fit: [6.6 s]: Recall = 0.1401, Jaccard score = 0.1170, loss = 0.4200, eval: [5.8 s]
+# Iteration 18 fit: [6.6 s]: Recall = 0.1374, Jaccard score = 0.1145, loss = 0.4194, eval: [5.8 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[512,256]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,256]_1565790851.h5
+--weights_path: Pretrain/_MLP_8_[512,256]_1565790851.h5
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=35, epochs=300, eval_recall=1, is_tag=1, layers='[512,256]', learner='adam', lr=0.0001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,256]_1565790863.h5
+--weights_path: Pretrain/_MLP_8_[512,256]_1565790863.h5
+# Load data done [10.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_features (InputLayer)      (None, 100)          0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dense_feature_layer1 (Dense)    (None, 512)          51712       user_features[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 768)          0           dense_feature_layer1[0][0]       
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 256)          196864      concatenate_3[0][0]              
+# __________________________________________________________________________________________________
+# activation_1 (Activation)       (None, 256)          0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            257         activation_1[0][0]               
+# ==================================================================================================
+# Total params: 760,833
+# Trainable params: 760,833
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0263, Jaccard score = 0.0201
+# Iteration 0 fit: [7.8 s]: Recall = 0.1611, Jaccard score = 0.1370, loss = 0.4702, eval: [5.8 s]
+# Iteration 1 fit: [7.4 s]: Recall = 0.1724, Jaccard score = 0.1480, loss = 0.4224, eval: [5.8 s]
+# Iteration 2 fit: [7.3 s]: Recall = 0.1833, Jaccard score = 0.1589, loss = 0.4033, eval: [5.8 s]
+# Iteration 3 fit: [7.3 s]: Recall = 0.1905, Jaccard score = 0.1661, loss = 0.3914, eval: [5.8 s]
+# Iteration 4 fit: [7.3 s]: Recall = 0.1889, Jaccard score = 0.1646, loss = 0.3826, eval: [5.8 s]
+# Iteration 5 fit: [7.3 s]: Recall = 0.1928, Jaccard score = 0.1685, loss = 0.3754, eval: [5.8 s]
+# Iteration 6 fit: [7.3 s]: Recall = 0.1969, Jaccard score = 0.1727, loss = 0.3679, eval: [5.8 s]
+# Iteration 7 fit: [7.3 s]: Recall = 0.1980, Jaccard score = 0.1739, loss = 0.3620, eval: [5.8 s]
+# Iteration 8 fit: [7.3 s]: Recall = 0.1993, Jaccard score = 0.1751, loss = 0.3564, eval: [5.8 s]
+# Iteration 9 fit: [7.3 s]: Recall = 0.2005, Jaccard score = 0.1764, loss = 0.3511, eval: [5.8 s]
+# Iteration 10 fit: [7.3 s]: Recall = 0.2016, Jaccard score = 0.1775, loss = 0.3468, eval: [5.8 s]
+# Iteration 11 fit: [7.3 s]: Recall = 0.2044, Jaccard score = 0.1804, loss = 0.3424, eval: [5.8 s]
+# Iteration 12 fit: [7.3 s]: Recall = 0.2043, Jaccard score = 0.1803, loss = 0.3383, eval: [5.8 s]
+# Iteration 13 fit: [7.3 s]: Recall = 0.2055, Jaccard score = 0.1816, loss = 0.3346, eval: [5.8 s]
+# Iteration 14 fit: [7.3 s]: Recall = 0.2041, Jaccard score = 0.1801, loss = 0.3303, eval: [5.8 s]
+# Iteration 15 fit: [7.3 s]: Recall = 0.2046, Jaccard score = 0.1806, loss = 0.3274, eval: [5.8 s]
+# Iteration 16 fit: [7.3 s]: Recall = 0.2048, Jaccard score = 0.1809, loss = 0.3237, eval: [5.8 s]
+# Iteration 17 fit: [7.3 s]: Recall = 0.2054, Jaccard score = 0.1815, loss = 0.3206, eval: [5.9 s]
+# Iteration 18 fit: [7.3 s]: Recall = 0.2058, Jaccard score = 0.1819, loss = 0.3173, eval: [5.8 s]
+# Iteration 19 fit: [7.3 s]: Recall = 0.2043, Jaccard score = 0.1803, loss = 0.3136, eval: [5.8 s]
+# Iteration 20 fit: [7.3 s]: Recall = 0.2055, Jaccard score = 0.1816, loss = 0.3113, eval: [5.8 s]
+# Iteration 21 fit: [7.3 s]: Recall = 0.2039, Jaccard score = 0.1800, loss = 0.3078, eval: [5.8 s]
+# Iteration 22 fit: [7.3 s]: Recall = 0.2056, Jaccard score = 0.1817, loss = 0.3053, eval: [5.8 s]
+# Iteration 23 fit: [7.4 s]: Recall = 0.2046, Jaccard score = 0.1806, loss = 0.3026, eval: [5.8 s]
+# Iteration 24 fit: [7.3 s]: Recall = 0.2035, Jaccard score = 0.1795, loss = 0.2993, eval: [5.8 s]
+# Iteration 25 fit: [7.3 s]: Recall = 0.2051, Jaccard score = 0.1812, loss = 0.2971, eval: [5.8 s]
+# Iteration 26 fit: [7.3 s]: Recall = 0.2039, Jaccard score = 0.1800, loss = 0.2949, eval: [5.8 s]
+# Iteration 27 fit: [7.3 s]: Recall = 0.2011, Jaccard score = 0.1771, loss = 0.2918, eval: [5.8 s]
+# Iteration 28 fit: [7.3 s]: Recall = 0.2021, Jaccard score = 0.1781, loss = 0.2899, eval: [5.8 s]

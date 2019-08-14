@@ -14,6 +14,7 @@ sys.path.append("..")
 from builtins import range
 from past.utils import old_div
 import numpy as np
+import os
 
 import keras
 from keras import backend as K
@@ -23,6 +24,7 @@ from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
+from keras.preprocessing.sequence import pad_sequences
 from evaluate import evaluate_model
 from evaluate_recall import evaluate_model_recall
 from Dataset import Dataset
@@ -228,8 +230,72 @@ def main(sargs):
     dataset = Dataset(args.path + args.dataset, args.eval_recall, args.is_tag, args.big_tag, args.test_dataset,
                       dataset_name_prepend=args.dataset_name_prepend)
     train, testRatings, testNegatives = dataset.trainMatrix, dataset.testRatings, dataset.testNegatives
+    mlbx = dataset.mlbx
     num_users, num_items = train.shape
     num_autotags = dataset.X.shape[1]
+    
+    # MAX_SEQUENCE_LENGTH = np.max(np.sum(dataset.X, axis=1))
+
+    # index_autotag_data = np.zeros((dataset.X.shape[0], MAX_SEQUENCE_LENGTH))
+    
+    # lastrow = -1
+    # col = 0
+    # for row, index in zip(*dataset.X.nonzero()):
+    #     if row == lastrow:
+    #         col += 1
+    #     else:
+    #         lastrow = row
+    #         col = 0
+    #         index_autotag_data[row, col] = index + 1
+
+    # dataset.X = index_autotag_data
+
+
+    EMBEDDING_DIM = 100
+    GLOVE_DIR = "/home/david/Documents/glove"
+
+    glove_index = {}
+    with open(os.path.join(GLOVE_DIR, 'glove.6B.100d.txt')) as f:
+        for line in f:
+            values = line.split()
+            word = values[0]
+            coefs = np.asarray(values[1:], dtype='float32')
+            glove_index[word] = coefs
+    
+    # add words and composite words to index
+    embedding_matrix = np.zeros((num_autotags, EMBEDDING_DIM))
+    for i, autotag in enumerate(mlbx.classes_):
+        if autotag == "blackandwhite":
+            autotag = "black-and-white"
+        elif autotag == "branchlet":
+            autotag = "small branch"
+        elif autotag == "carthorse":
+            autotag = "work horse"
+        elif autotag == "farmer's market":
+            autotag = "farmers market"
+        elif autotag == "grainfield":
+            autotag = "grain field"
+        elif autotag == "groupshot":
+            autotag = "group shot"
+        elif autotag == "jack-o-lantern":
+            autotag = "jack o'lantern"
+        elif autotag == "photomicrograph":
+            autotag = "microscope photo"
+        elif autotag == "radiogram":
+            autotag = "radio telegram"
+        elif autotag == "stemma":
+            autotag = "coat of arms"
+        elif autotag == "sunbath":
+            autotag = "sun bath"
+        embedding_matrix[i] = sum((glove_index[word] for word in autotag.split(' ')))
+
+    summed_glove_vectors = np.array([
+        sum(
+            [embedding_matrix[index] for index in item_row.nonzero()[0]]
+        ) for item_row in dataset.X
+    ])
+
+    dataset.X = summed_glove_vectors
     if args.eval_recall:
         num_test_ratings = "eval_recall"
     else:
@@ -243,7 +309,7 @@ def main(sargs):
     elif model_type == "GMF":
         model = GMF.get_model(num_users,num_items,mf_dim)
     elif model_type == "MLP":
-        model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
+        model = MLP.get_model(num_users, num_autotags, num_items, mlbx, layers, reg_layers)
     else:
         print("Error: wrong model type")
         sys.exit()
@@ -264,7 +330,7 @@ def main(sargs):
     if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
         gmf_model = GMF.get_model(num_users,num_items,mf_dim)
         gmf_model.load_weights(mf_pretrain)
-        mlp_model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
+        mlp_model = MLP.get_model(num_users, num_autotags, num_items, mlbx, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
         model = load_pretrain_model(model, gmf_model, mlp_model, len(layers))
         print("Load pretrained GMF (%s) and MLP (%s) models done. " %(mf_pretrain, mlp_pretrain))

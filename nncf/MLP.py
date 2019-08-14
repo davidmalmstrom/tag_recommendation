@@ -11,6 +11,7 @@ from __future__ import division
 from builtins import range
 from past.utils import old_div
 import numpy as np
+import os
 
 import keras
 from keras import backend as K
@@ -60,26 +61,76 @@ def parse_args():
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
 
-def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[0,0]):
+def get_model(num_users, num_autotags, num_items, mlbx, layers = [20,10], reg_layers=[0,0]):
     assert len(layers) == len(reg_layers)
     num_layer = len(layers) #Number of layers in the MLP
     # Input variables
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
-    user_features = Input(shape=(num_autotags,), dtype='float32', name='user_features')
+    user_features = Input(shape=(100,), dtype='float32', name='user_features')
+
+    def decode(datum):
+        return np.argmax(datum)
+    
+    
 
     MLP_Embedding_User = Embedding(input_dim = num_users, output_dim = old_div(layers[0],2), name = 'user_embedding',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
     MLP_Embedding_Item = Embedding(input_dim = num_items, output_dim = old_div(layers[0],2), name = 'item_embedding',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
+    
+    # EMBEDDING_DIM = 100
+    # GLOVE_DIR = "/home/david/Documents/glove"
 
+    # glove_index = {}
+    # with open(os.path.join(GLOVE_DIR, 'glove.6B.100d.txt')) as f:
+    #     for line in f:
+    #         values = line.split()
+    #         word = values[0]
+    #         coefs = np.asarray(values[1:], dtype='float32')
+    #         glove_index[word] = coefs
+    
+    # # add words and composite words to index
+    # embedding_matrix = np.zeros((num_autotags, EMBEDDING_DIM))
+    # for i, autotag in enumerate(mlbx.classes_):
+    #     if autotag == "blackandwhite":
+    #         autotag = "black-and-white"
+    #     elif autotag == "branchlet":
+    #         autotag = "small branch"
+    #     elif autotag == "carthorse":
+    #         autotag = "work horse"
+    #     elif autotag == "farmer's market":
+    #         autotag = "farmers market"
+    #     elif autotag == "grainfield":
+    #         autotag = "grain field"
+    #     elif autotag == "groupshot":
+    #         autotag = "group shot"
+    #     elif autotag == "jack-o-lantern":
+    #         autotag = "jack o'lantern"
+    #     elif autotag == "photomicrograph":
+    #         autotag = "microscope photo"
+    #     elif autotag == "radiogram":
+    #         autotag = "radio telegram"
+    #     elif autotag == "stemma":
+    #         autotag = "coat of arms"
+    #     elif autotag == "sunbath":
+    #         autotag = "sun bath"
+    #     embedding_matrix[i] = sum((glove_index[word] for word in autotag.split(' ')))
+                
+    # MLP_Embedding_User_Features = Embedding(input_dim=num_autotags,  # Med mask så ska det vara 1 till här tror jag 
+    #                                         output_dim=EMBEDDING_DIM,
+    #                                         embeddings_initializer=initializers.Constant(embedding_matrix),
+    #                                         input_length=77,  # Ändra detta till en variabel, finns på ett ställe till
+    #                                         trainable=False)
     
     # Crucial to flatten an embedding vector!
     user_latent = Flatten()(MLP_Embedding_User(user_input))
     item_latent = Flatten()(MLP_Embedding_Item(item_input))
     
-    feature_latent = Dense(1024, kernel_regularizer=l2(reg_layers[0]), activation='relu', name='dense_feature_layer1',
+    feature_latent = Dense(512, kernel_regularizer=l2(reg_layers[0]), activation='relu', name='dense_feature_layer1',
                            kernel_initializer='lecun_uniform')(user_features)
+    # feature_latent = user_features
+    # feature_latent = Flatten()(MLP_Embedding_User_Features(user_features))
     #feature_latent = Dense(layers[0], kernel_regularizer=l2(reg_layers[0]), name='dense_feature_layer2')(feature_latent)
 
     # feature_latent = Dropout(0.5)(feature_latent)
