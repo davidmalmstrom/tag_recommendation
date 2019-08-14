@@ -1,0 +1,1208 @@
+# optimizer:
+# <function gp_minimize at 0x7fa68f5f9ae8>
+# opt-args:
+# (<function opt_naive_bayes at 0x7fa68f5ff510>, [(0.1, 15)])
+# opt-kwargs:
+# {'verbose': True, 'random_state': 0, 'n_calls': 120}
+# 
+# Iteration No: 1 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.933384811552775'}
+# Iteration No: 1 ended. Evaluation done at random point.
+# Time taken: 156.2815
+# Function value obtained: -0.0801
+# Current minimum: -0.0801
+# Iteration No: 2 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.679559653857162'}
+# Iteration No: 2 ended. Evaluation done at random point.
+# Time taken: 151.1310
+# Function value obtained: -0.0795
+# Current minimum: -0.0801
+# Iteration No: 3 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.883389702579079'}
+# Iteration No: 3 ended. Evaluation done at random point.
+# Time taken: 151.1816
+# Function value obtained: -0.0794
+# Current minimum: -0.0801
+# Iteration No: 4 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.724050907883472'}
+# Iteration No: 4 ended. Evaluation done at random point.
+# Time taken: 151.5222
+# Function value obtained: -0.0795
+# Current minimum: -0.0801
+# Iteration No: 5 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '9.391099082110989'}
+# Iteration No: 5 ended. Evaluation done at random point.
+# Time taken: 151.2828
+# Function value obtained: -0.0803
+# Current minimum: -0.0803
+# Iteration No: 6 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.827287438661229'}
+# Iteration No: 6 ended. Evaluation done at random point.
+# Time taken: 151.5770
+# Function value obtained: -0.0805
+# Current minimum: -0.0805
+# Iteration No: 7 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.5332656375126374'}
+# Iteration No: 7 ended. Evaluation done at random point.
+# Time taken: 151.9674
+# Function value obtained: -0.0806
+# Current minimum: -0.0806
+# Iteration No: 8 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '0.9450233620299036'}
+# Iteration No: 8 ended. Evaluation done at random point.
+# Time taken: 150.8187
+# Function value obtained: -0.0788
+# Current minimum: -0.0806
+# Iteration No: 9 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.162578789243687'}
+# Iteration No: 9 ended. Evaluation done at random point.
+# Time taken: 152.0016
+# Function value obtained: -0.0808
+# Current minimum: -0.0808
+# Iteration No: 10 started. Evaluating function at random point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '7.217210248088114'}
+# Iteration No: 10 ended. Evaluation done at random point.
+# Time taken: 152.5412
+# Function value obtained: -0.0804
+# Current minimum: -0.0808
+# Iteration No: 11 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '0.10029841019871494'}
+# Iteration No: 11 ended. Search finished for the next optimal point.
+# Time taken: 152.7274
+# Function value obtained: -0.0652
+# Current minimum: -0.0808
+# Iteration No: 12 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '15.0'}
+# Iteration No: 12 ended. Search finished for the next optimal point.
+# Time taken: 152.3686
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 13 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.99530653932374'}
+# Iteration No: 13 ended. Search finished for the next optimal point.
+# Time taken: 153.6829
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 14 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.708972086224845'}
+# Iteration No: 14 ended. Search finished for the next optimal point.
+# Time taken: 151.6702
+# Function value obtained: -0.0802
+# Current minimum: -0.0808
+# Iteration No: 15 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.997082901636427'}
+# Iteration No: 15 ended. Search finished for the next optimal point.
+# Time taken: 151.6007
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 16 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.835732826677722'}
+# Iteration No: 16 ended. Search finished for the next optimal point.
+# Time taken: 152.7610
+# Function value obtained: -0.0802
+# Current minimum: -0.0808
+# Iteration No: 17 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.88706420376975'}
+# Iteration No: 17 ended. Search finished for the next optimal point.
+# Time taken: 152.5593
+# Function value obtained: -0.0802
+# Current minimum: -0.0808
+# Iteration No: 18 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.998728541456865'}
+# Iteration No: 18 ended. Search finished for the next optimal point.
+# Time taken: 151.4815
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 19 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.979844726249754'}
+# Iteration No: 19 ended. Search finished for the next optimal point.
+# Time taken: 152.1089
+# Function value obtained: -0.0802
+# Current minimum: -0.0808
+# Iteration No: 20 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '0.10241808410878682'}
+# Iteration No: 20 ended. Search finished for the next optimal point.
+# Time taken: 151.2475
+# Function value obtained: -0.0654
+# Current minimum: -0.0808
+# Iteration No: 21 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.22684238295599'}
+# Iteration No: 21 ended. Search finished for the next optimal point.
+# Time taken: 152.2144
+# Function value obtained: -0.0807
+# Current minimum: -0.0808
+# Iteration No: 22 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.999305985079072'}
+# Iteration No: 22 ended. Search finished for the next optimal point.
+# Time taken: 152.4659
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 23 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.174179500901564'}
+# Iteration No: 23 ended. Search finished for the next optimal point.
+# Time taken: 151.3280
+# Function value obtained: -0.0806
+# Current minimum: -0.0808
+# Iteration No: 24 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '11.008654475440643'}
+# Iteration No: 24 ended. Search finished for the next optimal point.
+# Time taken: 151.8240
+# Function value obtained: -0.0799
+# Current minimum: -0.0808
+# Iteration No: 25 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.995969146660755'}
+# Iteration No: 25 ended. Search finished for the next optimal point.
+# Time taken: 153.8151
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 26 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.182261754497958'}
+# Iteration No: 26 ended. Search finished for the next optimal point.
+# Time taken: 151.4278
+# Function value obtained: -0.0806
+# Current minimum: -0.0808
+# Iteration No: 27 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.148740469580851'}
+# Iteration No: 27 ended. Search finished for the next optimal point.
+# Time taken: 152.5160
+# Function value obtained: -0.0805
+# Current minimum: -0.0808
+# Iteration No: 28 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '10.945169331244458'}
+# Iteration No: 28 ended. Search finished for the next optimal point.
+# Time taken: 152.2221
+# Function value obtained: -0.0800
+# Current minimum: -0.0808
+# Iteration No: 29 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.99867636859032'}
+# Iteration No: 29 ended. Search finished for the next optimal point.
+# Time taken: 153.7462
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 30 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '7.171551628048699'}
+# Iteration No: 30 ended. Search finished for the next optimal point.
+# Time taken: 152.4647
+# Function value obtained: -0.0805
+# Current minimum: -0.0808
+# Iteration No: 31 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '7.200774548110502'}
+# Iteration No: 31 ended. Search finished for the next optimal point.
+# Time taken: 152.5030
+# Function value obtained: -0.0805
+# Current minimum: -0.0808
+# Iteration No: 32 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '11.154875732769987'}
+# Iteration No: 32 ended. Search finished for the next optimal point.
+# Time taken: 152.7659
+# Function value obtained: -0.0799
+# Current minimum: -0.0808
+# Iteration No: 33 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '7.175315320808244'}
+# Iteration No: 33 ended. Search finished for the next optimal point.
+# Time taken: 151.5770
+# Function value obtained: -0.0805
+# Current minimum: -0.0808
+# Iteration No: 34 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '7.2021908709252935'}
+# Iteration No: 34 ended. Search finished for the next optimal point.
+# Time taken: 152.2150
+# Function value obtained: -0.0804
+# Current minimum: -0.0808
+# Iteration No: 35 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.999349584049623'}
+# Iteration No: 35 ended. Search finished for the next optimal point.
+# Time taken: 152.7705
+# Function value obtained: -0.0789
+# Current minimum: -0.0808
+# Iteration No: 36 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.066304003349756'}
+# Iteration No: 36 ended. Search finished for the next optimal point.
+# Time taken: 153.2568
+# Function value obtained: -0.0809
+# Current minimum: -0.0809
+# Iteration No: 37 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '11.39564069059551'}
+# Iteration No: 37 ended. Search finished for the next optimal point.
+# Time taken: 161.3906
+# Function value obtained: -0.0798
+# Current minimum: -0.0809
+# Iteration No: 38 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.9534120014704945'}
+# Iteration No: 38 ended. Search finished for the next optimal point.
+# Time taken: 153.2362
+# Function value obtained: -0.0809
+# Current minimum: -0.0809
+# Iteration No: 39 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '6.649782271207653'}
+# Iteration No: 39 ended. Search finished for the next optimal point.
+# Time taken: 151.0412
+# Function value obtained: -0.0805
+# Current minimum: -0.0809
+# Iteration No: 40 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '6.667130378431281'}
+# Iteration No: 40 ended. Search finished for the next optimal point.
+# Time taken: 152.3592
+# Function value obtained: -0.0805
+# Current minimum: -0.0809
+# Iteration No: 41 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '6.682743511866123'}
+# Iteration No: 41 ended. Search finished for the next optimal point.
+# Time taken: 151.6241
+# Function value obtained: -0.0805
+# Current minimum: -0.0809
+# Iteration No: 42 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '6.701109055172925'}
+# Iteration No: 42 ended. Search finished for the next optimal point.
+# Time taken: 152.5003
+# Function value obtained: -0.0805
+# Current minimum: -0.0809
+# Iteration No: 43 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.997178709390251'}
+# Iteration No: 43 ended. Search finished for the next optimal point.
+# Time taken: 151.9190
+# Function value obtained: -0.0789
+# Current minimum: -0.0809
+# Iteration No: 44 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '0.10051222597056397'}
+# Iteration No: 44 ended. Search finished for the next optimal point.
+# Time taken: 156.8673
+# Function value obtained: -0.0653
+# Current minimum: -0.0809
+# Iteration No: 45 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '11.771438722759973'}
+# Iteration No: 45 ended. Search finished for the next optimal point.
+# Time taken: 154.9629
+# Function value obtained: -0.0797
+# Current minimum: -0.0809
+# Iteration No: 46 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.6457974967622753'}
+# Iteration No: 46 ended. Search finished for the next optimal point.
+# Time taken: 153.3686
+# Function value obtained: -0.0813
+# Current minimum: -0.0813
+# Iteration No: 47 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.486486895608596'}
+# Iteration No: 47 ended. Search finished for the next optimal point.
+# Time taken: 154.3088
+# Function value obtained: -0.0813
+# Current minimum: -0.0813
+# Iteration No: 48 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.606673755031914'}
+# Iteration No: 48 ended. Search finished for the next optimal point.
+# Time taken: 154.4369
+# Function value obtained: -0.0804
+# Current minimum: -0.0813
+# Iteration No: 49 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.639909155490993'}
+# Iteration No: 49 ended. Search finished for the next optimal point.
+# Time taken: 151.9176
+# Function value obtained: -0.0804
+# Current minimum: -0.0813
+# Iteration No: 50 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.178323686923981'}
+# Iteration No: 50 ended. Search finished for the next optimal point.
+# Time taken: 151.3031
+# Function value obtained: -0.0796
+# Current minimum: -0.0813
+# Iteration No: 51 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.68578696942226'}
+# Iteration No: 51 ended. Search finished for the next optimal point.
+# Time taken: 160.1471
+# Function value obtained: -0.0805
+# Current minimum: -0.0813
+# Iteration No: 52 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.1979905009976473'}
+# Iteration No: 52 ended. Search finished for the next optimal point.
+# Time taken: 159.2985
+# Function value obtained: -0.0812
+# Current minimum: -0.0813
+# Iteration No: 53 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '5.252636262107011'}
+# Iteration No: 53 ended. Search finished for the next optimal point.
+# Time taken: 158.3139
+# Function value obtained: -0.0806
+# Current minimum: -0.0813
+# Iteration No: 54 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.0708316906464264'}
+# Iteration No: 54 ended. Search finished for the next optimal point.
+# Time taken: 160.0053
+# Function value obtained: -0.0813
+# Current minimum: -0.0813
+# Iteration No: 55 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.547913209295043'}
+# Iteration No: 55 ended. Search finished for the next optimal point.
+# Time taken: 157.4810
+# Function value obtained: -0.0796
+# Current minimum: -0.0813
+# Iteration No: 56 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.988288264613198'}
+# Iteration No: 56 ended. Search finished for the next optimal point.
+# Time taken: 153.6956
+# Function value obtained: -0.0811
+# Current minimum: -0.0813
+# Iteration No: 57 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.9233332743819522'}
+# Iteration No: 57 ended. Search finished for the next optimal point.
+# Time taken: 152.3903
+# Function value obtained: -0.0810
+# Current minimum: -0.0813
+# Iteration No: 58 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.5780509279423125'}
+# Iteration No: 58 ended. Search finished for the next optimal point.
+# Time taken: 152.3255
+# Function value obtained: -0.0805
+# Current minimum: -0.0813
+# Iteration No: 59 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.605461617410727'}
+# Iteration No: 59 ended. Search finished for the next optimal point.
+# Time taken: 151.8152
+# Function value obtained: -0.0804
+# Current minimum: -0.0813
+# Iteration No: 60 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.632501322048426'}
+# Iteration No: 60 ended. Search finished for the next optimal point.
+# Time taken: 154.1262
+# Function value obtained: -0.0804
+# Current minimum: -0.0813
+# Iteration No: 61 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.761654873036964'}
+# Iteration No: 61 ended. Search finished for the next optimal point.
+# Time taken: 152.1213
+# Function value obtained: -0.0794
+# Current minimum: -0.0813
+# Iteration No: 62 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.995904607342615'}
+# Iteration No: 62 ended. Search finished for the next optimal point.
+# Time taken: 152.6903
+# Function value obtained: -0.0789
+# Current minimum: -0.0813
+# Iteration No: 63 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '10.003961722027505'}
+# Iteration No: 63 ended. Search finished for the next optimal point.
+# Time taken: 152.1962
+# Function value obtained: -0.0802
+# Current minimum: -0.0813
+# Iteration No: 64 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.706519285024378'}
+# Iteration No: 64 ended. Search finished for the next optimal point.
+# Time taken: 152.2856
+# Function value obtained: -0.0811
+# Current minimum: -0.0813
+# Iteration No: 65 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '12.897715710777437'}
+# Iteration No: 65 ended. Search finished for the next optimal point.
+# Time taken: 151.2980
+# Function value obtained: -0.0794
+# Current minimum: -0.0813
+# Iteration No: 66 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.4568084553833645'}
+# Iteration No: 66 ended. Search finished for the next optimal point.
+# Time taken: 151.0841
+# Function value obtained: -0.0806
+# Current minimum: -0.0813
+# Iteration No: 67 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '9.866509491836673'}
+# Iteration No: 67 ended. Search finished for the next optimal point.
+# Time taken: 152.9669
+# Function value obtained: -0.0801
+# Current minimum: -0.0813
+# Iteration No: 68 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.612392470077257'}
+# Iteration No: 68 ended. Search finished for the next optimal point.
+# Time taken: 151.1152
+# Function value obtained: -0.0811
+# Current minimum: -0.0813
+# Iteration No: 69 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.273640236712453'}
+# Iteration No: 69 ended. Search finished for the next optimal point.
+# Time taken: 151.7320
+# Function value obtained: -0.0807
+# Current minimum: -0.0813
+# Iteration No: 70 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '13.016802347331001'}
+# Iteration No: 70 ended. Search finished for the next optimal point.
+# Time taken: 152.1263
+# Function value obtained: -0.0793
+# Current minimum: -0.0813
+# Iteration No: 71 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.519918918040286'}
+# Iteration No: 71 ended. Search finished for the next optimal point.
+# Time taken: 153.5466
+# Function value obtained: -0.0810
+# Current minimum: -0.0813
+# Iteration No: 72 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '9.864063912764049'}
+# Iteration No: 72 ended. Search finished for the next optimal point.
+# Time taken: 153.5558
+# Function value obtained: -0.0801
+# Current minimum: -0.0813
+# Iteration No: 73 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.99708836738584'}
+# Iteration No: 73 ended. Search finished for the next optimal point.
+# Time taken: 151.9096
+# Function value obtained: -0.0789
+# Current minimum: -0.0813
+# Iteration No: 74 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.4782797955401485'}
+# Iteration No: 74 ended. Search finished for the next optimal point.
+# Time taken: 152.4401
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 75 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '13.140725986797548'}
+# Iteration No: 75 ended. Search finished for the next optimal point.
+# Time taken: 152.7935
+# Function value obtained: -0.0793
+# Current minimum: -0.0813
+# Iteration No: 76 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.041929705001916'}
+# Iteration No: 76 ended. Search finished for the next optimal point.
+# Time taken: 152.7574
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 77 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '9.865527549675463'}
+# Iteration No: 77 ended. Search finished for the next optimal point.
+# Time taken: 152.6279
+# Function value obtained: -0.0801
+# Current minimum: -0.0813
+# Iteration No: 78 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.403257052574896'}
+# Iteration No: 78 ended. Search finished for the next optimal point.
+# Time taken: 151.8581
+# Function value obtained: -0.0807
+# Current minimum: -0.0813
+# Iteration No: 79 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.969328341043971'}
+# Iteration No: 79 ended. Search finished for the next optimal point.
+# Time taken: 153.2799
+# Function value obtained: -0.0810
+# Current minimum: -0.0813
+# Iteration No: 80 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.9781966489314278'}
+# Iteration No: 80 ended. Search finished for the next optimal point.
+# Time taken: 152.6234
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 81 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.651486543473057'}
+# Iteration No: 81 ended. Search finished for the next optimal point.
+# Time taken: 152.8984
+# Function value obtained: -0.0802
+# Current minimum: -0.0813
+# Iteration No: 82 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.9917661247329446'}
+# Iteration No: 82 ended. Search finished for the next optimal point.
+# Time taken: 152.7883
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 83 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.001191300387368'}
+# Iteration No: 83 ended. Search finished for the next optimal point.
+# Time taken: 154.0383
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 84 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.99982390862125'}
+# Iteration No: 84 ended. Search finished for the next optimal point.
+# Time taken: 153.5136
+# Function value obtained: -0.0789
+# Current minimum: -0.0813
+# Iteration No: 85 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.009217731285326'}
+# Iteration No: 85 ended. Search finished for the next optimal point.
+# Time taken: 153.6632
+# Function value obtained: -0.0808
+# Current minimum: -0.0813
+# Iteration No: 86 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.0171963053871895'}
+# Iteration No: 86 ended. Search finished for the next optimal point.
+# Time taken: 153.5304
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 87 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '13.129301346281748'}
+# Iteration No: 87 ended. Search finished for the next optimal point.
+# Time taken: 153.9515
+# Function value obtained: -0.0793
+# Current minimum: -0.0813
+# Iteration No: 88 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.03275732692701'}
+# Iteration No: 88 ended. Search finished for the next optimal point.
+# Time taken: 153.6454
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 89 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.0395233003402895'}
+# Iteration No: 89 ended. Search finished for the next optimal point.
+# Time taken: 163.5767
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 90 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '10.45268604408246'}
+# Iteration No: 90 ended. Search finished for the next optimal point.
+# Time taken: 156.7522
+# Function value obtained: -0.0803
+# Current minimum: -0.0813
+# Iteration No: 91 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.047481759036031'}
+# Iteration No: 91 ended. Search finished for the next optimal point.
+# Time taken: 153.6793
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 92 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.056683417751566'}
+# Iteration No: 92 ended. Search finished for the next optimal point.
+# Time taken: 154.8241
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 93 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.230064493391732'}
+# Iteration No: 93 ended. Search finished for the next optimal point.
+# Time taken: 153.6689
+# Function value obtained: -0.0803
+# Current minimum: -0.0813
+# Iteration No: 94 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.070112085662365'}
+# Iteration No: 94 ended. Search finished for the next optimal point.
+# Time taken: 154.9571
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 95 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.999709235191993'}
+# Iteration No: 95 ended. Search finished for the next optimal point.
+# Time taken: 155.3420
+# Function value obtained: -0.0789
+# Current minimum: -0.0813
+# Iteration No: 96 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.077734022618291'}
+# Iteration No: 96 ended. Search finished for the next optimal point.
+# Time taken: 154.2587
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 97 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '13.0970244122555'}
+# Iteration No: 97 ended. Search finished for the next optimal point.
+# Time taken: 154.6532
+# Function value obtained: -0.0793
+# Current minimum: -0.0813
+# Iteration No: 98 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.0919058190091695'}
+# Iteration No: 98 ended. Search finished for the next optimal point.
+# Time taken: 153.8249
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 99 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '4.098904899655974'}
+# Iteration No: 99 ended. Search finished for the next optimal point.
+# Time taken: 154.4038
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 100 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '10.526284445559796'}
+# Iteration No: 100 ended. Search finished for the next optimal point.
+# Time taken: 154.8336
+# Function value obtained: -0.0803
+# Current minimum: -0.0813
+# Iteration No: 101 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.051517462181207'}
+# Iteration No: 101 ended. Search finished for the next optimal point.
+# Time taken: 155.3166
+# Function value obtained: -0.0809
+# Current minimum: -0.0813
+# Iteration No: 102 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.7375663082246784'}
+# Iteration No: 102 ended. Search finished for the next optimal point.
+# Time taken: 154.7779
+# Function value obtained: -0.0812
+# Current minimum: -0.0813
+# Iteration No: 103 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.04066498871774'}
+# Iteration No: 103 ended. Search finished for the next optimal point.
+# Time taken: 155.1538
+# Function value obtained: -0.0808
+# Current minimum: -0.0813
+# Iteration No: 104 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.081416081132879'}
+# Iteration No: 104 ended. Search finished for the next optimal point.
+# Time taken: 154.5363
+# Function value obtained: -0.0803
+# Current minimum: -0.0813
+# Iteration No: 105 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.5575880283924843'}
+# Iteration No: 105 ended. Search finished for the next optimal point.
+# Time taken: 155.5281
+# Function value obtained: -0.0812
+# Current minimum: -0.0813
+# Iteration No: 106 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.5635235053112875'}
+# Iteration No: 106 ended. Search finished for the next optimal point.
+# Time taken: 155.7698
+# Function value obtained: -0.0812
+# Current minimum: -0.0813
+# Iteration No: 107 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '10.670293150234189'}
+# Iteration No: 107 ended. Search finished for the next optimal point.
+# Time taken: 156.8909
+# Function value obtained: -0.0802
+# Current minimum: -0.0813
+# Iteration No: 108 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '13.353972625996027'}
+# Iteration No: 108 ended. Search finished for the next optimal point.
+# Time taken: 154.8036
+# Function value obtained: -0.0792
+# Current minimum: -0.0813
+# Iteration No: 109 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '0.10291394188945457'}
+# Iteration No: 109 ended. Search finished for the next optimal point.
+# Time taken: 155.2789
+# Function value obtained: -0.0652
+# Current minimum: -0.0813
+# Iteration No: 110 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.4796341768735957'}
+# Iteration No: 110 ended. Search finished for the next optimal point.
+# Time taken: 155.6572
+# Function value obtained: -0.0814
+# Current minimum: -0.0814
+# Iteration No: 111 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '2.0836575816777656'}
+# Iteration No: 111 ended. Search finished for the next optimal point.
+# Time taken: 155.3119
+# Function value obtained: -0.0807
+# Current minimum: -0.0814
+# Iteration No: 112 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.3925996267473533'}
+# Iteration No: 112 ended. Search finished for the next optimal point.
+# Time taken: 155.2012
+# Function value obtained: -0.0812
+# Current minimum: -0.0814
+# Iteration No: 113 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.3990535207497916'}
+# Iteration No: 113 ended. Search finished for the next optimal point.
+# Time taken: 154.2941
+# Function value obtained: -0.0811
+# Current minimum: -0.0814
+# Iteration No: 114 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '8.028020979854999'}
+# Iteration No: 114 ended. Search finished for the next optimal point.
+# Time taken: 156.0238
+# Function value obtained: -0.0803
+# Current minimum: -0.0814
+# Iteration No: 115 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '10.72653765711182'}
+# Iteration No: 115 ended. Search finished for the next optimal point.
+# Time taken: 155.0578
+# Function value obtained: -0.0802
+# Current minimum: -0.0814
+# Iteration No: 116 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '13.495161096770493'}
+# Iteration No: 116 ended. Search finished for the next optimal point.
+# Time taken: 155.6268
+# Function value obtained: -0.0792
+# Current minimum: -0.0814
+# Iteration No: 117 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '7.974042243845554'}
+# Iteration No: 117 ended. Search finished for the next optimal point.
+# Time taken: 155.0718
+# Function value obtained: -0.0803
+# Current minimum: -0.0814
+# Iteration No: 118 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.419381377254032'}
+# Iteration No: 118 ended. Search finished for the next optimal point.
+# Time taken: 158.1898
+# Function value obtained: -0.0813
+# Current minimum: -0.0814
+# Iteration No: 119 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '14.999938084996423'}
+# Iteration No: 119 ended. Search finished for the next optimal point.
+# Time taken: 155.5712
+# Function value obtained: -0.0789
+# Current minimum: -0.0814
+# Iteration No: 120 started. Searching for the next optimal point.
+# Args: {'--base_model': 'NaiveBayesEstimator', '--num_k_folds': '10', '--topk': '3', '--NB_smoothing': '3.4242026183191734'}
+# Iteration No: 120 ended. Search finished for the next optimal point.
+# Time taken: 155.2631
+# Function value obtained: -0.0813
+# Current minimum: -0.0814
+
+
+#           fun: -0.08140002602854209
+    func_vals: array([-0.08013476, -0.07950468, -0.07936687, -0.07945458, -0.08034995,
+       -0.08046142, -0.080563  , -0.07883524, -0.08079056, -0.08043568,
+       -0.06524022, -0.07886304, -0.07886304, -0.0802352 , -0.07886304,
+       -0.08019756, -0.0801596 , -0.07886304, -0.08018496, -0.06536219,
+       -0.08065048, -0.07886304, -0.08056186, -0.07992156, -0.07886304,
+       -0.08059942, -0.08053758, -0.07998403, -0.07886304, -0.08048572,
+       -0.08046113, -0.0798716 , -0.08049871, -0.08044861, -0.07886304,
+       -0.08094403, -0.07976977, -0.08090652, -0.08051257, -0.08052416,
+       -0.08054905, -0.08049828, -0.07886304, -0.06532756, -0.07968117,
+       -0.08131202, -0.08131189, -0.08041151, -0.08044906, -0.07961846,
+       -0.08049826, -0.08119849, -0.08058741, -0.08125041, -0.07963031,
+       -0.08106231, -0.08104967, -0.08049962, -0.08044942, -0.08041162,
+       -0.0794172 , -0.07886304, -0.08017215, -0.08113558, -0.07937935,
+       -0.08062671, -0.08012169, -0.08114693, -0.08072706, -0.07932879,
+       -0.08098563, -0.08012169, -0.07886304, -0.08087229, -0.07927874,
+       -0.0809178 , -0.08012169, -0.08072261, -0.08097008, -0.08094518,
+       -0.08023457, -0.08093272, -0.08088146, -0.07886304, -0.08081803,
+       -0.08094502, -0.07929138, -0.08085542, -0.08093044, -0.08029811,
+       -0.08090547, -0.08093141, -0.08034686, -0.0809435 , -0.07886304,
+       -0.08093051, -0.07927887, -0.08094226, -0.08091768, -0.08027246,
+       -0.08086129, -0.08119844, -0.08076   , -0.08032243, -0.08124943,
+       -0.0812494 , -0.08024868, -0.07920351, -0.06523798, -0.08140003,
+       -0.08065955, -0.08118656, -0.08114877, -0.08034784, -0.08017288,
+       -0.07919151, -0.08034739, -0.08129847, -0.07886304, -0.08129854])
+       models: [GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5) + WhiteKernel(noise_level=1),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396)]
+ random_state: <mtrand.RandomState object at 0x7fa68f5f8a68>
+        space: Space([Real(low=0.1, high=15, prior='uniform', transform='normalize')])
+        specs: {'args': {'n_jobs': 1, 'kappa': 1.96, 'xi': 0.01, 'n_restarts_optimizer': 5, 'n_points': 10000, 'callback': None, 'verbose': True, 'random_state': <mtrand.RandomState object at 0x7fa68f5f8a68>, 'y0': None, 'x0': None, 'acq_optimizer': 'auto', 'acq_func': 'gp_hedge', 'n_random_starts': 10, 'n_calls': 120, 'base_estimator': GaussianProcessRegressor(alpha=1e-10, copy_X_train=True,
+                         kernel=1**2 * Matern(length_scale=1, nu=2.5),
+                         n_restarts_optimizer=2, noise='gaussian',
+                         normalize_y=True, optimizer='fmin_l_bfgs_b',
+                         random_state=209652396), 'dimensions': Space([Real(low=0.1, high=15, prior='uniform', transform='normalize')]), 'func': <function opt_naive_bayes at 0x7fa68f5ff510>}, 'function': 'base_minimize'}
+            x: [3.4796341768735957]
+      x_iters: [[8.933384811552775], [12.679559653857162], [12.883389702579079], [12.724050907883472], [9.391099082110989], [5.827287438661229], [4.5332656375126374], [0.9450233620299036], [4.162578789243687], [7.217210248088114], [0.10029841019871494], [15.0], [14.99530653932374], [8.708972086224845], [14.997082901636427], [8.835732826677722], [8.88706420376975], [14.998728541456865], [8.979844726249754], [0.10241808410878682], [5.22684238295599], [14.999305985079072], [5.174179500901564], [11.008654475440643], [14.995969146660755], [5.182261754497958], [5.148740469580851], [10.945169331244458], [14.99867636859032], [7.171551628048699], [7.200774548110502], [11.154875732769987], [7.175315320808244], [7.2021908709252935], [14.999349584049623], [4.066304003349756], [11.39564069059551], [3.9534120014704945], [6.649782271207653], [6.667130378431281], [6.682743511866123], [6.701109055172925], [14.997178709390251], [0.10051222597056397], [11.771438722759973], [3.6457974967622753], [3.486486895608596], [5.606673755031914], [5.639909155490993], [12.178323686923981], [5.68578696942226], [3.1979905009976473], [5.252636262107011], [3.0708316906464264], [12.547913209295043], [2.988288264613198], [2.9233332743819522], [4.5780509279423125], [4.605461617410727], [4.632501322048426], [12.761654873036964], [14.995904607342615], [10.003961722027505], [2.706519285024378], [12.897715710777437], [4.4568084553833645], [9.866509491836673], [2.612392470077257], [4.273640236712453], [13.016802347331001], [2.519918918040286], [9.864063912764049], [14.99708836738584], [2.4782797955401485], [13.140725986797548], [4.041929705001916], [9.865527549675463], [2.403257052574896], [3.969328341043971], [3.9781966489314278], [8.651486543473057], [3.9917661247329446], [4.001191300387368], [14.99982390862125], [4.009217731285326], [4.0171963053871895], [13.129301346281748], [4.03275732692701], [4.0395233003402895], [10.45268604408246], [4.047481759036031], [4.056683417751566], [8.230064493391732], [4.070112085662365], [14.999709235191993], [4.077734022618291], [13.0970244122555], [4.0919058190091695], [4.098904899655974], [10.526284445559796], [2.051517462181207], [3.7375663082246784], [2.04066498871774], [8.081416081132879], [3.5575880283924843], [3.5635235053112875], [10.670293150234189], [13.353972625996027], [0.10291394188945457], [3.4796341768735957], [2.0836575816777656], [3.3925996267473533], [3.3990535207497916], [8.028020979854999], [10.72653765711182], [13.495161096770493], [7.974042243845554], [3.419381377254032], [14.999938084996423], [3.4242026183191734]]

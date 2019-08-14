@@ -1,0 +1,357 @@
+# optimizer:
+# <function gp_minimize at 0x7f693e07bae8>
+# opt-args:
+# (<function opt_als at 0x7f693e080598>, [(0.001, 10), (15,), (80, 150)])
+# opt-kwargs:
+# {'verbose': True, 'random_state': 0, 'n_calls': 120}
+# 
+# Iteration No: 1 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '5.92885333763196', '--iterations': '15', '--factors': '140'}
+# Iteration No: 1 ended. Evaluation done at random point.
+# Time taken: 66.7404
+# Function value obtained: -0.1529
+# Current minimum: -0.1529
+# Iteration No: 2 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '8.472670136102472', '--iterations': '15', '--factors': '107'}
+# Iteration No: 2 ended. Evaluation done at random point.
+# Time taken: 55.4307
+# Function value obtained: -0.1549
+# Current minimum: -0.1549
+# Iteration No: 3 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '2.9760485308381788', '--iterations': '15', '--factors': '99'}
+# Iteration No: 3 ended. Evaluation done at random point.
+# Time taken: 51.7285
+# Function value obtained: -0.1460
+# Current minimum: -0.1549
+# Iteration No: 4 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '4.777173508096179', '--iterations': '15', '--factors': '114'}
+# Iteration No: 4 ended. Evaluation done at random point.
+# Time taken: 58.2418
+# Function value obtained: -0.1492
+# Current minimum: -0.1549
+# Iteration No: 5 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '3.9284551762121978', '--iterations': '15', '--factors': '104'}
+# Iteration No: 5 ended. Evaluation done at random point.
+# Time taken: 52.0930
+# Function value obtained: -0.1473
+# Current minimum: -0.1549
+# Iteration No: 6 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '6.482070548639922', '--iterations': '15', '--factors': '147'}
+# Iteration No: 6 ended. Evaluation done at random point.
+# Time taken: 72.5949
+# Function value obtained: -0.1552
+# Current minimum: -0.1552
+# Iteration No: 7 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '1.404367453346039', '--iterations': '15', '--factors': '113'}
+# Iteration No: 7 ended. Evaluation done at random point.
+# Time taken: 57.4522
+# Function value obtained: -0.1454
+# Current minimum: -0.1552
+# Iteration No: 8 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '8.009306609044465', '--iterations': '15', '--factors': '128'}
+# Iteration No: 8 ended. Evaluation done at random point.
+# Time taken: 59.2345
+# Function value obtained: -0.1572
+# Current minimum: -0.1572
+# Iteration No: 9 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '7.206605914604443', '--iterations': '15', '--factors': '118'}
+# Iteration No: 9 ended. Evaluation done at random point.
+# Time taken: 59.9113
+# Function value obtained: -0.1543
+# Current minimum: -0.1572
+# Iteration No: 10 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '7.586397627599252', '--iterations': '15', '--factors': '113'}
+# Iteration No: 10 ended. Evaluation done at random point.
+# Time taken: 58.0461
+# Function value obtained: -0.1539
+# Current minimum: -0.1572
+# Iteration No: 11 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 11 ended. Search finished for the next optimal point.
+# Time taken: 73.7933
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 12 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.995444284063167', '--iterations': '15', '--factors': '82'}
+# Iteration No: 12 ended. Search finished for the next optimal point.
+# Time taken: 47.8222
+# Function value obtained: -0.1522
+# Current minimum: -0.1652
+# Iteration No: 13 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.912298596531135', '--iterations': '15', '--factors': '150'}
+# Iteration No: 13 ended. Search finished for the next optimal point.
+# Time taken: 72.6685
+# Function value obtained: -0.1651
+# Current minimum: -0.1652
+# Iteration No: 14 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 14 ended. Search finished for the next optimal point.
+# Time taken: 72.9041
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 15 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.975678563305143', '--iterations': '15', '--factors': '150'}
+# Iteration No: 15 ended. Search finished for the next optimal point.
+# Time taken: 73.0179
+# Function value obtained: -0.1651
+# Current minimum: -0.1652
+# Iteration No: 16 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1804228524829526', '--iterations': '15', '--factors': '150'}
+# Iteration No: 16 ended. Search finished for the next optimal point.
+# Time taken: 73.1485
+# Function value obtained: -0.1415
+# Current minimum: -0.1652
+# Iteration No: 17 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.945596239294842', '--iterations': '15', '--factors': '150'}
+# Iteration No: 17 ended. Search finished for the next optimal point.
+# Time taken: 72.6711
+# Function value obtained: -0.1651
+# Current minimum: -0.1652
+# Iteration No: 18 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.954699642112988', '--iterations': '15', '--factors': '80'}
+# Iteration No: 18 ended. Search finished for the next optimal point.
+# Time taken: 45.9282
+# Function value obtained: -0.1511
+# Current minimum: -0.1652
+# Iteration No: 19 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 19 ended. Search finished for the next optimal point.
+# Time taken: 72.7529
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 20 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.964826605723287', '--iterations': '15', '--factors': '150'}
+# Iteration No: 20 ended. Search finished for the next optimal point.
+# Time taken: 73.4187
+# Function value obtained: -0.1651
+# Current minimum: -0.1652
+# Iteration No: 21 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 21 ended. Search finished for the next optimal point.
+# Time taken: 72.9738
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 22 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.09482601539770577', '--iterations': '15', '--factors': '80'}
+# Iteration No: 22 ended. Search finished for the next optimal point.
+# Time taken: 45.7601
+# Function value obtained: -0.1440
+# Current minimum: -0.1652
+# Iteration No: 23 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.997923671270808', '--iterations': '15', '--factors': '150'}
+# Iteration No: 23 ended. Search finished for the next optimal point.
+# Time taken: 73.0203
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 24 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 24 ended. Search finished for the next optimal point.
+# Time taken: 73.3711
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 25 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.987231347871777', '--iterations': '15', '--factors': '149'}
+# Iteration No: 25 ended. Search finished for the next optimal point.
+# Time taken: 72.7972
+# Function value obtained: -0.1649
+# Current minimum: -0.1652
+# Iteration No: 26 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.90792511698548', '--iterations': '15', '--factors': '80'}
+# Iteration No: 26 ended. Search finished for the next optimal point.
+# Time taken: 45.8835
+# Function value obtained: -0.1511
+# Current minimum: -0.1652
+# Iteration No: 27 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.01674750143700328', '--iterations': '15', '--factors': '150'}
+# Iteration No: 27 ended. Search finished for the next optimal point.
+# Time taken: 73.1232
+# Function value obtained: -0.1412
+# Current minimum: -0.1652
+# Iteration No: 28 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 28 ended. Search finished for the next optimal point.
+# Time taken: 74.8841
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 29 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.999736972783822', '--iterations': '15', '--factors': '122'}
+# Iteration No: 29 ended. Search finished for the next optimal point.
+# Time taken: 63.8788
+# Function value obtained: -0.1601
+# Current minimum: -0.1652
+# Iteration No: 30 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 30 ended. Search finished for the next optimal point.
+# Time taken: 74.0155
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 31 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 31 ended. Search finished for the next optimal point.
+# Time taken: 74.0262
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 32 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 32 ended. Search finished for the next optimal point.
+# Time taken: 74.1841
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 33 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.021089471362349184', '--iterations': '15', '--factors': '81'}
+# Iteration No: 33 ended. Search finished for the next optimal point.
+# Time taken: 47.9872
+# Function value obtained: -0.1438
+# Current minimum: -0.1652
+# Iteration No: 34 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.993032410422193', '--iterations': '15', '--factors': '117'}
+# Iteration No: 34 ended. Search finished for the next optimal point.
+# Time taken: 60.3296
+# Function value obtained: -0.1599
+# Current minimum: -0.1652
+# Iteration No: 35 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.949246362042915', '--iterations': '15', '--factors': '80'}
+# Iteration No: 35 ended. Search finished for the next optimal point.
+# Time taken: 46.4755
+# Function value obtained: -0.1511
+# Current minimum: -0.1652
+# Iteration No: 36 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.99957645867166', '--iterations': '15', '--factors': '150'}
+# Iteration No: 36 ended. Search finished for the next optimal point.
+# Time taken: 73.9696
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 37 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.94148055266838', '--iterations': '15', '--factors': '150'}
+# Iteration No: 37 ended. Search finished for the next optimal point.
+# Time taken: 74.1083
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 38 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '6.4913328496524505', '--iterations': '15', '--factors': '150'}
+# Iteration No: 38 ended. Search finished for the next optimal point.
+# Time taken: 75.4415
+# Function value obtained: -0.1553
+# Current minimum: -0.1652
+# Iteration No: 39 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.99401074716851', '--iterations': '15', '--factors': '150'}
+# Iteration No: 39 ended. Search finished for the next optimal point.
+# Time taken: 73.9277
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 40 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.994641579257422', '--iterations': '15', '--factors': '123'}
+# Iteration No: 40 ended. Search finished for the next optimal point.
+# Time taken: 63.9410
+# Function value obtained: -0.1605
+# Current minimum: -0.1652
+# Iteration No: 41 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 41 ended. Search finished for the next optimal point.
+# Time taken: 74.1892
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 42 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.995329540594504', '--iterations': '15', '--factors': '119'}
+# Iteration No: 42 ended. Search finished for the next optimal point.
+# Time taken: 62.3976
+# Function value obtained: -0.1598
+# Current minimum: -0.1652
+# Iteration No: 43 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '6.450660518218559', '--iterations': '15', '--factors': '150'}
+# Iteration No: 43 ended. Search finished for the next optimal point.
+# Time taken: 73.7586
+# Function value obtained: -0.1550
+# Current minimum: -0.1652
+# Iteration No: 44 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.992131738894843', '--iterations': '15', '--factors': '148'}
+# Iteration No: 44 ended. Search finished for the next optimal point.
+# Time taken: 70.7200
+# Function value obtained: -0.1647
+# Current minimum: -0.1652
+# Iteration No: 45 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 45 ended. Search finished for the next optimal point.
+# Time taken: 73.3202
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 46 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.976003934342355', '--iterations': '15', '--factors': '150'}
+# Iteration No: 46 ended. Search finished for the next optimal point.
+# Time taken: 73.0134
+# Function value obtained: -0.1651
+# Current minimum: -0.1652
+# Iteration No: 47 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.996113739937849', '--iterations': '15', '--factors': '150'}
+# Iteration No: 47 ended. Search finished for the next optimal point.
+# Time taken: 73.1991
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 48 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.992700866507874', '--iterations': '15', '--factors': '80'}
+# Iteration No: 48 ended. Search finished for the next optimal point.
+# Time taken: 46.4177
+# Function value obtained: -0.1511
+# Current minimum: -0.1652
+# Iteration No: 49 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.980264663566563', '--iterations': '15', '--factors': '150'}
+# Iteration No: 49 ended. Search finished for the next optimal point.
+# Time taken: 73.5133
+# Function value obtained: -0.1651
+# Current minimum: -0.1652
+# Iteration No: 50 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.02403472802614977', '--iterations': '15', '--factors': '80'}
+# Iteration No: 50 ended. Search finished for the next optimal point.
+# Time taken: 46.8299
+# Function value obtained: -0.1438
+# Current minimum: -0.1652
+# Iteration No: 51 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '9.993101865965937', '--iterations': '15', '--factors': '122'}
+# Iteration No: 51 ended. Search finished for the next optimal point.
+# Time taken: 64.0893
+# Function value obtained: -0.1601
+# Current minimum: -0.1652
+# Iteration No: 52 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 52 ended. Search finished for the next optimal point.
+# Time taken: 73.9575
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 53 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 53 ended. Search finished for the next optimal point.
+# Time taken: 73.4289
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 54 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.015487869491047742', '--iterations': '15', '--factors': '149'}
+# Iteration No: 54 ended. Search finished for the next optimal point.
+# Time taken: 72.8244
+# Function value obtained: -0.1411
+# Current minimum: -0.1652
+# Iteration No: 55 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '6.483379537893797', '--iterations': '15', '--factors': '150'}
+# Iteration No: 55 ended. Search finished for the next optimal point.
+# Time taken: 73.2887
+# Function value obtained: -0.1552
+# Current minimum: -0.1652
+# Iteration No: 56 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 56 ended. Search finished for the next optimal point.
+# Time taken: 73.4791
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 57 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 57 ended. Search finished for the next optimal point.
+# Time taken: 73.3771
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 58 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}
+# Iteration No: 58 ended. Search finished for the next optimal point.
+# Time taken: 73.6828
+# Function value obtained: -0.1652
+# Current minimum: -0.1652
+# Iteration No: 59 started. Searching for the next optimal point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '10.0', '--iterations': '15', '--factors': '150'}

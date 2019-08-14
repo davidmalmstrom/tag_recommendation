@@ -1,0 +1,351 @@
+# optimizer:
+# <function gp_minimize at 0x7fcce862bae8>
+# opt-args:
+# (<function opt_baseline at 0x7fcce8630620>, [(4,), (10,), (15,), (300,), (0.005, 0.1)])
+# opt-kwargs:
+# {'verbose': True, 'random_state': 0, 'n_calls': 200}
+# 
+# Iteration No: 1 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.06423855119466738'}
+# Iteration No: 1 ended. Evaluation done at random point.
+# Time taken: 294.0584
+# Function value obtained: -0.1750
+# Current minimum: -0.1750
+# Iteration No: 2 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.05037818614552825'}
+# Iteration No: 2 ended. Evaluation done at random point.
+# Time taken: 291.5317
+# Function value obtained: -0.1773
+# Current minimum: -0.1773
+# Iteration No: 3 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.0370526352396405'}
+# Iteration No: 3 ended. Evaluation done at random point.
+# Time taken: 290.5941
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 4 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.08765828954405148'}
+# Iteration No: 4 ended. Evaluation done at random point.
+# Time taken: 291.5265
+# Function value obtained: -0.1661
+# Current minimum: -0.1777
+# Iteration No: 5 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.07346010219896211'}
+# Iteration No: 5 ended. Evaluation done at random point.
+# Time taken: 291.4420
+# Function value obtained: -0.1719
+# Current minimum: -0.1777
+# Iteration No: 6 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.04999203983793246'}
+# Iteration No: 6 ended. Evaluation done at random point.
+# Time taken: 290.8644
+# Function value obtained: -0.1775
+# Current minimum: -0.1777
+# Iteration No: 7 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.035793395740355345'}
+# Iteration No: 7 ended. Evaluation done at random point.
+# Time taken: 290.4622
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 8 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.04774524904156663'}
+# Iteration No: 8 ended. Evaluation done at random point.
+# Time taken: 290.4427
+# Function value obtained: -0.1776
+# Current minimum: -0.1777
+# Iteration No: 9 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.06704830340080409'}
+# Iteration No: 9 ended. Evaluation done at random point.
+# Time taken: 290.9852
+# Function value obtained: -0.1742
+# Current minimum: -0.1777
+# Iteration No: 10 started. Evaluating function at random point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.03587948675579349'}
+# Iteration No: 10 ended. Evaluation done at random point.
+# Time taken: 291.9511
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 11 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005'}
+# Iteration No: 11 ended. Search finished for the next optimal point.
+# Time taken: 296.1461
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 12 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005'}
+# Iteration No: 12 ended. Search finished for the next optimal point.
+# Time taken: 296.9381
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 13 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005'}
+# Iteration No: 13 ended. Search finished for the next optimal point.
+# Time taken: 315.1119
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 14 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.0050064290482993426'}
+# Iteration No: 14 ended. Search finished for the next optimal point.
+# Time taken: 308.7320
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 15 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005'}
+# Iteration No: 15 ended. Search finished for the next optimal point.
+# Time taken: 297.1482
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 16 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.09998548067878867'}
+# Iteration No: 16 ended. Search finished for the next optimal point.
+# Time taken: 291.5144
+# Function value obtained: -0.1610
+# Current minimum: -0.1777
+# Iteration No: 17 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005010467380088143'}
+# Iteration No: 17 ended. Search finished for the next optimal point.
+# Time taken: 292.5747
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 18 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005010081048819748'}
+# Iteration No: 18 ended. Search finished for the next optimal point.
+# Time taken: 294.9189
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 19 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.02934782231060734'}
+# Iteration No: 19 ended. Search finished for the next optimal point.
+# Time taken: 294.8072
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 20 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025683342875745096'}
+# Iteration No: 20 ended. Search finished for the next optimal point.
+# Time taken: 297.0944
+# Function value obtained: -0.1775
+# Current minimum: -0.1777
+# Iteration No: 21 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025398934907089988'}
+# Iteration No: 21 ended. Search finished for the next optimal point.
+# Time taken: 295.4743
+# Function value obtained: -0.1775
+# Current minimum: -0.1777
+# Iteration No: 22 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005001250734316388'}
+# Iteration No: 22 ended. Search finished for the next optimal point.
+# Time taken: 294.4930
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 23 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025734579711115448'}
+# Iteration No: 23 ended. Search finished for the next optimal point.
+# Time taken: 294.9726
+# Function value obtained: -0.1775
+# Current minimum: -0.1777
+# Iteration No: 24 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005008957114988143'}
+# Iteration No: 24 ended. Search finished for the next optimal point.
+# Time taken: 294.6492
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 25 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005000972105439023'}
+# Iteration No: 25 ended. Search finished for the next optimal point.
+# Time taken: 294.9425
+# Function value obtained: -0.1777
+# Current minimum: -0.1777
+# Iteration No: 26 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.09997805836754838'}
+# Iteration No: 26 ended. Search finished for the next optimal point.
+# Time taken: 297.6966
+# Function value obtained: -0.1610
+# Current minimum: -0.1777
+# Iteration No: 27 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.034117707974308305'}
+# Iteration No: 27 ended. Search finished for the next optimal point.
+# Time taken: 294.7954
+# Function value obtained: -0.1778
+# Current minimum: -0.1778
+# Iteration No: 28 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.0050058571251481165'}
+# Iteration No: 28 ended. Search finished for the next optimal point.
+# Time taken: 299.2777
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 29 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.03442624919838402'}
+# Iteration No: 29 ended. Search finished for the next optimal point.
+# Time taken: 297.5334
+# Function value obtained: -0.1778
+# Current minimum: -0.1778
+# Iteration No: 30 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005004478731506248'}
+# Iteration No: 30 ended. Search finished for the next optimal point.
+# Time taken: 295.9485
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 31 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.034900025125855653'}
+# Iteration No: 31 ended. Search finished for the next optimal point.
+# Time taken: 296.4941
+# Function value obtained: -0.1778
+# Current minimum: -0.1778
+# Iteration No: 32 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.0050066598231293625'}
+# Iteration No: 32 ended. Search finished for the next optimal point.
+# Time taken: 297.9927
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 33 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.03521397757793608'}
+# Iteration No: 33 ended. Search finished for the next optimal point.
+# Time taken: 295.9303
+# Function value obtained: -0.1778
+# Current minimum: -0.1778
+# Iteration No: 34 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005005515186024283'}
+# Iteration No: 34 ended. Search finished for the next optimal point.
+# Time taken: 297.5636
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 35 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.03580163259053878'}
+# Iteration No: 35 ended. Search finished for the next optimal point.
+# Time taken: 297.7013
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 36 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005012129680820627'}
+# Iteration No: 36 ended. Search finished for the next optimal point.
+# Time taken: 295.4814
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 37 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.052208400649679375'}
+# Iteration No: 37 ended. Search finished for the next optimal point.
+# Time taken: 297.0696
+# Function value obtained: -0.1770
+# Current minimum: -0.1778
+# Iteration No: 38 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005002724934225083'}
+# Iteration No: 38 ended. Search finished for the next optimal point.
+# Time taken: 298.2176
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 39 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.030822360539755737'}
+# Iteration No: 39 ended. Search finished for the next optimal point.
+# Time taken: 296.4183
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 40 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.05577414918580307'}
+# Iteration No: 40 ended. Search finished for the next optimal point.
+# Time taken: 296.0706
+# Function value obtained: -0.1765
+# Current minimum: -0.1778
+# Iteration No: 41 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005004825130060992'}
+# Iteration No: 41 ended. Search finished for the next optimal point.
+# Time taken: 296.1460
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 42 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.02515686762057576'}
+# Iteration No: 42 ended. Search finished for the next optimal point.
+# Time taken: 296.3316
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 43 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025078970962872926'}
+# Iteration No: 43 ended. Search finished for the next optimal point.
+# Time taken: 296.6445
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 44 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.09999381310988528'}
+# Iteration No: 44 ended. Search finished for the next optimal point.
+# Time taken: 298.8547
+# Function value obtained: -0.1609
+# Current minimum: -0.1778
+# Iteration No: 45 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025098535393351516'}
+# Iteration No: 45 ended. Search finished for the next optimal point.
+# Time taken: 296.9805
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 46 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.05838347083121651'}
+# Iteration No: 46 ended. Search finished for the next optimal point.
+# Time taken: 295.6350
+# Function value obtained: -0.1761
+# Current minimum: -0.1778
+# Iteration No: 47 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005006814006362979'}
+# Iteration No: 47 ended. Search finished for the next optimal point.
+# Time taken: 297.0295
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 48 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025381175860818103'}
+# Iteration No: 48 ended. Search finished for the next optimal point.
+# Time taken: 295.0897
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 49 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.05931635473760338'}
+# Iteration No: 49 ended. Search finished for the next optimal point.
+# Time taken: 295.8429
+# Function value obtained: -0.1761
+# Current minimum: -0.1778
+# Iteration No: 50 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.02563321765291334'}
+# Iteration No: 50 ended. Search finished for the next optimal point.
+# Time taken: 303.4765
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 51 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.02560449766285861'}
+# Iteration No: 51 ended. Search finished for the next optimal point.
+# Time taken: 296.5827
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 52 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.0255585298792504'}
+# Iteration No: 52 ended. Search finished for the next optimal point.
+# Time taken: 298.1353
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 53 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025517822600733077'}
+# Iteration No: 53 ended. Search finished for the next optimal point.
+# Time taken: 296.9397
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 54 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.025455739112513417'}
+# Iteration No: 54 ended. Search finished for the next optimal point.
+# Time taken: 294.6592
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 55 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.0050031314210745356'}
+# Iteration No: 55 ended. Search finished for the next optimal point.
+# Time taken: 294.1741
+# Function value obtained: -0.1777
+# Current minimum: -0.1778
+# Iteration No: 56 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.06107454296319492'}
+# Iteration No: 56 ended. Search finished for the next optimal point.
+# Time taken: 295.8118
+# Function value obtained: -0.1756
+# Current minimum: -0.1778
+# Iteration No: 57 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.02586978414567294'}
+# Iteration No: 57 ended. Search finished for the next optimal point.
+# Time taken: 293.5221
+# Function value obtained: -0.1775
+# Current minimum: -0.1778
+# Iteration No: 58 started. Searching for the next optimal point.
+# Args: {'--base_model': 'BaselineModel', '--num_k_folds': '10', '--topk': '3', '--regularization': '10', '--iterations': '15', '--factors': '300', '--NB_smoothing': '4', '--content_scale_factor': '0.005013888239509716'}

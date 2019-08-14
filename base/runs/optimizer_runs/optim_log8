@@ -1,0 +1,762 @@
+# optimizer:
+# <function dummy_minimize at 0x7f9ffa5ee378>
+# opt-args:
+# (<function opt_als at 0x7f9ffa5a1598>, [(0.001, 1), (15,), (30, 100)])
+# opt-kwargs:
+# {'verbose': True, 'random_state': 0, 'n_calls': 120}
+# 
+# Iteration No: 1 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5932517736067934', '--iterations': '15', '--factors': '97'}
+# Iteration No: 1 ended. Evaluation done at random point.
+# Time taken: 52.3534
+# Function value obtained: -0.1446
+# Current minimum: -0.1446
+# Iteration No: 2 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8474044870453413', '--iterations': '15', '--factors': '66'}
+# Iteration No: 2 ended. Evaluation done at random point.
+# Time taken: 40.8079
+# Function value obtained: -0.1421
+# Current minimum: -0.1446
+# Iteration No: 3 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.29823707193792787', '--iterations': '15', '--factors': '42'}
+# Iteration No: 3 ended. Evaluation done at random point.
+# Time taken: 36.2197
+# Function value obtained: -0.1314
+# Current minimum: -0.1446
+# Iteration No: 4 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.38405807730695196', '--iterations': '15', '--factors': '76'}
+# Iteration No: 4 ended. Evaluation done at random point.
+# Time taken: 43.9564
+# Function value obtained: -0.1442
+# Current minimum: -0.1446
+# Iteration No: 5 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5684765165328385', '--iterations': '15', '--factors': '39'}
+# Iteration No: 5 ended. Evaluation done at random point.
+# Time taken: 35.3015
+# Function value obtained: -0.1296
+# Current minimum: -0.1446
+# Iteration No: 6 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6485237001791461', '--iterations': '15', '--factors': '99'}
+# Iteration No: 6 ended. Evaluation done at random point.
+# Time taken: 51.4448
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 7 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7783785941989008', '--iterations': '15', '--factors': '79'}
+# Iteration No: 7 ended. Evaluation done at random point.
+# Time taken: 46.8025
+# Function value obtained: -0.1442
+# Current minimum: -0.1446
+# Iteration No: 8 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.46201788289067897', '--iterations': '15', '--factors': '44'}
+# Iteration No: 8 ended. Evaluation done at random point.
+# Time taken: 36.4290
+# Function value obtained: -0.1327
+# Current minimum: -0.1446
+# Iteration No: 9 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7209120220711909', '--iterations': '15', '--factors': '87'}
+# Iteration No: 9 ended. Evaluation done at random point.
+# Time taken: 50.5605
+# Function value obtained: -0.1439
+# Current minimum: -0.1446
+# Iteration No: 10 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9447242481325344', '--iterations': '15', '--factors': '53'}
+# Iteration No: 10 ended. Evaluation done at random point.
+# Time taken: 39.5995
+# Function value obtained: -0.1370
+# Current minimum: -0.1446
+# Iteration No: 11 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2652910564925224', '--iterations': '15', '--factors': '85'}
+# Iteration No: 11 ended. Evaluation done at random point.
+# Time taken: 49.6214
+# Function value obtained: -0.1441
+# Current minimum: -0.1446
+# Iteration No: 12 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2173338040699475', '--iterations': '15', '--factors': '66'}
+# Iteration No: 12 ended. Evaluation done at random point.
+# Time taken: 40.7343
+# Function value obtained: -0.1420
+# Current minimum: -0.1446
+# Iteration No: 13 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6180178615788012', '--iterations': '15', '--factors': '47'}
+# Iteration No: 13 ended. Evaluation done at random point.
+# Time taken: 37.9474
+# Function value obtained: -0.1346
+# Current minimum: -0.1446
+# Iteration No: 14 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9438043304361097', '--iterations': '15', '--factors': '88'}
+# Iteration No: 14 ended. Evaluation done at random point.
+# Time taken: 49.1381
+# Function value obtained: -0.1439
+# Current minimum: -0.1446
+# Iteration No: 15 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6134503944262484', '--iterations': '15', '--factors': '71'}
+# Iteration No: 15 ended. Evaluation done at random point.
+# Time taken: 42.9670
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 16 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9698392586790021', '--iterations': '15', '--factors': '41'}
+# Iteration No: 16 ended. Evaluation done at random point.
+# Time taken: 36.1617
+# Function value obtained: -0.1318
+# Current minimum: -0.1446
+# Iteration No: 17 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2111721785127671', '--iterations': '15', '--factors': '44'}
+# Iteration No: 17 ended. Evaluation done at random point.
+# Time taken: 36.5575
+# Function value obtained: -0.1326
+# Current minimum: -0.1446
+# Iteration No: 18 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6082228380467524', '--iterations': '15', '--factors': '72'}
+# Iteration No: 18 ended. Evaluation done at random point.
+# Time taken: 42.1584
+# Function value obtained: -0.1432
+# Current minimum: -0.1446
+# Iteration No: 19 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4391629119488581', '--iterations': '15', '--factors': '98'}
+# Iteration No: 19 ended. Evaluation done at random point.
+# Time taken: 50.8286
+# Function value obtained: -0.1439
+# Current minimum: -0.1446
+# Iteration No: 20 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6531375266884855', '--iterations': '15', '--factors': '82'}
+# Iteration No: 20 ended. Evaluation done at random point.
+# Time taken: 48.1021
+# Function value obtained: -0.1440
+# Current minimum: -0.1446
+# Iteration No: 21 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2540383109372424', '--iterations': '15', '--factors': '88'}
+# Iteration No: 21 ended. Evaluation done at random point.
+# Time taken: 48.9706
+# Function value obtained: -0.1434
+# Current minimum: -0.1446
+# Iteration No: 22 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.15981061406187422', '--iterations': '15', '--factors': '78'}
+# Iteration No: 22 ended. Evaluation done at random point.
+# Time taken: 46.1300
+# Function value obtained: -0.1441
+# Current minimum: -0.1446
+# Iteration No: 23 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1390447683972652', '--iterations': '15', '--factors': '94'}
+# Iteration No: 23 ended. Evaluation done at random point.
+# Time taken: 52.5429
+# Function value obtained: -0.1438
+# Current minimum: -0.1446
+# Iteration No: 24 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6628643400830943', '--iterations': '15', '--factors': '80'}
+# Iteration No: 24 ended. Evaluation done at random point.
+# Time taken: 45.5824
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 25 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6739859712049536', '--iterations': '15', '--factors': '33'}
+# Iteration No: 25 ended. Evaluation done at random point.
+# Time taken: 33.6946
+# Function value obtained: -0.1251
+# Current minimum: -0.1446
+# Iteration No: 26 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.46918255044605395', '--iterations': '15', '--factors': '51'}
+# Iteration No: 26 ended. Evaluation done at random point.
+# Time taken: 39.8635
+# Function value obtained: -0.1353
+# Current minimum: -0.1446
+# Iteration No: 27 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7395243158189034', '--iterations': '15', '--factors': '73'}
+# Iteration No: 27 ended. Evaluation done at random point.
+# Time taken: 43.1485
+# Function value obtained: -0.1433
+# Current minimum: -0.1446
+# Iteration No: 28 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.12107636465195575', '--iterations': '15', '--factors': '32'}
+# Iteration No: 28 ended. Evaluation done at random point.
+# Time taken: 32.8087
+# Function value obtained: -0.1243
+# Current minimum: -0.1446
+# Iteration No: 29 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6889725216229646', '--iterations': '15', '--factors': '97'}
+# Iteration No: 29 ended. Evaluation done at random point.
+# Time taken: 49.9851
+# Function value obtained: -0.1446
+# Current minimum: -0.1446
+# Iteration No: 30 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6927796472506499', '--iterations': '15', '--factors': '80'}
+# Iteration No: 30 ended. Evaluation done at random point.
+# Time taken: 46.0329
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 31 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5237248054132331', '--iterations': '15', '--factors': '95'}
+# Iteration No: 31 ended. Evaluation done at random point.
+# Time taken: 54.3384
+# Function value obtained: -0.1439
+# Current minimum: -0.1446
+# Iteration No: 32 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.08402938013797179', '--iterations': '15', '--factors': '41'}
+# Iteration No: 32 ended. Evaluation done at random point.
+# Time taken: 35.9830
+# Function value obtained: -0.1315
+# Current minimum: -0.1446
+# Iteration No: 33 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8424997375880634', '--iterations': '15', '--factors': '84'}
+# Iteration No: 33 ended. Evaluation done at random point.
+# Time taken: 47.2141
+# Function value obtained: -0.1446
+# Current minimum: -0.1446
+# Iteration No: 34 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.29011668685425396', '--iterations': '15', '--factors': '72'}
+# Iteration No: 34 ended. Evaluation done at random point.
+# Time taken: 42.4257
+# Function value obtained: -0.1431
+# Current minimum: -0.1446
+# Iteration No: 35 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5532686584076839', '--iterations': '15', '--factors': '60'}
+# Iteration No: 35 ended. Evaluation done at random point.
+# Time taken: 42.0891
+# Function value obtained: -0.1392
+# Current minimum: -0.1446
+# Iteration No: 36 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.14729532096638315', '--iterations': '15', '--factors': '43'}
+# Iteration No: 36 ended. Evaluation done at random point.
+# Time taken: 36.4880
+# Function value obtained: -0.1317
+# Current minimum: -0.1446
+# Iteration No: 37 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.43385477392006205', '--iterations': '15', '--factors': '56'}
+# Iteration No: 37 ended. Evaluation done at random point.
+# Time taken: 40.4698
+# Function value obtained: -0.1381
+# Current minimum: -0.1446
+# Iteration No: 38 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5726796538850826', '--iterations': '15', '--factors': '91'}
+# Iteration No: 38 ended. Evaluation done at random point.
+# Time taken: 51.9899
+# Function value obtained: -0.1443
+# Current minimum: -0.1446
+# Iteration No: 39 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4476782532390098', '--iterations': '15', '--factors': '41'}
+# Iteration No: 39 ended. Evaluation done at random point.
+# Time taken: 36.0320
+# Function value obtained: -0.1315
+# Current minimum: -0.1446
+# Iteration No: 40 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.29813951390427856', '--iterations': '15', '--factors': '86'}
+# Iteration No: 40 ended. Evaluation done at random point.
+# Time taken: 48.8835
+# Function value obtained: -0.1439
+# Current minimum: -0.1446
+# Iteration No: 41 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2505464793793231', '--iterations': '15', '--factors': '55'}
+# Iteration No: 41 ended. Evaluation done at random point.
+# Time taken: 40.7997
+# Function value obtained: -0.1379
+# Current minimum: -0.1446
+# Iteration No: 42 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5888766199836807', '--iterations': '15', '--factors': '91'}
+# Iteration No: 42 ended. Evaluation done at random point.
+# Time taken: 51.5013
+# Function value obtained: -0.1443
+# Current minimum: -0.1446
+# Iteration No: 43 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.23130249048282356', '--iterations': '15', '--factors': '100'}
+# Iteration No: 43 ended. Evaluation done at random point.
+# Time taken: 50.0108
+# Function value obtained: -0.1442
+# Current minimum: -0.1446
+# Iteration No: 44 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3022732418578748', '--iterations': '15', '--factors': '86'}
+# Iteration No: 44 ended. Evaluation done at random point.
+# Time taken: 49.5819
+# Function value obtained: -0.1439
+# Current minimum: -0.1446
+# Iteration No: 45 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.384078762809913', '--iterations': '15', '--factors': '70'}
+# Iteration No: 45 ended. Evaluation done at random point.
+# Time taken: 42.4506
+# Function value obtained: -0.1424
+# Current minimum: -0.1446
+# Iteration No: 46 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1363385901582278', '--iterations': '15', '--factors': '31'}
+# Iteration No: 46 ended. Evaluation done at random point.
+# Time taken: 36.2414
+# Function value obtained: -0.1234
+# Current minimum: -0.1446
+# Iteration No: 47 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5747509236007293', '--iterations': '15', '--factors': '54'}
+# Iteration No: 47 ended. Evaluation done at random point.
+# Time taken: 40.2207
+# Function value obtained: -0.1371
+# Current minimum: -0.1446
+# Iteration No: 48 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.43198701699854003', '--iterations': '15', '--factors': '65'}
+# Iteration No: 48 ended. Evaluation done at random point.
+# Time taken: 40.6141
+# Function value obtained: -0.1417
+# Current minimum: -0.1446
+# Iteration No: 49 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8920314316606566', '--iterations': '15', '--factors': '73'}
+# Iteration No: 49 ended. Evaluation done at random point.
+# Time taken: 43.4145
+# Function value obtained: -0.1435
+# Current minimum: -0.1446
+# Iteration No: 50 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.10112666042498883', '--iterations': '15', '--factors': '40'}
+# Iteration No: 50 ended. Evaluation done at random point.
+# Time taken: 35.5218
+# Function value obtained: -0.1309
+# Current minimum: -0.1446
+# Iteration No: 51 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4697799248162519', '--iterations': '15', '--factors': '58'}
+# Iteration No: 51 ended. Evaluation done at random point.
+# Time taken: 41.8834
+# Function value obtained: -0.1383
+# Current minimum: -0.1446
+# Iteration No: 52 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8682579313108462', '--iterations': '15', '--factors': '53'}
+# Iteration No: 52 ended. Evaluation done at random point.
+# Time taken: 39.8354
+# Function value obtained: -0.1371
+# Current minimum: -0.1446
+# Iteration No: 53 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7792719685894267', '--iterations': '15', '--factors': '83'}
+# Iteration No: 53 ended. Evaluation done at random point.
+# Time taken: 48.8370
+# Function value obtained: -0.1446
+# Current minimum: -0.1446
+# Iteration No: 54 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5695316378759788', '--iterations': '15', '--factors': '39'}
+# Iteration No: 54 ended. Evaluation done at random point.
+# Time taken: 35.4867
+# Function value obtained: -0.1296
+# Current minimum: -0.1446
+# Iteration No: 55 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9825923848653685', '--iterations': '15', '--factors': '76'}
+# Iteration No: 55 ended. Evaluation done at random point.
+# Time taken: 43.9361
+# Function value obtained: -0.1443
+# Current minimum: -0.1446
+# Iteration No: 56 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7223335438708777', '--iterations': '15', '--factors': '61'}
+# Iteration No: 56 ended. Evaluation done at random point.
+# Time taken: 43.0005
+# Function value obtained: -0.1396
+# Current minimum: -0.1446
+# Iteration No: 57 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.017611345760133398', '--iterations': '15', '--factors': '69'}
+# Iteration No: 57 ended. Evaluation done at random point.
+# Time taken: 41.7786
+# Function value obtained: -0.1422
+# Current minimum: -0.1446
+# Iteration No: 58 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9441793959160192', '--iterations': '15', '--factors': '64'}
+# Iteration No: 58 ended. Evaluation done at random point.
+# Time taken: 39.6255
+# Function value obtained: -0.1416
+# Current minimum: -0.1446
+# Iteration No: 59 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5215155695979252', '--iterations': '15', '--factors': '66'}
+# Iteration No: 59 ended. Evaluation done at random point.
+# Time taken: 40.8076
+# Function value obtained: -0.1421
+# Current minimum: -0.1446
+# Iteration No: 60 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.17181561208444837', '--iterations': '15', '--factors': '83'}
+# Iteration No: 60 ended. Evaluation done at random point.
+# Time taken: 48.5005
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 61 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.944175631166646', '--iterations': '15', '--factors': '91'}
+# Iteration No: 61 ended. Evaluation done at random point.
+# Time taken: 52.0700
+# Function value obtained: -0.1445
+# Current minimum: -0.1446
+# Iteration No: 62 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.03280709060177654', '--iterations': '15', '--factors': '70'}
+# Iteration No: 62 ended. Evaluation done at random point.
+# Time taken: 42.6597
+# Function value obtained: -0.1423
+# Current minimum: -0.1446
+# Iteration No: 63 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6993989766437927', '--iterations': '15', '--factors': '97'}
+# Iteration No: 63 ended. Evaluation done at random point.
+# Time taken: 50.3645
+# Function value obtained: -0.1446
+# Current minimum: -0.1446
+# Iteration No: 64 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6143519900099301', '--iterations': '15', '--factors': '60'}
+# Iteration No: 64 ended. Evaluation done at random point.
+# Time taken: 42.0146
+# Function value obtained: -0.1392
+# Current minimum: -0.1446
+# Iteration No: 65 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7510934013828032', '--iterations': '15', '--factors': '47'}
+# Iteration No: 65 ended. Evaluation done at random point.
+# Time taken: 38.1048
+# Function value obtained: -0.1345
+# Current minimum: -0.1446
+# Iteration No: 66 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.39882284115387584', '--iterations': '15', '--factors': '99'}
+# Iteration No: 66 ended. Evaluation done at random point.
+# Time taken: 51.5613
+# Function value obtained: -0.1441
+# Current minimum: -0.1446
+# Iteration No: 67 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.21953062436303508', '--iterations': '15', '--factors': '96'}
+# Iteration No: 67 ended. Evaluation done at random point.
+# Time taken: 48.4951
+# Function value obtained: -0.1440
+# Current minimum: -0.1446
+# Iteration No: 68 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9702664464130045', '--iterations': '15', '--factors': '69'}
+# Iteration No: 68 ended. Evaluation done at random point.
+# Time taken: 41.4899
+# Function value obtained: -0.1426
+# Current minimum: -0.1446
+# Iteration No: 69 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.05897113116355175', '--iterations': '15', '--factors': '100'}
+# Iteration No: 69 ended. Evaluation done at random point.
+# Time taken: 50.3332
+# Function value obtained: -0.1442
+# Current minimum: -0.1446
+# Iteration No: 70 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8811235576394734', '--iterations': '15', '--factors': '79'}
+# Iteration No: 70 ended. Evaluation done at random point.
+# Time taken: 46.6843
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 71 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.5429562762353871', '--iterations': '15', '--factors': '58'}
+# Iteration No: 71 ended. Evaluation done at random point.
+# Time taken: 42.2675
+# Function value obtained: -0.1384
+# Current minimum: -0.1446
+# Iteration No: 72 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8967746217473018', '--iterations': '15', '--factors': '30'}
+# Iteration No: 72 ended. Evaluation done at random point.
+# Time taken: 36.3365
+# Function value obtained: -0.1229
+# Current minimum: -0.1446
+# Iteration No: 73 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4565586085946494', '--iterations': '15', '--factors': '66'}
+# Iteration No: 73 ended. Evaluation done at random point.
+# Time taken: 40.8108
+# Function value obtained: -0.1421
+# Current minimum: -0.1446
+# Iteration No: 74 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.021630348466262956', '--iterations': '15', '--factors': '97'}
+# Iteration No: 74 ended. Evaluation done at random point.
+# Time taken: 50.3245
+# Function value obtained: -0.1445
+# Current minimum: -0.1446
+# Iteration No: 75 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9045205507135424', '--iterations': '15', '--factors': '62'}
+# Iteration No: 75 ended. Evaluation done at random point.
+# Time taken: 43.2862
+# Function value obtained: -0.1403
+# Current minimum: -0.1446
+# Iteration No: 76 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.872778004791948', '--iterations': '15', '--factors': '43'}
+# Iteration No: 76 ended. Evaluation done at random point.
+# Time taken: 36.3978
+# Function value obtained: -0.1320
+# Current minimum: -0.1446
+# Iteration No: 77 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.885452321949976', '--iterations': '15', '--factors': '85'}
+# Iteration No: 77 ended. Evaluation done at random point.
+# Time taken: 48.4037
+# Function value obtained: -0.1445
+# Current minimum: -0.1446
+# Iteration No: 78 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6878007881114275', '--iterations': '15', '--factors': '55'}
+# Iteration No: 78 ended. Evaluation done at random point.
+# Time taken: 40.9447
+# Function value obtained: -0.1380
+# Current minimum: -0.1446
+# Iteration No: 79 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.23021239263657436', '--iterations': '15', '--factors': '58'}
+# Iteration No: 79 ended. Evaluation done at random point.
+# Time taken: 41.8023
+# Function value obtained: -0.1382
+# Current minimum: -0.1446
+# Iteration No: 80 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.21409866539011452', '--iterations': '15', '--factors': '37'}
+# Iteration No: 80 ended. Evaluation done at random point.
+# Time taken: 34.3641
+# Function value obtained: -0.1284
+# Current minimum: -0.1446
+# Iteration No: 81 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4252607832827548', '--iterations': '15', '--factors': '30'}
+# Iteration No: 81 ended. Evaluation done at random point.
+# Time taken: 35.8592
+# Function value obtained: -0.1229
+# Current minimum: -0.1446
+# Iteration No: 82 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.21566585601382762', '--iterations': '15', '--factors': '41'}
+# Iteration No: 82 ended. Evaluation done at random point.
+# Time taken: 35.6434
+# Function value obtained: -0.1315
+# Current minimum: -0.1446
+# Iteration No: 83 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8639917503173082', '--iterations': '15', '--factors': '56'}
+# Iteration No: 83 ended. Evaluation done at random point.
+# Time taken: 40.4123
+# Function value obtained: -0.1382
+# Current minimum: -0.1446
+# Iteration No: 84 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2776168570662739', '--iterations': '15', '--factors': '81'}
+# Iteration No: 84 ended. Evaluation done at random point.
+# Time taken: 46.6397
+# Function value obtained: -0.1440
+# Current minimum: -0.1446
+# Iteration No: 85 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4636870497901431', '--iterations': '15', '--factors': '64'}
+# Iteration No: 85 ended. Evaluation done at random point.
+# Time taken: 39.4681
+# Function value obtained: -0.1415
+# Current minimum: -0.1446
+# Iteration No: 86 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.14570291158403387', '--iterations': '15', '--factors': '73'}
+# Iteration No: 86 ended. Evaluation done at random point.
+# Time taken: 43.0385
+# Function value obtained: -0.1434
+# Current minimum: -0.1446
+# Iteration No: 87 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.722358581740346', '--iterations': '15', '--factors': '75'}
+# Iteration No: 87 ended. Evaluation done at random point.
+# Time taken: 44.7302
+# Function value obtained: -0.1445
+# Current minimum: -0.1446
+# Iteration No: 88 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7489149562306968', '--iterations': '15', '--factors': '83'}
+# Iteration No: 88 ended. Evaluation done at random point.
+# Time taken: 48.4138
+# Function value obtained: -0.1445
+# Current minimum: -0.1446
+# Iteration No: 89 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7495051626461765', '--iterations': '15', '--factors': '56'}
+# Iteration No: 89 ended. Evaluation done at random point.
+# Time taken: 40.4569
+# Function value obtained: -0.1382
+# Current minimum: -0.1446
+# Iteration No: 90 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9619744421686819', '--iterations': '15', '--factors': '74'}
+# Iteration No: 90 ended. Evaluation done at random point.
+# Time taken: 43.5689
+# Function value obtained: -0.1440
+# Current minimum: -0.1446
+# Iteration No: 91 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.06397525137970737', '--iterations': '15', '--factors': '69'}
+# Iteration No: 91 ended. Evaluation done at random point.
+# Time taken: 41.6782
+# Function value obtained: -0.1419
+# Current minimum: -0.1446
+# Iteration No: 92 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.6702466300443192', '--iterations': '15', '--factors': '52'}
+# Iteration No: 92 ended. Evaluation done at random point.
+# Time taken: 39.3777
+# Function value obtained: -0.1359
+# Current minimum: -0.1446
+# Iteration No: 93 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.1824495692915567', '--iterations': '15', '--factors': '36'}
+# Iteration No: 93 ended. Evaluation done at random point.
+# Time taken: 33.7631
+# Function value obtained: -0.1275
+# Current minimum: -0.1446
+# Iteration No: 94 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.787754613799071', '--iterations': '15', '--factors': '96'}
+# Iteration No: 94 ended. Evaluation done at random point.
+# Time taken: 48.8809
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 95 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9616085843869572', '--iterations': '15', '--factors': '53'}
+# Iteration No: 95 ended. Evaluation done at random point.
+# Time taken: 40.2877
+# Function value obtained: -0.1370
+# Current minimum: -0.1446
+# Iteration No: 96 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9414363270017923', '--iterations': '15', '--factors': '79'}
+# Iteration No: 96 ended. Evaluation done at random point.
+# Time taken: 46.4232
+# Function value obtained: -0.1444
+# Current minimum: -0.1446
+# Iteration No: 97 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7088396018699831', '--iterations': '15', '--factors': '50'}
+# Iteration No: 97 ended. Evaluation done at random point.
+# Time taken: 38.7549
+# Function value obtained: -0.1362
+# Current minimum: -0.1446
+# Iteration No: 98 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8490946117576054', '--iterations': '15', '--factors': '57'}
+# Iteration No: 98 ended. Evaluation done at random point.
+# Time taken: 41.2113
+# Function value obtained: -0.1385
+# Current minimum: -0.1446
+# Iteration No: 99 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9742844051933757', '--iterations': '15', '--factors': '81'}
+# Iteration No: 99 ended. Evaluation done at random point.
+# Time taken: 46.8812
+# Function value obtained: -0.1443
+# Current minimum: -0.1446
+# Iteration No: 100 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.9850472466043527', '--iterations': '15', '--factors': '39'}
+# Iteration No: 100 ended. Evaluation done at random point.
+# Time taken: 35.6107
+# Function value obtained: -0.1297
+# Current minimum: -0.1446
+# Iteration No: 101 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2702099545241596', '--iterations': '15', '--factors': '66'}
+# Iteration No: 101 ended. Evaluation done at random point.
+# Time taken: 40.6100
+# Function value obtained: -0.1420
+# Current minimum: -0.1446
+# Iteration No: 102 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8222956154610513', '--iterations': '15', '--factors': '33'}
+# Iteration No: 102 ended. Evaluation done at random point.
+# Time taken: 33.6323
+# Function value obtained: -0.1252
+# Current minimum: -0.1446
+# Iteration No: 103 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.12153633419493362', '--iterations': '15', '--factors': '66'}
+# Iteration No: 103 ended. Evaluation done at random point.
+# Time taken: 40.6933
+# Function value obtained: -0.1419
+# Current minimum: -0.1446
+# Iteration No: 104 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8623293259042617', '--iterations': '15', '--factors': '40'}
+# Iteration No: 104 ended. Evaluation done at random point.
+# Time taken: 35.3461
+# Function value obtained: -0.1309
+# Current minimum: -0.1446
+# Iteration No: 105 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7890839049417447', '--iterations': '15', '--factors': '73'}
+# Iteration No: 105 ended. Evaluation done at random point.
+# Time taken: 43.7037
+# Function value obtained: -0.1434
+# Current minimum: -0.1446
+# Iteration No: 106 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.33381200687661333', '--iterations': '15', '--factors': '39'}
+# Iteration No: 106 ended. Evaluation done at random point.
+# Time taken: 35.5740
+# Function value obtained: -0.1295
+# Current minimum: -0.1446
+# Iteration No: 107 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7754445576891446', '--iterations': '15', '--factors': '48'}
+# Iteration No: 107 ended. Evaluation done at random point.
+# Time taken: 37.7092
+# Function value obtained: -0.1344
+# Current minimum: -0.1446
+# Iteration No: 108 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7258687698463683', '--iterations': '15', '--factors': '73'}
+# Iteration No: 108 ended. Evaluation done at random point.
+# Time taken: 43.2979
+# Function value obtained: -0.1433
+# Current minimum: -0.1446
+# Iteration No: 109 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.3052774486452319', '--iterations': '15', '--factors': '31'}
+# Iteration No: 109 ended. Evaluation done at random point.
+# Time taken: 36.2258
+# Function value obtained: -0.1235
+# Current minimum: -0.1446
+# Iteration No: 110 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.09051343120436679', '--iterations': '15', '--factors': '88'}
+# Iteration No: 110 ended. Evaluation done at random point.
+# Time taken: 49.0066
+# Function value obtained: -0.1434
+# Current minimum: -0.1446
+# Iteration No: 111 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.43271590187489184', '--iterations': '15', '--factors': '33'}
+# Iteration No: 111 ended. Evaluation done at random point.
+# Time taken: 33.5347
+# Function value obtained: -0.1250
+# Current minimum: -0.1446
+# Iteration No: 112 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8606906226549651', '--iterations': '15', '--factors': '63'}
+# Iteration No: 112 ended. Evaluation done at random point.
+# Time taken: 44.0789
+# Function value obtained: -0.1406
+# Current minimum: -0.1446
+# Iteration No: 113 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2568834378372976', '--iterations': '15', '--factors': '81'}
+# Iteration No: 113 ended. Evaluation done at random point.
+# Time taken: 47.6153
+# Function value obtained: -0.1440
+# Current minimum: -0.1446
+# Iteration No: 114 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.2628560310904386', '--iterations': '15', '--factors': '37'}
+# Iteration No: 114 ended. Evaluation done at random point.
+# Time taken: 34.4753
+# Function value obtained: -0.1284
+# Current minimum: -0.1446
+# Iteration No: 115 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.4425733024770753', '--iterations': '15', '--factors': '37'}
+# Iteration No: 115 ended. Evaluation done at random point.
+# Time taken: 35.0742
+# Function value obtained: -0.1283
+# Current minimum: -0.1446
+# Iteration No: 116 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.8270434979123609', '--iterations': '15', '--factors': '97'}
+# Iteration No: 116 ended. Evaluation done at random point.
+# Time taken: 50.9920
+# Function value obtained: -0.1447
+# Current minimum: -0.1447
+# Iteration No: 117 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.05779122835680707', '--iterations': '15', '--factors': '30'}
+# Iteration No: 117 ended. Evaluation done at random point.
+# Time taken: 35.9266
+# Function value obtained: -0.1227
+# Current minimum: -0.1447
+# Iteration No: 118 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.7776301542869045', '--iterations': '15', '--factors': '37'}
+# Iteration No: 118 ended. Evaluation done at random point.
+# Time taken: 34.5362
+# Function value obtained: -0.1285
+# Current minimum: -0.1447
+# Iteration No: 119 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.010678482625999054', '--iterations': '15', '--factors': '73'}
+# Iteration No: 119 ended. Evaluation done at random point.
+# Time taken: 43.6970
+# Function value obtained: -0.1435
+# Current minimum: -0.1447
+# Iteration No: 120 started. Evaluating function at random point.
+# Args: {'--base_model': 'ALSEstimator', '--num_k_folds': '10', '--topk': '3', '--regularization': '0.19785722590545402', '--iterations': '15', '--factors': '68'}
+# Iteration No: 120 ended. Evaluation done at random point.
+# Time taken: 40.7409
+# Function value obtained: -0.1423
+# Current minimum: -0.1447
+
+
+#           fun: -0.14467302695981113
+    func_vals: array([-0.14464874, -0.14213337, -0.13139692, -0.14417027, -0.12957292,
+       -0.14437395, -0.14422513, -0.13269036, -0.14394062, -0.13699539,
+       -0.14412719, -0.14203283, -0.13458677, -0.14392972, -0.14437215,
+       -0.13176268, -0.13263954, -0.14320451, -0.14394792, -0.14399123,
+       -0.1434037 , -0.14414005, -0.14383398, -0.14436891, -0.12514805,
+       -0.13528449, -0.14333661, -0.12428876, -0.14462269, -0.14439365,
+       -0.14387006, -0.1315356 , -0.14457217, -0.14307774, -0.13921748,
+       -0.13165668, -0.13805413, -0.14426773, -0.13152334, -0.14390495,
+       -0.13792542, -0.14426772, -0.14417404, -0.14390495, -0.14244347,
+       -0.12343066, -0.13708496, -0.14172816, -0.14346401, -0.13085179,
+       -0.13833888, -0.1370582 , -0.1445978 , -0.12957292, -0.14434411,
+       -0.13956944, -0.1421582 , -0.14159058, -0.14210891, -0.14437032,
+       -0.14445713, -0.14230614, -0.14463533, -0.13915441, -0.13453703,
+       -0.1440726 , -0.14404969, -0.14257454, -0.14421088, -0.14435189,
+       -0.13841483, -0.12291095, -0.14214634, -0.14445994, -0.14032327,
+       -0.13198323, -0.14446655, -0.13800262, -0.13821315, -0.12840927,
+       -0.12287266, -0.13147247, -0.13819295, -0.14404034, -0.14152763,
+       -0.14336227, -0.14448645, -0.1445095 , -0.13820528, -0.14395013,
+       -0.14193039, -0.13592276, -0.12746249, -0.14443789, -0.13696941,
+       -0.14443969, -0.13616722, -0.13847526, -0.1442532 , -0.12966203,
+       -0.14203216, -0.12519813, -0.14193227, -0.13086269, -0.14337493,
+       -0.12950906, -0.13435082, -0.14332409, -0.1234808 , -0.14336637,
+       -0.12504689, -0.14064028, -0.1440023 , -0.12842175, -0.12832215,
+       -0.14467303, -0.12273419, -0.12851122, -0.14352747, -0.14228405])
+       models: []
+ random_state: <mtrand.RandomState object at 0x7f9ffa59ba68>
+        space: Space([Real(low=0.001, high=1, prior='uniform', transform='identity'),
+       Categorical(categories=(15,), prior=None),
+       Integer(low=30, high=100)])
+        specs: {'args': {'n_jobs': 1, 'kappa': 1.96, 'xi': 0.01, 'n_restarts_optimizer': 5, 'n_points': 10000, 'callback': None, 'verbose': True, 'random_state': 0, 'y0': None, 'x0': None, 'acq_optimizer': 'sampling', 'acq_func': 'EI', 'n_random_starts': 120, 'n_calls': 120, 'base_estimator': 'dummy', 'dimensions': [(0.001, 1), (15,), (30, 100)], 'func': <function opt_als at 0x7f9ffa5a1598>}, 'function': 'base_minimize'}
+            x: [0.8270434979123609, 15, 97]
+      x_iters: [[0.5932517736067934, 15, 97], [0.8474044870453413, 15, 66], [0.29823707193792787, 15, 42], [0.38405807730695196, 15, 76], [0.5684765165328385, 15, 39], [0.6485237001791461, 15, 99], [0.7783785941989008, 15, 79], [0.46201788289067897, 15, 44], [0.7209120220711909, 15, 87], [0.9447242481325344, 15, 53], [0.2652910564925224, 15, 85], [0.2173338040699475, 15, 66], [0.6180178615788012, 15, 47], [0.9438043304361097, 15, 88], [0.6134503944262484, 15, 71], [0.9698392586790021, 15, 41], [0.2111721785127671, 15, 44], [0.6082228380467524, 15, 72], [0.4391629119488581, 15, 98], [0.6531375266884855, 15, 82], [0.2540383109372424, 15, 88], [0.15981061406187422, 15, 78], [0.1390447683972652, 15, 94], [0.6628643400830943, 15, 80], [0.6739859712049536, 15, 33], [0.46918255044605395, 15, 51], [0.7395243158189034, 15, 73], [0.12107636465195575, 15, 32], [0.6889725216229646, 15, 97], [0.6927796472506499, 15, 80], [0.5237248054132331, 15, 95], [0.08402938013797179, 15, 41], [0.8424997375880634, 15, 84], [0.29011668685425396, 15, 72], [0.5532686584076839, 15, 60], [0.14729532096638315, 15, 43], [0.43385477392006205, 15, 56], [0.5726796538850826, 15, 91], [0.4476782532390098, 15, 41], [0.29813951390427856, 15, 86], [0.2505464793793231, 15, 55], [0.5888766199836807, 15, 91], [0.23130249048282356, 15, 100], [0.3022732418578748, 15, 86], [0.384078762809913, 15, 70], [0.1363385901582278, 15, 31], [0.5747509236007293, 15, 54], [0.43198701699854003, 15, 65], [0.8920314316606566, 15, 73], [0.10112666042498883, 15, 40], [0.4697799248162519, 15, 58], [0.8682579313108462, 15, 53], [0.7792719685894267, 15, 83], [0.5695316378759788, 15, 39], [0.9825923848653685, 15, 76], [0.7223335438708777, 15, 61], [0.017611345760133398, 15, 69], [0.9441793959160192, 15, 64], [0.5215155695979252, 15, 66], [0.17181561208444837, 15, 83], [0.944175631166646, 15, 91], [0.03280709060177654, 15, 70], [0.6993989766437927, 15, 97], [0.6143519900099301, 15, 60], [0.7510934013828032, 15, 47], [0.39882284115387584, 15, 99], [0.21953062436303508, 15, 96], [0.9702664464130045, 15, 69], [0.05897113116355175, 15, 100], [0.8811235576394734, 15, 79], [0.5429562762353871, 15, 58], [0.8967746217473018, 15, 30], [0.4565586085946494, 15, 66], [0.021630348466262956, 15, 97], [0.9045205507135424, 15, 62], [0.872778004791948, 15, 43], [0.885452321949976, 15, 85], [0.6878007881114275, 15, 55], [0.23021239263657436, 15, 58], [0.21409866539011452, 15, 37], [0.4252607832827548, 15, 30], [0.21566585601382762, 15, 41], [0.8639917503173082, 15, 56], [0.2776168570662739, 15, 81], [0.4636870497901431, 15, 64], [0.14570291158403387, 15, 73], [0.722358581740346, 15, 75], [0.7489149562306968, 15, 83], [0.7495051626461765, 15, 56], [0.9619744421686819, 15, 74], [0.06397525137970737, 15, 69], [0.6702466300443192, 15, 52], [0.1824495692915567, 15, 36], [0.787754613799071, 15, 96], [0.9616085843869572, 15, 53], [0.9414363270017923, 15, 79], [0.7088396018699831, 15, 50], [0.8490946117576054, 15, 57], [0.9742844051933757, 15, 81], [0.9850472466043527, 15, 39], [0.2702099545241596, 15, 66], [0.8222956154610513, 15, 33], [0.12153633419493362, 15, 66], [0.8623293259042617, 15, 40], [0.7890839049417447, 15, 73], [0.33381200687661333, 15, 39], [0.7754445576891446, 15, 48], [0.7258687698463683, 15, 73], [0.3052774486452319, 15, 31], [0.09051343120436679, 15, 88], [0.43271590187489184, 15, 33], [0.8606906226549651, 15, 63], [0.2568834378372976, 15, 81], [0.2628560310904386, 15, 37], [0.4425733024770753, 15, 37], [0.8270434979123609, 15, 97], [0.05779122835680707, 15, 30], [0.7776301542869045, 15, 37], [0.010678482625999054, 15, 73], [0.19785722590545402, 15, 68]]
