@@ -1,15 +1,18 @@
+# Trains and tests a configuration. Specify config as argument. Make sure that the configuration has '--test_dataset: "1"'.
+
 import sys
 sys.path.append("..")
 
-import NeuMF
-import MLP
-import GMF
+import nncf.NeuMF as NeuMF
+import nncf.MLP as MLP
+import nncf.GMF as GMF
+from nncf.evaluate_recall import evaluate_model_recall
 import oyaml as yaml
-from evaluate_recall import evaluate_model_recall
 import scipy.sparse as sp
 import lib.notebook_helpers as nh
 import pickle
-import run_script
+import nncf.run_script
+import os
 
 TEST_PART_SIZE = 2000
 
@@ -19,9 +22,9 @@ def train_model(model_runfile_path, vscode=False):
     """
     read_params(model_runfile_path)  # for the assert
     if vscode:
-        run_script.main(["run_model_test.py", model_runfile_path, "vscode"])
+        nncf.run_script.main(["run_model_test.py", model_runfile_path, "vscode"])
     else:
-        run_script.main(["run_model_test.py", model_runfile_path])
+        nncf.run_script.main(["run_model_test.py", model_runfile_path])
 
 def read_params(model_runfile_path):
     """Also asserts that the yml file is valid for testing
@@ -45,7 +48,8 @@ def read_params(model_runfile_path):
         return params
 
 def get_test_set(prepend):
-    with open('../data/' + prepend + 'test_tag_dataset.pkl', 'rb') as f:
+    test_set_path = os.path.join(os.path.dirname(__file__), '../data/' + prepend + 'test_tag_dataset.pkl')
+    with open(test_set_path, 'rb') as f:
         X, y_test, _, _, _, test_y = pickle.load(f)
         test_set = sp.dok_matrix(y_test)
     return test_set, test_y, X
@@ -67,7 +71,7 @@ def build_model(params, data_shape, num_autotags):
         print(e)
         print("yaml file is probably wrong")
         sys.exit()
-    model.load_weights(params['weights_path'])
+    model.load_weights(os.path.join(os.path.dirname(__file__), params['weights_path']))
     return model
 
 def test_model(model, params, test_set, model_runfile_path, test_y, X):

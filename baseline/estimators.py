@@ -142,7 +142,8 @@ class BaselineModel(BaseEstimator):
                     filter_seen=True,
                     show_progress=True,
                     n=3,
-                    content_scale_factor=0.2):
+                    content_scale_factor=0.2,
+                    alpha=4):
         self.factors = factors
         self.regularization = regularization
         self.iterations = iterations
@@ -150,6 +151,7 @@ class BaselineModel(BaseEstimator):
         self.show_progress = show_progress
         self.n = n
         self.content_scale_factor = content_scale_factor
+        self.alpha = alpha
 
     def fit(self, X, y):
         self.cf = ALSEstimator(self.factors,
@@ -158,7 +160,8 @@ class BaselineModel(BaseEstimator):
                                self.filter_seen,
                                self.show_progress,
                                self.n)
-        self.content = NaiveBayesEstimator(self.n)
+        self.content = NaiveBayesEstimator(self.alpha,
+                                           self.n)
 
 
         self.cf = self.cf.fit(y=y)

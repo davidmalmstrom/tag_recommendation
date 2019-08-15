@@ -2,7 +2,7 @@ import sys
 sys.path.append("..")
 
 import lib.notebook_helpers as nh
-from estimators import BaselineModel, NaiveBayesEstimator, ALSEstimator, SVMEstimator
+from baseline.estimators import BaselineModel, NaiveBayesEstimator, ALSEstimator, SVMEstimator
 from sklearn.model_selection import train_test_split
 import numpy as np
 import pickle
@@ -56,7 +56,8 @@ def get_model(args):
                                 iterations=args.iterations,
                                 show_progress=args.show_als_progress,
                                 n=args.topk,
-                                content_scale_factor=args.content_scale_factor)
+                                content_scale_factor=args.content_scale_factor,
+                                alpha=args.NB_smoothing)
     elif model_name == "ALSEstimator":
         model = ALSEstimator(factors=args.factors,
                                 regularization=args.regularization,

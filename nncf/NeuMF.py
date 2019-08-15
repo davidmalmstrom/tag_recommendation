@@ -23,11 +23,12 @@ from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
-from evaluate import evaluate_model
-from evaluate_recall import evaluate_model_recall
-from Dataset import Dataset
+from nncf.evaluate import evaluate_model
+from nncf.evaluate_recall import evaluate_model_recall
+from nncf.Dataset import Dataset
 from time import time
-import GMF, MLP
+import nncf.GMF as GMF
+import nncf.MLP as MLP
 import argparse
 import scipy.sparse as sp
 import lib.notebook_helpers as nh

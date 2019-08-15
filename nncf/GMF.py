@@ -17,8 +17,8 @@ from keras.layers.core import Dense, Lambda, Activation
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from keras.regularizers import l2
-from Dataset import Dataset
-from evaluate import evaluate_model
+from nncf.Dataset import Dataset
+from nncf.evaluate import evaluate_model
 from time import time
 import multiprocessing as mp
 import sys

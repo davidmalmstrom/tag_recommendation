@@ -21,8 +21,8 @@ from keras.layers.core import Dense, Lambda, Activation
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
 from keras.constraints import maxnorm
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
-from evaluate import evaluate_model
-from Dataset import Dataset
+from nncf.evaluate import evaluate_model
+from nncf.Dataset import Dataset
 from time import time
 import sys
 import argparse
