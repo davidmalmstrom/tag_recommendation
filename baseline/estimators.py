@@ -33,12 +33,14 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
             if input_[0] is not None and type(input_[0]) is not sp.csr_matrix:
                 print("Warning: input \"" + input_[1] + "\" is not of csr_matrix type.")
 
-    def predict(self, X=None, start_index=0):
+    def predict(self, X=None, start_index=0, n=None):
         """Returns the top-n predictions as a one-hot multi-element array.
         """
         predictions = self.predict_score(X, start_index=start_index)
-
-        tops = nh.get_top_n_tags(predictions, n=self.n)
+        
+        if n is None:
+            n = self.n
+        tops = nh.get_top_n_tags(predictions, n=n)
         return nh.from_keras_format(list(map(lambda x: x + 1, tops)), predictions.shape[1])
 
     def predict_score(self, X, start_index):
@@ -170,16 +172,19 @@ class BaselineModel(BaseEstimator):
         self._fitted = True
         return self
 
-    def predict(self, X=None, y=None, start_index=0):
+    def predict(self, X=None, y=None, start_index=0, n=None):
         check_is_fitted(self, ['_fitted'])
 
+        if n is None:
+            n = self.n
+
         cf_predictions = self.cf.predict_score(X, start_index=start_index)
-        cf_top_n_scores = self._top_n_scores(cf_predictions)
+        cf_top_n_scores = self._top_n_scores(cf_predictions, n)
 
         content_predictions = self.content.predict_score(X) * self.content_scale_factor  # Use of scale_factor hyperparameter
-        content_top_n_scores = self._top_n_scores(content_predictions)
+        content_top_n_scores = self._top_n_scores(content_predictions, n)
 
-        def best_n(cf_cands, content_cands):
+        def best_n(cf_cands, content_cands, n):
             best_n = sorted(cf_cands + content_cands, key = lambda x: x[1], reverse=True)
 
             # Don't add tuples with the same index
@@ -189,21 +194,21 @@ class BaselineModel(BaseEstimator):
                 if cand[0] not in seen_indexes:
                     retlist.append(cand)
                     seen_indexes.add(cand[0])
-            return retlist[:self.n]
+            return retlist[:n]
 
-        predictions = [best_n(cf_cands, content_cands) for cf_cands,
+        predictions = [best_n(cf_cands, content_cands, n) for cf_cands,
                        content_cands in zip(cf_top_n_scores, content_top_n_scores)]
 
         top_indexes = np.array([[index for index, _ in top_list] for top_list in predictions])
 
         return nh.from_keras_format(list(map(lambda x: x + 1, top_indexes)), cf_predictions.shape[1])
 
-    def _top_n_scores(self, score_matrix):
+    def _top_n_scores(self, score_matrix, n):
         """Returns lists of tuples with top-n element indexes and the
         scores of them, given the score matrix.
         """
-        top_n_indexes_lists = nh.get_top_n_tags(score_matrix, n=self.n)
+        top_n_indexes_lists = nh.get_top_n_tags(score_matrix, n=n)
 
-        f = lambda x: x[x.argsort()[-self.n:][::-1]]
+        f = lambda x: x[x.argsort()[-n:][::-1]]
         top_n_scores_lists = np.apply_along_axis(f, 1, score_matrix)
         return [list(zip(i_list, p_list)) for i_list, p_list in zip(top_n_indexes_lists, top_n_scores_lists)]
