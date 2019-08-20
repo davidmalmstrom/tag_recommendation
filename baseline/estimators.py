@@ -196,8 +196,10 @@ class BaselineModel(BaseEstimator):
                     seen_indexes.add(cand[0])
             return retlist[:n]
 
-        predictions = [best_n(cf_cands, content_cands, n) for cf_cands,
-                       content_cands in zip(cf_top_n_scores, content_top_n_scores)]
+        predictions = [
+            best_n(cf_cands, content_cands, n)
+            for cf_cands, content_cands in zip(cf_top_n_scores, content_top_n_scores)
+        ]
 
         top_indexes = np.array([[index for index, _ in top_list] for top_list in predictions])
 
