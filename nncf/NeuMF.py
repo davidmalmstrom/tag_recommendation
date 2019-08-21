@@ -346,17 +346,38 @@ def main(sargs):
             if args.early_stopping != 0 and args.early_stopping == epochs_without_improvement:
                 break
             t1 = time()
+
+            tbCallBack = keras.callbacks.TensorBoard(log_dir='./Graph', histogram_freq=0, write_graph=True, write_images=True)
+
             # Generate training instances
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
-            
-            # Training
+
             if model.name == "GMF":
                 input_array = [np.array(user_input), np.array(item_input)]
             else:
                 input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
-            hist = model.fit(input_array, #input
+            # Training
+
+
+            if args.test_dataset:
+                val_user_input, val_item_input, val_labels = get_train_instances(val_y, 0, num_items)
+                val_user_input_mod = np.array(val_user_input) + 18000
+
+                if model.name == "GMF":
+                    val_input_array = [val_user_input_mod, np.array(val_item_input)]
+                else:
+                    val_input_array = [val_user_input_mod, np.array(val_item_input), dataset.X[val_user_input_mod]]
+
+                # training
+
+                hist = model.fit(input_array, #input
                             np.array(labels), # labels 
-                            batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
+                            batch_size=batch_size, epochs=1, verbose=0, shuffle=True, callbacks=[tbCallBack],
+                            validation_data=(val_input_array, val_labels))
+            else:
+                hist = model.fit(input_array, #input
+                                np.array(labels), # labels 
+                                batch_size=batch_size, epochs=1, verbose=0, shuffle=True, callbacks=[tbCallBack])
             t2 = time()
             
             # Evaluation
@@ -367,8 +388,9 @@ def main(sargs):
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
                 loss = hist.history['loss'][0]
-                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, eval: [%.1f s]'
-                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, time()-t2))
+                val_loss = hist.history['val_loss'][0]
+                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, val_loss %.4f, eval: [%.1f s]'
+                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, val_loss, time()-t2))
                 if hr > best_hr:
                     best_hr, best_ndcg, best_iter = hr, ndcg, epoch
                     if args.out > 0:
