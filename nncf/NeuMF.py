@@ -21,7 +21,8 @@ from keras import initializers
 from keras.regularizers import l1, l2, l1_l2
 from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
-from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
+from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU
+from keras.layers.normalization import BatchNormalization
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from nncf.evaluate import evaluate_model
 from nncf.evaluate_recall import evaluate_model_recall
@@ -97,7 +98,7 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     # Input variables
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
-    user_features = Input(shape=(num_autotags,), dtype='float32', name='user_features')
+    user_feature_input = Input(shape=(num_autotags,), dtype='float32', name='user_feature_input')
     
     # Embedding layer
     MF_Embedding_User = Embedding(input_dim = num_users, output_dim = mf_dim, name = 'mf_embedding_user',
@@ -118,12 +119,18 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     # MLP part 
     mlp_user_latent = Flatten()(MLP_Embedding_User(user_input))
     mlp_item_latent = Flatten()(MLP_Embedding_Item(item_input))
+    
+    user_features = Dense(layers[0]+(layers[0]//2), name='feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
+    user_features = BatchNormalization(name='feature_dense_layer_bn')(user_features)
+    user_features = LeakyReLU(alpha=0.1)(user_features)
+
     mlp_user_latent = Concatenate()([mlp_user_latent, user_features])
 
     mlp_vector = Concatenate()([mlp_user_latent, mlp_item_latent])
     for idx in range(1, num_layer):
-        layer = Dense(layers[idx], kernel_regularizer= l2(reg_layers[idx]), activation='relu', name="layer%d" %idx)
-        mlp_vector = layer(mlp_vector)
+        mlp_vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal')(mlp_vector)
+        mlp_vector = BatchNormalization(name='mlp_layer_bn%d' %idx)(mlp_vector)
+        mlp_vector = LeakyReLU(alpha=0.1)(mlp_vector)
 
     # Concatenate MF and MLP parts
     #mf_vector = Lambda(lambda x: x * alpha)(mf_vector)
@@ -133,7 +140,7 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = "prediction")(predict_vector)
     
-    model = Model(inputs=[user_input, item_input, user_features],
+    model = Model(inputs=[user_input, item_input, user_feature_input],
                   outputs=prediction)
 
     model.name = "NeuMF"
@@ -152,6 +159,12 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
     mlp_item_embeddings = mlp_model.get_layer('item_embedding').get_weights()
     model.get_layer('mlp_embedding_user').set_weights(mlp_user_embeddings)
     model.get_layer('mlp_embedding_item').set_weights(mlp_item_embeddings)
+
+    # MLP feature layer
+    mlp_user_features = mlp_model.get_layer('feature_dense_layer').get_weights()
+    mlp_user_features_bn = mlp_model.get_layer('feature_dense_layer_bn').get_weights()
+    model.get_layer('feature_dense_layer').set_weights(mlp_user_features)
+    model.get_layer('feature_dense_layer_bn').set_weights(mlp_user_features_bn)
     
     # MLP layers
     for i in range(1, num_layers):

@@ -18,7 +18,8 @@ from keras import initializers
 from keras.regularizers import l2
 from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
-from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate
+from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU
+from keras.layers.normalization import BatchNormalization
 from keras.constraints import maxnorm
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from nncf.evaluate import evaluate_model
@@ -64,17 +65,20 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
     # Input variables
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
-    user_features = Input(shape=(num_autotags,), dtype='float32', name='user_features')
+    user_feature_input = Input(shape=(num_autotags,), dtype='float32', name='user_feature_input')
 
     MLP_Embedding_User = Embedding(input_dim = num_users, output_dim = old_div(layers[0],2), name = 'user_embedding',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
     MLP_Embedding_Item = Embedding(input_dim = num_items, output_dim = old_div(layers[0],2), name = 'item_embedding',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
-    # MLP_Embedding_User_Features = Embedding(input_dim = num_autotags + 1, )
     
     # Crucial to flatten an embedding vector!
     user_latent = Flatten()(MLP_Embedding_User(user_input))
     item_latent = Flatten()(MLP_Embedding_Item(item_input))
+
+    user_features = Dense(layers[0]+(layers[0]//2), name='feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
+    user_features = BatchNormalization(name='feature_dense_layer_bn')(user_features)
+    user_features = LeakyReLU(alpha=0.1)(user_features)
     
     user_latent = Concatenate()([user_latent, user_features])
 
@@ -83,15 +87,16 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
     
     # MLP layerss
     for idx in range(1, num_layer):
-        layer = Dense(layers[idx], kernel_regularizer= l2(reg_layers[idx]), activation='relu', name = 'layer%d' %idx)
-        vector = layer(vector)
+        vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal')(vector)
+        vector = BatchNormalization(name='layer_bn%d' %idx)(vector)
+        vector = LeakyReLU(alpha=0.1)(vector)
         
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = 'prediction')(vector)
     
-    model = Model(inputs=[user_input, item_input, user_features], 
+    model = Model(inputs=[user_input, item_input, user_feature_input],
                   outputs=prediction)
-    
+
     model.name = "MLP"
 
     return model
