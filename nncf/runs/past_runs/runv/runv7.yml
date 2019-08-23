@@ -1,0 +1,70 @@
+--nn_model: GMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--num_factors: "94"
+--early_stopping: "145"
+--test_dataset: "1"
+--percentage: "0.0"
+--dataset_name_prepend: "cold_0.0_"
+
+# Launched by terminal.
+# GMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=145, epochs=300, eval_recall=1, is_tag=1, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='GMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0,0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_GMF_94_[64,32,16,8]_1566560313.h5
+--weights_path: Pretrain/_GMF_94_[64,32,16,8]_1566560313.h5
+
+
+# Launched by terminal.
+# GMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=145, epochs=300, eval_recall=1, is_tag=1, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='GMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0,0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_GMF_94_[64,32,16,8]_1566560345.h5
+--weights_path: Pretrain/_GMF_94_[64,32,16,8]_1566560345.h5
+# Load data done [1.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 94)        1880000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 94)           0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1094)         0           flatten_1[0][0]                  
+#                                                                  user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# user_feature_item_latent1 (Dens (None, 94)           102930      concatenate_1[0][0]              
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_feature_item_latent_bn1 (B (None, 94)           376         user_feature_item_latent1[0][0]  
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 94)        188000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# leaky_re_lu_1 (LeakyReLU)       (None, 94)           0           user_feature_item_latent_bn1[0][0
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 94)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# multiply_1 (Multiply)           (None, 94)           0           leaky_re_lu_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            95          multiply_1[0][0]                 
+# ==================================================================================================
+# Total params: 2,171,401
+# Trainable params: 2,171,213
+# Non-trainable params: 188
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0281, Jaccard score = 0.0215
+# Iteration 0 fit: [17.2 s]: Recall = 0.1725, Jaccard score = 0.1481, loss = 0.4937, gradient norm = 0.2976, eval: [7.3 s]
+# Iteration 1 fit: [17.0 s]: Recall = 0.1847, Jaccard score = 0.1603, loss = 0.3876, gradient norm = 0.2542, eval: [7.2 s]
+# Iteration 2 fit: [17.0 s]: Recall = 0.1909, Jaccard score = 0.1666, loss = 0.3598, gradient norm = 0.2576, eval: [7.2 s]
+# Iteration 3 fit: [16.9 s]: Recall = 0.1890, Jaccard score = 0.1646, loss = 0.3364, gradient norm = 0.2690, eval: [7.3 s]
+# Iteration 4 fit: [16.8 s]: Recall = 0.1854, Jaccard score = 0.1610, loss = 0.3131, gradient norm = 0.2814, eval: [7.3 s]
+# Iteration 5 fit: [16.7 s]: Recall = 0.1803, Jaccard score = 0.1559, loss = 0.2907, gradient norm = 0.2921, eval: [7.3 s]
+# Model test performed 
+# Recall score: 0.05494929453262787     Jaccard score: 0.04307253639780533

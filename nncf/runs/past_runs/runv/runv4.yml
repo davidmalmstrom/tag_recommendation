@@ -1,0 +1,27 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--layers: "[512,96]"
+--reg_layers: "[0,0]"
+--early_stopping: "45"
+--test_dataset: "1"
+--percentage: "0.0"
+--dataset_name_prepend: "cold_0.0_"
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1566389718.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1566389718.h5
+# Load data done [1.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0292, Jaccard score = 0.0223
+# Iteration 0 fit: [28.5 s]: Recall = 0.1764, Jaccard score = 0.1520, loss = 0.4247, eval: [7.8 s]
+# Iteration 1 fit: [27.5 s]: Recall = 0.1892, Jaccard score = 0.1648, loss = 0.3816, eval: [7.7 s]
+# Iteration 2 fit: [27.5 s]: Recall = 0.1949, Jaccard score = 0.1706, loss = 0.3602, eval: [7.7 s]
+# Iteration 3 fit: [27.5 s]: Recall = 0.1921, Jaccard score = 0.1678, loss = 0.3393, eval: [7.7 s]
+# Model test performed 
+# Recall score: 0.05715388007054674     Jaccard score: 0.044878175444670446

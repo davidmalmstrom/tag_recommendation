@@ -1,0 +1,196 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--layers: "[512,96]"
+--reg_layers: "[0,0]"
+--early_stopping: "45"
+--test_dataset: "1"
+--percentage: "0.0"
+--dataset_name_prepend: "cold_0.0_"
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1566387329.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1566387329.h5
+# Load data done [1.7 s]. #user=20000, #item=2000, #train=161729, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# feature_dense_layer (Dense)     (None, 768)          768768      user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 256)       5120000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# batch_normalization_1 (BatchNor (None, 768)          3072        feature_dense_layer[0][0]        
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 256)          0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# leaky_re_lu_1 (LeakyReLU)       (None, 768)          0           batch_normalization_1[0][0]      
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1024)         0           flatten_1[0][0]                  
+#                                                                  leaky_re_lu_1[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1280)         0           concatenate_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           122976      concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# batch_normalization_2 (BatchNor (None, 96)           384         layer1[0][0]                     
+# __________________________________________________________________________________________________
+# leaky_re_lu_2 (LeakyReLU)       (None, 96)           0           batch_normalization_2[0][0]      
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          leaky_re_lu_2[0][0]              
+# ==================================================================================================
+# Total params: 6,527,297
+# Trainable params: 6,525,569
+# Non-trainable params: 1,728
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0298, Jaccard score = 0.0180
+# Iteration 0 fit: [31.8 s]: Recall = 0.2360, Jaccard score = 0.1628, loss = 0.4214, eval: [8.4 s]
+# Iteration 1 fit: [30.9 s]: Recall = 0.2622, Jaccard score = 0.1842, loss = 0.3792, eval: [8.4 s]
+# Iteration 2 fit: [30.9 s]: Recall = 0.2791, Jaccard score = 0.1984, loss = 0.3568, eval: [8.5 s]
+# Iteration 3 fit: [30.8 s]: Recall = 0.2824, Jaccard score = 0.2013, loss = 0.3358, eval: [8.4 s]
+# Iteration 4 fit: [30.8 s]: Recall = 0.2921, Jaccard score = 0.2096, loss = 0.3159, eval: [8.4 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1566387579.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1566387579.h5
+# Load data done [1.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# feature_dense_layer (Dense)     (None, 768)          768768      user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 256)       5120000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# batch_normalization_1 (BatchNor (None, 768)          3072        feature_dense_layer[0][0]        
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 256)          0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# leaky_re_lu_1 (LeakyReLU)       (None, 768)          0           batch_normalization_1[0][0]      
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1024)         0           flatten_1[0][0]                  
+#                                                                  leaky_re_lu_1[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1280)         0           concatenate_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           122976      concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# batch_normalization_2 (BatchNor (None, 96)           384         layer1[0][0]                     
+# __________________________________________________________________________________________________
+# leaky_re_lu_2 (LeakyReLU)       (None, 96)           0           batch_normalization_2[0][0]      
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          leaky_re_lu_2[0][0]              
+# ==================================================================================================
+# Total params: 6,527,297
+# Trainable params: 6,525,569
+# Non-trainable params: 1,728
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0275, Jaccard score = 0.0210
+# Iteration 0 fit: [28.8 s]: Recall = 0.1760, Jaccard score = 0.1516, loss = 0.4260, eval: [7.8 s]
+# Iteration 1 fit: [27.9 s]: Recall = 0.1900, Jaccard score = 0.1656, loss = 0.3819, eval: [7.9 s]
+# Iteration 2 fit: [27.9 s]: Recall = 0.1934, Jaccard score = 0.1691, loss = 0.3609, eval: [7.8 s]
+# Iteration 3 fit: [27.9 s]: Recall = 0.1941, Jaccard score = 0.1698, loss = 0.3408, eval: [7.8 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1566387757.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1566387757.h5
+# Load data done [1.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# feature_dense_layer (Dense)     (None, 768)          768768      user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 256)       5120000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# batch_normalization_1 (BatchNor (None, 768)          3072        feature_dense_layer[0][0]        
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 256)          0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# leaky_re_lu_1 (LeakyReLU)       (None, 768)          0           batch_normalization_1[0][0]      
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1024)         0           flatten_1[0][0]                  
+#                                                                  leaky_re_lu_1[0][0]              
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1280)         0           concatenate_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           122976      concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# batch_normalization_2 (BatchNor (None, 96)           384         layer1[0][0]                     
+# __________________________________________________________________________________________________
+# leaky_re_lu_2 (LeakyReLU)       (None, 96)           0           batch_normalization_2[0][0]      
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          leaky_re_lu_2[0][0]              
+# ==================================================================================================
+# Total params: 6,527,297
+# Trainable params: 6,525,569
+# Non-trainable params: 1,728
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0303, Jaccard score = 0.0232
+# Iteration 0 fit: [28.5 s]: Recall = 0.1762, Jaccard score = 0.1518, loss = 0.4243, eval: [7.7 s]
+# Iteration 1 fit: [27.5 s]: Recall = 0.1907, Jaccard score = 0.1663, loss = 0.3827, eval: [7.8 s]
+# Iteration 2 fit: [27.5 s]: Recall = 0.1968, Jaccard score = 0.1726, loss = 0.3597, eval: [7.8 s]
+# Iteration 3 fit: [27.5 s]: Recall = 0.1900, Jaccard score = 0.1656, loss = 0.3392, eval: [9.0 s]
+# Iteration 4 fit: [30.1 s]: Recall = 0.1893, Jaccard score = 0.1650, loss = 0.3199, eval: [7.8 s]
+# Iteration 5 fit: [27.5 s]: Recall = 0.1879, Jaccard score = 0.1635, loss = 0.3020, eval: [7.9 s]
+# Iteration 6 fit: [27.4 s]: Recall = 0.1838, Jaccard score = 0.1594, loss = 0.2847, eval: [7.8 s]
+# Iteration 7 fit: [27.5 s]: Recall = 0.1798, Jaccard score = 0.1554, loss = 0.2699, eval: [7.8 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1566388081.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1566388081.h5
+# Load data done [1.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0274, Jaccard score = 0.0209
+# Iteration 0 fit: [28.6 s]: Recall = 0.0284, Jaccard score = 0.0217, loss = 12.7539, eval: [8.0 s]
+# Iteration 1 fit: [27.6 s]: Recall = 0.0276, Jaccard score = 0.0211, loss = 12.7539, eval: [10.0 s]

@@ -74,9 +74,9 @@ def get_model(num_users, num_autotags, num_items, latent_dim, regs=[0,0]):
     user_feature_user_latent = Concatenate()([user_latent, user_feature_input])
 
     # Resize the combined user-user_feature-vector to prepare for product
-    user_feature_user_latent = Dense(94, name='user_feature_item_latent1',
-                                     kernel_initializer='he_normal', trainable=True)(user_feature_user_latent)
-    user_feature_user_latent = BatchNormalization(name='user_feature_item_latent_bn1')(user_feature_user_latent)
+    user_feature_user_latent = Dense(latent_dim, name='user_feature_user_latent',
+                                     kernel_initializer='he_normal')(user_feature_user_latent)
+    user_feature_user_latent = BatchNormalization(name='user_feature_user_latent_bn')(user_feature_user_latent)
     user_feature_user_latent = LeakyReLU(alpha=0.1)(user_feature_user_latent)
 
     # Element-wise product of user and item embeddings 
