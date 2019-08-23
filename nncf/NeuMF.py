@@ -359,14 +359,24 @@ def main(sargs):
             if args.early_stopping != 0 and args.early_stopping == epochs_without_improvement:
                 break
             t1 = time()
+
             # Generate training instances
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
             
             # Training
-            if model.name == "GMF":
-                input_array = [np.array(user_input), np.array(item_input)]
-            else:
-                input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
+
+            def get_gradient_norm(model):
+                """from
+                https://stackoverflow.com/questions/45694344/calculating-gradient-norm-wrt-weights-with-keras
+                """
+                with K.name_scope('gradient_norm'):
+                    grads = K.gradients(model.total_loss, model.trainable_weights)
+                    norm = K.sqrt(sum([K.sum(K.square(g)) for g in grads]))
+                return norm
+
+            model.metrics_names.append("gradient_norm")
+            model.metrics_tensors.append(get_gradient_norm(model))
+
             hist = model.fit(input_array, #input
                             np.array(labels), # labels 
                             batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
@@ -380,8 +390,9 @@ def main(sargs):
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
                 loss = hist.history['loss'][0]
-                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, eval: [%.1f s]'
-                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, time()-t2))
+                gradient_norm = hist.history['gradient_norm'][0]
+                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, gradient norm = %.4f, eval: [%.1f s]'
+                    % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, gradient_norm, time()-t2))
                 if hr > best_hr:
                     best_hr, best_ndcg, best_iter = hr, ndcg, epoch
                     if args.out > 0:
