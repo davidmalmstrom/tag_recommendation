@@ -255,7 +255,7 @@ def main(sargs):
     if model_type == 'NeuMF':
         model = get_model(num_users, num_autotags, num_items, mf_dim, layers, reg_layers, reg_mf)
     elif model_type == "GMF":
-        model = GMF.get_model(num_users,num_items,mf_dim)
+        model = GMF.get_model(num_users, num_autotags, num_items, mf_dim)
     elif model_type == "MLP":
         model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
     else:
@@ -276,7 +276,7 @@ def main(sargs):
 
     # Load pretrain model
     if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
-        gmf_model = GMF.get_model(num_users,num_items,mf_dim)
+        gmf_model = GMF.get_model(num_users, num_autotags, num_items, mf_dim)
         gmf_model.load_weights(mf_pretrain)
         mlp_model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
@@ -377,6 +377,7 @@ def main(sargs):
             model.metrics_names.append("gradient_norm")
             model.metrics_tensors.append(get_gradient_norm(model))
 
+            input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
             hist = model.fit(input_array, #input
                             np.array(labels), # labels 
                             batch_size=batch_size, epochs=1, verbose=0, shuffle=True)

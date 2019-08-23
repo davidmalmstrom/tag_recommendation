@@ -14,7 +14,8 @@ from keras import backend as K
 from keras import initializers
 from keras.models import Sequential, Model, load_model, save_model
 from keras.layers.core import Dense, Lambda, Activation
-from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten
+from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, LeakyReLU, Concatenate, Dropout
+from keras.layers.normalization import BatchNormalization
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from keras.regularizers import l2
 from nncf.Dataset import Dataset
@@ -55,10 +56,11 @@ def parse_args():
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
 
-def get_model(num_users, num_items, latent_dim, regs=[0,0]):
+def get_model(num_users, num_autotags, num_items, latent_dim, regs=[0,0]):
     # Input variables
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
+    user_feature_input = Input(shape=(num_autotags,), dtype='float32', name='user_feature_input')
 
     MF_Embedding_User = Embedding(input_dim = num_users, output_dim = latent_dim, name = 'user_embedding',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(regs[0]), input_length=1)
@@ -69,14 +71,22 @@ def get_model(num_users, num_items, latent_dim, regs=[0,0]):
     user_latent = Flatten()(MF_Embedding_User(user_input))
     item_latent = Flatten()(MF_Embedding_Item(item_input))
     
+    user_feature_user_latent = Concatenate()([user_latent, user_feature_input])
+
+    # Resize the combined user-user_feature-vector to prepare for product
+    user_feature_user_latent = Dense(94, name='user_feature_item_latent1',
+                                     kernel_initializer='he_normal', trainable=True)(user_feature_user_latent)
+    user_feature_user_latent = BatchNormalization(name='user_feature_item_latent_bn1')(user_feature_user_latent)
+    user_feature_user_latent = LeakyReLU(alpha=0.1)(user_feature_user_latent)
+
     # Element-wise product of user and item embeddings 
-    predict_vector = Multiply()([user_latent, item_latent])
-    
+    predict_vector = Multiply()([user_feature_user_latent, item_latent])
+
     # Final prediction layer
     #prediction = Lambda(lambda x: K.sigmoid(K.sum(x)), output_shape=(1,))(predict_vector)
-    prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = 'prediction')(predict_vector)
-    
-    model = Model(inputs=[user_input, item_input], 
+    prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name='prediction')(predict_vector)
+
+    model = Model(inputs=[user_input, item_input, user_feature_input],
                 outputs=prediction)
     model.name = "GMF"
 
