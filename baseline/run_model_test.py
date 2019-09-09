@@ -70,7 +70,7 @@ def main():
     model = base.get_model(params)
 
     model.fit(X, test_set)
-    
+
     test_model(model, params, model_runfile_path, test_y, X)
 
 if __name__ == "__main__":

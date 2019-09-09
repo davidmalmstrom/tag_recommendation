@@ -5,7 +5,7 @@ from run_optimization import opt_als, opt_baseline, opt_naive_bayes, main
 from skopt import dummy_minimize, gp_minimize, forest_minimize
 
 optimizer = gp_minimize
-args_list = [(opt_naive_bayes, [(0.1,4)]), (opt_als, [(0.001,1), (15,), (30,100)]), 
+args_list = [(opt_naive_bayes, [(0.1,4)]), (opt_als, [(0.001,1), (15,), (30,100)]),
              (opt_baseline, [(0.1,4), (0.001,1), (15,), (30,100), (0.02,0.10)])]
 
 kwargs = {"verbose": True, "random_state": 0, "n_calls": 120}

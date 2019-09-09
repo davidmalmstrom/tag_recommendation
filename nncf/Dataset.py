@@ -1,6 +1,6 @@
 '''
 Created on Aug 8, 2016
-Processing datasets. 
+Processing datasets.
 
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
@@ -44,7 +44,7 @@ class Dataset(object):
 
                 # Sample positives as test positives. The list in list with indices is because NCF is implemented that way.
                 # Sets the test positives in the y-matrix to 0, so that these are not in the training process.
-                # The order is important here, since y is modified. Therefore, this step should be done after negatives have 
+                # The order is important here, since y is modified. Therefore, this step should be done after negatives have
                 # been sampled, and before the trainMatrix is finalized.
                 self.testRatings = [[i, int(np.random.choice(np.nonzero(row)[0]))] for i, row in enumerate(y)]
                 for (m, n) in self.testRatings:
@@ -62,9 +62,9 @@ class Dataset(object):
             self.testRatings = self.load_rating_file_as_list(path + ".test.rating")
             self.testNegatives = self.load_negative_file(path + ".test.negative")
         if not eval_recall: assert len(self.testRatings) == len(self.testNegatives)
-        
+
         self.num_users, self.num_items = self.trainMatrix.shape
-        
+
     def load_rating_file_as_list(self, filename):
         ratingList = []
         with open(filename, "r") as f:
@@ -75,7 +75,7 @@ class Dataset(object):
                 ratingList.append([user, item])
                 line = f.readline()
         return ratingList
-    
+
     def load_negative_file(self, filename):
         negativeList = []
         with open(filename, "r") as f:
@@ -88,7 +88,7 @@ class Dataset(object):
                 negativeList.append(negatives)
                 line = f.readline()
         return negativeList
-    
+
     def load_rating_file_as_matrix(self, filename):
         '''
         Read .rating file and Return dok matrix.
@@ -113,5 +113,5 @@ class Dataset(object):
                 user, item, rating = int(arr[0]), int(arr[1]), float(arr[2])
                 if (rating > 0):
                     mat[user, item] = 1.0
-                line = f.readline()    
+                line = f.readline()
         return mat

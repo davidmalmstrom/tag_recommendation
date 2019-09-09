@@ -36,7 +36,7 @@ def evaluate_model(model, testRatings, testNegatives, K, num_thread):
     _testRatings = testRatings
     _testNegatives = testNegatives
     _K = K
-        
+
     hits, ndcgs = [],[]
     if(num_thread > 1): # Multi-thread
         pool = multiprocessing.Pool(processes=num_thread)
@@ -50,7 +50,7 @@ def evaluate_model(model, testRatings, testNegatives, K, num_thread):
     for idx in range(len(_testRatings)):
         (hr,ndcg) = eval_one_rating(idx)
         hits.append(hr)
-        ndcgs.append(ndcg)      
+        ndcgs.append(ndcg)
     return (hits, ndcgs)
 
 def eval_one_rating(idx):
@@ -62,13 +62,13 @@ def eval_one_rating(idx):
     # Get prediction scores
     map_item_score = {}
     users = np.full(len(items), u, dtype = 'int32')
-    predictions = _model.predict([users, np.array(items)], 
+    predictions = _model.predict([users, np.array(items)],
                                  batch_size=100, verbose=0)
     for i in range(len(items)):
         item = items[i]
         map_item_score[item] = predictions[i]
     items.pop()
-    
+
     # Evaluate top rank list
     ranklist = heapq.nlargest(_K, map_item_score, key=map_item_score.get)
     hr = getHitRatio(ranklist, gtItem)

@@ -1,4 +1,4 @@
-# Script to run several runs after each other. The runs are specified by the run-configurations 
+# Script to run several runs after each other. The runs are specified by the run-configurations
 # located in the folder runs/several_runs/
 
 import sys

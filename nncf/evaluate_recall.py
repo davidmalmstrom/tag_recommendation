@@ -36,14 +36,14 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
             num_unseen_tags = 100
             all_true = user_row + val_y[i]
 
-            # Make predictions only on the items that has not been added to the model 
+            # Make predictions only on the items that has not been added to the model
             # (i.e. 1:s in the final concatenated train matrix)
             not_seen_tag_indices = np.where(np.squeeze(all_true.toarray()) == 0)[0]
 
             tag_indices_to_predict = np.random.choice(not_seen_tag_indices, num_unseen_tags, replace=False)
             tag_indices_to_predict = np.append(tag_indices_to_predict, np.nonzero(val_y[i])[1])
             np.random.shuffle(tag_indices_to_predict)
-        else: 
+        else:
             tag_indices_to_predict = np.where(np.squeeze(user_row.toarray()) == 0)[0]
 
         users = np.full(len(tag_indices_to_predict), u_num, dtype='int32')
@@ -54,12 +54,12 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
             features = np.tile(X[u_num], (len(tag_indices_to_predict), 1))
             predictions = model.predict([users, tag_indices_to_predict, features],
                                     batch_size=100, verbose=0)
-        
+
         map_item_score = {}
         for j in range(len(tag_indices_to_predict)):
             item_index = tag_indices_to_predict[j]
             map_item_score[item_index] = predictions[j][0]
-    
+
         # return top rank list
         return np.array(heapq.nlargest(K, map_item_score, key=map_item_score.get))
 
@@ -67,7 +67,7 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
 #[row.argsort()[-n:][::-1] for row in prediction]
 #np.array([pre[0] for pre in predictions]).argsort()[-10:][::-1]
 #np.array(heapq.nlargest(K, map_item_score, key=map_item_score.get))
-    # This is the part of the prediction function that uses the fact that the val_x part was prepended to the rest of the 
+    # This is the part of the prediction function that uses the fact that the val_x part was prepended to the rest of the
     # training data before the training occurred.
     tops = np.array([top_cands(user_row, i, i + starting_user_num) for i, user_row in enumerate(val_x)])
 

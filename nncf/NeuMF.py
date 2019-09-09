@@ -1,7 +1,7 @@
 '''
 Created on Aug 9, 2016
 Keras Implementation of Neural Matrix Factorization (NeuMF) recommender model in:
-He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.  
+He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
 
 @author: Xiangnan He (xiangnanhe@gmail.com)
 '''
@@ -50,7 +50,7 @@ def parse_args(sargs):
     parser.add_argument('--layers', nargs='?', default='[64,32,16,8]',
                         help="MLP layers. Note that the first layer is the concatenation of user and item embeddings. So layers[0]/2 is the embedding size.")
     parser.add_argument('--reg_mf', type=float, default=0,
-                        help='Regularization for MF embeddings.')                    
+                        help='Regularization for MF embeddings.')
     parser.add_argument('--reg_layers', nargs='?', default='[0,0,0,0]',
                         help="Regularization for each MLP layer. reg_layers[0] is the regularization for embeddings.")
     parser.add_argument('--num_neg', type=int, default=4,
@@ -99,27 +99,27 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
     user_feature_input = Input(shape=(num_autotags,), dtype='float32', name='user_feature_input')
-    
+
     # Embedding layer
     MF_Embedding_User = Embedding(input_dim = num_users, output_dim = mf_dim, name = 'mf_embedding_user',
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_mf), input_length=1)
     MF_Embedding_Item = Embedding(input_dim = num_items, output_dim = mf_dim, name = 'mf_embedding_item',
-                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_mf), input_length=1)   
+                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_mf), input_length=1)
 
     MLP_Embedding_User = Embedding(input_dim = num_users, output_dim = old_div(layers[0],2), name = "mlp_embedding_user",
                                   embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
     MLP_Embedding_Item = Embedding(input_dim = num_items, output_dim = old_div(layers[0],2), name = 'mlp_embedding_item',
-                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)   
-    
+                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(reg_layers[0]), input_length=1)
+
     # MF part
     mf_user_latent = Flatten()(MF_Embedding_User(user_input))
     mf_item_latent = Flatten()(MF_Embedding_Item(item_input))
     mf_vector = Multiply()([mf_user_latent, mf_item_latent]) # element-wise multiply
 
-    # MLP part 
+    # MLP part
     mlp_user_latent = Flatten()(MLP_Embedding_User(user_input))
     mlp_item_latent = Flatten()(MLP_Embedding_Item(item_input))
-    
+
     user_features = Dense(layers[0]+(layers[0]//2), name='feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
     user_features = BatchNormalization(name='feature_dense_layer_bn')(user_features)
     user_features = LeakyReLU(alpha=0.1)(user_features)
@@ -136,10 +136,10 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     #mf_vector = Lambda(lambda x: x * alpha)(mf_vector)
     #mlp_vector = Lambda(lambda x : x * (1-alpha))(mlp_vector)
     predict_vector = Concatenate()([mf_vector, mlp_vector])
-    
+
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = "prediction")(predict_vector)
-    
+
     model = Model(inputs=[user_input, item_input, user_feature_input],
                   outputs=prediction)
 
@@ -153,7 +153,7 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers, mf_percentage):
     gmf_item_embeddings = gmf_model.get_layer('item_embedding').get_weights()
     model.get_layer('mf_embedding_user').set_weights(gmf_user_embeddings)
     model.get_layer('mf_embedding_item').set_weights(gmf_item_embeddings)
-    
+
     # MLP embeddings
     mlp_user_embeddings = mlp_model.get_layer('user_embedding').get_weights()
     mlp_item_embeddings = mlp_model.get_layer('item_embedding').get_weights()
@@ -165,12 +165,12 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers, mf_percentage):
     mlp_user_features_bn = mlp_model.get_layer('feature_dense_layer_bn').get_weights()
     model.get_layer('feature_dense_layer').set_weights(mlp_user_features)
     model.get_layer('feature_dense_layer_bn').set_weights(mlp_user_features_bn)
-    
+
     # MLP layers
     for i in range(1, num_layers):
         mlp_layer_weights = mlp_model.get_layer('layer%d' %i).get_weights()
         model.get_layer('layer%d' %i).set_weights(mlp_layer_weights)
-        
+
     # Prediction weights
     gmf_prediction = gmf_model.get_layer('prediction').get_weights()
     gmf_prediction = [mf_percentage * weight for weight in gmf_prediction]
@@ -233,7 +233,7 @@ def main(sargs):
             print("ERROR: percentage and dataset_name_prepend should be specified as a pair.")
             print("------------------------------------")
             sys.exit()
-            
+
     topK = args.topk
     evaluation_threads = 1#mp.cpu_count()
     print("%s arguments: %s " %(model_type, args))
@@ -252,9 +252,9 @@ def main(sargs):
         num_test_ratings = "eval_recall"
     else:
         num_test_ratings = str(len(testRatings))
-    print("Load data done [%.1f s]. #user=%d, #item=%d, #train=%d, #test=%s" 
+    print("Load data done [%.1f s]. #user=%d, #item=%d, #train=%d, #test=%s"
           %(time()-t1, num_users, num_items, train.nnz, num_test_ratings))
-    
+
     # Build model
     if model_type == 'NeuMF':
         model = get_model(num_users, num_autotags, num_items, mf_dim, layers, reg_layers, reg_mf)
@@ -265,9 +265,9 @@ def main(sargs):
     else:
         print("Error: wrong model type")
         sys.exit()
-        
+
     def compile_model():
-        if learner.lower() == "adagrad": 
+        if learner.lower() == "adagrad":
             model.compile(optimizer=Adagrad(lr=learning_rate), loss='binary_crossentropy')
         elif learner.lower() == "rmsprop":
             model.compile(optimizer=RMSprop(lr=learning_rate), loss='binary_crossentropy')
@@ -336,7 +336,7 @@ def main(sargs):
             #     avg_jaccard = avg_jaccard + ((best_ndcg - avg_jaccard) / (fold + 1))
             #     # avg_recall = ((avg_recall * fold) + best_hr) / (fold + 1)
             #     # avg_jaccard = ((avg_jaccard * fold) + best_ndcg) / (fold + 1)
-            #     print("The average best performance after k-fold " + str(fold + 1) + 
+            #     print("The average best performance after k-fold " + str(fold + 1) +
             #         " is: Recall = " + str(avg_recall) + ", Jaccard score = " + str(avg_jaccard))
             # continue
             # Test.remove
@@ -349,11 +349,11 @@ def main(sargs):
 
             metric1 = "HR"
             metric2 = "NDCG"
-        
+
         print('Init: %s = %.4f, %s = %.4f' % (metric1, hr, metric2, ndcg))
         best_hr, best_ndcg, best_iter = hr, ndcg, -1
         if args.out > 0:
-            model.save_weights(model_out_file, overwrite=True) 
+            model.save_weights(model_out_file, overwrite=True)
 
         if args.early_stopping:
             epochs_without_improvement = 0
@@ -366,7 +366,7 @@ def main(sargs):
 
             # Generate training instances
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
-            
+
             # Training
             input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
 
@@ -383,10 +383,10 @@ def main(sargs):
             model.metrics_tensors.append(get_gradient_norm(model))
 
             hist = model.fit(input_array, #input
-                            np.array(labels), # labels 
+                            np.array(labels), # labels
                             batch_size=batch_size, epochs=1, verbose=0, shuffle=True)
             t2 = time()
-            
+
             # Evaluation
             if epoch %verbose == 0:
                 if args.eval_recall:
@@ -415,7 +415,7 @@ def main(sargs):
         if args.eval_recall and num_k_folds > 1:
             avg_recall = avg_recall + ((best_hr - avg_recall) / (fold + 1))
             avg_jaccard = avg_jaccard + ((best_ndcg - avg_jaccard) / (fold + 1))
-            print("The average best performance after k-fold " + str(fold + 1) + 
+            print("The average best performance after k-fold " + str(fold + 1) +
                   " is: Recall = " + str(avg_recall) + ", Jaccard score = " + str(avg_jaccard))
 
 if __name__ == '__main__':

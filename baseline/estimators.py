@@ -37,7 +37,7 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
         """Returns the top-n predictions as a one-hot multi-element array.
         """
         predictions = self.predict_score(X, start_index=start_index)
-        
+
         if n is None:
             n = self.n
         tops = nh.get_top_n_tags(predictions, n=n)

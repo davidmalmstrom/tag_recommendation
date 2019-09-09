@@ -32,7 +32,7 @@ def read_params(model_runfile_path):
     with open(model_runfile_path) as run_file:
         yaml_params = yaml.safe_load(run_file)
         params_mid = {k[2:]: v for k, v in yaml_params.items()}  # yml file keys has leading "--"
-        params = {k: eval(v) if k in ['layers', 'reg_layers', 'num_factors', 'topk'] 
+        params = {k: eval(v) if k in ['layers', 'reg_layers', 'num_factors', 'topk']
                       else v for k, v in params_mid.items()}
         try:
             assert(params['test_dataset'] == '1')
