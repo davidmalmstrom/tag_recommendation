@@ -48,8 +48,11 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
 
         users = np.full(len(tag_indices_to_predict), u_num, dtype='int32')
 
-        features = np.tile(X[u_num], (len(tag_indices_to_predict), 1))
-        predictions = model.predict([users, tag_indices_to_predict, features],
+        if model.name == "GMF":
+            predictions = model.predict([users, tag_indices_to_predict], batch_size=100, verbose=0)
+        else:
+            features = np.tile(X[u_num], (len(tag_indices_to_predict), 1))
+            predictions = model.predict([users, tag_indices_to_predict, features],
                                     batch_size=100, verbose=0)
         
         map_item_score = {}

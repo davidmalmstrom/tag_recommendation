@@ -114,28 +114,21 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     # MF part
     mf_user_latent = Flatten()(MF_Embedding_User(user_input))
     mf_item_latent = Flatten()(MF_Embedding_Item(item_input))
-
-    mf_user_feature_user_latent = Concatenate()([mf_user_latent, user_feature_input])
-    mf_user_feature_user_latent = Dense(mf_dim, name='mf_user_feature_user_latent',
-                                     kernel_initializer='he_normal')(mf_user_feature_user_latent)
-    mf_user_feature_user_latent = BatchNormalization(name='mf_user_feature_user_latent_bn')(mf_user_feature_user_latent)
-    mf_user_feature_user_latent = LeakyReLU(alpha=0.1)(mf_user_feature_user_latent)
-
-    mf_vector = Multiply()([mf_user_feature_user_latent, mf_item_latent]) # element-wise multiply
+    mf_vector = Multiply()([mf_user_latent, mf_item_latent]) # element-wise multiply
 
     # MLP part 
     mlp_user_latent = Flatten()(MLP_Embedding_User(user_input))
     mlp_item_latent = Flatten()(MLP_Embedding_Item(item_input))
     
-    mlp_user_features = Dense(layers[0]+(layers[0]//2), name='mlp_feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
-    mlp_user_features = BatchNormalization(name='mlp_feature_dense_layer_bn')(mlp_user_features)
-    mlp_user_features = LeakyReLU(alpha=0.1)(mlp_user_features)
+    user_features = Dense(layers[0]+(layers[0]//2), name='feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
+    user_features = BatchNormalization(name='feature_dense_layer_bn')(user_features)
+    user_features = LeakyReLU(alpha=0.1)(user_features)
 
-    mlp_user_latent = Concatenate()([mlp_user_latent, mlp_user_features])
+    mlp_user_latent = Concatenate()([mlp_user_latent, user_features])
 
     mlp_vector = Concatenate()([mlp_user_latent, mlp_item_latent])
     for idx in range(1, num_layer):
-        mlp_vector = Dense(layers[idx], name = 'mlp_layer%d' %idx, kernel_initializer='he_normal')(mlp_vector)
+        mlp_vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal')(mlp_vector)
         mlp_vector = BatchNormalization(name='mlp_layer_bn%d' %idx)(mlp_vector)
         mlp_vector = LeakyReLU(alpha=0.1)(mlp_vector)
 
@@ -160,10 +153,6 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
     gmf_item_embeddings = gmf_model.get_layer('item_embedding').get_weights()
     model.get_layer('mf_embedding_user').set_weights(gmf_user_embeddings)
     model.get_layer('mf_embedding_item').set_weights(gmf_item_embeddings)
-
-    # MF feature-user layer
-    gmf_feature_user = gmf_model.get_layer('user_feature_user_latent').get_weights()
-    model.get_layer('mf_user_feature_user_latent').set_weights(gmf_feature_user)
     
     # MLP embeddings
     mlp_user_embeddings = mlp_model.get_layer('user_embedding').get_weights()
@@ -174,13 +163,13 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
     # MLP feature layer
     mlp_user_features = mlp_model.get_layer('feature_dense_layer').get_weights()
     mlp_user_features_bn = mlp_model.get_layer('feature_dense_layer_bn').get_weights()
-    model.get_layer('mlp_feature_dense_layer').set_weights(mlp_user_features)
-    model.get_layer('mlp_feature_dense_layer_bn').set_weights(mlp_user_features_bn)
+    model.get_layer('feature_dense_layer').set_weights(mlp_user_features)
+    model.get_layer('feature_dense_layer_bn').set_weights(mlp_user_features_bn)
     
     # MLP layers
     for i in range(1, num_layers):
         mlp_layer_weights = mlp_model.get_layer('layer%d' %i).get_weights()
-        model.get_layer('mlp_layer%d' %i).set_weights(mlp_layer_weights)
+        model.get_layer('layer%d' %i).set_weights(mlp_layer_weights)
         
     # Prediction weights
     gmf_prediction = gmf_model.get_layer('prediction').get_weights()
@@ -266,7 +255,7 @@ def main(sargs):
     if model_type == 'NeuMF':
         model = get_model(num_users, num_autotags, num_items, mf_dim, layers, reg_layers, reg_mf)
     elif model_type == "GMF":
-        model = GMF.get_model(num_users, num_autotags, num_items, mf_dim)
+        model = GMF.get_model(num_users,num_items,mf_dim)
     elif model_type == "MLP":
         model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
     else:
@@ -287,7 +276,7 @@ def main(sargs):
 
     # Load pretrain model
     if mf_pretrain != '' and mlp_pretrain != '' and model_type == 'NeuMF':
-        gmf_model = GMF.get_model(num_users, num_autotags, num_items, mf_dim)
+        gmf_model = GMF.get_model(num_users,num_items,mf_dim)
         gmf_model.load_weights(mf_pretrain)
         mlp_model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
@@ -374,7 +363,8 @@ def main(sargs):
             # Generate training instances
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
             
-            # Add gradient norm metric to get gradient norm output
+            # Training
+
             def get_gradient_norm(model):
                 """from
                 https://stackoverflow.com/questions/45694344/calculating-gradient-norm-wrt-weights-with-keras
@@ -387,8 +377,6 @@ def main(sargs):
             model.metrics_names.append("gradient_norm")
             model.metrics_tensors.append(get_gradient_norm(model))
 
-            # Training
-            input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
             hist = model.fit(input_array, #input
                             np.array(labels), # labels 
                             batch_size=batch_size, epochs=1, verbose=0, shuffle=True)

@@ -61,7 +61,7 @@ def build_model(params, data_shape, num_autotags):
             reg_mf = 0
             model = NeuMF.get_model(num_users, num_autotags, num_items, params['num_factors'], params['layers'], params['reg_layers'], reg_mf)
         elif params['nn_model'] == "GMF":
-            model = GMF.get_model(num_users, num_autotags, num_items, params['num_factors'])
+            model = GMF.get_model(num_users, num_items, params['num_factors'])
         elif params['nn_model'] == "MLP":
             model = MLP.get_model(num_users, num_autotags, num_items, params['layers'], params['reg_layers'])
         else:
