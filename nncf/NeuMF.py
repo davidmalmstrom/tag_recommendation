@@ -169,7 +169,10 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers, mf_percentage):
     # MLP layers
     for i in range(1, num_layers):
         mlp_layer_weights = mlp_model.get_layer('layer%d' %i).get_weights()
+        mlp_layer_bn = mlp_model.get_layer('layer_bn%d' %i).get_weights()
+
         model.get_layer('layer%d' %i).set_weights(mlp_layer_weights)
+        model.get_layer('mlp_layer_bn%d' %i).set_weights(mlp_layer_bn)
 
     # Prediction weights
     gmf_prediction = gmf_model.get_layer('prediction').get_weights()
