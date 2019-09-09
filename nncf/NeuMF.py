@@ -147,7 +147,7 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
 
     return model
 
-def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
+def load_pretrain_model(model, gmf_model, mlp_model, num_layers, mf_percentage):
     # MF embeddings
     gmf_user_embeddings = gmf_model.get_layer('user_embedding').get_weights()
     gmf_item_embeddings = gmf_model.get_layer('item_embedding').get_weights()
@@ -173,10 +173,14 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers):
         
     # Prediction weights
     gmf_prediction = gmf_model.get_layer('prediction').get_weights()
+    gmf_prediction = [mf_percentage * weight for weight in gmf_prediction]
+
     mlp_prediction = mlp_model.get_layer('prediction').get_weights()
+    mlp_prediction = [(1 - mf_percentage) * weight for weight in mlp_prediction]
+
     new_weights = np.concatenate((gmf_prediction[0], mlp_prediction[0]), axis=0)
     new_b = gmf_prediction[1] + mlp_prediction[1]
-    model.get_layer('prediction').set_weights([0.5*new_weights, 0.5*new_b])    
+    model.get_layer('prediction').set_weights([new_weights, new_b])
     return model
 
 def get_train_instances(train, num_negatives, num_items):
@@ -280,7 +284,7 @@ def main(sargs):
         gmf_model.load_weights(mf_pretrain)
         mlp_model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
         mlp_model.load_weights(mlp_pretrain)
-        model = load_pretrain_model(model, gmf_model, mlp_model, len(layers))
+        model = load_pretrain_model(model, gmf_model, mlp_model, len(layers), args.percentage)
         print("Load pretrained GMF (%s) and MLP (%s) models done. " %(mf_pretrain, mlp_pretrain))
 
     old_weights = model.get_weights()
@@ -364,6 +368,7 @@ def main(sargs):
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
             
             # Training
+            input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
 
             def get_gradient_norm(model):
                 """from
