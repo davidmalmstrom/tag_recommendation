@@ -293,6 +293,8 @@ def main(sargs):
     old_weights = model.get_weights()
     orig_train = train.copy()
 
+    print(model.summary())
+
     if not args.eval_recall:
         num_k_folds = 1
     else:
