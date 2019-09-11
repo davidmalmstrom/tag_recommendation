@@ -373,17 +373,17 @@ def main(sargs):
             # Training
             input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
 
-            def get_gradient_norm(model):
-                """from
-                https://stackoverflow.com/questions/45694344/calculating-gradient-norm-wrt-weights-with-keras
-                """
-                with K.name_scope('gradient_norm'):
-                    grads = K.gradients(model.total_loss, model.trainable_weights)
-                    norm = K.sqrt(sum([K.sum(K.square(g)) for g in grads]))
-                return norm
+            # def get_gradient_norm(model):
+            #     """from
+            #     https://stackoverflow.com/questions/45694344/calculating-gradient-norm-wrt-weights-with-keras
+            #     """
+            #     with K.name_scope('gradient_norm'):
+            #         grads = K.gradients(model.total_loss, model.trainable_weights)
+            #         norm = K.sqrt(sum([K.sum(K.square(g)) for g in grads]))
+            #     return norm
 
-            model.metrics_names.append("gradient_norm")
-            model.metrics_tensors.append(get_gradient_norm(model))
+            # model.metrics_names.append("gradient_norm")
+            # model.metrics_tensors.append(get_gradient_norm(model))
 
             hist = model.fit(input_array, #input
                             np.array(labels), # labels
@@ -398,7 +398,8 @@ def main(sargs):
                     (hits, ndcgs) = evaluate_model(model, testRatings, testNegatives, topK, evaluation_threads)
                     hr, ndcg = np.array(hits).mean(), np.array(ndcgs).mean()
                 loss = hist.history['loss'][0]
-                gradient_norm = hist.history['gradient_norm'][0]
+                # gradient_norm = hist.history['gradient_norm'][0]
+                gradient_norm = 1
                 print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, gradient norm = %.4f, eval: [%.1f s]'
                     % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, gradient_norm, time()-t2))
                 if hr > best_hr:
