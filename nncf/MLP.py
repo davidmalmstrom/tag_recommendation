@@ -76,20 +76,15 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
     user_latent = Flatten()(MLP_Embedding_User(user_input))
     item_latent = Flatten()(MLP_Embedding_Item(item_input))
 
-    user_features = Dense(layers[0]+(layers[0]//2), name='feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
-    user_features = BatchNormalization(name='feature_dense_layer_bn')(user_features)
-    user_features = LeakyReLU(alpha=0.1)(user_features)
-
-    user_latent = Concatenate()([user_latent, user_features])
+    user_latent = Concatenate()([user_latent, user_feature_input])
 
     # The 0-th layer is the concatenation of embedding layers
     vector = Concatenate()([user_latent, item_latent])
 
     # MLP layerss
     for idx in range(1, num_layer):
-        vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal')(vector)
-        vector = BatchNormalization(name='layer_bn%d' %idx)(vector)
-        vector = LeakyReLU(alpha=0.1)(vector)
+        vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal', kernel_regularizer=l2(0),
+                       activation='relu')(vector)
 
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = 'prediction')(vector)

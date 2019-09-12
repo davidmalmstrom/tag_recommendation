@@ -120,18 +120,12 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     mlp_user_latent = Flatten()(MLP_Embedding_User(user_input))
     mlp_item_latent = Flatten()(MLP_Embedding_Item(item_input))
 
-    user_features = Dense(layers[0]+(layers[0]//2), name='feature_dense_layer', kernel_initializer='he_normal')(user_feature_input)
-    user_features = BatchNormalization(name='feature_dense_layer_bn')(user_features)
-    user_features = LeakyReLU(alpha=0.1)(user_features)
-
-    mlp_user_latent = Concatenate()([mlp_user_latent, user_features])
+    mlp_user_latent = Concatenate()([mlp_user_latent, user_feature_input])
 
     mlp_vector = Concatenate()([mlp_user_latent, mlp_item_latent])
     for idx in range(1, num_layer):
-        mlp_vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal')(mlp_vector)
-        mlp_vector = BatchNormalization(name='mlp_layer_bn%d' %idx)(mlp_vector)
-        mlp_vector = LeakyReLU(alpha=0.1)(mlp_vector)
-
+        mlp_vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal',
+                           kernel_regularizer=l2(0), activation='relu')(mlp_vector)
     # Concatenate MF and MLP parts
     #mf_vector = Lambda(lambda x: x * alpha)(mf_vector)
     #mlp_vector = Lambda(lambda x : x * (1-alpha))(mlp_vector)
@@ -160,19 +154,10 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers, mf_percentage):
     model.get_layer('mlp_embedding_user').set_weights(mlp_user_embeddings)
     model.get_layer('mlp_embedding_item').set_weights(mlp_item_embeddings)
 
-    # MLP feature layer
-    mlp_user_features = mlp_model.get_layer('feature_dense_layer').get_weights()
-    mlp_user_features_bn = mlp_model.get_layer('feature_dense_layer_bn').get_weights()
-    model.get_layer('feature_dense_layer').set_weights(mlp_user_features)
-    model.get_layer('feature_dense_layer_bn').set_weights(mlp_user_features_bn)
-
     # MLP layers
     for i in range(1, num_layers):
         mlp_layer_weights = mlp_model.get_layer('layer%d' %i).get_weights()
-        mlp_layer_bn = mlp_model.get_layer('layer_bn%d' %i).get_weights()
-
         model.get_layer('layer%d' %i).set_weights(mlp_layer_weights)
-        model.get_layer('mlp_layer_bn%d' %i).set_weights(mlp_layer_bn)
 
     # Prediction weights
     gmf_prediction = gmf_model.get_layer('prediction').get_weights()
@@ -373,7 +358,10 @@ def main(sargs):
             user_input, item_input, labels = get_train_instances(train, num_negatives, num_items)
 
             # Training
-            input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
+            if model.name == "GMF":
+                input_array = [np.array(user_input), np.array(item_input)]
+            else:
+                input_array = [np.array(user_input), np.array(item_input), dataset.X[user_input]]
 
             # def get_gradient_norm(model):
             #     """from
