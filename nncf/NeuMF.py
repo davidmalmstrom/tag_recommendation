@@ -303,7 +303,7 @@ def main(sargs):
             elif args.test_dataset:  # validation from end of user list since first end is already halved (for later testing)
                 start_index = num_users - int(num_users / 10)
                 end_index = num_users
-                fast_eval = True
+                fast_eval = False
             else:
                 start_index = 0
                 end_index = int(num_users/10)
