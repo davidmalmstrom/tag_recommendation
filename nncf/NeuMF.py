@@ -390,7 +390,7 @@ def main(sargs):
                 loss = hist.history['loss'][0]
                 # gradient_norm = hist.history['gradient_norm'][0]
                 gradient_norm = 1
-                print('Iteration %d fit: [%.1f s]: %s = %.4f, %s = %.4f, loss = %.4f, gradient norm = %.4f, eval: [%.1f s]'
+                print('Iteration %d fit: [%.1f s]: %s = %.5f, %s = 5.4f, loss = %.6f, gradient norm = %.4f, eval: [%.1f s]'
                     % (epoch,  t2-t1, metric1, hr, metric2, ndcg, loss, gradient_norm, time()-t2))
                 if hr > best_hr:
                     best_hr, best_ndcg, best_iter = hr, ndcg, epoch

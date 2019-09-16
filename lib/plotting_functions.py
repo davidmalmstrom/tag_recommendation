@@ -12,6 +12,7 @@ import scipy.sparse as sp
 import numpy as np
 from sklearn.metrics import jaccard_score, recall_score
 import seaborn as sns
+import matplotlib.pyplot as plt
 import pandas as pd
 
 def compute_metrics(test_y, preds):
@@ -85,19 +86,18 @@ def produce_df_for_plot(m_space, proj_root_dir, dataset_file_name, nn_rel_path):
 
 M_SPACE = np.linspace(10, 90, 3, dtype="int32")
 PROJ_ROOT_DIR = os.path.join(os.path.abspath(''), '..')
-sns.set_style("whitegrid")
+sns.set_style("darkgrid")
 
-dataset_file_name = "test_tag_dataset.pkl"
-nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runu", "runu4.yml")
-df = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_path)
-plot = sns.lineplot(x="M", y="Recall", marker="o", hue="Type", data=df)
+configs = [
+    {'dataset_file_name': 'test_tag_dataset.pkl', 'runfile': 'runu4.yml', 'save_name': 'M_plot_nn_05.svg'},
+    {'dataset_file_name': 'cold_0.1_test_tag_dataset.pkl', 'runfile': 'runu8.yml', 'save_name': 'M_plot_nn_01.svg'},
+    {'dataset_file_name': 'cold_0.0_test_tag_dataset.pkl', 'runfile': 'runu11.yml', 'save_name': 'M_plot_nn_00.svg'}
+]
 
-dataset_file_name = "cold_0.1_test_tag_dataset.pkl"
-nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runu", "runu8.yml")
-df_cold_01 = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_path)
-plot01 = sns.lineplot(x="M", y="Recall", marker="o", hue="Type", data=df_cold_01)
-
-dataset_file_name = "cold_0.0_test_tag_dataset.pkl"
-nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runu", "runu11.yml")
-df_cold_00 = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_path)
-plot00 = sns.lineplot(x="M", y="Recall", marker="o", hue="Type", data=df_cold_00)
+for config in configs:
+    dataset_file_name = config['dataset_file_name']
+    nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runu", config["runfile"])
+    df = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_path)
+    plt.figure()
+    plot = sns.lineplot(x="M", y="Recall", marker="o", hue="Type", data=df)
+    plt.savefig(config["save_name"], bbox_inches='tight')
