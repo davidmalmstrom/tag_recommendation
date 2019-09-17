@@ -1,3 +1,4 @@
+import sys
 
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -9,7 +10,7 @@ def process_line(line):
     loss, _ = rest.split('loss = ')[1].split(',', 1)
     return [int(iteration), float(recall), float(loss)]
 
-with open('testtext') as f:
+with open(sys.argv[1]) as f:
     data = [
         process_line(line)
         for line in f if '# Iteration ' in line
