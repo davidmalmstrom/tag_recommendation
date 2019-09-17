@@ -1,0 +1,10 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--layers: "[700,96]"
+--reg_layers: "[0,0]"
+--early_stopping: "45"
+--num_k_folds: "5"

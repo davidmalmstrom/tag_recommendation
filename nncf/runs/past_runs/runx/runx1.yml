@@ -1,0 +1,68 @@
+--nn_model: NeuMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--num_factors: "94"
+--early_stopping: "45"
+--layers: "[512,96]"
+--reg_layers: "[0,0]"
+--test_dataset: "1"
+--percentage: "0.0"
+--dataset_name_prepend: "cold_0.0_"
+--mf_pretrain: "Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5"
+--mlp_pretrain: "Pretrain/_MLP_8_[512,96]_1566389718.h5"
+
+# Detta är med gmf och autotags
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566579499.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566591956.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1567769920.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1567769920.h5
+# Load data done [1.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# Load pretrained GMF (Pretrain/_GMF_94_[64,32,16,8]_1566579499.h5) and MLP (Pretrain/_MLP_8_[512,96]_1566591956.h5) models done. 
+# 
+# Performing k-fold 1
+# Init: Recall = 0.1983, Jaccard score = 0.1741
+# Iteration 0 fit: [36.7 s]: Recall = 0.1885, Jaccard score = 0.1642, loss = 0.3003, gradient norm = 0.2757, eval: [9.0 s]
+# Model test performed 
+# Recall score: 0.059964726631393295     Jaccard score: 0.04718945176960444
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566579499.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566591956.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1568018404.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1568018404.h5
+# Load data done [4.2 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566389718.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1568018766.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1568018766.h5
+# Load data done [3.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# Load pretrained GMF (Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5) and MLP (Pretrain/_MLP_8_[512,96]_1566389718.h5) models done. 
+# 
+# Performing k-fold 1
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566389718.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1568018784.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1568018784.h5
+# Load data done [3.9 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# Load pretrained GMF (Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5) and MLP (Pretrain/_MLP_8_[512,96]_1566389718.h5) models done. 
+# 
+# Performing k-fold 1
+# Init: Recall = 0.1901, Jaccard score = 0.1657
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566389718.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1568018902.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1568018902.h5
+# Load data done [4.3 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# Load pretrained GMF (Pretrain/_GMF_94_[64,32,16,8]_1566231092.h5) and MLP (Pretrain/_MLP_8_[512,96]_1566389718.h5) models done. 
+# 
+# Performing k-fold 1
+# Init: Recall = 0.1908, Jaccard score = 0.1664
+# Iteration 0 fit: [37.0 s]: Recall = 0.0627, Jaccard score = 0.0492, loss = 0.1302, gradient norm = 0.1829, eval: [12.1 s]

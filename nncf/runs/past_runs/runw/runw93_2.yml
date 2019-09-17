@@ -1,0 +1,9 @@
+--nn_model: GMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--num_factors: "114"
+--early_stopping: "145"
+--num_k_folds: "5"

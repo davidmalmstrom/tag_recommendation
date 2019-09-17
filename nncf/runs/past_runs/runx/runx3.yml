@@ -1,0 +1,33 @@
+--nn_model: NeuMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--num_factors: "94"
+--early_stopping: "45"
+--layers: "[512,96]"
+--reg_layers: "[0,0]"
+--test_dataset: "1"
+--percentage: "0.1"
+--dataset_name_prepend: "cold_0.1_"
+--mf_pretrain: "Pretrain/_GMF_94_[64,32,16,8]_1566233590.h5"
+--mlp_pretrain: "Pretrain/_MLP_8_[512,96]_1566383249.h5"
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.1_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566233590.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566292013.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.1, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1568019029.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1568019029.h5
+# Load data done [4.3 s]. #user=20000, #item=2000, #train=147903, #test=eval_recall
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.1_', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1566233590.h5', mlp_pretrain='Pretrain/_MLP_8_[512,96]_1566383249.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.1, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,96]_1568019066.h5
+--weights_path: Pretrain/_NeuMF_94_[512,96]_1568019066.h5
+# Load data done [4.0 s]. #user=20000, #item=2000, #train=147903, #test=eval_recall
+# Load pretrained GMF (Pretrain/_GMF_94_[64,32,16,8]_1566233590.h5) and MLP (Pretrain/_MLP_8_[512,96]_1566383249.h5) models done. 
+# 
+# Performing k-fold 1
+# Init: Recall = 0.2186, Jaccard score = 0.1875
+# Iteration 0 fit: [38.1 s]: Recall = 0.1712, Jaccard score = 0.1411, loss = 0.0178, gradient norm = 2.1503, eval: [13.9 s]

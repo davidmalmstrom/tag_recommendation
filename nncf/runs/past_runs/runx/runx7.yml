@@ -1,0 +1,150 @@
+--nn_model: MLP
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "3"
+--big_tag: "0"
+--epochs: "300"
+--layers: "[512,96]"
+--reg_layers: "[0,0]"
+--early_stopping: "45"
+--num_k_folds: "5"
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1568127040.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1568127040.h5
+# Load data done [2.0 s]. #user=20000, #item=2000, #train=161729, #test=eval_recall
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0010, Jaccard score = 0.0006
+# Iteration 0 fit: [25.9 s]: Recall = 0.0407, Jaccard score = 0.0247, loss = 0.4274, gradient norm = 1.0000, eval: [39.0 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1568127260.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1568127260.h5
+# Load data done [2.0 s]. #user=20000, #item=2000, #train=161729, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 256)       5120000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 256)          0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1256)         0           flatten_1[0][0]                  
+#                                                                  user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1512)         0           concatenate_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           145248      concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          layer1[0][0]                     
+# ==================================================================================================
+# Total params: 5,777,345
+# Trainable params: 5,777,345
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0276, Jaccard score = 0.0167
+# Iteration 0 fit: [26.0 s]: Recall = 0.2207, Jaccard score = 0.1507, loss = 0.4284, gradient norm = 1.0000, eval: [7.7 s]
+# Iteration 1 fit: [25.8 s]: Recall = 0.2507, Jaccard score = 0.1748, loss = 0.3854, gradient norm = 1.0000, eval: [7.6 s]
+# Iteration 2 fit: [25.7 s]: Recall = 0.2622, Jaccard score = 0.1842, loss = 0.3575, gradient norm = 1.0000, eval: [7.5 s]
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=1, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1568127633.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1568127633.h5
+# Load data done [4.4 s]. #user=20000, #item=2000, #train=161729, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 256)       5120000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 256)          0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1256)         0           flatten_1[0][0]                  
+#                                                                  user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1512)         0           concatenate_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           145248      concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          layer1[0][0]                     
+# ==================================================================================================
+# Total params: 5,777,345
+# Trainable params: 5,777,345
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0272, Jaccard score = 0.0164
+
+
+# Launched by terminal.
+# MLP arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='', early_stopping=45, epochs=300, eval_recall=1, is_tag=1, layers='[512,96]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='MLP', num_factors=8, num_k_folds=5, num_neg=4, out=1, path='../data/', percentage=0.5, reg_layers='[0,0]', reg_mf=0, test_dataset=0, topk=3, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_MLP_8_[512,96]_1568127843.h5
+--weights_path: Pretrain/_MLP_8_[512,96]_1568127843.h5
+# Load data done [4.6 s]. #user=18000, #item=2000, #train=161301, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 256)       4608000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 256)          0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1256)         0           flatten_1[0][0]                  
+#                                                                  user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 256)          0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1512)         0           concatenate_1[0][0]              
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 96)           145248      concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            97          layer1[0][0]                     
+# ==================================================================================================
+# Total params: 5,265,345
+# Trainable params: 5,265,345
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0311, Jaccard score = 0.0188
