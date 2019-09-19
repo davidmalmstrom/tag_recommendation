@@ -3,7 +3,6 @@ Pretrain
 .vscode
 __pycache__
 NCF_dataset.pkl
-__init__.py
 out.profile
 saves
 data/preprocessed_user_auto_tags_big.pkl
@@ -15,3 +14,7 @@ data/dev_tag_dataset.pkl
 data/test_tag_dataset.pkl
 test_test_script.py
 *.lprof
+random_skrap
+data/index_id_mapping.pkl
+data/cold_0.0_test_tag_dataset.pkl
+data/cold_0.1_test_tag_dataset.pkl
