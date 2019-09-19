@@ -31,7 +31,7 @@ def get_base_results(X, y, test_y, m_space):
     base_model.fit(X, y)
     
     k_list_base = [
-        (*compute_metrics(test_y, base_model.predict(X[:test_part_size], start_index=0, n=K)), K, "Base")
+        (*compute_metrics(test_y, base_model.predict(X[:test_part_size], start_index=0, n=K)), K, "Baseline")
         for K in m_space
     ]
     
@@ -46,7 +46,7 @@ def get_nn_results(X, y, test_y, proj_root_dir, config_file_path, m_space):
     
     k_list_nn = [
         (*evaluate_model_recall(nn_model, y[:test_part_size], 
-                                test_y, K, X[:test_part_size].toarray(), False), K, "nn")
+                                test_y, K, X[:test_part_size].toarray(), False), K, "Deep learning")
         for K in m_space
     ]
     
@@ -81,12 +81,12 @@ def produce_df_for_plot(m_space, proj_root_dir, dataset_file_name, nn_rel_path):
     base = get_base_results(X, y, test_y, m_space)
     random = get_random_results(test_y, m_space, num_user_tags)
 
-    df = pd.DataFrame(nn + base + random, columns=["Recall", "Jaccard", "M", "Type"])
+    df = pd.DataFrame(nn + base + random, columns=["Recall", "Jaccard", "M", "Model"])
     return df
 
 M_SPACE = np.linspace(10, 90, 3, dtype="int32")
 PROJ_ROOT_DIR = os.path.join(os.path.abspath(''), '..')
-sns.set_style("darkgrid")
+sns.set_style("whitegrid")
 
 configs = [
     {'dataset_file_name': 'test_tag_dataset.pkl', 'runfile': 'runu4.yml', 'save_name': 'M_plot_nn_05.svg'},
@@ -99,5 +99,5 @@ for config in configs:
     nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runu", config["runfile"])
     df = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_path)
     plt.figure()
-    plot = sns.lineplot(x="M", y="Recall", marker="o", hue="Type", data=df)
+    plot = sns.lineplot(x="M", y="Recall", markers=True, style="Model", dashes=False, hue="Model", data=df)
     plt.savefig(config["save_name"], bbox_inches='tight')
