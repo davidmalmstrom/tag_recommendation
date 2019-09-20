@@ -2,16 +2,12 @@ import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import os
 
-sys.path.append("..")
-from nncf.util.parse_recall_loss import parse_runfile
+PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path.append(PROJ_ROOT_DIR)
 
-run_files = {'GMF': 'runs/past_runs/runw/runw1.yml',
-             'MLP': 'runs/past_runs/runx/runx5.yml',
-             'NN from scratch': 'runs/past_runs/runx/runx99_neumfdummy.yml',
-             'NN pretrained': 'runs/past_runs/runy/runy8.yml'
- }
-
+from plotting.parse_recall_loss import parse_runfile
 
 def get_df(model_name, runfile_path):
     data = parse_runfile(runfile_path)
@@ -19,8 +15,15 @@ def get_df(model_name, runfile_path):
     df['Model'] = model_name
     return df
 
+run_files = {'GMF': os.path.join("nncf", "runs", "past_runs", "runy", "runy16.yml"),
+             'MLP': os.path.join("nncf", "runs", "past_runs", "runy", "runy17.yml"),
+             'NN from scratch': os.path.join("nncf", "runs", "past_runs", "runy", "runy18.yml"),
+             'NN pretrained': os.path.join("nncf", "runs", "past_runs", "runy", "runy8.yml")
+ }
+
+
 frames = [
-    get_df(model_name, runfile_path)
+    get_df(model_name, os.path.join(PROJ_ROOT_DIR, runfile_path))
     for model_name, runfile_path in run_files.items()
 ]
 
@@ -34,10 +37,12 @@ save_name = ''.join([
     for path in run_files.values()
 ])
 
-plt.savefig('recall_graph_{}.svg'.format(save_name), bbox_inches='tight')
+fig_path = os.path.join(PROJ_ROOT_DIR, 'figures')
+
+plt.savefig(os.path.join(fig_path, 'recall_graph_{}.svg'.format(save_name)), bbox_inches='tight')
 
 plt.figure()
 zxc = sns.lineplot(x="Iteration", y="Loss", hue='Model',
             data=df)
 zxc.set(yscale="log")
-plt.savefig('loss_graph_{}.svg'.format(save_name), bbox_inches='tight')
+plt.savefig(os.path.join(fig_path, 'loss_graph_{}.svg'.format(save_name)), bbox_inches='tight')

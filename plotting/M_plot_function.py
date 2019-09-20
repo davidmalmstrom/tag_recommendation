@@ -1,5 +1,6 @@
 import sys
-sys.path.append('..')
+PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path.append(PROJ_ROOT_DIR)
 
 import lib.notebook_helpers as nh
 import baseline.estimators as estimators
@@ -85,19 +86,18 @@ def produce_df_for_plot(m_space, proj_root_dir, dataset_file_name, nn_rel_path):
     return df
 
 M_SPACE = np.linspace(10, 90, 3, dtype="int32")
-PROJ_ROOT_DIR = os.path.join(os.path.abspath(''), '..')
 sns.set_style("whitegrid")
 
 configs = [
-    {'dataset_file_name': 'test_tag_dataset.pkl', 'runfile': 'runu4.yml', 'save_name': 'M_plot_nn_05.svg'},
-    {'dataset_file_name': 'cold_0.1_test_tag_dataset.pkl', 'runfile': 'runu8.yml', 'save_name': 'M_plot_nn_01.svg'},
-    {'dataset_file_name': 'cold_0.0_test_tag_dataset.pkl', 'runfile': 'runu11.yml', 'save_name': 'M_plot_nn_00.svg'}
+    {'dataset_file_name': 'test_tag_dataset.pkl', 'runfile': 'runy21.yml', 'save_name': 'M_plot_nn_05.svg'},
+    {'dataset_file_name': 'cold_0.1_test_tag_dataset.pkl', 'runfile': 'runy20.yml', 'save_name': 'M_plot_nn_01.svg'},
+    {'dataset_file_name': 'cold_0.0_test_tag_dataset.pkl', 'runfile': 'runy19.yml', 'save_name': 'M_plot_nn_00.svg'}
 ]
 
 for config in configs:
     dataset_file_name = config['dataset_file_name']
-    nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runu", config["runfile"])
+    nn_rel_path = os.path.join("nncf", "runs", "past_runs", "runy", config["runfile"])
     df = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_path)
     plt.figure()
     plot = sns.lineplot(x="M", y="Recall", markers=True, style="Model", dashes=False, hue="Model", data=df)
-    plt.savefig(config["save_name"], bbox_inches='tight')
+    plt.savefig(os.path.join(PROJ_ROOT_DIR, "figures", config["save_name"]), bbox_inches='tight')
