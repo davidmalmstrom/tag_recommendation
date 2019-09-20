@@ -11,14 +11,14 @@ from plotting.parse_recall_loss import parse_runfile
 
 def get_df(model_name, runfile_path):
     data = parse_runfile(runfile_path)
-    df = pd.DataFrame(data, columns = ['Iteration', 'Recall@M', 'Loss'])
+    df = pd.DataFrame(data, columns = ['Iteration', 'Recall@10', 'Loss'])
     df['Model'] = model_name
     return df
 
 run_files = {'GMF': os.path.join("nncf", "runs", "past_runs", "runy", "runy16.yml"),
              'MLP': os.path.join("nncf", "runs", "past_runs", "runy", "runy17.yml"),
-             'NN from scratch': os.path.join("nncf", "runs", "past_runs", "runy", "runy18.yml"),
-             'NN pretrained': os.path.join("nncf", "runs", "past_runs", "runy", "runy8.yml")
+             'Deep from scratch': os.path.join("nncf", "runs", "past_runs", "runy", "runy18.yml"),
+             'Deep pretrained': os.path.join("nncf", "runs", "past_runs", "runy", "runy8.yml")
  }
 
 
@@ -29,7 +29,7 @@ frames = [
 
 df = pd.concat(frames)
 plt.figure()
-zxc = sns.lineplot(x="Iteration", y="Recall@M", hue='Model',
+zxc = sns.lineplot(x="Iteration", y="Recall@10", hue='Model',
                 data=df)
 
 save_name = ''.join([
