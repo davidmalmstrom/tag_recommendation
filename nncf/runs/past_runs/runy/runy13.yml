@@ -1,0 +1,142 @@
+--nn_model: GMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "10"
+--big_tag: "0"
+--epochs: "600"
+--num_factors: "94"
+--early_stopping: "80"
+--test_dataset: "1"
+--percentage: "0.0"
+--dataset_name_prepend: "cold_0.0_"
+
+
+# Launched by terminal.
+# GMF arguments: Namespace(batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=80, epochs=600, eval_recall=1, is_tag=1, layers='[64,32,16,8]', learner='adam', lr=0.001, mf_pretrain='', mlp_pretrain='', nn_model='GMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0,0,0]', reg_mf=0, test_dataset=1, topk=10, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_GMF_94_[64,32,16,8]_1568834136.h5
+--weights_path: Pretrain/_GMF_94_[64,32,16,8]_1568834136.h5
+# Load data done [1.5 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# user_embedding (Embedding)      (None, 1, 94)        1880000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# item_embedding (Embedding)      (None, 1, 94)        188000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 94)           0           user_embedding[0][0]             
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 94)           0           item_embedding[0][0]             
+# __________________________________________________________________________________________________
+# multiply_1 (Multiply)           (None, 94)           0           flatten_1[0][0]                  
+#                                                                  flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            95          multiply_1[0][0]                 
+# ==================================================================================================
+# Total params: 2,068,095
+# Trainable params: 2,068,095
+# Non-trainable params: 0
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.0049, Jaccard score = 0.0023
+# Iteration 0 fit: [9.5 s]: Recall = 0.00410, Jaccard score = 0.0019, loss = 0.542878, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 1 fit: [9.1 s]: Recall = 0.00523, Jaccard score = 0.0025, loss = 0.500838, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 2 fit: [9.1 s]: Recall = 0.00528, Jaccard score = 0.0025, loss = 0.499892, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 3 fit: [9.1 s]: Recall = 0.00607, Jaccard score = 0.0029, loss = 0.496451, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 4 fit: [9.1 s]: Recall = 0.00669, Jaccard score = 0.0032, loss = 0.488268, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 5 fit: [9.1 s]: Recall = 0.00792, Jaccard score = 0.0037, loss = 0.473489, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 6 fit: [9.1 s]: Recall = 0.00848, Jaccard score = 0.0040, loss = 0.452019, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 7 fit: [9.1 s]: Recall = 0.01039, Jaccard score = 0.0049, loss = 0.423459, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 8 fit: [9.1 s]: Recall = 0.01208, Jaccard score = 0.0057, loss = 0.390052, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 9 fit: [9.1 s]: Recall = 0.01382, Jaccard score = 0.0066, loss = 0.353372, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 10 fit: [9.1 s]: Recall = 0.01511, Jaccard score = 0.0072, loss = 0.316430, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 11 fit: [9.1 s]: Recall = 0.01568, Jaccard score = 0.0074, loss = 0.280330, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 12 fit: [9.1 s]: Recall = 0.01556, Jaccard score = 0.0074, loss = 0.247573, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 13 fit: [9.1 s]: Recall = 0.01629, Jaccard score = 0.0077, loss = 0.218258, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 14 fit: [9.1 s]: Recall = 0.01629, Jaccard score = 0.0077, loss = 0.190864, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 15 fit: [9.1 s]: Recall = 0.01612, Jaccard score = 0.0077, loss = 0.167510, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 16 fit: [9.1 s]: Recall = 0.01545, Jaccard score = 0.0073, loss = 0.145585, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 17 fit: [9.1 s]: Recall = 0.01534, Jaccard score = 0.0073, loss = 0.127567, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 18 fit: [9.1 s]: Recall = 0.01478, Jaccard score = 0.0070, loss = 0.111181, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 19 fit: [9.1 s]: Recall = 0.01405, Jaccard score = 0.0067, loss = 0.096094, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 20 fit: [9.1 s]: Recall = 0.01433, Jaccard score = 0.0068, loss = 0.082881, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 21 fit: [9.1 s]: Recall = 0.01371, Jaccard score = 0.0065, loss = 0.072681, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 22 fit: [9.1 s]: Recall = 0.01326, Jaccard score = 0.0063, loss = 0.062708, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 23 fit: [9.1 s]: Recall = 0.01275, Jaccard score = 0.0060, loss = 0.054744, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 24 fit: [9.1 s]: Recall = 0.01270, Jaccard score = 0.0060, loss = 0.047971, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 25 fit: [9.1 s]: Recall = 0.01191, Jaccard score = 0.0056, loss = 0.042006, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 26 fit: [9.0 s]: Recall = 0.01191, Jaccard score = 0.0056, loss = 0.037142, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 27 fit: [9.1 s]: Recall = 0.01146, Jaccard score = 0.0054, loss = 0.032848, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 28 fit: [9.1 s]: Recall = 0.01135, Jaccard score = 0.0054, loss = 0.029243, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 29 fit: [9.1 s]: Recall = 0.01101, Jaccard score = 0.0052, loss = 0.026014, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 30 fit: [9.1 s]: Recall = 0.01062, Jaccard score = 0.0050, loss = 0.022910, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 31 fit: [9.1 s]: Recall = 0.01028, Jaccard score = 0.0049, loss = 0.021271, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 32 fit: [9.1 s]: Recall = 0.01028, Jaccard score = 0.0049, loss = 0.019152, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 33 fit: [9.1 s]: Recall = 0.00989, Jaccard score = 0.0047, loss = 0.017232, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 34 fit: [9.1 s]: Recall = 0.00955, Jaccard score = 0.0045, loss = 0.016329, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 35 fit: [9.1 s]: Recall = 0.00989, Jaccard score = 0.0047, loss = 0.014754, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 36 fit: [9.1 s]: Recall = 0.00938, Jaccard score = 0.0044, loss = 0.013651, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 37 fit: [9.1 s]: Recall = 0.00916, Jaccard score = 0.0043, loss = 0.012230, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 38 fit: [9.1 s]: Recall = 0.00910, Jaccard score = 0.0043, loss = 0.011682, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 39 fit: [9.1 s]: Recall = 0.00893, Jaccard score = 0.0042, loss = 0.010633, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 40 fit: [9.0 s]: Recall = 0.00899, Jaccard score = 0.0043, loss = 0.010060, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 41 fit: [9.1 s]: Recall = 0.00860, Jaccard score = 0.0041, loss = 0.009512, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 42 fit: [9.1 s]: Recall = 0.00860, Jaccard score = 0.0041, loss = 0.008778, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 43 fit: [9.1 s]: Recall = 0.00854, Jaccard score = 0.0040, loss = 0.008294, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 44 fit: [9.1 s]: Recall = 0.00832, Jaccard score = 0.0039, loss = 0.007700, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 45 fit: [9.1 s]: Recall = 0.00770, Jaccard score = 0.0036, loss = 0.007082, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 46 fit: [9.1 s]: Recall = 0.00753, Jaccard score = 0.0036, loss = 0.006878, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 47 fit: [9.1 s]: Recall = 0.00725, Jaccard score = 0.0034, loss = 0.006556, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 48 fit: [9.1 s]: Recall = 0.00714, Jaccard score = 0.0034, loss = 0.006081, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 49 fit: [9.1 s]: Recall = 0.00674, Jaccard score = 0.0032, loss = 0.006098, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 50 fit: [9.1 s]: Recall = 0.00680, Jaccard score = 0.0032, loss = 0.005548, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 51 fit: [9.1 s]: Recall = 0.00669, Jaccard score = 0.0032, loss = 0.005446, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 52 fit: [9.0 s]: Recall = 0.00708, Jaccard score = 0.0033, loss = 0.005130, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 53 fit: [9.1 s]: Recall = 0.00685, Jaccard score = 0.0032, loss = 0.005303, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 54 fit: [9.1 s]: Recall = 0.00680, Jaccard score = 0.0032, loss = 0.005050, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 55 fit: [9.1 s]: Recall = 0.00657, Jaccard score = 0.0031, loss = 0.004643, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 56 fit: [9.1 s]: Recall = 0.00657, Jaccard score = 0.0031, loss = 0.004569, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 57 fit: [9.1 s]: Recall = 0.00624, Jaccard score = 0.0029, loss = 0.004437, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 58 fit: [9.1 s]: Recall = 0.00612, Jaccard score = 0.0029, loss = 0.004424, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 59 fit: [9.1 s]: Recall = 0.00612, Jaccard score = 0.0029, loss = 0.004093, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 60 fit: [9.1 s]: Recall = 0.00562, Jaccard score = 0.0027, loss = 0.004021, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 61 fit: [9.1 s]: Recall = 0.00579, Jaccard score = 0.0027, loss = 0.003876, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 62 fit: [9.1 s]: Recall = 0.00551, Jaccard score = 0.0026, loss = 0.003821, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 63 fit: [9.1 s]: Recall = 0.00517, Jaccard score = 0.0024, loss = 0.003778, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 64 fit: [9.1 s]: Recall = 0.00494, Jaccard score = 0.0023, loss = 0.003447, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 65 fit: [9.1 s]: Recall = 0.00528, Jaccard score = 0.0025, loss = 0.003402, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 66 fit: [9.1 s]: Recall = 0.00523, Jaccard score = 0.0025, loss = 0.003297, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 67 fit: [9.1 s]: Recall = 0.00511, Jaccard score = 0.0024, loss = 0.003155, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 68 fit: [9.1 s]: Recall = 0.00534, Jaccard score = 0.0025, loss = 0.003171, gradient norm = 1.0000, eval: [17.4 s]
+# Iteration 69 fit: [9.1 s]: Recall = 0.00517, Jaccard score = 0.0024, loss = 0.003044, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 70 fit: [9.0 s]: Recall = 0.00489, Jaccard score = 0.0023, loss = 0.003034, gradient norm = 1.0000, eval: [17.4 s]
+# Iteration 71 fit: [9.1 s]: Recall = 0.00506, Jaccard score = 0.0024, loss = 0.003225, gradient norm = 1.0000, eval: [17.4 s]
+# Iteration 72 fit: [9.1 s]: Recall = 0.00506, Jaccard score = 0.0024, loss = 0.003069, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 73 fit: [9.1 s]: Recall = 0.00489, Jaccard score = 0.0023, loss = 0.003088, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 74 fit: [9.1 s]: Recall = 0.00478, Jaccard score = 0.0023, loss = 0.003023, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 75 fit: [9.1 s]: Recall = 0.00455, Jaccard score = 0.0021, loss = 0.003015, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 76 fit: [9.1 s]: Recall = 0.00472, Jaccard score = 0.0022, loss = 0.002848, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 77 fit: [9.1 s]: Recall = 0.00438, Jaccard score = 0.0021, loss = 0.002833, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 78 fit: [9.1 s]: Recall = 0.00466, Jaccard score = 0.0022, loss = 0.002673, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 79 fit: [9.1 s]: Recall = 0.00472, Jaccard score = 0.0022, loss = 0.002568, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 80 fit: [9.1 s]: Recall = 0.00472, Jaccard score = 0.0022, loss = 0.002703, gradient norm = 1.0000, eval: [17.4 s]
+# Iteration 81 fit: [9.1 s]: Recall = 0.00427, Jaccard score = 0.0020, loss = 0.002585, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 82 fit: [9.1 s]: Recall = 0.00427, Jaccard score = 0.0020, loss = 0.002686, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 83 fit: [9.1 s]: Recall = 0.00466, Jaccard score = 0.0022, loss = 0.002591, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 84 fit: [9.1 s]: Recall = 0.00461, Jaccard score = 0.0022, loss = 0.002642, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 85 fit: [9.1 s]: Recall = 0.00433, Jaccard score = 0.0020, loss = 0.002723, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 86 fit: [9.1 s]: Recall = 0.00478, Jaccard score = 0.0023, loss = 0.002438, gradient norm = 1.0000, eval: [17.3 s]
+# Iteration 87 fit: [9.1 s]: Recall = 0.00466, Jaccard score = 0.0022, loss = 0.002422, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 88 fit: [9.1 s]: Recall = 0.00416, Jaccard score = 0.0020, loss = 0.002477, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 89 fit: [9.1 s]: Recall = 0.00433, Jaccard score = 0.0020, loss = 0.002513, gradient norm = 1.0000, eval: [17.1 s]
+# Iteration 90 fit: [9.1 s]: Recall = 0.00478, Jaccard score = 0.0023, loss = 0.002387, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 91 fit: [9.1 s]: Recall = 0.00416, Jaccard score = 0.0020, loss = 0.002537, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 92 fit: [9.1 s]: Recall = 0.00444, Jaccard score = 0.0021, loss = 0.002471, gradient norm = 1.0000, eval: [17.2 s]
+# Iteration 93 fit: [9.1 s]: Recall = 0.00449, Jaccard score = 0.0021, loss = 0.002405, gradient norm = 1.0000, eval: [17.2 s]
+# End. Best Iteration 13:  Recall = 0.0163, Jaccard score = 0.0077. 
+# The best NeuMF model has been saved to Pretrain/_GMF_94_[64,32,16,8]_1568834136.h5

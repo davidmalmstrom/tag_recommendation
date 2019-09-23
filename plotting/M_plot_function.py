@@ -1,4 +1,5 @@
 import sys
+import os
 PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 sys.path.append(PROJ_ROOT_DIR)
 
@@ -7,7 +8,6 @@ import baseline.estimators as estimators
 import nncf.run_model_test as nn_test
 from nncf.evaluate_recall import evaluate_model_recall
 
-import os
 import pickle
 import scipy.sparse as sp
 import numpy as np
