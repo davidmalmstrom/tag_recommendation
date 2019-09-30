@@ -18,7 +18,7 @@ from keras import initializers
 from keras.regularizers import l2
 from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
-from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU
+from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU, Dropout
 from keras.layers.normalization import BatchNormalization
 from keras.constraints import maxnorm
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
@@ -59,7 +59,7 @@ def parse_args():
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
 
-def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[0,0]):
+def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[0,0], variant=""):
     assert len(layers) == len(reg_layers)
     num_layer = len(layers) #Number of layers in the MLP
     # Input variables
@@ -76,6 +76,13 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
     user_latent = Flatten()(MLP_Embedding_User(user_input))
     item_latent = Flatten()(MLP_Embedding_Item(item_input))
 
+    if "bn" in variant:
+        user_latent = BatchNormalization(name='bn_user')(user_latent)
+        item_latent = BatchNormalization(name='bn_item')(item_latent)
+    if "drop" in variant:
+        user_latent = Dropout(0.2)(user_latent)
+        item_latent = Dropout(0.2)(item_latent)
+
     user_latent = Concatenate()([user_latent, user_feature_input])
 
     # The 0-th layer is the concatenation of embedding layers
@@ -83,9 +90,10 @@ def get_model(num_users, num_autotags, num_items, layers = [20,10], reg_layers=[
 
     # MLP layerss
     for idx in range(1, num_layer):
-        vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal', kernel_regularizer=l2(0),
+        vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal', kernel_regularizer=l2(reg_layers[idx]),
                        activation='relu')(vector)
-
+        if "drop" in variant:
+            vector = Dropout(0.2)(vector)
     # Final prediction layer
     prediction = Dense(1, activation='sigmoid', kernel_initializer='lecun_uniform', name = 'prediction')(vector)
 

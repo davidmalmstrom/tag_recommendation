@@ -21,8 +21,7 @@ from keras import initializers
 from keras.regularizers import l1, l2, l1_l2
 from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
-from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU
-from keras.layers.normalization import BatchNormalization
+from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU, BatchNormalization
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from nncf.evaluate import evaluate_model
 from nncf.evaluate_recall import evaluate_model_recall
@@ -87,6 +86,8 @@ def parse_args(sargs):
                         help='Specify at which point the training should be stopped if no improvement has been made.')
     parser.add_argument('--dataset_name_prepend', nargs='?', default='',
                         help='Prepend to dataset name to read the cold start datasets instead.')
+    parser.add_argument('--MLP_variant', nargs='?', default='',
+                        help='The MLP variant.')
     return parser.parse_known_args(sargs)[0]
 
 def init_normal(shape, dtype=None):
@@ -114,18 +115,26 @@ def get_model(num_users, num_autotags, num_items, mf_dim=10, layers=[10], reg_la
     # MF part
     mf_user_latent = Flatten()(MF_Embedding_User(user_input))
     mf_item_latent = Flatten()(MF_Embedding_Item(item_input))
+    mf_user_latent = BatchNormalization(name='mf_bn_user')(mf_user_latent)
+    mf_item_latent = BatchNormalization(name='mf_bn_item')(mf_item_latent)
+    mf_user_latent = Dropout(0.2)(mf_user_latent)
+    mf_item_latent = Dropout(0.2)(mf_item_latent)
+
     mf_vector = Multiply()([mf_user_latent, mf_item_latent]) # element-wise multiply
 
     # MLP part
     mlp_user_latent = Flatten()(MLP_Embedding_User(user_input))
     mlp_item_latent = Flatten()(MLP_Embedding_Item(item_input))
+    mlp_user_latent = Dropout(0.2)(mlp_user_latent)
+    mlp_item_latent = Dropout(0.2)(mlp_item_latent)
 
     mlp_user_latent = Concatenate()([mlp_user_latent, user_feature_input])
 
     mlp_vector = Concatenate()([mlp_user_latent, mlp_item_latent])
     for idx in range(1, num_layer):
         mlp_vector = Dense(layers[idx], name = 'layer%d' %idx, kernel_initializer='he_normal',
-                           kernel_regularizer=l2(0), activation='relu')(mlp_vector)
+                           kernel_regularizer=l2(reg_layers[idx]), activation='relu')(mlp_vector)
+        mlp_vector = Dropout(0.2)(mlp_vector)
     # Concatenate MF and MLP parts
     #mf_vector = Lambda(lambda x: x * alpha)(mf_vector)
     #mlp_vector = Lambda(lambda x : x * (1-alpha))(mlp_vector)
@@ -145,8 +154,12 @@ def load_pretrain_model(model, gmf_model, mlp_model, num_layers, mf_percentage):
     # MF embeddings
     gmf_user_embeddings = gmf_model.get_layer('user_embedding').get_weights()
     gmf_item_embeddings = gmf_model.get_layer('item_embedding').get_weights()
+    gmf_user_batchnorm = gmf_model.get_layer('batch_normalization_1').get_weights()
+    gmf_item_batchnorm = gmf_model.get_layer('batch_normalization_2').get_weights()
     model.get_layer('mf_embedding_user').set_weights(gmf_user_embeddings)
     model.get_layer('mf_embedding_item').set_weights(gmf_item_embeddings)
+    model.get_layer('mf_bn_user').set_weights(gmf_user_batchnorm)
+    model.get_layer('mf_bn_item').set_weights(gmf_item_batchnorm)
 
     # MLP embeddings
     mlp_user_embeddings = mlp_model.get_layer('user_embedding').get_weights()
@@ -247,9 +260,9 @@ def main(sargs):
     if model_type == 'NeuMF':
         model = get_model(num_users, num_autotags, num_items, mf_dim, layers, reg_layers, reg_mf)
     elif model_type == "GMF":
-        model = GMF.get_model(num_users,num_items,mf_dim)
+        model = GMF.get_model(num_users,num_items,mf_dim,reg_mf)
     elif model_type == "MLP":
-        model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers)
+        model = MLP.get_model(num_users, num_autotags, num_items, layers, reg_layers, args.MLP_variant)
     else:
         print("Error: wrong model type")
         sys.exit()
