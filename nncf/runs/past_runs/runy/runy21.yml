@@ -671,3 +671,5 @@
 # Iteration 599 fit: [31.3 s]: Recall = 0.23212, Jaccard score = 0.0760, loss = 0.000225, gradient norm = 1.0000, eval: [39.8 s]
 # End. Best Iteration 2:  Recall = 0.3273, Jaccard score = 0.1107. 
 # The best NeuMF model has been saved to Pretrain/_NeuMF_94_[512,96]_1568984296.h5
+# Model test performed 
+# Recall score: 0.3280517741575541     Jaccard score: 0.1129813234955038
