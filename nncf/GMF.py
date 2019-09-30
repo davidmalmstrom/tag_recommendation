@@ -14,7 +14,7 @@ from keras import backend as K
 from keras import initializers
 from keras.models import Sequential, Model, load_model, save_model
 from keras.layers.core import Dense, Lambda, Activation
-from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten
+from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, BatchNormalization
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
 from keras.regularizers import l2
 from nncf.Dataset import Dataset
@@ -38,7 +38,7 @@ def parse_args():
                         help='Batch size.')
     parser.add_argument('--num_factors', type=int, default=8,
                         help='Embedding size.')
-    parser.add_argument('--regs', nargs='?', default='[0,0]',
+    parser.add_argument('--reg', nargs='?', default='0',
                         help="Regularization for user and item embeddings.")
     parser.add_argument('--num_neg', type=int, default=4,
                         help='Number of negative instances to pair with a positive instance.')
@@ -55,19 +55,24 @@ def parse_args():
 def init_normal(shape, dtype=None):
     return K.random_normal(shape, dtype=dtype)
 
-def get_model(num_users, num_items, latent_dim, regs=[0,0]):
+def get_model(num_users, num_items, latent_dim, reg=0):
     # Input variables
     user_input = Input(shape=(1,), dtype='int32', name = 'user_input')
     item_input = Input(shape=(1,), dtype='int32', name = 'item_input')
 
     MF_Embedding_User = Embedding(input_dim = num_users, output_dim = latent_dim, name = 'user_embedding',
-                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(regs[0]), input_length=1)
+                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(reg), input_length=1)
     MF_Embedding_Item = Embedding(input_dim = num_items, output_dim = latent_dim, name = 'item_embedding',
-                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(regs[1]), input_length=1)
+                                  embeddings_initializer = init_normal, embeddings_regularizer = l2(reg), input_length=1)
 
     # Crucial to flatten an embedding vector!
     user_latent = Flatten()(MF_Embedding_User(user_input))
     item_latent = Flatten()(MF_Embedding_Item(item_input))
+
+    user_latent = BatchNormalization()(user_latent)
+    item_latent = BatchNormalization()(item_latent)
+    user_latent = Dropout(0.2)(user_latent)
+    item_latent = Dropout(0.2)(item_latent)
 
     # Element-wise product of user and item embeddings
     predict_vector = Multiply()([user_latent, item_latent])
