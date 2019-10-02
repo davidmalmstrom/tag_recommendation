@@ -24,7 +24,7 @@ def evaluate_model_recall(model, val_x, val_y, K, X, fast_eval=False, starting_u
     return recall_score(val_y, y_pred, average='micro'), jaccard_score(val_y, y_pred, average='micro')
 
 
-def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
+def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None, rank_list=False):
     def top_cands(user_row, i, u_num):
         # Just the same user all the way, like in ncf (evaluate.py)
 
@@ -71,4 +71,15 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None):
     # training data before the training occurred.
     tops = np.array([top_cands(user_row, i, i + starting_user_num) for i, user_row in enumerate(val_x)])
 
-    return nh.from_keras_format(list(map(lambda x: x + 1, tops)), val_x.shape[1])
+    num_usertags = val_x.shape[1]
+
+    if rank_list:
+        def one_hot_ranked_list(item_rank_list):
+            one_hot = np.zeros((K, num_usertags))
+            one_hot[np.arange(K), item_rank_list] = 1
+            return one_hot
+
+        one_hot_ranked = [one_hot_ranked_list(item_rank_list) for item_rank_list in tops]
+        return one_hot_ranked
+    else:
+        return nh.from_keras_format(list(map(lambda x: x + 1, tops)), val_x.shape[1])
