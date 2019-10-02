@@ -1,0 +1,111 @@
+--nn_model: NeuMF
+--is_tag: "1"
+--eval_recall: "1"
+--topk: "10"
+--big_tag: "0"
+--epochs: "600"
+--lr: "0.00001"
+--num_factors: "94"
+--early_stopping: "70"
+--layers: "[512,750,350,96]"
+--reg_layers: "[0,0,0,0]"
+--percentage: "0.0"
+--dataset_name_prepend: "cold_0.0_"
+--test_dataset: "1"
+--mf_pretrain: "Pretrain/_GMF_94_[64,32,16,8]_1569901590.h5"
+--mlp_pretrain: "Pretrain/_MLP_8_[512,750,350,96]_1569870465.h5"
+
+
+# Launched by terminal.
+# NeuMF arguments: Namespace(MLP_variant='', batch_size=256, big_tag=0, dataset='', dataset_name_prepend='cold_0.0_', early_stopping=70, epochs=600, eval_recall=1, is_tag=1, layers='[512,750,350,96]', learner='adam', lr=1e-05, mf_pretrain='Pretrain/_GMF_94_[64,32,16,8]_1569901590.h5', mlp_pretrain='Pretrain/_MLP_8_[512,750,350,96]_1569870465.h5', nn_model='NeuMF', num_factors=94, num_k_folds=1, num_neg=4, out=1, path='../data/', percentage=0.0, reg_layers='[0,0,0,0]', reg_mf=0, test_dataset=1, topk=10, verbose=1) 
+# The best NeuMF model will be saved to Pretrain/_NeuMF_94_[512,750,350,96]_1570006028.h5
+--weights_path: Pretrain/_NeuMF_94_[512,750,350,96]_1570006028.h5
+# Load data done [1.7 s]. #user=20000, #item=2000, #train=143502, #test=eval_recall
+# Load pretrained GMF (Pretrain/_GMF_94_[64,32,16,8]_1569901590.h5) and MLP (Pretrain/_MLP_8_[512,750,350,96]_1569870465.h5) models done. 
+# __________________________________________________________________________________________________
+# Layer (type)                    Output Shape         Param #     Connected to                     
+# ==================================================================================================
+# user_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# item_input (InputLayer)         (None, 1)            0                                            
+# __________________________________________________________________________________________________
+# mlp_embedding_user (Embedding)  (None, 1, 256)       5120000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# flatten_3 (Flatten)             (None, 256)          0           mlp_embedding_user[0][0]         
+# __________________________________________________________________________________________________
+# mlp_embedding_item (Embedding)  (None, 1, 256)       512000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dropout_3 (Dropout)             (None, 256)          0           flatten_3[0][0]                  
+# __________________________________________________________________________________________________
+# user_feature_input (InputLayer) (None, 1000)         0                                            
+# __________________________________________________________________________________________________
+# flatten_4 (Flatten)             (None, 256)          0           mlp_embedding_item[0][0]         
+# __________________________________________________________________________________________________
+# concatenate_1 (Concatenate)     (None, 1256)         0           dropout_3[0][0]                  
+#                                                                  user_feature_input[0][0]         
+# __________________________________________________________________________________________________
+# dropout_4 (Dropout)             (None, 256)          0           flatten_4[0][0]                  
+# __________________________________________________________________________________________________
+# concatenate_2 (Concatenate)     (None, 1512)         0           concatenate_1[0][0]              
+#                                                                  dropout_4[0][0]                  
+# __________________________________________________________________________________________________
+# layer1 (Dense)                  (None, 750)          1134750     concatenate_2[0][0]              
+# __________________________________________________________________________________________________
+# mf_embedding_user (Embedding)   (None, 1, 94)        1880000     user_input[0][0]                 
+# __________________________________________________________________________________________________
+# mf_embedding_item (Embedding)   (None, 1, 94)        188000      item_input[0][0]                 
+# __________________________________________________________________________________________________
+# dropout_5 (Dropout)             (None, 750)          0           layer1[0][0]                     
+# __________________________________________________________________________________________________
+# flatten_1 (Flatten)             (None, 94)           0           mf_embedding_user[0][0]          
+# __________________________________________________________________________________________________
+# flatten_2 (Flatten)             (None, 94)           0           mf_embedding_item[0][0]          
+# __________________________________________________________________________________________________
+# layer2 (Dense)                  (None, 350)          262850      dropout_5[0][0]                  
+# __________________________________________________________________________________________________
+# mf_bn_user (BatchNormalization) (None, 94)           376         flatten_1[0][0]                  
+# __________________________________________________________________________________________________
+# mf_bn_item (BatchNormalization) (None, 94)           376         flatten_2[0][0]                  
+# __________________________________________________________________________________________________
+# dropout_6 (Dropout)             (None, 350)          0           layer2[0][0]                     
+# __________________________________________________________________________________________________
+# dropout_1 (Dropout)             (None, 94)           0           mf_bn_user[0][0]                 
+# __________________________________________________________________________________________________
+# dropout_2 (Dropout)             (None, 94)           0           mf_bn_item[0][0]                 
+# __________________________________________________________________________________________________
+# layer3 (Dense)                  (None, 96)           33696       dropout_6[0][0]                  
+# __________________________________________________________________________________________________
+# multiply_1 (Multiply)           (None, 94)           0           dropout_1[0][0]                  
+#                                                                  dropout_2[0][0]                  
+# __________________________________________________________________________________________________
+# dropout_7 (Dropout)             (None, 96)           0           layer3[0][0]                     
+# __________________________________________________________________________________________________
+# concatenate_3 (Concatenate)     (None, 190)          0           multiply_1[0][0]                 
+#                                                                  dropout_7[0][0]                  
+# __________________________________________________________________________________________________
+# prediction (Dense)              (None, 1)            191         concatenate_3[0][0]              
+# ==================================================================================================
+# Total params: 9,132,239
+# Trainable params: 9,131,863
+# Non-trainable params: 376
+# __________________________________________________________________________________________________
+# None
+# 
+# Performing k-fold 1
+# Init: Recall = 0.1335, Jaccard score = 0.0671
+# Iteration 0 fit: [37.2 s]: Recall = 0.13608, Jaccard score = 0.0685, loss = 0.337031, gradient norm = 1.0000, eval: [50.1 s]
+# Iteration 1 fit: [35.7 s]: Recall = 0.13787, Jaccard score = 0.0694, loss = 0.335694, gradient norm = 1.0000, eval: [51.9 s]
+# Iteration 2 fit: [35.7 s]: Recall = 0.13821, Jaccard score = 0.0696, loss = 0.335418, gradient norm = 1.0000, eval: [51.4 s]
+# Iteration 3 fit: [35.7 s]: Recall = 0.13810, Jaccard score = 0.0696, loss = 0.333996, gradient norm = 1.0000, eval: [51.5 s]
+# Iteration 4 fit: [35.6 s]: Recall = 0.13894, Jaccard score = 0.0700, loss = 0.333109, gradient norm = 1.0000, eval: [51.5 s]
+# Iteration 5 fit: [35.8 s]: Recall = 0.13877, Jaccard score = 0.0699, loss = 0.331859, gradient norm = 1.0000, eval: [51.6 s]
+# Iteration 6 fit: [35.6 s]: Recall = 0.13917, Jaccard score = 0.0701, loss = 0.332088, gradient norm = 1.0000, eval: [51.7 s]
+# Iteration 7 fit: [35.7 s]: Recall = 0.14001, Jaccard score = 0.0706, loss = 0.331455, gradient norm = 1.0000, eval: [51.6 s]
+# Iteration 8 fit: [35.6 s]: Recall = 0.14001, Jaccard score = 0.0706, loss = 0.331006, gradient norm = 1.0000, eval: [51.3 s]
+# Iteration 9 fit: [35.6 s]: Recall = 0.13984, Jaccard score = 0.0705, loss = 0.331194, gradient norm = 1.0000, eval: [51.8 s]
+# Iteration 10 fit: [35.7 s]: Recall = 0.14001, Jaccard score = 0.0706, loss = 0.330041, gradient norm = 1.0000, eval: [51.8 s]
+# Iteration 11 fit: [35.7 s]: Recall = 0.14063, Jaccard score = 0.0709, loss = 0.329929, gradient norm = 1.0000, eval: [51.3 s]
+# Iteration 12 fit: [35.7 s]: Recall = 0.13973, Jaccard score = 0.0704, loss = 0.329493, gradient norm = 1.0000, eval: [51.9 s]
+# Iteration 13 fit: [35.6 s]: Recall = 0.13973, Jaccard score = 0.0704, loss = 0.328522, gradient norm = 1.0000, eval: [51.6 s]
+# Iteration 14 fit: [35.6 s]: Recall = 0.13945, Jaccard score = 0.0703, loss = 0.328190, gradient norm = 1.0000, eval: [51.2 s]
+# Iteration 15 fit: [35.6 s]: Recall = 0.13956, Jaccard score = 0.0703, loss = 0.327449, gradient norm = 1.0000, eval: [51.7 s]
