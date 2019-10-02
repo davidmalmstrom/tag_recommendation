@@ -82,4 +82,4 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None, rank
         one_hot_ranked = [one_hot_ranked_list(item_rank_list) for item_rank_list in tops]
         return one_hot_ranked
     else:
-        return nh.from_keras_format(list(map(lambda x: x + 1, tops)), val_x.shape[1])
+        return nh.from_keras_format(list(map(lambda x: x + 1, tops)), num_usertags)

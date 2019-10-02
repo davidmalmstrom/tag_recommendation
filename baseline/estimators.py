@@ -172,7 +172,7 @@ class BaselineModel(BaseEstimator):
         self._fitted = True
         return self
 
-    def predict(self, X=None, y=None, start_index=0, n=None):
+    def predict(self, X=None, y=None, start_index=0, n=None, rank_list=False):
         check_is_fitted(self, ['_fitted'])
 
         if n is None:
@@ -203,7 +203,19 @@ class BaselineModel(BaseEstimator):
 
         top_indexes = np.array([[index for index, _ in top_list] for top_list in predictions])
 
-        return nh.from_keras_format(list(map(lambda x: x + 1, top_indexes)), cf_predictions.shape[1])
+        num_usertags = cf_predictions.shape[1]
+
+        if rank_list:
+            def one_hot_ranked_list(item_rank_list):
+                one_hot = np.zeros((n, num_usertags))
+                one_hot[np.arange(n), item_rank_list] = 1
+                return one_hot
+
+            one_hot_ranked = [one_hot_ranked_list(item_rank_list) for item_rank_list in top_indexes]
+            return one_hot_ranked
+        else:
+            return nh.from_keras_format(list(map(lambda x: x + 1, top_indexes)), num_usertags)
+
 
     def _top_n_scores(self, score_matrix, n):
         """Returns lists of tuples with top-n element indexes and the
