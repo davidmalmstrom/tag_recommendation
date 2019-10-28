@@ -11,14 +11,14 @@ from plotting.parse_recall_loss import parse_runfile
 
 def get_df(model_name, runfile_path):
     data = parse_runfile(runfile_path)
-    df = pd.DataFrame(data, columns = ['Iteration', 'Recall@10', 'Loss'])
+    df = pd.DataFrame(data, columns = ['Epoch', 'Recall@10', 'Loss'])
     df['Model'] = model_name
     return df
 
-run_files = {'GMF': os.path.join("nncf", "runs", "past_runs", "runy", "runy16.yml"),
-             'MLP': os.path.join("nncf", "runs", "past_runs", "runy", "runy17.yml"),
-             'Deep from scratch': os.path.join("nncf", "runs", "past_runs", "runy", "runy18.yml"),
-             'Deep pretrained': os.path.join("nncf", "runs", "past_runs", "runy", "runy8.yml")
+run_files = {'GMF': os.path.join("nncf", "runs", "past_runs", "runz", "runz9.yml"),
+             'MLP': os.path.join("nncf", "runs", "past_runs", "runza", "runza13.yml"),
+             'Deep from scratch': os.path.join("nncf", "runs", "past_runs", "runzb", "runzb5.yml"),
+             'Deep pretrained': os.path.join("nncf", "runs", "past_runs", "runza", "runza14.yml")
  }
 
 
@@ -27,9 +27,14 @@ frames = [
     for model_name, runfile_path in run_files.items()
 ]
 
+min_length = min([len(frame) for frame in frames])
+frames = [frame.head(min_length) for frame in frames]
+
 df = pd.concat(frames)
 plt.figure()
-zxc = sns.lineplot(x="Iteration", y="Recall@10", hue='Model',
+sns.set_palette('cubehelix', 4)
+
+zxc = sns.lineplot(x="Epoch", y="Recall@10", hue='Model',
                 data=df)
 
 save_name = ''.join([
@@ -42,7 +47,7 @@ fig_path = os.path.join(PROJ_ROOT_DIR, 'figures')
 plt.savefig(os.path.join(fig_path, 'recall_graph_{}.svg'.format(save_name)), bbox_inches='tight')
 
 plt.figure()
-zxc = sns.lineplot(x="Iteration", y="Loss", hue='Model',
+zxc = sns.lineplot(x="Epoch", y="Loss", hue='Model',
             data=df)
 zxc.set(yscale="log")
 plt.savefig(os.path.join(fig_path, 'loss_graph_{}.svg'.format(save_name)), bbox_inches='tight')
