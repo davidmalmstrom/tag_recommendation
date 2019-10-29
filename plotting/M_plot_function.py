@@ -27,8 +27,8 @@ def get_base_results(X, y, test_y, m_space):
                                         iterations=15,
                                         show_progress=False,
                                         n=3,
-                                        content_scale_factor=0.0424,
-                                        alpha=2.17)
+                                        content_scale_factor=0.038,
+                                        alpha=3.5)
     base_model.fit(X, y)
 
     cf_model = estimators.ALSEstimator(factors=1000,
@@ -58,7 +58,7 @@ def get_base_results(X, y, test_y, m_space):
     
     return k_list_base + k_list_cf + k_list_nb
 
-def get_nn_results(X, y, test_y, proj_root_dir, config_file_path, m_space, nn_model):
+def get_nn_results(X, y, test_y, proj_root_dir, config_file_path, m_space, nn_model_name):
     test_part_size = test_y.shape[0]
 
     params = nn_test.read_params(config_file_path)
@@ -67,7 +67,7 @@ def get_nn_results(X, y, test_y, proj_root_dir, config_file_path, m_space, nn_mo
     
     k_list_nn = [
         (*evaluate_model_recall(nn_model, y[:test_part_size], 
-                                test_y, K, X[:test_part_size].toarray(), False), K, nn_model)
+                                test_y, K, X[:test_part_size].toarray(), False), K, nn_model_name)
         for K in m_space
     ]
     
@@ -98,9 +98,9 @@ def produce_df_for_plot(m_space, proj_root_dir, dataset_file_name, nn_rel_paths)
 
     full_list = []
 
-    for nn_model, nn_rel_path in zip(['Deep', 'GMF', 'MLP'], nn_rel_paths):
+    for nn_model_name, nn_rel_path in zip(['Deep', 'GMF', 'MLP'], nn_rel_paths):
         nn_file_path = os.path.join(proj_root_dir, nn_rel_path)
-        full_list += get_nn_results(X, y, test_y, proj_root_dir, nn_file_path, m_space, nn_model)
+        full_list += get_nn_results(X, y, test_y, proj_root_dir, nn_file_path, m_space, nn_model_name)
 
     base = get_base_results(X, y, test_y, m_space)
     random = get_random_results(test_y, m_space, num_user_tags)
@@ -108,13 +108,13 @@ def produce_df_for_plot(m_space, proj_root_dir, dataset_file_name, nn_rel_paths)
     df = pd.DataFrame(full_list + base + random, columns=["Recall", "Jaccard", "M", "Model"])
     return df
 
-M_SPACE = np.linspace(3, 80, 11, dtype="int32")
+M_SPACE = np.linspace(3, 19, 9, dtype="int32")
 sns.set_style("whitegrid")
 
 # Enter runfiles in order: ncf -> gmf -> mlp
 configs = [
     {'dataset_file_name': 'test_tag_dataset.pkl',
-     'runfiles': ['runzb5.yml', 'runz9.yml', 'runza13.yml'],
+     'runfiles': ['runza14.yml', 'runz9.yml', 'runza13.yml'],
      'save_name': 'M_plot_nn_05.svg'
     },
     {'dataset_file_name': 'cold_0.1_test_tag_dataset.pkl',
@@ -131,6 +131,7 @@ import re
 # Split on numbers of runfile names to get folder name
 r = re.compile("([a-zA-Z]+)([0-9]+)")
 
+pickle_list = []
 for config in configs:
     dataset_file_name = config['dataset_file_name']
     nn_rel_paths = [
@@ -140,4 +141,10 @@ for config in configs:
     df = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_paths)
     plt.figure()
     plot = sns.lineplot(x="M", y="Recall", markers=True, style="Model", dashes=False, hue="Model", data=df)
+    pickle_list.append(plot)
     plt.savefig(os.path.join(PROJ_ROOT_DIR, "figures", config["save_name"]), bbox_inches='tight')
+i = 1
+import pickle
+for plot in pickle_list:
+    pickle.dump(plot, open('fig{}.pkl'.format(i), 'wb'))
+    i += 1
