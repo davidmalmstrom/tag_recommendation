@@ -7,6 +7,7 @@ Measures: Recall and jaccard-score
 import sys
 sys.path.append("..")
 
+import pickle
 import lib.notebook_helpers as nh
 import numpy as np
 import heapq
@@ -83,3 +84,32 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None, rank
         return one_hot_ranked
     else:
         return nh.from_keras_format(list(map(lambda x: x + 1, tops)), num_usertags)
+
+def test_model_recall_automl(model, X):
+    """Test as done in automl.
+    We want to make predictions on tags that we know are true, and tags that are not true.
+    Use all of the known-to-be-true tags in val_y, and sample equally many non-true tags
+    to make predictions on. The tags to be predicted should be the same as for automl.
+    Thus, we need the same split for the nncf model. Generate the same by using the
+    same np.random seed."""
+    with open("../data/test_data_balanced.pkl", 'rb') as f:
+        test_data = pickle.load(f)
+
+
+    index, tag_indices_to_predict = np.nonzero(test_data)
+
+    labels = np.array([1 if user < 2000 else 0 for user in index])
+    users = np.array([index % 2000 for index in index])
+
+    if model.name == "GMF":
+        predictions = model.predict([users, tag_indices_to_predict], batch_size=100, verbose=0)
+    else:
+        features = X[users]
+        predictions = model.predict([users, tag_indices_to_predict, features],
+                                batch_size=100, verbose=0)
+    predictions = [round(pred[0]) for pred in predictions]  # Round 0.5+ to 1, and otherwise 0, labelling
+
+    recall_one = recall_score(labels, predictions)
+    recall_zero = recall_score(labels, predictions, pos_label=0)
+
+    return recall_one, recall_zero

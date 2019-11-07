@@ -6,7 +6,7 @@ sys.path.append("..")
 import nncf.NeuMF as NeuMF
 import nncf.MLP as MLP
 import nncf.GMF as GMF
-from nncf.evaluate_recall import evaluate_model_recall
+from nncf.evaluate_recall import evaluate_model_recall, test_model_recall_automl
 import oyaml as yaml
 import scipy.sparse as sp
 import lib.notebook_helpers as nh
@@ -80,6 +80,9 @@ def test_model(model, params, test_set, model_runfile_path, test_y, X):
     recall, jaccard = evaluate_model_recall(model, test_x, test_y, params['topk'], X, fast_eval=False)
 
     result = "Model test performed \nRecall score: " + str(recall) + "     Jaccard score: " + str(jaccard)
+    print_results(result, model_runfile_path)
+
+def print_results(result, model_runfile_path):
     print(result)
     with open(model_runfile_path, 'a') as run_file:
         run_file.write("# " + result.replace("\n", "\n# "))
@@ -105,7 +108,17 @@ def main():
 
     model = build_model(params, test_set.shape, X.shape[1])
 
-    test_model(model, params, test_set, model_runfile_path, test_y, X)
+
+    if sys.argv[-1] == "automl":
+        recall_one, recall_zero = test_model_recall_automl(model, X)
+        result = ("Model test performed as in AutoML: "
+                   "\nRecall_one score: {}    Recall_zero"
+                   " score: {}".format(str(recall_one), str(recall_zero)))
+
+        print_results(result, model_runfile_path)
+    else:
+        test_model(model, params, test_set, model_runfile_path, test_y, X)
+
 
 if __name__ == "__main__":
 	main()
