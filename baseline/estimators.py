@@ -58,15 +58,18 @@ class ALSEstimator(TemplateEstimator):
                        iterations=15,
                        filter_seen=True,
                        show_progress=True,
-                       n=3):
+                       n=3,
+                       confidence=1):
         super().__init__(n)
         self.factors = factors
         self.regularization = regularization
         self.iterations = iterations
         self.filter_seen = filter_seen
         self.show_progress = show_progress
+        self.confidence = confidence
 
     def fit(self, X=None, y=None):
+        y = self.confidence * y
         super().fit(None, y)
         self._model = implicit.als.AlternatingLeastSquares(factors=self.factors,
                                              regularization=self.regularization,
@@ -145,7 +148,8 @@ class BaselineModel(BaseEstimator):
                     show_progress=True,
                     n=3,
                     content_scale_factor=0.2,
-                    alpha=4):
+                    alpha=4,
+                    confidence=1):
         self.factors = factors
         self.regularization = regularization
         self.iterations = iterations
@@ -154,6 +158,7 @@ class BaselineModel(BaseEstimator):
         self.n = n
         self.content_scale_factor = content_scale_factor
         self.alpha = alpha
+        self.confidence = confidence
 
     def fit(self, X, y):
         self.cf = ALSEstimator(self.factors,
@@ -161,7 +166,8 @@ class BaselineModel(BaseEstimator):
                                self.iterations,
                                self.filter_seen,
                                self.show_progress,
-                               self.n)
+                               self.n,
+                               self.confidence)
         self.content = NaiveBayesEstimator(self.alpha,
                                            self.n)
 

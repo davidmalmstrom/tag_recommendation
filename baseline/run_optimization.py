@@ -46,21 +46,22 @@ def opt_naive_bayes(params=[1]):
     return run_config(yml_params)
 
 def opt_als(params=[0.01, 15, 50]):
-    regularization, iterations, factors = params
+    regularization, iterations, factors, confidence = params
 
     yml_params = {"--base_model": "ALSEstimator", "--num_k_folds": "10", "--topk": "3",
                   "--regularization": str(regularization), "--iterations": str(iterations),
-                  "--factors": str(factors)}
+                  "--factors": str(factors), "--confidence": str(confidence)}
 
     return run_config(yml_params)
 
 def opt_baseline(params=[1, 0.01, 15, 50, 0.06]):
-    NB_smoothing, regularization, iterations, factors, content_scale_factor = params
+    NB_smoothing, regularization, iterations, factors, content_scale_factor, confidence = params
 
-    yml_params = {"--base_model": "BaselineModel", "--num_k_folds": "10", "--topk": "3",
+    yml_params = {"--base_model": "BaselineModel", "--num_k_folds": "10", "--topk": "10",
                   "--regularization": str(regularization), "--iterations": str(iterations),
                   "--factors": str(factors), "--NB_smoothing": str(NB_smoothing),
-                  "--content_scale_factor": str(content_scale_factor)}
+                  "--content_scale_factor": str(content_scale_factor),
+                  "--confidence": str(confidence)}
 
     return run_config(yml_params)
 

@@ -42,6 +42,8 @@ def parse_args(sargs):
                         help='The percentage of user_tags that should be used for training. 0 means cold start.')
     parser.add_argument('--dataset_name_prepend', nargs='?', default='',
                         help='Prepend to dataset name to read the cold start test datasets instead.')
+    parser.add_argument('--confidence', type=float, default=1,
+                        help='The confidence weight for the implicit CF model')
 
     return parser.parse_known_args(sargs)[0]
 
@@ -57,13 +59,15 @@ def get_model(args):
                                 show_progress=args.show_als_progress,
                                 n=args.topk,
                                 content_scale_factor=args.content_scale_factor,
-                                alpha=args.NB_smoothing)
+                                alpha=args.NB_smoothing,
+                                confidence=args.confidence)
     elif model_name == "ALSEstimator":
         model = ALSEstimator(factors=args.factors,
                                 regularization=args.regularization,
                                 iterations=args.iterations,
                                 show_progress=args.show_als_progress,
-                                n=args.topk)
+                                n=args.topk,
+                                confidence=args.confidence)
     elif model_name == "NaiveBayesEstimator":
         model = NaiveBayesEstimator(alpha=args.NB_smoothing, n=args.topk)
     elif model_name == "SVMEstimator":

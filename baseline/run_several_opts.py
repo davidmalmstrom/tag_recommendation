@@ -4,11 +4,11 @@ import os
 from run_optimization import opt_als, opt_baseline, opt_naive_bayes, main
 from skopt import dummy_minimize, gp_minimize, forest_minimize
 
-optimizer = gp_minimize
+optimizer = dummy_minimize
 args_list = [(opt_naive_bayes, [(0.1,4)]), (opt_als, [(0.001,1), (15,), (30,100)]),
              (opt_baseline, [(0.1,4), (0.001,1), (15,), (30,100), (0.02,0.10)])]
-
-kwargs = {"verbose": True, "random_state": 0, "n_calls": 120}
+args_list = [(opt_als, [(1.0,15.0), (15,), (50,350), (40, 350)])]
+kwargs = {"verbose": True, "random_state": 0, "n_calls": 200}
 opts_list = [optimizer for args in args_list]
 kwargs_list = [kwargs for args in args_list]
 
