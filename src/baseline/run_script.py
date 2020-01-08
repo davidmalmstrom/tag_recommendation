@@ -2,7 +2,9 @@
 # Requires a json with the parameters in it
 
 import sys
+import os
 sys.path.append("..")
+
 
 import os
 import oyaml as yaml

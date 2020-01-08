@@ -1,7 +1,9 @@
 import sys
+import os
 sys.path.append("..")
 
-import lib.notebook_helpers as nh
+
+import lib.utils as utils
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC, SVC
 from sklearn.multiclass import OneVsRestClassifier
@@ -40,8 +42,8 @@ class TemplateEstimator(BaseEstimator, TransformerMixin):
 
         if n is None:
             n = self.n
-        tops = nh.get_top_n_tags(predictions, n=n)
-        return nh.from_keras_format(list(map(lambda x: x + 1, tops)), predictions.shape[1])
+        tops = utils.get_top_n_tags(predictions, n=n)
+        return utils.from_keras_format(list(map(lambda x: x + 1, tops)), predictions.shape[1])
 
     def predict_score(self, X, start_index):
         """Returns the probabilities of the classes. If the probabilities
@@ -214,14 +216,14 @@ class BaselineModel(BaseEstimator):
             one_hot_ranked = [one_hot_ranked_list(item_rank_list) for item_rank_list in top_indexes]
             return one_hot_ranked
         else:
-            return nh.from_keras_format(list(map(lambda x: x + 1, top_indexes)), num_usertags)
+            return utils.from_keras_format(list(map(lambda x: x + 1, top_indexes)), num_usertags)
 
 
     def _top_n_scores(self, score_matrix, n):
         """Returns lists of tuples with top-n element indexes and the
         scores of them, given the score matrix.
         """
-        top_n_indexes_lists = nh.get_top_n_tags(score_matrix, n=n)
+        top_n_indexes_lists = utils.get_top_n_tags(score_matrix, n=n)
 
         f = lambda x: x[x.argsort()[-n:][::-1]]
         top_n_scores_lists = np.apply_along_axis(f, 1, score_matrix)

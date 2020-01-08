@@ -1,17 +1,19 @@
 # Trains and tests a configuration. Specify config as argument. Make sure that the configuration has '--test_dataset: "1"'.
 
 import sys
+import os
 sys.path.append("..")
 
-import nncf.NeuMF as NeuMF
-import nncf.MLP as MLP
-import nncf.GMF as GMF
-from nncf.evaluate_recall import evaluate_model_recall
+
+import deep_learning.NeuMF as NeuMF
+import deep_learning.MLP as MLP
+import deep_learning.GMF as GMF
+from deep_learning.evaluate_recall import evaluate_model_recall
 import oyaml as yaml
 import scipy.sparse as sp
-import lib.notebook_helpers as nh
+import lib.utils as utils
 import pickle
-import nncf.run_script
+import deep_learning.run_script
 import os
 
 TEST_PART_SIZE = 2000
@@ -22,9 +24,9 @@ def train_model(model_runfile_path, vscode=False):
     """
     read_params(model_runfile_path)  # for the assert
     if vscode:
-        nncf.run_script.main(["run_model_test.py", model_runfile_path, "vscode"])
+        deep_learning.run_script.main(["run_model_test.py", model_runfile_path, "vscode"])
     else:
-        nncf.run_script.main(["run_model_test.py", model_runfile_path])
+        deep_learning.run_script.main(["run_model_test.py", model_runfile_path])
 
 def read_params(model_runfile_path):
     """Also asserts that the yml file is valid for testing

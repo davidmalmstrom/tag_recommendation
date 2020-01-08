@@ -1,10 +1,12 @@
 import sys
+import os
 sys.path.append("..")
+
 
 import base
 import oyaml as yaml
 import scipy.sparse as sp
-import lib.notebook_helpers as nh
+import lib.utils as utils
 import pickle
 from argparse import Namespace
 from sklearn.metrics import jaccard_score, recall_score

@@ -1,15 +1,10 @@
-'''
-Created on Aug 9, 2016
-Keras Implementation of Neural Matrix Factorization (NeuMF) recommender model in:
-He Xiangnan et al. Neural Collaborative Filtering. In WWW 2017.
-
-@author: Xiangnan He (xiangnanhe@gmail.com)
-'''
 from __future__ import print_function
 from __future__ import division
 
 import sys
+import os
 sys.path.append("..")
+
 
 from builtins import range
 from past.utils import old_div
@@ -23,15 +18,15 @@ from keras.models import Sequential, Model
 from keras.layers.core import Dense, Lambda, Activation
 from keras.layers import Embedding, Input, Dense, Multiply, Reshape, Flatten, Dropout, Concatenate, LeakyReLU, BatchNormalization
 from keras.optimizers import Adagrad, Adam, SGD, RMSprop
-from nncf.evaluate import evaluate_model
-from nncf.evaluate_recall import evaluate_model_recall
-from nncf.Dataset import Dataset
+from deep_learning.evaluate import evaluate_model
+from deep_learning.evaluate_recall import evaluate_model_recall
+from deep_learning.Dataset import Dataset
 from time import time
-import nncf.GMF as GMF
-import nncf.MLP as MLP
+import deep_learning.GMF as GMF
+import deep_learning.MLP as MLP
 import argparse
 import scipy.sparse as sp
-import lib.notebook_helpers as nh
+import lib.utils as utils
 
 #################### Arguments ####################
 def parse_args(sargs):
@@ -326,7 +321,7 @@ def main(sargs):
                 val_x = train[start_index:end_index]
                 val_y = dataset.val_y
             else:
-                val_x, val_y = nh.split_user_tags_percentage(orig_train[start_index:end_index], seed=1, percentage=args.percentage)
+                val_x, val_y = utils.split_user_tags_percentage(orig_train[start_index:end_index], seed=1, percentage=args.percentage)
                 train = sp.vstack([orig_train[0:start_index], val_x, orig_train[end_index:]]).todok()
 
             hr, ndcg = evaluate_model_recall(model, val_x, val_y, topK, dataset.X, fast_eval, starting_user_num=starting_user_num)

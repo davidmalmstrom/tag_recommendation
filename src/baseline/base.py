@@ -1,7 +1,9 @@
 import sys
+import os
 sys.path.append("..")
 
-import lib.notebook_helpers as nh
+
+import lib.utils as utils
 from baseline.estimators import BaselineModel, NaiveBayesEstimator, ALSEstimator, SVMEstimator
 from sklearn.model_selection import train_test_split
 import numpy as np
@@ -125,7 +127,7 @@ def main(sargs, log_output=True):
             val_x = y[start_index:end_index]
             y_train = y.copy()
         else:
-            val_x, val_y = nh.split_user_tags_percentage(y[start_index:end_index], seed=1, todok=True, percentage=args.percentage)
+            val_x, val_y = utils.split_user_tags_percentage(y[start_index:end_index], seed=1, todok=True, percentage=args.percentage)
             y_train = sp.vstack([y[0:start_index], val_x, y[end_index:]], format="csr")
 
         t1 = time()

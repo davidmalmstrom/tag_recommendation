@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import os
 
-PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
 sys.path.append(PROJ_ROOT_DIR)
 
 from plotting.parse_recall_loss import parse_runfile
@@ -15,10 +15,10 @@ def get_df(model_name, runfile_path):
     df['Model'] = model_name
     return df
 
-run_files = {'GMF': os.path.join("nncf", "runs", "past_runs", "runz", "runz9.yml"),
-             'MLP': os.path.join("nncf", "runs", "past_runs", "runza", "runza13.yml"),
-             'Deep from scratch': os.path.join("nncf", "runs", "past_runs", "runzb", "runzb5.yml"),
-             'Deep pretrained': os.path.join("nncf", "runs", "past_runs", "runza", "runza14.yml")
+run_files = {'GMF': os.path.join("deep_learning", "runs", "past_runs", "runz", "runz9.yml"),
+             'MLP': os.path.join("deep_learning", "runs", "past_runs", "runza", "runza13.yml"),
+             'Deep from scratch': os.path.join("deep_learning", "runs", "past_runs", "runzb", "runzb5.yml"),
+             'Deep pretrained': os.path.join("deep_learning", "runs", "past_runs", "runza", "runza14.yml")
  }
 
 

@@ -1,4 +1,16 @@
-# Does the preprocessing which is done in ./notebooks/flickr100m/data_exploration.ipynb
+"""
+This script performs preprocessing of the original flickr100m dataset which can be
+accesses following the instructions at 
+https://multimediacommons.wordpress.com/yfcc100m-core-dataset/ 
+The script outputs a file called preprocessed_user_auto_tags.pkl
+which is a cleaned subset of the dataset with autotags, user-tags and 
+item-identifier for items that have enough user-tags and autotags.
+The main purpose of doing this is to get a subset of the dataset which size is
+managable and for example not too big to be uploaded to github.
+Thus, to try the rest of the code in this repo, this script is not needed, as the
+subset is provided in the preprocessed_user_auto_tags.pkl file.
+"""
+
 import sys
 import pandas as pd
 

@@ -1,16 +1,12 @@
-'''
-Created on Aug 8, 2016
-Processing datasets.
-
-@author: Xiangnan He (xiangnanhe@gmail.com)
-'''
 import sys
+import os
 sys.path.append("..")
+
 
 from builtins import object
 import scipy.sparse as sp
 import numpy as np
-import lib.notebook_helpers as nh
+import lib.utils as utils
 import pickle
 
 class Dataset(object):

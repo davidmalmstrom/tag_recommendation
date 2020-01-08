@@ -5,9 +5,11 @@ Protocol: half test set
 Measures: Recall and jaccard-score
 """
 import sys
+import os
 sys.path.append("..")
 
-import lib.notebook_helpers as nh
+
+import lib.utils as utils
 import numpy as np
 import heapq
 from sklearn.metrics import recall_score, jaccard_score
@@ -82,4 +84,4 @@ def get_preds(model, val_x, K, fast_eval, starting_user_num, X, val_y=None, rank
         one_hot_ranked = [one_hot_ranked_list(item_rank_list) for item_rank_list in tops]
         return one_hot_ranked
     else:
-        return nh.from_keras_format(list(map(lambda x: x + 1, tops)), num_usertags)
+        return utils.from_keras_format(list(map(lambda x: x + 1, tops)), num_usertags)

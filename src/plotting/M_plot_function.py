@@ -3,10 +3,10 @@ import os
 PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
 sys.path.append(PROJ_ROOT_DIR)
 
-import lib.notebook_helpers as nh
+import lib.utils as utils
 import baseline.estimators as estimators
-import nncf.run_model_test as nn_test
-from nncf.evaluate_recall import evaluate_model_recall
+import deep_learning.run_model_test as nn_test
+from deep_learning.evaluate_recall import evaluate_model_recall
 
 import pickle
 import scipy.sparse as sp
@@ -135,7 +135,7 @@ pickle_list = []
 for config in configs:
     dataset_file_name = config['dataset_file_name']
     nn_rel_paths = [
-        os.path.join("nncf", "runs", "past_runs", r.match(runfile).group(1), runfile)
+        os.path.join("deep_learning", "runs", "past_runs", r.match(runfile).group(1), runfile)
         for runfile in config["runfiles"]
     ]
     df = produce_df_for_plot(M_SPACE, PROJ_ROOT_DIR, dataset_file_name, nn_rel_paths)
