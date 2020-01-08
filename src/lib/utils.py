@@ -106,7 +106,7 @@ def generate_data(n_samples=None, x_dim=1000, y_dim=1000, amount_x=6, amount_y=6
         data_dir = "/Users/davidmalmstrom/mnt/proj/tag-rec/src/notebooks/flickr100m/results"
     if data_name is None:
         data_name = "preprocessed_user_auto_tags.pkl"
-    dataset = pd.read_pickle(data_dir + "/" + data_name)
+    dataset = pd.read_pickle(os.path.join(data_dir, data_name))
 
     
     # Drop duplicate user tag sets (to avoid problem of flickr bulk tagging)

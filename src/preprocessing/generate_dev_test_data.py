@@ -1,3 +1,9 @@
+"""
+Script to generate development and test set partitions.
+Does this for the three different scenarios; p=0, p=0.1 and p=0.5
+Uses the result of the preprocessing script.
+"""
+
 import sys
 import os
 sys.path.append(os.path.abspath('..'))
@@ -7,9 +13,9 @@ from sklearn.model_selection import train_test_split
 import pickle
 import scipy.sparse as sp
 
-path = "data/"
+path = os.path.join('..', '..', 'data')
 
-dataset = utils.generate_data(n_samples=20000, y_dim=2000, data_dir=path, data_name="preprocessed_user_auto_tags_big.pkl",
+dataset = utils.generate_data(n_samples=20000, y_dim=2000, data_dir=path, data_name="preprocessed_user_auto_tags.pkl",
                            amount_x=6, amount_y=6, min_x=6, min_y=6)
 
 # Hold out first 2000 entries for testing.

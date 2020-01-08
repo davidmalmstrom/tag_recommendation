@@ -5,15 +5,12 @@ https://multimediacommons.wordpress.com/yfcc100m-core-dataset/
 The script outputs a file called preprocessed_user_auto_tags.pkl
 which is a cleaned subset of the dataset with autotags, user-tags and 
 item-identifier for items that have enough user-tags and autotags.
-The main purpose of doing this is to get a subset of the dataset which size is
-managable and for example not too big to be uploaded to github.
-Thus, to try the rest of the code in this repo, this script is not needed, as the
-subset is provided in the preprocessed_user_auto_tags.pkl file.
 """
 
 import sys
 import pandas as pd
 
+# This is the path to the yfcc100m csv-file
 data_dir = "/Users/davidmalmstrom/Documents/proj/data/flickr100m/"
 try:
     nrows = int(sys.argv[1])
@@ -89,4 +86,4 @@ print("ratio user_tags/item: " + str(len(user_tag_list) / prepare_dataset.shape[
 
 print("Size of final dataset: " + str(prepare_dataset.shape[0]))
 
-prepare_dataset.to_pickle("results/preprocessed_user_auto_tags_big.pkl")
+prepare_dataset.to_pickle("results/preprocessed_user_auto_tags.pkl")
