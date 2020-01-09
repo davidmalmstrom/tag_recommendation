@@ -10,6 +10,7 @@ import run_script
 files_path = "runs/several_runs/"
 
 run_files = os.listdir(files_path)
+run_files.remove('.keep')
 run_files.sort()
 seen = set()
 
