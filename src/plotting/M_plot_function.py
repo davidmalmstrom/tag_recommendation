@@ -1,7 +1,8 @@
 import sys
 import os
-PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
-sys.path.append(PROJ_ROOT_DIR)
+PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
+PROJ_SRC_DIR = os.path.join(PROJ_ROOT_DIR, '..')
+sys.path.append(PROJ_SRC_DIR)
 
 import lib.utils as utils
 import baseline.estimators as estimators
@@ -99,8 +100,8 @@ def produce_df_for_plot(m_space, proj_root_dir, dataset_file_name, nn_rel_paths)
     full_list = []
 
     for nn_model_name, nn_rel_path in zip(['Deep', 'GMF', 'MLP'], nn_rel_paths):
-        nn_file_path = os.path.join(proj_root_dir, nn_rel_path)
-        full_list += get_nn_results(X, y, test_y, proj_root_dir, nn_file_path, m_space, nn_model_name)
+        nn_file_path = os.path.join(PROJ_SRC_DIR, nn_rel_path)
+        full_list += get_nn_results(X, y, test_y, PROJ_SRC_DIR, nn_file_path, m_space, nn_model_name)
 
     base = get_base_results(X, y, test_y, m_space)
     random = get_random_results(test_y, m_space, num_user_tags)

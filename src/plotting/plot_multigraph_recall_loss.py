@@ -5,7 +5,8 @@ import seaborn as sns
 import os
 
 PROJ_ROOT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..')
-sys.path.append(PROJ_ROOT_DIR)
+PROJ_SRC_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..')
+sys.path.append(PROJ_SRC_DIR)
 
 from plotting.parse_recall_loss import parse_runfile
 
@@ -15,6 +16,7 @@ def get_df(model_name, runfile_path):
     df['Model'] = model_name
     return df
 
+# Change this to specify which runs should be included in the graph
 run_files = {'GMF': os.path.join("deep_learning", "runs", "past_runs", "runz", "runz9.yml"),
              'MLP': os.path.join("deep_learning", "runs", "past_runs", "runza", "runza13.yml"),
              'Deep from scratch': os.path.join("deep_learning", "runs", "past_runs", "runzb", "runzb5.yml"),
@@ -23,7 +25,7 @@ run_files = {'GMF': os.path.join("deep_learning", "runs", "past_runs", "runz", "
 
 
 frames = [
-    get_df(model_name, os.path.join(PROJ_ROOT_DIR, runfile_path))
+    get_df(model_name, os.path.join(PROJ_SRC_DIR, runfile_path))
     for model_name, runfile_path in run_files.items()
 ]
 

@@ -1,4 +1,4 @@
-# Trains and tests a configuration. Specify config as argument. Make sure that the configuration has '--test_dataset: "1"'.
+# Trains (if needed) and tests a configuration. Specify config as argument. Make sure that the configuration has '--test_dataset: "1"'.
 
 import sys
 import os

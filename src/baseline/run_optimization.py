@@ -69,7 +69,11 @@ def main(combinations=None):
         optimizer, args, kwargs = combinations
     else:
         optimizer = gp_minimize
+        # Change this to try other models
         args = (opt_naive_bayes, [(0.1,4)])
+        # Another example:
+        # args = (opt_baseline, [(0.1,4), (0.001,1), (15,), (30,100), (0.02,0.10)])
+
         kwargs = {"verbose": True, "random_state": 0, "n_calls": 100}
     optim_log_name = get_unique_filename("optim_log")
     sys.stdout = utils.Logger(folder_path + optim_log_name)

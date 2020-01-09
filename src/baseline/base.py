@@ -28,7 +28,7 @@ def parse_args(sargs):
                         help='Specify whether test dataset should be used.')
     parser.add_argument('--topk', type=int, default=10,
                         help='What topk to use when evaluating (recall@K, for example)')
-    parser.add_argument('--path', nargs='?', default='../data/',
+    parser.add_argument('--path', nargs='?', default='../../data/',
                         help='Input data path.')
     parser.add_argument('--regularization', type=float, default=0.01,
                         help='Regularization for the ALS estimator.')
